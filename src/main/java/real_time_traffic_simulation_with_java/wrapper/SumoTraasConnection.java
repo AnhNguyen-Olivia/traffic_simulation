@@ -23,12 +23,20 @@ public class SumoTraasConnection {
     private String rouFile = Path.RouFilePath;
 
     
-    /** Constructor that initializes TraCI and start SUMO*/
+    /** Constructor for SumoTraasConnection */
     public SumoTraasConnection() throws Exception{
         try {
             /** Creat a new sumo connection object */
             connection = new SumoTraciConnection(SumoBinary, netFile, rouFile);
+            /** Throws (output) the errors */
+        } catch(Exception e){
+            e.printStackTrace();
+            throw e;
+        }
+    }
 
+    /** Method to start the connection */
+    public void startConnection() throws Exception{
             System.out.println("Starting Sumo, please wait....");
 
             /** Start Sumo automatically */
@@ -41,12 +49,6 @@ public class SumoTraasConnection {
             Thread.sleep(wait);
  
             System.out.println("Sumo start successfully! Thank you for waiting.");
-        
-            /** Throw/output errors */
-        } catch(Exception e){
-            e.printStackTrace();
-            throw e;
-        }
     }
 
     /** Make a Sumo-move-to-the-next-step method */
