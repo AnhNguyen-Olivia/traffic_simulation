@@ -55,8 +55,9 @@ public class SumoTraasConnection {
     }
 
     /** Get the current time (step) in s (double) */
-    public void getCurrentStep() throws Exception{
-        Simulation.getTime();
+    public double getCurrentStep() throws Exception{
+        double timeSeconds = (double)connection.do_job_get(Simulation.getTime());
+        return timeSeconds; 
     }
 
     /** Method to close the connection.
