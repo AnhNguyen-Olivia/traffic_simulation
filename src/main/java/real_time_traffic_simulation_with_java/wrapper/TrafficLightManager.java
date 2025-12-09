@@ -2,8 +2,6 @@ package real_time_traffic_simulation_with_java.wrapper;
 
 import it.polito.appeal.traci.SumoTraciConnection;
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
 import de.tudresden.sumo.cmd.Trafficlight;
 
 public class TrafficLightManager{
@@ -15,7 +13,7 @@ public class TrafficLightManager{
     /**
      * get all traffic light id 
      */
-    @SuppressWarnings("Unchecked")
+    @SuppressWarnings("unchecked")    
     public List<String> getIDList() throws Exception{
         return (List<String>) conn.do_job_get(Trafficlight.getIDList());
     }
