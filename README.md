@@ -13,29 +13,50 @@ It simulates:
 - Vehicles moving on a predefined road network
 - Traffic lights switching between red/yellow/green states
 - Roads and map layout
-- A GUI built using Java Swing (similar to SUMO-GUI)  
+- A GUI built using JavaFx (similar to SUMO-GUI)  
 - Real-time behavior controlled by a Swing `Timer`
 
 ## Project Structure
 
 ```bash
-Real-Time-Traffic-Simulation-with-Java-WiSe-25-26
-├───Demo_video
-├───SumoConfig
-└───SumoTrafficSim
-    ├───.settings
-    ├───bin
-    │   ├───core
-    │   ├───gui
-    │   ├───test
-    │   └───wrapper
-    ├───img
-    ├───lib
-    └───src
-        ├───core
-        ├───gui
-        ├───test
-        └───wrapper
+traffic_simulation
+├───lib
+├───src
+│   ├───main
+│   │   └───java
+│   │       └───real_time_traffic_simulation_with_java
+│   │           ├───alias
+│   │           ├───cores
+│   │           ├───gui
+│   │           ├───lib
+│   │           ├───SumoConfig
+│   │           └───wrapper
+│   └───test
+│       └───java
+│           └───real_time_traffic_simulation_with_java
+└───target
+    ├───classes
+    │   └───real_time_traffic_simulation_with_java
+    │       ├───alias
+    │       ├───cores
+    │       ├───gui
+    │       ├───lib
+    │       ├───SumoConfig
+    │       └───wrapper
+    ├───generated-sources
+    │   └───annotations
+    ├───generated-test-sources
+    │   └───test-annotations
+    ├───maven-archiver
+    ├───maven-status
+    │   └───maven-compiler-plugin
+    │       ├───compile
+    │       │   └───default-compile
+    │       └───testCompile
+    │           └───default-testCompile
+    ├───surefire-reports
+    └───test-classes
+        └───real_time_traffic_simulation_with_java
 ```
 
 ## Installation
@@ -79,7 +100,7 @@ Real-Time-Traffic-Simulation-with-Java-WiSe-25-26
 ### Programming Language and Frameworks
 
 - Java 25/ Java SE
-- Java Swing for GUI development
+- JavaFX for GUI development
 
 ### Tools and IDE
 
@@ -145,12 +166,6 @@ Real-Time-Traffic-Simulation-with-Java-WiSe-25-26
 - [ ] Final user guide + installation section
 - [ ] Presentation preparation
 - [ ] Team reflection & clean repository
-
-## Video Demo
-
-- For demostation the connection see the [SumoConnectionDemo.mkv](Demo_video/SumoConnectionDemo.mkv).
-
-- For GUI demo see the [Demo_GUI.mkv](Demo_video/Demo_GUI.mkv).
 
 ## License
 
