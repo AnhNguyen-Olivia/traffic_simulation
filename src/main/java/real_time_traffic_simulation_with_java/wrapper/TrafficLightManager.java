@@ -37,9 +37,6 @@ public class TrafficLightManager{
     public void setDuration(String tlId, double duration) throws Exception{
         conn.do_job_set(Trafficlight.setPhaseDuration(tlId, duration));
     }
-    /**
-     * set and get Phase of the current phase
-     */
     public int getPhase(String tlId) throws Exception{
         return(int) conn.do_job_get(Trafficlight.getPhase(tlId));
     }
@@ -47,7 +44,8 @@ public class TrafficLightManager{
         conn.do_job_set(Trafficlight.setPhase(tlId, phase));
     }
     /**
-    * Toggle traffic light to next phase
+    * Toggle traffic light to next phase: get the current phase
+    * and then add 1 to convert to next phase
     */
    public void nextPhase(String tlId) throws Exception{
     int phase = getPhase(tlId);
