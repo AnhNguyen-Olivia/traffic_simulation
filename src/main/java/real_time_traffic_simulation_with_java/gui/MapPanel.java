@@ -1,20 +1,29 @@
 package real_time_traffic_simulation_with_java.gui;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import de.tudresden.sumo.objects.SumoColor;
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Affine;
+import javafx.scene.transform.Rotate;
+import real_time_traffic_simulation_with_java.wrapper.LaneManager;
+import real_time_traffic_simulation_with_java.wrapper.VehicleManager;
 
 /**
  * MapPanel - Panel hiển thị bản đồ ở giữa với zoom controls
@@ -32,38 +41,42 @@ public class MapPanel extends StackPane {
     private double anchorTx, anchorTy;
     
     // Components
-    private Pane viewport;
-    private Group world;
-    private ImageView imageView;
-    private Affine viewTransform;
+    private final Pane viewport;
+    private final Group world;
+    private final Group laneLayer;      // Layer chứa các lane (đường)
+    private final Group vehicleLayer;   // Layer chứa các xe
+    private final Affine viewTransform;
+    
+    // SUMO Managers - sẽ được set từ bên ngoài
+    private LaneManager laneManager;
+    private VehicleManager vehicleManager;
+    
+    // Cache để lưu trữ shapes
+    private final Map<String, Group> laneShapes = new HashMap<>();
+    private final Map<String, Polygon> vehicleShapes = new HashMap<>();
     
     /**
      * Constructor - Khởi tạo MapPanel với Affine Transform cho pan/zoom tối ưu
      */
     public MapPanel() {
         // Thiết lập style cho MapPanel
-        setStyle("-fx-background-color: white; " +
+        setStyle("-fx-background-color: #F0F0F0; " +
                  "-fx-border-color: #bdbdbd; " +
                  "-fx-border-width: 0 2 0 2;");
         
         // Tạo viewport (Pane chứa world) - sẽ clip content
         viewport = new Pane();
-        viewport.setStyle("-fx-background-color: white;");
+        viewport.setStyle("-fx-background-color: #F0F0F0;");
         
-        // Tạo world (Group chứa ImageView) - sẽ được transform
+        // Tạo world (Group chứa map layers) - sẽ được transform
         world = new Group();
         
-        // Load image 
-        String imageUrl = getClass().getResource("resources/pngtree-pink-watercolor-brushes-png-image_5054156.jpg").toExternalForm();
-        Image image = new Image(imageUrl);
-        imageView = new ImageView(image);
+        // Tạo các layer
+        laneLayer = new Group();
+        vehicleLayer = new Group();
         
-        // Set kích thước ImageView để preserve aspect ratio
-        imageView.setPreserveRatio(true);
-        imageView.setSmooth(true);
-        
-        // Thêm ImageView vào world
-        world.getChildren().add(imageView);
+        // Thêm layers vào world (thứ tự quan trọng: lanes trước, vehicles sau để xe nằm trên đường)
+        world.getChildren().addAll(laneLayer, vehicleLayer);
         
         // Tạo Affine transform cho world
         viewTransform = new Affine();
@@ -77,10 +90,6 @@ public class MapPanel extends StackPane {
         clip.widthProperty().bind(viewport.widthProperty());
         clip.heightProperty().bind(viewport.heightProperty());
         viewport.setClip(clip);
-        
-        // Bind kích thước ImageView theo viewport (fit to container)
-        viewport.widthProperty().addListener((obs, old, newVal) -> centerImage());
-        viewport.heightProperty().addListener((obs, old, newVal) -> centerImage());
         
         // Thêm viewport vào MapPanel
         getChildren().add(viewport);
@@ -239,30 +248,194 @@ public class MapPanel extends StackPane {
     }
     
     /**
-     * Center image khi viewport thay đổi kích thước
+     * Set SUMO managers để lấy dữ liệu
      */
-    private void centerImage() {
-        if (viewport.getWidth() <= 0 || viewport.getHeight() <= 0) return;
+    public void setManagers(LaneManager laneManager, VehicleManager vehicleManager) {
+        this.laneManager = laneManager;
+        this.vehicleManager = vehicleManager;
+    }
+    
+    /**
+     * Render toàn bộ map (lanes) - chỉ gọi 1 lần khi khởi tạo
+     */
+    public void renderMap() {
+        if (laneManager == null) return;
         
-        double viewportWidth = viewport.getWidth();
-        double viewportHeight = viewport.getHeight();
-        double imageWidth = imageView.getImage().getWidth();
-        double imageHeight = imageView.getImage().getHeight();
+        try {
+            List<String> laneIDs = laneManager.getIDList();
+            
+            for (String laneID : laneIDs) {
+                renderLane(laneID);
+            }
+            
+            // Center view sau khi render xong map
+            centerView();
+        } catch (Exception e) {
+            System.err.println("Error rendering map: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * Render một lane (đường)
+     */
+    private void renderLane(String laneID) {
+        try {
+            // Lấy dữ liệu lane
+            List<double[]> coordinates = laneManager.getCoordinateList(laneID);
+            double width = laneManager.getWidth(laneID);
+            
+            if (coordinates == null || coordinates.isEmpty()) return;
+            
+            Group laneGroup = new Group();
+            
+            // Vẽ từng đoạn của lane
+            for (int i = 0; i < coordinates.size() - 1; i++) {
+                double[] point1 = coordinates.get(i);
+                double[] point2 = coordinates.get(i + 1);
+                
+                // Tạo line cho lane
+                Line laneLine = new Line(point1[0], -point1[1], point2[0], -point2[1]); // Đảo ngược Y vì SUMO dùng coordinate khác
+                laneLine.setStroke(Color.GRAY);
+                laneLine.setStrokeWidth(width);
+                
+                laneGroup.getChildren().add(laneLine);
+            }
+            
+            // Lưu vào cache và thêm vào layer
+            laneShapes.put(laneID, laneGroup);
+            laneLayer.getChildren().add(laneGroup);
+            
+        } catch (Exception e) {
+            System.err.println("Error rendering lane " + laneID + ": " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Update vehicles - gọi liên tục mỗi simulation step
+     */
+    public void updateVehicles() {
+        if (vehicleManager == null) return;
         
-        // Tính scale để fit image vào viewport (contain)
-        double scaleX = viewportWidth / imageWidth;
-        double scaleY = viewportHeight / imageHeight;
-        double fitScale = Math.min(scaleX, scaleY);
+        try {
+            List<String> vehicleIDs = vehicleManager.getIDList();
+            
+            // Xóa các xe không còn tồn tại
+
+            vehicleLayer.getChildren().clear();
+            
+            // Update hoặc tạo mới vehicle shapes
+            for (String vehicleID : vehicleIDs) {
+                updateVehicle(vehicleID);
+            }
+            
+        } catch (Exception e) {
+            System.err.println("Error updating vehicles: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Update một vehicle
+     */
+    private void updateVehicle(String vehicleID) {
+        try {
+            // Lấy dữ liệu vehicle
+            double[] position = vehicleManager.getPosition(vehicleID);
+            double angle = vehicleManager.getAngle(vehicleID);
+            SumoColor sumoColor = vehicleManager.getColor(vehicleID);
+            
+            // Kích thước xe mặc định (5m x 1.8m)
+            double length = 5.0;
+            double width = 1.8;
+            
+            // Tạo hoặc lấy polygon từ cache
+            Polygon vehicleShape = vehicleShapes.get(vehicleID);
+            if (vehicleShape == null) {
+                vehicleShape = new Polygon();
+                vehicleShapes.put(vehicleID, vehicleShape);
+                // Tạo hình chữ nhật cho xe (tọa độ local, center tại origin)
+                vehicleShape.getPoints().addAll(
+                    -length/2, -width/2,  // Top-left
+                     length/2, -width/2,  // Top-right
+                     length/2,  width/2,  // Bottom-right
+                    -length/2,  width/2   // Bottom-left
+                );
+            }
+            
+            // Set màu xe
+            Color color = convertSumoColor(sumoColor);
+            vehicleShape.setFill(color);
+            vehicleShape.setStroke(Color.BLACK);
+            vehicleShape.setStrokeWidth(0.2);
+            
+            // Transform: Rotate và Translate
+            vehicleShape.getTransforms().clear();
+            vehicleShape.getTransforms().addAll(
+                new Rotate(angle, 0, 0),           // Rotate quanh center
+                new javafx.scene.transform.Translate(position[0], -position[1])  // Translate tới vị trí (đảo Y)
+            );
+            
+            // Thêm vào layer
+            vehicleLayer.getChildren().add(vehicleShape);
+            
+        } catch (Exception e) {
+            System.err.println("Error updating vehicle " + vehicleID + ": " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Convert SumoColor sang JavaFX Color
+     */
+    private Color convertSumoColor(SumoColor sumoColor) {
+        if (sumoColor == null) return Color.WHITE;
         
-        // Set kích thước ImageView
-        imageView.setFitWidth(imageWidth * fitScale);
-        imageView.setFitHeight(imageHeight * fitScale);
+        return Color.rgb(
+            sumoColor.r & 0xFF,
+            sumoColor.g & 0xFF,
+            sumoColor.b & 0xFF
+        );
+    }
+    
+    /**
+     * Center view để hiển thị toàn bộ map
+     */
+    private void centerView() {
+        if (laneLayer.getChildren().isEmpty()) return;
         
-        // Center ImageView trong world
-        double offsetX = (viewportWidth - imageView.getFitWidth()) / 2;
-        double offsetY = (viewportHeight - imageView.getFitHeight()) / 2;
-        imageView.setX(offsetX);
-        imageView.setY(offsetY);
+        // Reset transform
+        viewTransform.setToIdentity();
+        scale = 1.0;
+        
+        // Tính bounds của map
+        double minX = Double.MAX_VALUE, maxX = Double.MIN_VALUE;
+        double minY = Double.MAX_VALUE, maxY = Double.MIN_VALUE;
+        
+        for (javafx.scene.Node node : laneLayer.getChildren()) {
+            javafx.geometry.Bounds bounds = node.getBoundsInParent();
+            minX = Math.min(minX, bounds.getMinX());
+            maxX = Math.max(maxX, bounds.getMaxX());
+            minY = Math.min(minY, bounds.getMinY());
+            maxY = Math.max(maxY, bounds.getMaxY());
+        }
+        
+        double mapWidth = maxX - minX;
+        double mapHeight = maxY - minY;
+        double mapCenterX = (minX + maxX) / 2;
+        double mapCenterY = (minY + maxY) / 2;
+        
+        // Tính scale để fit map vào viewport
+        double scaleX = viewport.getWidth() / mapWidth;
+        double scaleY = viewport.getHeight() / mapHeight;
+        double fitScale = Math.min(scaleX, scaleY) * 0.9; // 0.9 để có margin
+        
+        // Apply transform: scale và center
+        viewTransform.appendScale(fitScale, fitScale);
+        viewTransform.appendTranslation(
+            viewport.getWidth() / 2 / fitScale - mapCenterX,
+            viewport.getHeight() / 2 / fitScale - mapCenterY
+        );
+        
+        scale = fitScale;
     }
     
     /**

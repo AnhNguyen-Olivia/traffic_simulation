@@ -5,6 +5,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection;
+import real_time_traffic_simulation_with_java.wrapper.LaneManager;
+import real_time_traffic_simulation_with_java.wrapper.VehicleManager;
 
 /**
  * MainWindow - Cửa sổ chính
@@ -25,8 +28,26 @@ public class MainWindow extends Application {
         MapPanel centerPanel = new MapPanel();
         Dashboard rightPanel = new Dashboard();
         
-        // 🔥 Bước 3.5: Tạo Controller (Backend Logic điều khiển) - hiện giờ chỉ giả lập
-        // SimulationController controller = new SimulationController(leftPanel);
+        // 🔥 Bước 3.5: Khởi tạo SUMO connection và render map
+        try {
+            SumoTraasConnection sumoConn = new SumoTraasConnection();
+            sumoConn.startConnection();
+            
+            // Tạo managers
+            LaneManager laneManager = new LaneManager(sumoConn.getConnection());
+            VehicleManager vehicleManager = new VehicleManager(sumoConn.getConnection(), sumoConn);
+            
+            // Set managers cho MapPanel
+            centerPanel.setManagers(laneManager, vehicleManager);
+            
+            // Render map
+            centerPanel.renderMap();
+            
+            System.out.println("SUMO connected and map rendered successfully!");
+        } catch (Exception e) {
+            System.err.println("Error connecting to SUMO: " + e.getMessage());
+            e.printStackTrace();
+        }
         
         // Bước 3.6: Wrap panels trong ScrollPane cho vertical scrolling
         ScrollPane leftScroll = new ScrollPane(leftPanel);

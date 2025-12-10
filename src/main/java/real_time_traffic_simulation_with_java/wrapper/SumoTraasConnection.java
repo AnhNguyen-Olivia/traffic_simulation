@@ -61,6 +61,11 @@ public class SumoTraasConnection {
         double timeSeconds = (double)connection.do_job_get(Simulation.getTime());
         return timeSeconds; 
     }
+    
+    /** Get the SumoTraciConnection object */
+    public SumoTraciConnection getConnection() {
+        return connection;
+    }
 
     /** Method to close the connection.
      * Check if the connection is null or not. If yes then throw Exception.
