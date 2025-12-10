@@ -32,23 +32,21 @@
       <scope>system</scope>
       <systemPath>${project.basedir}/lib/TraaS.jar</systemPath>
     </dependency>
-<<<<<<< HEAD
     <dependency>
-    <groupId>org.openjfx</groupId>
-    <artifactId>javafx-controls</artifactId>
-    <version>23.0.1</version>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>23.0.1</version>
     </dependency>
     <dependency>
-    <groupId>org.openjfx</groupId>
-    <artifactId>javafx-fxml</artifactId>
-    <version>25.0.1</version>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>25.0.1</version>
     </dependency>
     <dependency>
-    <groupId>org.openjfx</groupId>
-    <artifactId>javafx-graphics</artifactId>
-    <version>25.0.1</version>
-=======
-    <!-- JavaFX dependencies for Java 25 -->
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-graphics</artifactId>
+      <version>25.0.1</version>
+    </dependency>
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
@@ -63,7 +61,6 @@
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-graphics</artifactId>
       <version>25</version>
->>>>>>> f680377e3854b30e752e82f2a66cbf64c2868564
     </dependency>
   </dependencies>
 
