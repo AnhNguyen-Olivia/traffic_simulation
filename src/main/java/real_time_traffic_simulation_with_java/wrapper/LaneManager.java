@@ -56,8 +56,7 @@ public class LaneManager {
                 LaneData lanedata = new LaneData(
                         id,
                         this.getEdgeID(id),
-                        this.getLength(id),
-                        3.2, // default width in sumo
+                        this.getLength(id), // default width in sumo
                         this.getCoordinateList(id)
                 );
                 laneDataList.add(lanedata);

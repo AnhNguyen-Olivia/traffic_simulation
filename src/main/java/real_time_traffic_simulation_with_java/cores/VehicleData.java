@@ -4,6 +4,8 @@ public class VehicleData {
     public String vehicleID;
     public double x;
     public double y;
+    public double length = 5;
+    public double width = 1.8;
     public double angle;
     public String color;
 
@@ -12,6 +14,6 @@ public class VehicleData {
         this.x = x;
         this.y = y;
         this.angle = angle;
-        this.color = color;
+        this.color = color; // "red", "green", "blue", "black", "white"
     }
 }

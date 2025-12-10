@@ -7,14 +7,13 @@ public class LaneData {
     public String laneID;
     public String edgeID;
     public double length;
-    public double width;
+    public double width = 3.2;
     public List<SumoPosition2D> coordinates;
 
-    public LaneData(String laneID, String edgeID, double length, double width, List<SumoPosition2D> coordinates) {
+    public LaneData(String laneID, String edgeID, double length, List<SumoPosition2D> coordinates) {
         this.laneID = laneID;
         this.edgeID = edgeID;
         this.length = length;
-        this.width = width;
         this.coordinates = coordinates;
     }
 }
