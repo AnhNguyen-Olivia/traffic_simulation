@@ -1,9 +1,9 @@
 package real_time_traffic_simulation_with_java.wrapper;
 
-import it.polito.appeal.traci.SumoTraciConnection;
 import java.util.List;
+
 import de.tudresden.sumo.objects.SumoColor;
-import real_time_traffic_simulation_with_java.cores.Vehicle;
+import it.polito.appeal.traci.SumoTraciConnection;
 
 public class VehicleManager {
     private final SumoTraciConnection conn;
@@ -30,7 +30,9 @@ public class VehicleManager {
     // Get position of a vehicle in map to visualize map
     // Returns double[2] with [0] = x, [1] = y
     public double[] getPosition(String vehicleID) throws Exception {
-        return (double[]) conn.do_job_get(de.tudresden.sumo.cmd.Vehicle.getPosition(vehicleID));
+        de.tudresden.sumo.objects.SumoPosition2D pos = 
+            (de.tudresden.sumo.objects.SumoPosition2D) conn.do_job_get(de.tudresden.sumo.cmd.Vehicle.getPosition(vehicleID));
+        return new double[]{pos.x, pos.y};
     }
 
 

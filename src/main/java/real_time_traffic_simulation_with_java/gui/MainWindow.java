@@ -5,8 +5,9 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection;
+import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.wrapper.LaneManager;
+import real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection;
 import real_time_traffic_simulation_with_java.wrapper.VehicleManager;
 
 /**
@@ -30,22 +31,43 @@ public class MainWindow extends Application {
         
         // 🔥 Bước 3.5: Khởi tạo SUMO connection và render map
         try {
+            System.out.println("🚀 Initializing SUMO connection...");
             SumoTraasConnection sumoConn = new SumoTraasConnection();
             sumoConn.startConnection();
+            System.out.println("✅ SUMO connection established!");
             
             // Tạo managers
+            System.out.println("🔧 Creating managers...");
             LaneManager laneManager = new LaneManager(sumoConn.getConnection());
             VehicleManager vehicleManager = new VehicleManager(sumoConn.getConnection(), sumoConn);
+            real_time_traffic_simulation_with_java.wrapper.TrafficLightManager trafficLightManager = 
+                new real_time_traffic_simulation_with_java.wrapper.TrafficLightManager(sumoConn.getConnection());
+            System.out.println("✅ Managers created!");
             
             // Set managers cho MapPanel
-            centerPanel.setManagers(laneManager, vehicleManager);
+            System.out.println("🔧 Setting managers to MapPanel...");
+            centerPanel.setManagers(laneManager, vehicleManager, trafficLightManager);
+            System.out.println("✅ Managers set!");
             
             // Render map
+            System.out.println("🎨 Rendering map...");
             centerPanel.renderMap();
+            System.out.println("✅ Map rendered!");
             
-            System.out.println("SUMO connected and map rendered successfully!");
+            // Render traffic lights
+            System.out.println("🚦 Rendering traffic lights...");
+            centerPanel.renderTrafficLights();
+            System.out.println("✅ Traffic lights rendered!");
+            
+            // 🔥 Tạo SimulationEngine và kết nối với ControlPanel
+            System.out.println("⚙️  Creating SimulationEngine...");
+            SimulationEngine simulationEngine = new SimulationEngine(sumoConn, centerPanel);
+            leftPanel.setSimulationEngine(simulationEngine);
+            System.out.println("✅ SimulationEngine created and connected!");
+            
+            System.out.println("🎉 SUMO connected and map rendered successfully!");
         } catch (Exception e) {
-            System.err.println("Error connecting to SUMO: " + e.getMessage());
+            System.err.println("❌ Error connecting to SUMO: " + e.getMessage());
             e.printStackTrace();
         }
         
@@ -85,6 +107,9 @@ public class MainWindow extends Application {
         // Hiển thị
         stage.setScene(scene);
         stage.show();
+        
+        // Recenter map sau khi window hiển thị
+        centerPanel.recenterView();
     }
     
     // Main method - chạy chương trình

@@ -10,12 +10,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
 public class ControlPanel extends VBox {
     
     // PHẦN 1: Connect to SUMO - Attributes (Biến)
     private Button startButton;
     private Label timeLabel;
+    private SimulationEngine simulationEngine;
+    private boolean isSimulationRunning = false;
     
     // PHẦN 2: Vehicle Injection - Attributes
     private ComboBox<String> edgeComboBox;
@@ -350,6 +353,61 @@ public class ControlPanel extends VBox {
     
     public Button getInjectButton() {
         return injectButton;
+    }
+    
+    /**
+     * Set SimulationEngine và kết nối với Start button
+     */
+    public void setSimulationEngine(SimulationEngine engine) {
+        this.simulationEngine = engine;
+        
+        // Kết nối Start button với SimulationEngine
+        startButton.setOnAction(e -> toggleSimulation());
+        
+        // Setup callback để update time label
+        engine.setOnTimeUpdate(() -> {
+            double time = engine.getCurrentTime();
+            updateTime((int) time);
+        });
+    }
+    
+    /**
+     * Toggle simulation (Start/Stop)
+     */
+    private void toggleSimulation() {
+        if (simulationEngine == null) return;
+        
+        if (isSimulationRunning) {
+            // Stop simulation
+            simulationEngine.stop();
+            isSimulationRunning = false;
+            
+            // Update button style
+            startButton.setText("▶ Start Simulation");
+            startButton.setStyle("-fx-background-color: #34C759; " +
+                                "-fx-text-fill: white; " +
+                                "-fx-font-size: 13px; " +
+                                "-fx-font-weight: 600; " +
+                                "-fx-border-radius: 8; " +
+                                "-fx-background-radius: 8; " +
+                                "-fx-cursor: hand; " +
+                                "-fx-effect: dropshadow(gaussian, rgba(52, 199, 89, 0.3), 6, 0, 0, 2);");
+        } else {
+            // Start simulation
+            simulationEngine.start();
+            isSimulationRunning = true;
+            
+            // Update button style to red (Stop)
+            startButton.setText("⏸ Stop Simulation");
+            startButton.setStyle("-fx-background-color: #FF3B30; " +
+                                "-fx-text-fill: white; " +
+                                "-fx-font-size: 13px; " +
+                                "-fx-font-weight: 600; " +
+                                "-fx-border-radius: 8; " +
+                                "-fx-background-radius: 8; " +
+                                "-fx-cursor: hand; " +
+                                "-fx-effect: dropshadow(gaussian, rgba(255, 59, 48, 0.3), 6, 0, 0, 2);");
+        }
     }
     
     // ===== HELPER METHODS =====
