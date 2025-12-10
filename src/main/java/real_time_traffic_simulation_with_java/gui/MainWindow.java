@@ -1,4 +1,4 @@
-package gui;
+package real_time_traffic_simulation_with_java.gui;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
