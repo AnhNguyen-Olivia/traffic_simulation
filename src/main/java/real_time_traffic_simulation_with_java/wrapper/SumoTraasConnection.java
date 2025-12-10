@@ -37,7 +37,7 @@ public class SumoTraasConnection {
 
     /** Getter for connection */
     public SumoTraciConnection getConnection() {
-        return connection;
+        return this.connection;
     }
 
     /** Method to start the connection */
@@ -65,11 +65,6 @@ public class SumoTraasConnection {
     public double getCurrentStep() throws Exception{
         double timeSeconds = (double)connection.do_job_get(Simulation.getTime());
         return timeSeconds; 
-    }
-    
-    /** Get the SumoTraciConnection object */
-    public SumoTraciConnection getConnection() {
-        return connection;
     }
 
     /** Method to close the connection.

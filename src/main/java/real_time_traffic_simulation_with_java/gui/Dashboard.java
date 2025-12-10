@@ -1,9 +1,6 @@
 package real_time_traffic_simulation_with_java.gui;
-<<<<<<< HEAD
-=======
 
 import java.util.Optional;
->>>>>>> d9ec41605b8ba052ab5d2b262e42dc0e394a13f9
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
