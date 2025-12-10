@@ -95,7 +95,9 @@ public class VehicleManager {
             vehicleDataList.add(vehicledata);
         }
         return vehicleDataList;
->>>>>>> d3e6b8adf5972d600dd66347f3759a3f3a4502b1
+
+
+
+        
     }
->>>>>>> f680377e3854b30e752e82f2a66cbf64c2868564
 }
