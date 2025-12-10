@@ -2,11 +2,13 @@ package real_time_traffic_simulation_with_java.wrapper;
 
 import it.polito.appeal.traci.SumoTraciConnection;
 import de.tudresden.sumo.cmd.Vehicle;
+import de.tudresden.sumo.cmd.Lane;
 import de.tudresden.sumo.objects.SumoColor;
 import de.tudresden.sumo.objects.SumoPosition2D;
 
 import java.util.List;
 import real_time_traffic_simulation_with_java.cores.VehicleData;
+import real_time_traffic_simulation_with_java.alias.Color;
 
 public class VehicleManager {
     private final SumoTraciConnection conn;
@@ -37,9 +39,13 @@ public class VehicleManager {
     }
 
 
-    // Get Lane ID that the vehicle is currently on
-    public String getLane(String vehicleID) throws Exception {
+    // Get Lane & Edge ID that the vehicle is currently on
+    public String getLaneID(String vehicleID) throws Exception {
         return (String) conn.do_job_get(Vehicle.getLaneID(vehicleID));
+    }
+
+    public String getEdgeID(String vehicleID) throws Exception {
+        return (String) conn.do_job_get(Lane.getEdgeID(this.getLaneID(vehicleID)));
     }
 
 
@@ -63,36 +69,14 @@ public class VehicleManager {
         return (SumoColor) conn.do_job_get(Vehicle.getColor(vehicleID));
     }
 
-    public String colorToString(SumoColor color) {
-        if(color.r == (byte)255 && color.g == 0 && color.b == 0){
-            return "RED";
-        } else if(color.r == 0 && color.g == 0 && color.b == (byte)255){
-            return "BLUE";
-        } else if(color.r == 0 && color.g == (byte)255 && color.b == 0){
-            return "GREEN";
-        } else if(color.r == 0 && color.g == 0 && color.b == 0){
-            return "BLACK";
-        } else {
-            return "WHITE";
-        }
-    }
-
 
     // Inject vehicle, typeID ="" is DEFAULT_VEHTYPE (car)
     // depart: current simulation time (in sec)
     // position: 0.0 (start of edge), lane = 0 (rightmost lane)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // public void inject(String vehicleID, String routeID, double position, double speed, byte lane) throws Exception {
-    //     conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.add(vehicleID, "", routeID, (int)SumoTraasConnection.getCurrentStep(), position, speed, lane));
-    // }
-=======
-    public void inject(String vehicleID, String routeID, double position, double speed, byte lane) throws Exception {
-        conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.add(vehicleID, "", routeID, (int)sumoConn.getCurrentStep(), position, speed, lane));
-=======
-    public void add(String vehID, String routeID, SumoColor color) throws Exception {
+    public void add(String vehID, String routeID, String color) throws Exception {
+        SumoColor vehcolor = Color.stringToColor(color);
         conn.do_job_set(Vehicle.addFull(vehID, routeID, "DEFAULT_VEHTYPE", "now", "best", "base", "max", "current", "max", "current", "", "", "", 0, 0));
-        this.setColor(vehID, color);
+        this.setColor(vehID, vehcolor);
     }
 
     // Get vehicle data list
@@ -106,7 +90,7 @@ public class VehicleManager {
                     pos.x,
                     pos.y,
                     this.getAngle(id),
-                    this.colorToString(this.getColor(id))
+                    this.getColor(id)
             );
             vehicleDataList.add(vehicledata);
         }

@@ -2,8 +2,9 @@ package real_time_traffic_simulation_with_java.wrapper;
 
 import it.polito.appeal.traci.SumoTraciConnection;
 import de.tudresden.sumo.cmd.Edge;
-import de.tudresden.sumo.objects.SumoPosition2D;
+import de.tudresden.sumo.cmd.Lane;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class EdgeManager {
@@ -43,23 +44,33 @@ public class EdgeManager {
     }
 
 
-    /**
-     * Get number of lanes
-     * @param edgeID
-     * @return an int number of lanes
-     * @throws Exception
-    */ 
+    // Get number of lanes & lane IDs on the edge
     public int getLaneCount(String edgeID) throws Exception {
         return (int) conn.do_job_get(Edge.getLaneNumber(edgeID));
     }
 
+    public List<String> getLaneIDList(String edgeID) throws Exception {
+        List<String> laneIDs = new ArrayList<>();
+        for(int i=0; i<getLaneCount(edgeID); i++){
+            laneIDs.add(edgeID + "_" + i);
+        }
+        return laneIDs;
+    }
 
-    /**
-     * Get vehicle ID and number of vehicles on the edge last step
-     * @param edgeID
-     * @return List type String of vehicle IDs
-     * @throws Exception
-    */ 
+
+    // Get max speed allowed on the edge (m/s)
+    public double getMaxSpeed(String edgeID) throws Exception {
+        return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0"));
+    }
+
+
+    // Get length of the edge (m)
+    public double getLength(String edgeID) throws Exception {
+        return (double) conn.do_job_get(Lane.getLength(edgeID + "_0"));
+    }
+
+
+    // Get vehicle ID and number of vehicles on the edge last step
     @SuppressWarnings("unchecked")
     public List<String> getVehicleIDList(String edgeID) throws Exception {
         return (List<String>) conn.do_job_get(Edge.getLastStepVehicleIDs(edgeID));
@@ -76,76 +87,22 @@ public class EdgeManager {
     }
 
 
-    /**
-     * Get average speed of vehicles on the edge (m/s)
-     * @param edgeID
-     * @return a double average speed in m/s
-     * @throws Exception
-    */
-    public double getMeanSpeed(String edgeID) throws Exception {
+    // Get average speed of vehicles on the edge last step (m/s)
+    public double getAverageSpeed(String edgeID) throws Exception {
         return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID));
     }
 
 
-    /**
-     * Get density of vehicles on the  (vehicle/m)
-     * @param edgeID
-     * @return a double density in vehicle/m
-     * @throws Exception
-    */
+    // Get density of vehicles on the edge last step (vehicle/m)
     public double getDensity(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Edge.getParameter(edgeID, "density"));
+        double vehicleCount = (int) conn.do_job_get(Edge.getLastStepVehicleNumber(edgeID));
+        return vehicleCount / this.getLength(edgeID);
     }
 
-    /**
-     * Get length & width of the edge (m)
-     * @param edgeID
-     * @return a double length in m
-     * @throws Exception
-    */
-    public double getLength(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Edge.getParameter(edgeID, "length"));
-    }
 
-    /**
-     * Get width of the edge (m)
-     * @param edgeID
-     * @return a double width in m
-     * @throws Exception
-    */
-    public double getWidth(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Edge.getParameter(edgeID, "width"));
-    }
-
-    /**
-     * Get max speed allowed on the edge (m/s)
-     * @param edgeID
-     * @return a double max speed in m/s
-     * @throws Exception
-    */
-    public double getMaxSpeed(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Edge.getParameter(edgeID, "maxSpeed"));
-    }
-
-    /**
-     * Get estimate travel time on the edge (s)
-     * @param edgeID
-     * @return a double travel time in s
-     * @throws Exception
-    */
+    // Get estimate travel time on the edge last step (s)
     public double getTravelTime(String edgeID) throws Exception {
         return (double) conn.do_job_get(Edge.getTraveltime(edgeID));
-    }
-
-    /**
-     * Get shape of the edge as list of SumoPosition2D points
-     * @param edgeID
-     * @return a List type SumoPosition2D of shape points
-     * @throws Exception
-    */
-    @SuppressWarnings("unchecked")
-    public List<SumoPosition2D> getShape(String edgeID) throws Exception {
-        return (List<SumoPosition2D>) conn.do_job_get(Edge.getParameter(edgeID, "shape"));
     }
 
 }
