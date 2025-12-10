@@ -1,4 +1,5 @@
 package real_time_traffic_simulation_with_java.wrapper;
+import de.tudresden.sumo.objects.SumoLink;
 
 import it.polito.appeal.traci.SumoTraciConnection;
 import java.util.List;
@@ -46,7 +47,22 @@ public class TrafficLightManager{
     * and then add 1 to convert to next phase
     */
    public void nextPhase(String tlId) throws Exception{
-    int phase = getPhase(tlId);
-    setPhase(tlId,phase+1);
+        int phase = getPhase(tlId);
+        setPhase(tlId,phase+1);
    }
+
+   @SuppressWarnings("unchecked")
+   public List<String> getLaneTraffic(String tlID) throws Exception{
+        return (List<String>)conn.do_job_get(Trafficlight.getControlledLanes(tlID));
+   }
+   @SuppressWarnings("unchecked")
+   public List<SumoLink> getLinksTraffic(String tlID) throws Exception{
+        return (List<SumoLink>)conn.do_job_get(Trafficlight.getControlledLinks(tlID));
+   }
+
+    @SuppressWarnings("unchecked")
+   public List<String> getJunctionTraffic(String tlID) throws Exception{
+        return (List<String>)conn.do_job_get(Trafficlight.getControlledJunctions(tlID));
+   }
+
 }

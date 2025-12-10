@@ -16,7 +16,7 @@ public final class Path {
 
     public static String TraasPath = "src/main/java/real_time_traffic_simulation_with_java/lib/TraaS.jar";
     public static String SumoPath = "src/main/java/real_time_traffic_simulation_with_java/lib/sumo.exe";
-    public static String NetFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/testing.net.xml";
-    public static String RouFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/testing.rou.xml";
+    public static String NetFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/map.net.xml";
+    public static String RouFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/map.rou.xml";
 
 }
