@@ -1,8 +1,9 @@
 package real_time_traffic_simulation_with_java.wrapper;
 import java.util.Objects;
+
+import de.tudresden.sumo.cmd.Simulation;
 import it.polito.appeal.traci.SumoTraciConnection;
 import real_time_traffic_simulation_with_java.alias.Path;
-import de.tudresden.sumo.cmd.Simulation;
 
 public class SumoTraasConnection {
     
