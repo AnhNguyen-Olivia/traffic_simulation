@@ -1,4 +1,6 @@
-package gui;
+package real_time_traffic_simulation_with_java.gui;
+
+import java.util.Optional;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -11,7 +13,6 @@ import javafx.scene.control.Separator;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import java.util.Optional;
 
 /**
  * Dashboard - Panel thống kê bên phải

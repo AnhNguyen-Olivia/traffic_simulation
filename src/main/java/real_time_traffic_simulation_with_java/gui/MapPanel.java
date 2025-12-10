@@ -1,4 +1,4 @@
-package gui;
+package real_time_traffic_simulation_with_java.gui;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
@@ -53,8 +53,8 @@ public class MapPanel extends StackPane {
         // Tạo world (Group chứa ImageView) - sẽ được transform
         world = new Group();
         
-        // Load image
-        String imageUrl = getClass().getResource("/pngtree-pink-watercolor-brushes-png-image_5054156.jpg").toExternalForm();
+        // Load image 
+        String imageUrl = getClass().getResource("resources/pngtree-pink-watercolor-brushes-png-image_5054156.jpg").toExternalForm();
         Image image = new Image(imageUrl);
         imageView = new ImageView(image);
         
