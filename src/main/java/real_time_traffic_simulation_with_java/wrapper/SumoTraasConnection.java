@@ -21,7 +21,6 @@ public class SumoTraasConnection {
     private String SumoBinary = Path.SumoPath;
     private String netFile = Path.NetFilePath;
     private String rouFile = Path.RouFilePath;
-
     
     /** Constructor for SumoTraasConnection */
     public SumoTraasConnection() throws Exception{

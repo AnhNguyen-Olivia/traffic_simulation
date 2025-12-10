@@ -5,7 +5,12 @@ E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulatio
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\cores\SimulationEngine.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\cores\TrafficLight.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\cores\Vehicle.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\gui\ControlPanel.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\gui\Dashboard.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\gui\guiTesting.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\gui\MainWindow.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\gui\MapPanel.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\gui\SimulationController.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\EdgeManager.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\LaneManager.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\RouteManager.java

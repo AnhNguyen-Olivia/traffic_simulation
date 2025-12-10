@@ -40,7 +40,12 @@
     <dependency>
     <groupId>org.openjfx</groupId>
     <artifactId>javafx-fxml</artifactId>
-    <version>23.0.1</version>
+    <version>25.0.1</version>
+    </dependency>
+    <dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-graphics</artifactId>
+    <version>25.0.1</version>
     </dependency>
   </dependencies>
 
@@ -95,6 +100,14 @@
           <additionalClasspathElements>
             <additionalClasspathElement>${project.basedir}/lib/TraaS.jar</additionalClasspathElement>
           </additionalClasspathElements>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <configuration>
+          <mainClass>real_time_traffic_simulation_with_java.gui.guiTesting</mainClass>
         </configuration>
       </plugin>
     </plugins>
