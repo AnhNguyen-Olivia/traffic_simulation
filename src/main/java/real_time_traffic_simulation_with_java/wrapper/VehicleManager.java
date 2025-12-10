@@ -63,7 +63,7 @@ public class VehicleManager {
     // Inject vehicle, type ID is DEFAULT_VEHTYPE (car)
     // depart: current simulation time (in sec)
     // position: 0.0 (start of edge), lane = 0 (rightmost lane)
-    public void inject(String vehicleID, String routeID, double position, double speed, byte lane) throws Exception {
-        conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.add(vehicleID, "", routeID, (int)SumoTraasConnection.getCurrentStep(), position, speed, lane));
-    }
+    // public void inject(String vehicleID, String routeID, double position, double speed, byte lane) throws Exception {
+    //     conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.add(vehicleID, "", routeID, (int)SumoTraasConnection.getCurrentStep(), position, speed, lane));
+    // }
 }

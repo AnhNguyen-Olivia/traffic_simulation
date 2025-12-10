@@ -32,6 +32,16 @@
       <scope>system</scope>
       <systemPath>${project.basedir}/lib/TraaS.jar</systemPath>
     </dependency>
+    <dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-controls</artifactId>
+    <version>23.0.1</version>
+    </dependency>
+    <dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-fxml</artifactId>
+    <version>23.0.1</version>
+    </dependency>
   </dependencies>
 
   <repositories>

@@ -1,6 +1,14 @@
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\alias\Color.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\alias\Path.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\App.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\cores\Edge.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\cores\SimulationEngine.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\cores\TrafficLight.java
-E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\gui\gui.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\cores\Vehicle.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\gui\guiTesting.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\EdgeManager.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\LaneManager.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\RouteManager.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\SumoTraasConnection.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\TrafficLightManager.java
+E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\VehicleManager.java
