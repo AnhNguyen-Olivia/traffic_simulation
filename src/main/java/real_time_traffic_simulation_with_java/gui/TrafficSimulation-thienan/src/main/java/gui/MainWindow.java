@@ -1,5 +1,9 @@
+<<<<<<< HEAD:src/main/java/real_time_traffic_simulation_with_java/gui/MainWindow.java
 package real_time_traffic_simulation_with_java.gui;
 
+=======
+package gui;
+>>>>>>> 8a9f5fa6ee07407c35537c27ee2e102ca7fb50eb:src/main/java/real_time_traffic_simulation_with_java/gui/TrafficSimulation-thienan/src/main/java/gui/MainWindow.java
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;

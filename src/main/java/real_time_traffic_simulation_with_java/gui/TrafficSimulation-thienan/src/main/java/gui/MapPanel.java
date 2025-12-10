@@ -1,5 +1,4 @@
-package real_time_traffic_simulation_with_java.gui;
-
+package gui;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;

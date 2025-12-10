@@ -1,0 +1,5 @@
+gui\SimulationController.class
+gui\Dashboard.class
+gui\ControlPanel.class
+gui\MainWindow.class
+gui\MapPanel.class
