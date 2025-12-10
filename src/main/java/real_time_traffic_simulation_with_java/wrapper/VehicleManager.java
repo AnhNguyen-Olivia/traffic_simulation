@@ -12,12 +12,10 @@ import real_time_traffic_simulation_with_java.alias.Color;
 
 public class VehicleManager {
     private final SumoTraciConnection conn;
-    private final SumoTraasConnection sumoConn;
 
     // Connection to Sumo
     public VehicleManager(SumoTraciConnection connection, SumoTraasConnection sumoConnection) throws Exception {
         this.conn = connection;
-        this.sumoConn = sumoConnection;
     }
 
     // -------------------WRAPPER FOR TRAAS-------------------
@@ -95,9 +93,5 @@ public class VehicleManager {
             vehicleDataList.add(vehicledata);
         }
         return vehicleDataList;
-
-
-
-        
     }
 }
