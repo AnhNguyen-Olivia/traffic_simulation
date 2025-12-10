@@ -34,6 +34,11 @@ public class SumoTraasConnection {
         }
     }
 
+    /** Getter for connection */
+    public SumoTraciConnection getConnection() {
+        return connection;
+    }
+
     /** Method to start the connection */
     public void startConnection() throws Exception{
             System.out.println("Starting Sumo, please wait....");
