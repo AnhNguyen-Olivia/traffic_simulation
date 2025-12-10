@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 real_time_traffic_simulation_with_java\App.class
 real_time_traffic_simulation_with_java\wrapper\EdgeManager.class
 real_time_traffic_simulation_with_java\gui\Dashboard.class
@@ -18,3 +19,23 @@ real_time_traffic_simulation_with_java\gui\MapPanel.class
 real_time_traffic_simulation_with_java\wrapper\RouteManager.class
 real_time_traffic_simulation_with_java\cores\TrafficLight.class
 real_time_traffic_simulation_with_java\gui\SimulationController.class
+=======
+real_time_traffic_simulation_with_java/alias/Color.class
+gui/ControlPanel.class
+real_time_traffic_simulation_with_java/cores/TrafficLight$State.class
+gui/MainWindow.class
+real_time_traffic_simulation_with_java/cores/TrafficLight.class
+real_time_traffic_simulation_with_java/App.class
+real_time_traffic_simulation_with_java/cores/SimulationEngine.class
+real_time_traffic_simulation_with_java/wrapper/VehicleManager.class
+real_time_traffic_simulation_with_java/alias/Path.class
+gui/MapPanel.class
+real_time_traffic_simulation_with_java/cores/Edge.class
+real_time_traffic_simulation_with_java/wrapper/EdgeManager.class
+real_time_traffic_simulation_with_java/wrapper/RouteManager.class
+real_time_traffic_simulation_with_java/wrapper/TrafficLightManager.class
+real_time_traffic_simulation_with_java/wrapper/LaneManager.class
+gui/Dashboard.class
+real_time_traffic_simulation_with_java/wrapper/SumoTraasConnection.class
+real_time_traffic_simulation_with_java/cores/Vehicle.class
+>>>>>>> f680377e3854b30e752e82f2a66cbf64c2868564

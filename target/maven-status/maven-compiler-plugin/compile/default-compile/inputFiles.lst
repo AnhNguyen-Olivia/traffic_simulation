@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\alias\Color.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\alias\Path.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\App.java
@@ -17,3 +18,22 @@ E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulatio
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\SumoTraasConnection.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\TrafficLightManager.java
 E:\Online Downloads\traffic_simulation\src\main\java\real_time_traffic_simulation_with_java\wrapper\VehicleManager.java
+=======
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/App.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/alias/Color.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/alias/Path.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/cores/Edge.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/cores/SimulationEngine.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/cores/TrafficLight.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/cores/Vehicle.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/gui/ControlPanel.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/gui/Dashboard.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/gui/MainWindow.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/gui/MapPanel.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/wrapper/EdgeManager.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/wrapper/LaneManager.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/wrapper/RouteManager.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/wrapper/SumoTraasConnection.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/wrapper/TrafficLightManager.java
+/workspaces/traffic_simulation/src/main/java/real_time_traffic_simulation_with_java/wrapper/VehicleManager.java
+>>>>>>> f680377e3854b30e752e82f2a66cbf64c2868564

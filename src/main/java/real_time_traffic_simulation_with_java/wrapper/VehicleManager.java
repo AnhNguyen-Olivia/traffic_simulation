@@ -7,11 +7,12 @@ import real_time_traffic_simulation_with_java.cores.Vehicle;
 
 public class VehicleManager {
     private final SumoTraciConnection conn;
-
+    private final SumoTraasConnection sumoConn;
 
     // Connection to Sumo
-    public VehicleManager(SumoTraciConnection connection) throws Exception {
+    public VehicleManager(SumoTraciConnection connection, SumoTraasConnection sumoConnection) throws Exception {
         this.conn = connection;
+        this.sumoConn = sumoConnection;
     }
 
     
@@ -63,7 +64,13 @@ public class VehicleManager {
     // Inject vehicle, type ID is DEFAULT_VEHTYPE (car)
     // depart: current simulation time (in sec)
     // position: 0.0 (start of edge), lane = 0 (rightmost lane)
+<<<<<<< HEAD
     // public void inject(String vehicleID, String routeID, double position, double speed, byte lane) throws Exception {
     //     conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.add(vehicleID, "", routeID, (int)SumoTraasConnection.getCurrentStep(), position, speed, lane));
     // }
+=======
+    public void inject(String vehicleID, String routeID, double position, double speed, byte lane) throws Exception {
+        conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.add(vehicleID, "", routeID, (int)sumoConn.getCurrentStep(), position, speed, lane));
+    }
+>>>>>>> f680377e3854b30e752e82f2a66cbf64c2868564
 }
