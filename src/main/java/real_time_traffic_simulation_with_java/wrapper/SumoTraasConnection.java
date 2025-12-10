@@ -1,8 +1,9 @@
 package real_time_traffic_simulation_with_java.wrapper;
 import java.util.Objects;
+
+import de.tudresden.sumo.cmd.Simulation;
 import it.polito.appeal.traci.SumoTraciConnection;
 import real_time_traffic_simulation_with_java.alias.Path;
-import de.tudresden.sumo.cmd.Simulation;
 
 public class SumoTraasConnection {
     
@@ -64,6 +65,11 @@ public class SumoTraasConnection {
     public double getCurrentStep() throws Exception{
         double timeSeconds = (double)connection.do_job_get(Simulation.getTime());
         return timeSeconds; 
+    }
+    
+    /** Get the SumoTraciConnection object */
+    public SumoTraciConnection getConnection() {
+        return connection;
     }
 
     /** Method to close the connection.
