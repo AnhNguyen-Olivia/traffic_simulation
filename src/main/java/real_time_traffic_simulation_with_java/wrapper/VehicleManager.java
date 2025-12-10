@@ -81,10 +81,15 @@ public class VehicleManager {
     // Inject vehicle, typeID ="" is DEFAULT_VEHTYPE (car)
     // depart: current simulation time (in sec)
     // position: 0.0 (start of edge), lane = 0 (rightmost lane)
-
+<<<<<<< HEAD
+<<<<<<< HEAD
+    // public void inject(String vehicleID, String routeID, double position, double speed, byte lane) throws Exception {
+    //     conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.add(vehicleID, "", routeID, (int)SumoTraasConnection.getCurrentStep(), position, speed, lane));
+    // }
+=======
     public void inject(String vehicleID, String routeID, double position, double speed, byte lane) throws Exception {
-        conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.add(vehicleID, "", routeID, (int)sumoConn.getCurrentStep(), position, speed, lane));}
-
+        conn.do_job_set(de.tudresden.sumo.cmd.Vehicle.add(vehicleID, "", routeID, (int)sumoConn.getCurrentStep(), position, speed, lane));
+=======
     public void add(String vehID, String routeID, SumoColor color) throws Exception {
         conn.do_job_set(Vehicle.addFull(vehID, routeID, "DEFAULT_VEHTYPE", "now", "best", "base", "max", "current", "max", "current", "", "", "", 0, 0));
         this.setColor(vehID, color);
@@ -106,5 +111,7 @@ public class VehicleManager {
             vehicleDataList.add(vehicledata);
         }
         return vehicleDataList;
+>>>>>>> d3e6b8adf5972d600dd66347f3759a3f3a4502b1
     }
+>>>>>>> f680377e3854b30e752e82f2a66cbf64c2868564
 }
