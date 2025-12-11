@@ -31,10 +31,10 @@ import real_time_traffic_simulation_with_java.wrapper.VehicleManager;
  */
 public class MapPanel extends StackPane {
     
-    // Zoom settings
-    private static final double MIN_SCALE = 0.5;
-    private static final double MAX_SCALE = 3.0;
-    private static final double ZOOM_STEP = 1.10;
+    // Zoom settings - cho phép zoom rất sâu để xem từng con đường
+    private static final double MIN_SCALE = 0.1;
+    private static final double MAX_SCALE = 15.0;  // Tăng lên 15x để zoom sâu
+    private static final double ZOOM_STEP = 1.15;  // Tăng step để zoom nhanh hơn
     
     private double scale = 1.0;
     private double anchorX, anchorY;
@@ -44,16 +44,19 @@ public class MapPanel extends StackPane {
     private final Pane viewport;
     private final Group world;
     private final Group laneLayer;      // Layer chứa các lane (đường)
+    private final Group trafficLightLayer;   // Layer chứa traffic lights
     private final Group vehicleLayer;   // Layer chứa các xe
     private final Affine viewTransform;
     
     // SUMO Managers - sẽ được set từ bên ngoài
     private LaneManager laneManager;
     private VehicleManager vehicleManager;
+    private real_time_traffic_simulation_with_java.wrapper.TrafficLightManager trafficLightManager;
     
     // Cache để lưu trữ shapes
     private final Map<String, Group> laneShapes = new HashMap<>();
     private final Map<String, Polygon> vehicleShapes = new HashMap<>();
+    private final Map<String, javafx.scene.shape.Circle> trafficLightShapes = new HashMap<>();
     
     /**
      * Constructor - Khởi tạo MapPanel với Affine Transform cho pan/zoom tối ưu
@@ -73,10 +76,11 @@ public class MapPanel extends StackPane {
         
         // Tạo các layer
         laneLayer = new Group();
+        trafficLightLayer = new Group();
         vehicleLayer = new Group();
         
-        // Thêm layers vào world (thứ tự quan trọng: lanes trước, vehicles sau để xe nằm trên đường)
-        world.getChildren().addAll(laneLayer, vehicleLayer);
+        // Thêm layers vào world (thứ tự: lanes -> traffic lights -> vehicles)
+        world.getChildren().addAll(laneLayer, trafficLightLayer, vehicleLayer);
         
         // Tạo Affine transform cho world
         viewTransform = new Affine();
@@ -250,28 +254,43 @@ public class MapPanel extends StackPane {
     /**
      * Set SUMO managers để lấy dữ liệu
      */
-    public void setManagers(LaneManager laneManager, VehicleManager vehicleManager) {
+    public void setManagers(LaneManager laneManager, VehicleManager vehicleManager, 
+                           real_time_traffic_simulation_with_java.wrapper.TrafficLightManager trafficLightManager) {
         this.laneManager = laneManager;
         this.vehicleManager = vehicleManager;
+        this.trafficLightManager = trafficLightManager;
     }
     
     /**
      * Render toàn bộ map (lanes) - chỉ gọi 1 lần khi khởi tạo
      */
     public void renderMap() {
-        if (laneManager == null) return;
+        if (laneManager == null) {
+            System.err.println("❌ LaneManager is NULL! Cannot render map.");
+            return;
+        }
         
         try {
             List<String> laneIDs = laneManager.getIDList();
+            System.out.println("✅ Found " + laneIDs.size() + " lanes to render");
             
+            if (laneIDs.isEmpty()) {
+                System.err.println("❌ No lanes found in SUMO network!");
+                return;
+            }
+            
+            int successCount = 0;
             for (String laneID : laneIDs) {
                 renderLane(laneID);
+                successCount++;
             }
+            
+            System.out.println("✅ Successfully rendered " + successCount + " lanes");
             
             // Center view sau khi render xong map
             centerView();
         } catch (Exception e) {
-            System.err.println("Error rendering map: " + e.getMessage());
+            System.err.println("❌ Error rendering map: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -285,34 +304,191 @@ public class MapPanel extends StackPane {
             List<double[]> coordinates = laneManager.getCoordinateList(laneID);
             double width = laneManager.getWidth(laneID);
             
-            if (coordinates == null || coordinates.isEmpty()) return;
+            System.out.println("🔧 Rendering lane: " + laneID + " (width: " + width + ", points: " + coordinates.size() + ")");
+            
+            if (coordinates == null || coordinates.isEmpty()) {
+                System.err.println("⚠️  Lane " + laneID + " has no coordinates!");
+                return;
+            }
             
             Group laneGroup = new Group();
             
-            // Vẽ từng đoạn của lane
+            // Vẽ từng đoạn của lane - đơn giản và liền mạch
             for (int i = 0; i < coordinates.size() - 1; i++) {
                 double[] point1 = coordinates.get(i);
                 double[] point2 = coordinates.get(i + 1);
                 
-                // Tạo line cho lane
-                Line laneLine = new Line(point1[0], -point1[1], point2[0], -point2[1]); // Đảo ngược Y vì SUMO dùng coordinate khác
-                laneLine.setStroke(Color.GRAY);
-                laneLine.setStrokeWidth(width);
+                // Debug: In ra coordinates
+                if (i == 0) {
+                    System.out.println("   First point: [" + point1[0] + ", " + point1[1] + "]");
+                }
+                
+                // Vẽ mặt đường chính với màu xám và viền mượt
+                Line laneLine = new Line(point1[0], -point1[1], point2[0], -point2[1]);
+                laneLine.setStroke(Color.rgb(70, 70, 70)); // Màu xám đậm cho asphalt
+                laneLine.setStrokeWidth(width); // Sử dụng đúng width của lane
+                laneLine.setStrokeLineCap(javafx.scene.shape.StrokeLineCap.ROUND); // Bo tròn đầu mút để liền mạch
+                laneLine.setStrokeLineJoin(javafx.scene.shape.StrokeLineJoin.ROUND); // Bo tròn góc nối
+                laneLine.setSmooth(true); // Làm mượt đường
                 
                 laneGroup.getChildren().add(laneLine);
             }
+            
+            System.out.println("   ✅ Added " + (coordinates.size() - 1) + " line segments");
             
             // Lưu vào cache và thêm vào layer
             laneShapes.put(laneID, laneGroup);
             laneLayer.getChildren().add(laneGroup);
             
         } catch (Exception e) {
-            System.err.println("Error rendering lane " + laneID + ": " + e.getMessage());
+            System.err.println("❌ Error rendering lane " + laneID + ": " + e.getMessage());
+            e.printStackTrace();
         }
     }
     
     /**
-     * Update vehicles - gọi liên tục mỗi simulation step
+     * Render traffic lights - gọi 1 lần khi khởi tạo
+     */
+    public void renderTrafficLights() {
+        if (trafficLightManager == null || laneManager == null) return;
+        
+        try {
+            List<String> tlIDs = trafficLightManager.getIDList();
+            System.out.println("\n========================================");
+            System.out.println("🚦 TRAFFIC LIGHT RENDERING");
+            System.out.println("========================================");
+            System.out.println("Total traffic lights found: " + tlIDs.size());
+            System.out.println("Traffic light IDs: " + tlIDs);
+            System.out.println("========================================\n");
+            
+            int successCount = 0;
+            int skippedCount = 0;
+            
+            for (String tlID : tlIDs) {
+                int beforeSize = trafficLightLayer.getChildren().size();
+                renderTrafficLight(tlID);
+                int afterSize = trafficLightLayer.getChildren().size();
+                
+                if (afterSize > beforeSize) {
+                    successCount++;
+                } else {
+                    skippedCount++;
+                }
+            }
+            
+            System.out.println("\n========================================");
+            System.out.println("📊 RENDERING SUMMARY:");
+            System.out.println("   ✅ Successfully rendered: " + successCount);
+            System.out.println("   ⚠️  Skipped: " + skippedCount);
+            System.out.println("   📍 Total on map: " + trafficLightShapes.size());
+            System.out.println("========================================\n");
+            
+        } catch (Exception e) {
+            System.err.println("❌ Error rendering traffic lights: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * Render một traffic light với cột đèn và trạng thái
+     */
+    private void renderTrafficLight(String tlID) {
+        try {
+            // Lấy controlled lanes để tìm vị trí
+            List<String> controlledLanes = trafficLightManager.getControlledLanes(tlID);
+            if (controlledLanes == null || controlledLanes.isEmpty()) {
+                System.out.println("⚠️  Traffic light " + tlID + " has no controlled lanes - SKIPPED");
+                return;
+            }
+            
+            System.out.println("   Processing TL " + tlID + " with " + controlledLanes.size() + " controlled lanes: " + controlledLanes);
+            
+            // Lấy lane đầu tiên để xác định vị trí
+            String firstLane = controlledLanes.get(0);
+            List<double[]> coordinates = laneManager.getCoordinateList(firstLane);
+            
+            if (coordinates == null || coordinates.isEmpty()) {
+                System.out.println("⚠️  Lane " + firstLane + " has no coordinates - SKIPPED");
+                return;
+            }
+            
+            // Vị trí traffic light = điểm cuối của lane (trước junction)
+            double[] endPoint = coordinates.get(coordinates.size() - 1);
+            double x = endPoint[0];
+            double y = -endPoint[1]; // Đảo Y
+            
+            // Tạo Group chứa cột đèn và đèn tín hiệu đẹp hơn
+            Group tlGroup = new Group();
+            
+            // 1. Vẽ đế cột đèn (base)
+            Rectangle base = new Rectangle(1.2, 0.4);
+            base.setX(x - 0.6);
+            base.setY(y - 0.2);
+            base.setFill(Color.rgb(60, 60, 60));
+            base.setStroke(Color.rgb(30, 30, 30));
+            base.setStrokeWidth(0.1);
+            base.setArcWidth(0.2);
+            base.setArcHeight(0.2);
+            
+            // 2. Vẽ cột đèn (pole) - với gradient và shadow
+            Rectangle pole = new Rectangle(0.5, 8);
+            pole.setX(x - 0.25);
+            pole.setY(y - 8);
+            javafx.scene.paint.LinearGradient poleGradient = new javafx.scene.paint.LinearGradient(
+                0, 0, 1, 0, true, javafx.scene.paint.CycleMethod.NO_CYCLE,
+                new javafx.scene.paint.Stop(0, Color.rgb(80, 80, 80)),
+                new javafx.scene.paint.Stop(0.5, Color.rgb(100, 100, 100)),
+                new javafx.scene.paint.Stop(1, Color.rgb(70, 70, 70))
+            );
+            pole.setFill(poleGradient);
+            pole.setStroke(Color.rgb(40, 40, 40));
+            pole.setStrokeWidth(0.1);
+            pole.setEffect(new javafx.scene.effect.DropShadow(3, 1, 1, Color.rgb(0, 0, 0, 0.5)));
+            
+            // 3. Vẽ hộp đèn (traffic light housing) - hình chữ nhật bo góc
+            Rectangle housing = new Rectangle(1.8, 2.4);
+            housing.setX(x - 0.9);
+            housing.setY(y - 10.9);
+            housing.setFill(Color.rgb(40, 40, 40));
+            housing.setStroke(Color.rgb(20, 20, 20));
+            housing.setStrokeWidth(0.15);
+            housing.setArcWidth(0.4);
+            housing.setArcHeight(0.4);
+            housing.setEffect(new javafx.scene.effect.DropShadow(4, 1, 2, Color.rgb(0, 0, 0, 0.6)));
+            
+            // 4. Vẽ đèn tín hiệu (traffic light) - hình tròn với gradient và glow
+            javafx.scene.shape.Circle lightCircle = new javafx.scene.shape.Circle(x, y - 9.7, 0.7);
+            lightCircle.setStroke(Color.rgb(30, 30, 30));
+            lightCircle.setStrokeWidth(0.15);
+            lightCircle.setFill(Color.rgb(60, 60, 60)); // Màu tắt mặc định
+            
+            // Thêm glow effect
+            javafx.scene.effect.Bloom bloom = new javafx.scene.effect.Bloom(0.3);
+            javafx.scene.effect.DropShadow glow = new javafx.scene.effect.DropShadow();
+            glow.setColor(Color.rgb(100, 100, 100, 0.8));
+            glow.setRadius(2);
+            glow.setSpread(0.5);
+            bloom.setInput(glow);
+            lightCircle.setEffect(bloom);
+            
+            // Thêm vào group theo thứ tự: base -> pole -> housing -> light
+            tlGroup.getChildren().addAll(base, pole, housing, lightCircle);
+            
+            // Lưu reference để update màu sau
+            trafficLightShapes.put(tlID, lightCircle);
+            
+            // Add vào layer
+            trafficLightLayer.getChildren().add(tlGroup);
+            
+            System.out.println("   ✅ Successfully rendered traffic light " + tlID + " at (" + String.format("%.2f", x) + ", " + String.format("%.2f", y) + ")");
+            
+        } catch (Exception e) {
+            System.err.println("❌ Error rendering traffic light " + tlID + ": " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Update vehicles và traffic lights - gọi liên tục mỗi simulation step
      */
     public void updateVehicles() {
         if (vehicleManager == null) return;
@@ -321,7 +497,6 @@ public class MapPanel extends StackPane {
             List<String> vehicleIDs = vehicleManager.getIDList();
             
             // Xóa các xe không còn tồn tại
-
             vehicleLayer.getChildren().clear();
             
             // Update hoặc tạo mới vehicle shapes
@@ -329,9 +504,124 @@ public class MapPanel extends StackPane {
                 updateVehicle(vehicleID);
             }
             
+            // Update traffic lights colors
+            updateTrafficLights();
+            
         } catch (Exception e) {
             System.err.println("Error updating vehicles: " + e.getMessage());
         }
+    }
+    
+    /**
+     * Update traffic lights state (màu)
+     */
+    private void updateTrafficLights() {
+        if (trafficLightManager == null) return;
+        
+        try {
+            for (String tlID : trafficLightShapes.keySet()) {
+                String state = trafficLightManager.getState(tlID);
+                // State string từ SUMO:
+                // Mỗi ký tự tương ứng với 1 controlled link/lane:
+                // 'r'/'R' = red (đỏ)
+                // 'y'/'Y' = yellow (vàng) 
+                // 'g' = green (xanh - yield)
+                // 'G' = green (xanh - priority, không cần nhường đường)
+                
+                if (state != null && !state.isEmpty()) {
+                    javafx.scene.shape.Circle tlShape = trafficLightShapes.get(tlID);
+                    
+                    if (tlShape != null) {
+                        // Hiển thị màu dominant (ưu tiên đỏ > vàng > xanh)
+                        // Vì mỗi junction có nhiều lanes với states khác nhau,
+                        // ta hiển thị màu có priority cao nhất để người dùng biết
+                        // có ít nhất 1 hướng đang đỏ/vàng
+                        char dominantState = getDominantState(state);
+                        
+                        Color color;
+                        Color glowColor;
+                        
+                        switch (dominantState) {
+                            case 'r', 'R' -> {
+                                color = Color.rgb(220, 20, 20);
+                                glowColor = Color.rgb(255, 0, 0, 0.9);
+                            }
+                            case 'y', 'Y' -> {
+                                color = Color.rgb(255, 200, 0);
+                                glowColor = Color.rgb(255, 220, 0, 0.9);
+                            }
+                            case 'g', 'G' -> {
+                                color = Color.rgb(0, 200, 50);
+                                glowColor = Color.rgb(0, 255, 100, 0.9);
+                            }
+                            default -> {
+                                // Fallback - không nên xảy ra
+                                color = Color.rgb(60, 60, 60);
+                                glowColor = Color.rgb(100, 100, 100, 0.5);
+                            }
+                        }
+                        
+                        // Set màu với gradient
+                        javafx.scene.paint.RadialGradient lightGradient = new javafx.scene.paint.RadialGradient(
+                            0, 0, 0.5, 0.5, 0.5, true, javafx.scene.paint.CycleMethod.NO_CYCLE,
+                            new javafx.scene.paint.Stop(0, color.brighter()),
+                            new javafx.scene.paint.Stop(0.7, color),
+                            new javafx.scene.paint.Stop(1, color.darker())
+                        );
+                        tlShape.setFill(lightGradient);
+                        
+                        // Update glow effect
+                        javafx.scene.effect.Bloom bloom = new javafx.scene.effect.Bloom(0.6);
+                        javafx.scene.effect.DropShadow glow = new javafx.scene.effect.DropShadow();
+                        glow.setColor(glowColor);
+                        glow.setRadius(4);
+                        glow.setSpread(0.7);
+                        bloom.setInput(glow);
+                        tlShape.setEffect(bloom);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error updating traffic lights: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Xác định state dominant từ state string
+     * Ưu tiên: red > yellow > green
+     * 
+     * Lý do: Mỗi traffic light junction có nhiều controlled lanes,
+     * mỗi lane có state riêng (ví dụ: "grrrggggrrrr" = 12 lanes).
+     * Vì chỉ hiển thị 1 đèn cho cả junction, ta ưu tiên màu đỏ/vàng
+     * để người dùng biết có ít nhất 1 hướng đang stop.
+     */
+    private char getDominantState(String state) {
+        // Đếm số lượng mỗi loại state
+        int redCount = 0;
+        int yellowCount = 0;
+        int greenCount = 0;
+        
+        for (char c : state.toCharArray()) {
+            switch (c) {
+                case 'r', 'R' -> redCount++;
+                case 'y', 'Y' -> yellowCount++;
+                case 'g', 'G' -> greenCount++;
+            }
+        }
+        
+        // Ưu tiên: nếu có ít nhất 1 đỏ/vàng thì hiển thị đỏ/vàng
+        if (redCount > 0) {
+            return 'r';
+        }
+        if (yellowCount > 0) {
+            return 'y';
+        }
+        if (greenCount > 0) {
+            return 'g';
+        }
+        
+        // Fallback: lấy ký tự đầu tiên
+        return state.charAt(0);
     }
     
     /**
@@ -348,31 +638,49 @@ public class MapPanel extends StackPane {
             double length = 5.0;
             double width = 1.8;
             
-            // Tạo hoặc lấy polygon từ cache
+            // Tạo hoặc lấy polygon từ cache với hình dáng xe 3D đẹp hơn
             Polygon vehicleShape = vehicleShapes.get(vehicleID);
             if (vehicleShape == null) {
                 vehicleShape = new Polygon();
                 vehicleShapes.put(vehicleID, vehicleShape);
-                // Tạo hình chữ nhật cho xe (tọa độ local, center tại origin)
+                // Tạo hình xe với đầu nhọn (aerodynamic) - tọa độ local, center tại origin
                 vehicleShape.getPoints().addAll(
-                    -length/2, -width/2,  // Top-left
-                     length/2, -width/2,  // Top-right
-                     length/2,  width/2,  // Bottom-right
-                    -length/2,  width/2   // Bottom-left
+                    -length/2, -width/2,          // Rear-left
+                    -length/2, width/2,           // Rear-right
+                    length/2 - 0.8, width/2,      // Front-right
+                    length/2, 0.0,                // Front tip (nose)
+                    length/2 - 0.8, -width/2      // Front-left
                 );
             }
             
-            // Set màu xe
-            Color color = convertSumoColor(sumoColor);
-            vehicleShape.setFill(color);
-            vehicleShape.setStroke(Color.BLACK);
-            vehicleShape.setStrokeWidth(0.2);
+            // Set màu xe với gradient để tạo hiệu ứng 3D
+            Color baseColor = convertSumoColor(sumoColor);
+            javafx.scene.paint.LinearGradient carGradient = new javafx.scene.paint.LinearGradient(
+                0, 0, 0, 1, true, javafx.scene.paint.CycleMethod.NO_CYCLE,
+                new javafx.scene.paint.Stop(0, baseColor.brighter()),
+                new javafx.scene.paint.Stop(0.5, baseColor),
+                new javafx.scene.paint.Stop(1, baseColor.darker())
+            );
+            vehicleShape.setFill(carGradient);
+            vehicleShape.setStroke(baseColor.darker().darker());
+            vehicleShape.setStrokeWidth(0.15);
             
-            // Transform: Rotate và Translate
+            // Thêm shadow để xe nổi bật
+            javafx.scene.effect.DropShadow carShadow = new javafx.scene.effect.DropShadow();
+            carShadow.setRadius(1.5);
+            carShadow.setOffsetX(0.3);
+            carShadow.setOffsetY(0.3);
+            carShadow.setColor(Color.rgb(0, 0, 0, 0.5));
+            vehicleShape.setEffect(carShadow);
+            
+            // Transform: Translate trước (di chuyển tới vị trí), Rotate sau (quay tại chỗ)
+            // SUMO angle: 0° = North (hướng lên), 90° = East (hướng phải), clockwise
+            // JavaFX rotate: 0° = East (phải), 90° = South (xuống), clockwise
+            // Cần convert: JavaFX angle = SUMO angle - 90°
             vehicleShape.getTransforms().clear();
             vehicleShape.getTransforms().addAll(
-                new Rotate(angle, 0, 0),           // Rotate quanh center
-                new javafx.scene.transform.Translate(position[0], -position[1])  // Translate tới vị trí (đảo Y)
+                new javafx.scene.transform.Translate(position[0], -position[1]),  // Translate tới vị trí (đảo Y)
+                new Rotate(angle - 90, 0, 0)           // Rotate quanh center (convert SUMO -> JavaFX angle)
             );
             
             // Thêm vào layer
@@ -400,7 +708,24 @@ public class MapPanel extends StackPane {
      * Center view để hiển thị toàn bộ map
      */
     private void centerView() {
-        if (laneLayer.getChildren().isEmpty()) return;
+        if (laneLayer.getChildren().isEmpty()) {
+            System.err.println("⚠️  Cannot center view: no lanes rendered!");
+            return;
+        }
+        
+        System.out.println("📐 Centering view...");
+        System.out.println("   Viewport size: " + viewport.getWidth() + " x " + viewport.getHeight());
+        
+        // Nếu viewport chưa có size, đợi đến khi có size
+        if (viewport.getWidth() == 0 || viewport.getHeight() == 0) {
+            System.out.println("⏳ Viewport not ready, waiting for layout...");
+            viewport.widthProperty().addListener((obs, oldVal, newVal) -> {
+                if (newVal.doubleValue() > 0 && viewport.getHeight() > 0) {
+                    centerView();
+                }
+            });
+            return;
+        }
         
         // Reset transform
         viewTransform.setToIdentity();
@@ -423,10 +748,19 @@ public class MapPanel extends StackPane {
         double mapCenterX = (minX + maxX) / 2;
         double mapCenterY = (minY + maxY) / 2;
         
-        // Tính scale để fit map vào viewport
+        System.out.println("   Map bounds: [" + minX + ", " + minY + "] to [" + maxX + ", " + maxY + "]");
+        System.out.println("   Map size: " + mapWidth + " x " + mapHeight);
+        System.out.println("   Map center: [" + mapCenterX + ", " + mapCenterY + "]");
+        
+        // Tính scale để fit map vào viewport với zoom to hơn
         double scaleX = viewport.getWidth() / mapWidth;
         double scaleY = viewport.getHeight() / mapHeight;
-        double fitScale = Math.min(scaleX, scaleY) * 0.9; // 0.9 để có margin
+        double fitScale = Math.min(scaleX, scaleY) * 2.5; // 2.5 để map to hơn (thay vì 0.9)
+        
+        // Giới hạn scale trong khoảng MIN_SCALE -> MAX_SCALE
+        fitScale = clamp(fitScale, MIN_SCALE, MAX_SCALE);
+        
+        System.out.println("   Fit scale: " + fitScale + " (scaleX: " + scaleX + ", scaleY: " + scaleY + ")");
         
         // Apply transform: scale và center
         viewTransform.appendScale(fitScale, fitScale);
@@ -436,6 +770,22 @@ public class MapPanel extends StackPane {
         );
         
         scale = fitScale;
+        System.out.println("✅ View centered successfully!");
+    }
+    
+    /**
+     * Public method để recenter view - gọi từ bên ngoài sau khi window hiển thị
+     */
+    public void recenterView() {
+        // Đợi một chút để viewport có size
+        javafx.application.Platform.runLater(() -> {
+            try {
+                Thread.sleep(100); // Đợi 100ms
+                javafx.application.Platform.runLater(this::centerView);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
     }
     
     /**

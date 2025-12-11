@@ -1,7 +1,11 @@
 package real_time_traffic_simulation_with_java.wrapper;
 
-import it.polito.appeal.traci.SumoTraciConnection;
+import java.util.ArrayList;
 import java.util.List;
+
+import de.tudresden.sumo.objects.SumoGeometry;
+import de.tudresden.sumo.objects.SumoPosition2D;
+import it.polito.appeal.traci.SumoTraciConnection;
 
 public class LaneManager {
     private final SumoTraciConnection conn;
@@ -31,17 +35,24 @@ public class LaneManager {
 
     // Get length & width of the lane (m)
     public double getLength(String laneID) throws Exception {
-        return (double) conn.do_job_get(de.tudresden.sumo.cmd.Lane.getParameter(laneID, "length"));
+        return (double) conn.do_job_get(de.tudresden.sumo.cmd.Lane.getLength(laneID));
     }
 
     public double getWidth(String laneID) throws Exception {
-        return (double) conn.do_job_get(de.tudresden.sumo.cmd.Lane.getParameter(laneID, "width"));
+        return (double) conn.do_job_get(de.tudresden.sumo.cmd.Lane.getWidth(laneID));
     }
 
 
     // Get coordinations of lanes (list of double arrays [x,y])
-    @SuppressWarnings("unchecked")
     public List<double[]> getCoordinateList(String laneID) throws Exception {
-        return (List<double[]>) conn.do_job_get(de.tudresden.sumo.cmd.Lane.getShape(laneID));
+        SumoGeometry geometry = 
+            (SumoGeometry) conn.do_job_get(de.tudresden.sumo.cmd.Lane.getShape(laneID));
+        
+        // Convert LinkedList<SumoPosition2D> to List<double[]>
+        List<double[]> coordinates = new ArrayList<>();
+        for (SumoPosition2D pos : geometry.coords) {
+            coordinates.add(new double[]{pos.x, pos.y});
+        }
+        return coordinates;
     }
 }

@@ -1,8 +1,9 @@
 package real_time_traffic_simulation_with_java.wrapper;
 
-import it.polito.appeal.traci.SumoTraciConnection;
 import java.util.List;
+
 import de.tudresden.sumo.cmd.Trafficlight;
+import it.polito.appeal.traci.SumoTraciConnection;
 
 public class TrafficLightManager{
     private final SumoTraciConnection conn;
@@ -48,5 +49,13 @@ public class TrafficLightManager{
    public void nextPhase(String tlId) throws Exception{
     int phase = getPhase(tlId);
     setPhase(tlId,phase+1);
+   }
+   
+   /**
+    * Get controlled lanes by traffic light
+    */
+   @SuppressWarnings("unchecked")
+   public List<String> getControlledLanes(String tlId) throws Exception {
+       return (List<String>) conn.do_job_get(Trafficlight.getControlledLanes(tlId));
    }
 }
