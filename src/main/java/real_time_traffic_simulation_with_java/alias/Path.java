@@ -16,7 +16,12 @@ public final class Path {
     /** Sumo, TraaS and cfg path*/
     public static final String TraasPath = "src/main/java/real_time_traffic_simulation_with_java/lib/TraaS.jar";
     public static final String SumoPath = "src/main/java/real_time_traffic_simulation_with_java/lib/sumo.exe";
-    public static final String NetFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/testing.net.xml";
-    public static final String RouFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/allRoutes.rou.xml";
+    public static final String NetFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/map.net.xml";
+    public static final String RouFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/map.rou.xml";
     
 }
+
+// py findAllRoutes.py -n map.net.xml -o map.rou.xml -s -t
+// Only start: E15
+// If start, then create 1 edge route: E34,-E12
+// Rest: E10,E11,E16,E17,E19,E20,E21,E23,E24,E25,E26,E27,E28,E30,E31,E32,E33,E35,E36,-E10,-E11,-E13,-E14,-E19,-E20,-E21,-E23,-E24,-E25,-E26,-E27,-E28,-E30,-E31,-E32,-E33

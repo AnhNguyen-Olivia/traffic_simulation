@@ -2,12 +2,6 @@ package real_time_traffic_simulation_with_java.alias;
 
 import de.tudresden.sumo.objects.SumoColor;
 
-/*
-This is where we put all the sumo color code definitions to prevent user from generting so many color types
-Thus make the code easier to look and fix as we only need the change the color code here
-We use final class and private constructor to make it unextendable and not be use as an object.
-*/
-
 /**
  * This is where we put all the sumo color code definitions to prevent user from generting so many color types
  * The class have methods to convert between SumoColor and String representation of colors
