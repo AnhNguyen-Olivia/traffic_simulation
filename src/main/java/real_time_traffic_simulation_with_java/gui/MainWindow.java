@@ -18,13 +18,14 @@ public class MainWindow extends Stage {
         Group root = new Group();
         Scene scene = new Scene(root, Color.BLACK);
 
-        Image icon = new Image(Path.IconImage);
+        Image icon = new Image(getClass().getResource(Path.IconImage).toExternalForm());
         this.getIcons().add(icon);
         this.setTitle("Traffic Simulation Beta");
         this.setWidth(1400);
         this.setHeight(850);
         this.setResizable(false);
         this.setScene(scene);
+        this.show();
 
     }
 

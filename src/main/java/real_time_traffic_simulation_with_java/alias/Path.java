@@ -20,7 +20,7 @@ public final class Path {
     public static final String RouFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/map.rou.xml";
 
     /** Image path if needed*/
-    public static final String IconImage = "src/main/java/real_time_traffic_simulation_with_java/gui/resources/cat.png";
+    public static final String IconImage = "/real_time_traffic_simulation_with_java/gui/resources/cat.png";
     
 }
 

@@ -19,7 +19,7 @@ public class App {
             connection = new SumoTraasConnection();
             connection.startConnection();
             launchGui();
-            runSimulation();
+            //runSimulation();
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -32,10 +32,10 @@ public class App {
         });
     }
 
-    private void runSimulation() throws Exception{
-        while(true){
-            connection.nextStep();
-            Thread.sleep(100);
-        }
-    }
+    // private void runSimulation() throws Exception{
+    //     while(true){
+    //         connection.nextStep();
+    //         Thread.sleep(100);
+    //     }
+    // }
 }
