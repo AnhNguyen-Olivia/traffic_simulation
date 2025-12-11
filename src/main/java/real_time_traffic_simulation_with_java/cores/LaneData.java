@@ -4,6 +4,9 @@ import java.util.List;
 import de.tudresden.sumo.objects.SumoPosition2D;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
+/**
+ * @Tested
+ */
 public class LaneData {
     public static final double width = Metrics.DEFAULT_LANE_WIDTH;
 

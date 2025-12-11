@@ -6,6 +6,10 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import javafx.geometry.Point2D;
 
+/**
+ * @Unfinished
+ */
+
 public class VehicleData {
     public static final double length = Metrics.DEFAULT_VEHICLE_LENGTH;
     public static final double width = Metrics.DEFAULT_VEHICLE_WIDTH;
