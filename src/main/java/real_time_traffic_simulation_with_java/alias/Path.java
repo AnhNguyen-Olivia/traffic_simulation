@@ -18,6 +18,9 @@ public final class Path {
     public static final String SumoPath = "src/main/java/real_time_traffic_simulation_with_java/lib/sumo.exe";
     public static final String NetFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/map.net.xml";
     public static final String RouFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/map.rou.xml";
+
+    /** Image path if needed*/
+    public static final String IconImage = "src/main/java/real_time_traffic_simulation_with_java/gui/resources/cat.png";
     
 }
 

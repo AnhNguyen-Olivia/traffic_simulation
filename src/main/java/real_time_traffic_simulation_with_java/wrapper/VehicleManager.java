@@ -14,7 +14,7 @@ public class VehicleManager {
     private final SumoTraciConnection conn;
 
     // Connection to Sumo
-    public VehicleManager(SumoTraciConnection connection, SumoTraasConnection sumoConnection) throws Exception {
+    public VehicleManager(SumoTraciConnection connection) throws Exception {
         this.conn = connection;
     }
 
