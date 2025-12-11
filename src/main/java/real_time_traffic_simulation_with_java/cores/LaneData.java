@@ -1,10 +1,11 @@
 package real_time_traffic_simulation_with_java.cores;
 
 import java.util.List;
-import de.tudresden.sumo.objects.SumoPosition2D;
+import de.tudresden.sumo.objects.SumoGeometry;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
 /**
+ * @Finished
  * @Tested
  */
 public class LaneData {
@@ -13,9 +14,9 @@ public class LaneData {
     public String laneID;
     public String edgeID;
     public double length;
-    public List<SumoPosition2D> coordinates;
+    public SumoGeometry coordinates;
 
-    public LaneData(String laneID, String edgeID, double length, List<SumoPosition2D> coordinates) {
+    public LaneData(String laneID, String edgeID, double length, SumoGeometry coordinates) {
         this.laneID = laneID;
         this.edgeID = edgeID;
         this.length = length;

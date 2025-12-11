@@ -8,6 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import real_time_traffic_simulation_with_java.cores.JunctionData;
 
+/**
+ * JunctionManager is a wrapper class for SumoTraciConnection to manage junctions in the simulation
+ * @TestedCompleted
+ */
+
 public class JunctionManager {
     
     /**
@@ -72,6 +77,7 @@ public class JunctionManager {
      * Create and get a List of JunctionData for all junctions
      * @return a List of JunctionData for all junctions
      * @throws Exception
+     * @Tested
     */
     public List<JunctionData> getJunctionDataList() throws Exception {
         if(junctionDataList.isEmpty()){

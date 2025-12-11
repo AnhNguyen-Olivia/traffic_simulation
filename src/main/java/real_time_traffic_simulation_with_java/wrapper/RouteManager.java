@@ -5,6 +5,11 @@ import de.tudresden.sumo.cmd.Route;
 
 import java.util.List;
 
+/**
+ * RouteManager is a wrapper class for SumoTraciConnection to manage routes in the simulation
+ * @TestedCompleted
+ */
+
 public class RouteManager {
 
     /**

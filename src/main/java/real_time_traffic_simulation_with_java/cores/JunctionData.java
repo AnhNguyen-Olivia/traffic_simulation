@@ -6,7 +6,8 @@ import java.util.List;
 import javafx.geometry.Point2D;
 
 /**
- * 
+ * @Finished
+ * @Tested
  */
 public class JunctionData {
     public String junctionID;

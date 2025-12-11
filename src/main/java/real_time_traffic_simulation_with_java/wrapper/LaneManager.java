@@ -8,6 +8,11 @@ import de.tudresden.sumo.objects.SumoPosition2D;
 import java.util.List;
 import real_time_traffic_simulation_with_java.cores.LaneData;
 
+/**
+ * LaneManager is a wrapper class for SumoTraciConnection to manage lanes in the simulation
+ * @TestedCompleted
+ */
+
 public class LaneManager {
 
     /**
@@ -78,9 +83,9 @@ public class LaneManager {
      * @throws Exception
      * @Tested
     */
-    public List<SumoPosition2D> getCoordinateList(String laneID) throws Exception {
-        SumoGeometry a = (SumoGeometry) conn.do_job_get(Lane.getShape(laneID));
-        return a.coords;
+    @SuppressWarnings("unchecked")
+    public SumoGeometry getCoordinateList(String laneID) throws Exception {
+        return (SumoGeometry) conn.do_job_get(Lane.getShape(laneID));
     }
 
 

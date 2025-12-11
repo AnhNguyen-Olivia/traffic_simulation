@@ -12,6 +12,11 @@ import java.util.List;
 import real_time_traffic_simulation_with_java.cores.VehicleData;
 import real_time_traffic_simulation_with_java.alias.Color;
 
+/**
+ * VehicleManager is a wrapper class for SumoTraciConnection to manage vehicles in the simulation
+ * @TestedCompleted
+ */
+
 public class VehicleManager {
 
     /**
@@ -145,6 +150,7 @@ public class VehicleManager {
      * Create and get a List of VehicleData for all vehicles
      * @return a List of VehicleData for all vehicles
      * @throws Exception
+     * @Tested
     */
     public List<VehicleData> getVehicleDataList() throws Exception {
         List<VehicleData> vehicleDataList = new java.util.ArrayList<>();

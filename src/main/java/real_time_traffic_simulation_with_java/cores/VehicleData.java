@@ -7,7 +7,8 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 import javafx.geometry.Point2D;
 
 /**
- * @Unfinished
+ * @Finished
+ * @Tested
  */
 
 public class VehicleData {
@@ -21,8 +22,14 @@ public class VehicleData {
 
     public VehicleData(String vehicleID, double x, double y, double angle, SumoColor color) {
         this.vehicleID = vehicleID;
+        this.top_left_corner = calculateTopLeftCorner(x, y);
         this.angle = angle;
         this.color = Color.colorToString(color); // default color is white if no input, can modify return String in alias.Color
+    }
+
+    private Point2D calculateTopLeftCorner(double x, double y) {
+        double translate_vec = length/2 - width/2;
+        return new Point2D(x + translate_vec, y + translate_vec);
     }
 
     
