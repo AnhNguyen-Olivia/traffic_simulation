@@ -25,6 +25,8 @@ public final class Path {
 }
 
 // py findAllRoutes.py -n map.net.xml -o map.rou.xml -s -t
-// Only start: E15
-// If start, then create 1 edge route: E34,-E12
-// Rest: E10,E11,E16,E17,E19,E20,E21,E23,E24,E25,E26,E27,E28,E30,E31,E32,E33,E35,E36,-E10,-E11,-E13,-E14,-E19,-E20,-E21,-E23,-E24,-E25,-E26,-E27,-E28,-E30,-E31,-E32,-E33
+// All edges can be start edges or target edges
+// 39 edges in total
+// Retrieve edge IDs anytime by calling EdgeManager.getIDList()
+// Edge IDs:
+// -E10,-E11,-E12,-E13,-E14,-E19,-E20,-E21,-E23,-E24,-E25,-E26,-E27,-E28,-E30,-E31,-E32,-E33,E0,E10,E11,E15,E16,E17,E19,E20,E21,E23,E24,E25,E26,E27,E28,E30,E31,E32,E33,E35,E36
