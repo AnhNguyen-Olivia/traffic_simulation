@@ -16,8 +16,6 @@ public class VehicleData {
 
     public String vehicleID;
     public Point2D top_left_corner;
-    public double x;
-    public double y;
     public double angle;
     public String color;
 
