@@ -1,6 +1,8 @@
 package real_time_traffic_simulation_with_java.cores;
+import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.shape.Rectangle;
 import real_time_traffic_simulation_with_java.wrapper.*;
 
 public class SimulationEngine {
@@ -24,34 +26,10 @@ public class SimulationEngine {
         this.routeManager = new RouteManager(this.conn.getConnection());
         this.trafficLightManager = new TrafficLightManager(this.conn.getConnection());
         this.junctionManager = new JunctionManager(this.conn.getConnection());
-    }
-
-
-    /**
-     * Get all IDs: edges
-     * @throws Exception
-     */
-    /**
-     * Get all IDs: junctions
-     * @throws Exception
-     */
-    /**
-     * Get all IDs: vehicles
-     * @throws Exception
-     */
-    /**
-     * Get all IDs: traffic lights
-     * @throws Exception
-     */
-
-
-    /**
-     * Control Simulation: start 
-     * @throws Exception
-     */
-    public void startSimulation() throws Exception {
         this.conn.startConnection();
     }
+
+
     /**
      * Control simulation: advance simulation by one step
      * @throws Exception
@@ -69,11 +47,39 @@ public class SimulationEngine {
 
 
     /**
+     * Get all IDs: edges
+     * @throws Exception
+     */
+    public List<String> getAllEdgeIDs() throws Exception {
+        return this.edgeManager.getIDList();
+    }
+    /**
+     * Get all IDs: traffic lights
+     * @throws Exception
+     */
+    public List<String> getAllTrafficLightIDs() throws Exception {
+        return this.trafficLightManager.getIDList();
+    }
+
+
+    /**
      * Inject vehicle: single and batch injection
      */
+    public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color) throws Exception {
+        // Generate a unique ID
+        String routeID = this.conn.getCurrentStep() + "";
+        this.routeManager.add(routeID, start_edge_ID, end_edge_ID);
+        for (int i = 0; i < numVehicles; i++) {
+            String vehicleID = routeID + "_" + i;
+            this.vehicleManager.add(vehicleID, routeID, color);
+        }
+    }
     /**
      * Inject vehicle: stress test tool
      */
+    public void stressTest(String start_edge_ID, String end_edge_ID, String color) throws Exception {
+        this.injectVehicle(100, start_edge_ID, end_edge_ID, color);
+    }
 
 
     /**
@@ -108,8 +114,12 @@ public class SimulationEngine {
     /**
      * Get mapping data: vehicles
      */
-    public List<VehicleData> getMapVehicles() throws Exception {
-        return this.vehicleManager.getVehicleDataList();
+    public List<Rectangle> getMapVehicles() throws Exception {
+        List<Rectangle> Rectangles =  new ArrayList<>();
+        for(VehicleData vehicleData: this.vehicleManager.getVehicleDataList()) {
+            Rectangles.add(vehicleData.getShape());
+        }
+        return Rectangles;
     }
     /**
      * Get mapping data: traffic lights

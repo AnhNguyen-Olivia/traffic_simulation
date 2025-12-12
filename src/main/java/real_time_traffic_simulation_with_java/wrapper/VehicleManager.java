@@ -140,9 +140,8 @@ public class VehicleManager {
      * @throws Exception
      * @Tested
     */ 
-    public void add(String vehID, String start_edges, String end_edges, String color) throws Exception {
-        conn.do_job_set(Route.add(vehID, new SumoStringList(List.of(start_edges, end_edges))));
-        conn.do_job_set(Vehicle.addFull(vehID, vehID, "DEFAULT_VEHTYPE", "now", "best", "base", "max", "current", "max", "current", "", "", "", 0, 0));
+    public void add(String vehID, String routeID, String color) throws Exception {
+        conn.do_job_set(Vehicle.addFull(vehID, routeID, "DEFAULT_VEHTYPE", "now", "best", "base", "max", "current", "max", "current", "", "", "", 0, 0));
         this.setColor(vehID, Color.stringToColor(color));
     }
 
