@@ -9,6 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import real_time_traffic_simulation_with_java.cores.EdgeData;
 
+/**
+ * EdgeManager is a wrapper class for SumoTraciConnection to manage edges in the simulation
+ * @Test Incomplete: Retest getEdgeDataList after EdgeData class is completed
+ * @Javadoc Completed
+ */
+
 public class EdgeManager {
 
     /**
@@ -89,6 +95,7 @@ public class EdgeManager {
      * Get coordinations of lanes the edge
      * @return a List of SumoGeometry type coordinations of the lanes on the edge
      * @throws Exception
+     * @Tested
     */
     public List<SumoGeometry> getLanesCoordinate(String edgeID) throws Exception {
         List<SumoGeometry> laneCoords = new ArrayList<>();
@@ -184,6 +191,7 @@ public class EdgeManager {
      * Create and get a List of EdgeData for all edges
      * @return a List of EdgeData for all edges
      * @throws Exception
+     * @Tested
     */
     public List<EdgeData> getEdgeDataList() throws Exception {
         if(edgeDataList.isEmpty()){
@@ -192,7 +200,6 @@ public class EdgeManager {
                 EdgeData edgedata = new EdgeData(
                         id,
                         this.getLaneCount(id),
-                        this.getLength(id),
                         this.getLanesCoordinate(id)
                 );
                 edgeDataList.add(edgedata);

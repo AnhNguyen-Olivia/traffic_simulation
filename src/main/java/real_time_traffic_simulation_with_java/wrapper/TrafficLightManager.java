@@ -13,7 +13,8 @@ import real_time_traffic_simulation_with_java.cores.TrafficLightData;
 
 /**
  * TrafficLightManager is a wrapper class for SumoTraciConnection to manage traffic lights in the simulation
- * @TestedCompleted
+ * @Test Completed
+ * @Javadoc Completed
  */
 
 public class TrafficLightManager{
@@ -195,7 +196,7 @@ public class TrafficLightManager{
         } else {
             // Update color list only
             for (TrafficLightData trafficLightData : trafficLightDataList) {
-                trafficLightData.setColorList(this.getState(trafficLightData.tlID));
+                trafficLightData.setColorList(this.getState(trafficLightData.getTlID()));
             }
         }
         return trafficLightDataList;
