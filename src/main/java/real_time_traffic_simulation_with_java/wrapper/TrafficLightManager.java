@@ -3,11 +3,18 @@ package real_time_traffic_simulation_with_java.wrapper;
 import it.polito.appeal.traci.SumoTraciConnection;
 import de.tudresden.sumo.cmd.Simulation;
 import de.tudresden.sumo.cmd.Trafficlight;
+import de.tudresden.sumo.objects.SumoGeometry;
 import de.tudresden.sumo.objects.SumoLink;
 import de.tudresden.sumo.objects.SumoTLSController;
 import de.tudresden.sumo.objects.SumoTLSProgram;
 
 import java.util.List;
+import real_time_traffic_simulation_with_java.cores.TrafficLightData;
+
+/**
+ * TrafficLightManager is a wrapper class for SumoTraciConnection to manage traffic lights in the simulation
+ * @TestedCompleted
+ */
 
 public class TrafficLightManager{
 
@@ -16,6 +23,7 @@ public class TrafficLightManager{
      * private List<TrafficLightData> TrafficLightDataList
     */
     private final SumoTraciConnection conn;
+    private List<TrafficLightData> trafficLightDataList = new java.util.ArrayList<>();
 
     /**
      * Connection to Sumo
@@ -108,6 +116,7 @@ public class TrafficLightManager{
      * Toggle traffic light to next phase: get the current phase index
      * and then add 1 to convert to next phase
      * @throws Exception
+     * @Tested
      */
     public void nextPhase(String tlId) throws Exception{
         int phase = (int) conn.do_job_get(Trafficlight.getPhase(tlId));
@@ -157,6 +166,39 @@ public class TrafficLightManager{
     @SuppressWarnings("unchecked")
     public List<String> getJunctionTraffic(String tlID) throws Exception{
         return (List<String>)conn.do_job_get(Trafficlight.getControlledJunctions(tlID));
+    }
+
+
+    /**
+     * Create and get a List of TrafficLightData for all traffic lights
+     * @return a List of TrafficLightData for all traffic lights
+     * @throws Exception
+     * @Tested
+    */
+    public List<TrafficLightData> getTrafficLightDataList() throws Exception {
+        List<String> IDs = this.getIDList();
+        if(trafficLightDataList.isEmpty()) {
+            for (String id : IDs) {
+                // Get coordinates of start lanes by lane IDs
+                List<SumoGeometry> LandGeometries = new java.util.ArrayList<>();
+                for(SumoLink link : this.getLinksTraffic(id)){
+                    SumoGeometry laneGeometry = (SumoGeometry) conn.do_job_get(de.tudresden.sumo.cmd.Lane.getShape(link.from));
+                    LandGeometries.add(laneGeometry);
+                }
+                TrafficLightData trafficLightData = new TrafficLightData(
+                    id,
+                    LandGeometries,
+                    this.getState(id)
+                );
+                trafficLightDataList.add(trafficLightData);
+            }
+        } else {
+            // Update color list only
+            for (TrafficLightData trafficLightData : trafficLightDataList) {
+                trafficLightData.setColorList(this.getState(trafficLightData.tlID));
+            }
+        }
+        return trafficLightDataList;
     }
 
 }
