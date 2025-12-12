@@ -18,7 +18,7 @@ import javafx.scene.shape.Polygon;
 public class TrafficLightData {
     private String tlID;
     /**
-     * Each represents the coordinates of 4 corners of 1 sub-light for a lane
+     * Each Polygon represents the shape of corresponding sub-light
      */
     private List<Polygon> shapeList;
     /**

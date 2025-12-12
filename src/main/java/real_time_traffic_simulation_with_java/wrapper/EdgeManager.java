@@ -200,7 +200,6 @@ public class EdgeManager {
                 EdgeData edgedata = new EdgeData(
                         id,
                         this.getLaneCount(id),
-                        this.getLength(id),
                         this.getLanesCoordinate(id)
                 );
                 edgeDataList.add(edgedata);

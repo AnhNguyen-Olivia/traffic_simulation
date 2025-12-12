@@ -9,18 +9,25 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Polygon;
 
 /**
  * @Unfinished
- * TODO: finish edge corners and lane dividers calculation
- * @Test Incomplete
- * @Javadoc Incomplete
+ * @Test Completed
+ * @Javadoc Completed
  */
 
 public class EdgeData {
     private String edgeID;
-    private List<Line> lane_dividers = new ArrayList<>(); // start and end coordinates for each lane divider
-    private List<Point2D> edge_corners = new ArrayList<>(); // 4 points for 4 corners
+    /**
+     * Lines object representing lane dividers within the edge
+     * @return List<Line> using library javafx.scene.shape.Line
+     */
+    private List<Line> lane_dividers;
+    /**
+     * Polygon object representing the edge shape
+     */
+    private Polygon edge_shape;
     private int number_of_lanes;
     private double width;
 
@@ -33,9 +40,8 @@ public class EdgeData {
         this.edgeID = edgeID;
         this.number_of_lanes = number_of_lanes;
         this.width = number_of_lanes * Metrics.DEFAULT_LANE_WIDTH;
-        for (SumoGeometry pos : coordinates) {
-            this.edge_corners.add(new Point2D(pos.x, pos.y));
-        }
+        this.edge_shape = createPolygon(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
+        this.lane_dividers = calculateLaneDividers(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
     }
 
     /**
@@ -44,11 +50,11 @@ public class EdgeData {
     public String getEdgeID() {
         return edgeID;
     }
-    public List<Point2D> getLaneDividers() {
+    public List<Line> getLaneDividers() {
         return lane_dividers;
     }
-    public List<Point2D> getEdgeCorners() {
-        return edge_corners;
+    public Polygon getShape() {
+        return edge_shape;
     }
     public int getNumberOfLanes() {
         return number_of_lanes;
@@ -57,16 +63,50 @@ public class EdgeData {
         return width;
     }
 
+
+
     /**
-     * Inner class representing 2 JavaFX Point2D coordinates to draw line
+     * Private helper method: Create Polygon by calculating coordinations of the edge corners
      */
-    public class Line {
-        public Point2D start;
-        public Point2D end;
-        public Line(Point2D start, Point2D end) {
-            this.start = start;
-            this.end = end;
+    private Polygon createPolygon(int number_of_lanes, double edge_width, List<SumoGeometry> coordinates) {
+        Line midLine = calculateMidPoint(number_of_lanes, coordinates);
+        Point2D start = new Point2D(midLine.getStartX(), midLine.getStartY());
+        Point2D end = new Point2D(midLine.getEndX(), midLine.getEndY());
+        Point2D scaled_perpendicular_vector = calculateVectors(midLine).multiply(edge_width/2);
+        // Calculate 4 corners
+        Point2D p1 = start.add(scaled_perpendicular_vector);
+        Point2D p2 = start.subtract(scaled_perpendicular_vector);
+        Point2D p3 = end.subtract(scaled_perpendicular_vector);
+        Point2D p4 = end.add(scaled_perpendicular_vector);
+        return new Polygon(
+            p1.getX(), p1.getY(),
+            p2.getX(), p2.getY(),
+            p3.getX(), p3.getY(),
+            p4.getX(), p4.getY()
+        );
+    }
+
+    /**
+     * Private helper method: Calculate coordinations of lane dividers within the edge
+     */
+    private List<Line> calculateLaneDividers(int number_of_lanes, double edge_width, List<SumoGeometry> coordinates) {
+        List<Line> lane_dividers = new ArrayList<>();
+        Line midLine = calculateMidPoint(number_of_lanes, coordinates);
+        Point2D start = new Point2D(midLine.getStartX(), midLine.getStartY());
+        Point2D end = new Point2D(midLine.getEndX(), midLine.getEndY());
+        Point2D perpendicular_vector = calculateVectors(midLine);
+        double scale_factor = edge_width/2 - Metrics.DEFAULT_LANE_WIDTH;
+        for(int i = 1; i < number_of_lanes; i++) {
+            Point2D scaled_vector = perpendicular_vector.multiply(scale_factor);
+            Point2D start_point = start.add(scaled_vector);
+            Point2D end_point = end.add(scaled_vector);
+            this.lane_dividers.add(new Line(
+                start_point.getX(), start_point.getY(),
+                 end_point.getX(), end_point.getY()
+            ));
+            scale_factor -= Metrics.DEFAULT_LANE_WIDTH;
         }
+        return lane_dividers;
     }
 
     /**
@@ -99,21 +139,17 @@ public class EdgeData {
                 (left_end_pos.y + right_end_pos.y) / 2
             );
         }
-        return new Line(new Point2D(start_pos.x, start_pos.y), new Point2D(end_pos.x, end_pos.y));
+        return new Line(start_pos.x, start_pos.y, end_pos.x, end_pos.y);
     }
 
     /**
-     * Private helper method: Calculate parallel and perpendicular unit vectors of the edge
-     * Reuse Line class to represent the vectors
-     * Start point represents parallel vector, end point represents perpendicular vector
+     * Private helper method: Calculate perpendicular unit vectors of the edge
      * @param midLine Line object representing the mid line of the edge
-     * @return Line(parallel_vector, perpendicular_vector)
      */
-    private Line calculateVectors(Line midLine) {
-        // Calculate parallel vector
-        Point2D parallel_vector = midLine.end.subtract(midLine.start).normalize();
+    private Point2D calculateVectors(Line midLine) {
         // Calculate perpendicular vector
-        Point2D perpendicular_vector = new Point2D(-parallel_vector.getY(), parallel_vector.getX());
-        return new Line(parallel_vector, perpendicular_vector);
+        Point2D perpendicular_vector = new Point2D(midLine.getStartY() - midLine.getEndY(), 
+                                                    midLine.getEndX() - midLine.getStartX()).normalize();
+        return perpendicular_vector;
     }
 }
