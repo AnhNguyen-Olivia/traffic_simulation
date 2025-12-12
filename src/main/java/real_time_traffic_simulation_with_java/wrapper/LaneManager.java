@@ -3,24 +3,23 @@ package real_time_traffic_simulation_with_java.wrapper;
 import it.polito.appeal.traci.SumoTraciConnection;
 import de.tudresden.sumo.cmd.Lane;
 import de.tudresden.sumo.objects.SumoGeometry;
-import de.tudresden.sumo.objects.SumoPosition2D;
 
 import java.util.List;
-import real_time_traffic_simulation_with_java.cores.LaneData;
+// import real_time_traffic_simulation_with_java.cores.LaneData;
 
 /**
  * LaneManager is a wrapper class for SumoTraciConnection to manage lanes in the simulation
- * @TestedCompleted
+ * @Test Completed
+ * @Javadoc Completed
  */
 
 public class LaneManager {
 
     /**
      * private SumoTraciConnection conn
-     * private List<LaneData> laneDataList
     */
     private final SumoTraciConnection conn;
-    private List<LaneData> laneDataList = new java.util.ArrayList<>();
+    // private List<LaneData> laneDataList = new java.util.ArrayList<>();
 
     /**
      * Connection to Sumo
@@ -83,31 +82,30 @@ public class LaneManager {
      * @throws Exception
      * @Tested
     */
-    @SuppressWarnings("unchecked")
     public SumoGeometry getCoordinateList(String laneID) throws Exception {
         return (SumoGeometry) conn.do_job_get(Lane.getShape(laneID));
     }
 
 
-    /**
-     * Create and get a List of LaneData for all lanes
-     * @return a List of LaneData for all lanes
-     * @throws Exception
-     * @Tested
-    */
-    public List<LaneData> getLaneDataList() throws Exception {
-        if(laneDataList.isEmpty()){
-            List<String> IDs = this.getIDList();
-            for (String id : IDs) {
-                LaneData lanedata = new LaneData(
-                        id,
-                        this.getEdgeID(id),
-                        this.getLength(id), // default width in sumo
-                        this.getCoordinateList(id)
-                );
-                laneDataList.add(lanedata);
-            }
-        }
-        return laneDataList;
-    }
+    // /**
+    //  * Create and get a List of LaneData for all lanes
+    //  * @return a List of LaneData for all lanes
+    //  * @throws Exception
+    //  * @Tested
+    // */
+    // public List<LaneData> getLaneDataList() throws Exception {
+    //     if(laneDataList.isEmpty()){
+    //         List<String> IDs = this.getIDList();
+    //         for (String id : IDs) {
+    //             LaneData lanedata = new LaneData(
+    //                     id,
+    //                     this.getEdgeID(id),
+    //                     this.getLength(id), // default width in sumo
+    //                     this.getCoordinateList(id)
+    //             );
+    //             laneDataList.add(lanedata);
+    //         }
+    //     }
+    //     return laneDataList;
+    // }
 }

@@ -10,7 +10,8 @@ import real_time_traffic_simulation_with_java.cores.JunctionData;
 
 /**
  * JunctionManager is a wrapper class for SumoTraciConnection to manage junctions in the simulation
- * @TestedCompleted
+ * @Test Completed
+ * @Javadoc Completed
  */
 
 public class JunctionManager {

@@ -7,17 +7,39 @@ import javafx.geometry.Point2D;
 
 /**
  * @Finished
- * @Tested
+ * @Test Completed
+ * @Javadoc Completed
  */
 public class JunctionData {
-    public String junctionID;
-    public List<Point2D> coordinates;
+    private String junctionID;
+    /**
+     * Coordinates of the junction shape
+     */
+    private List<Point2D> coordinates;
 
+    /**
+     * Constructor
+     * @param coordinates SumoGeometry representing the coordinates of the junction shape
+     */
     public JunctionData(String junctionID, SumoGeometry coordinates){
         this.junctionID = junctionID;
         this.coordinates = get_coordinates(coordinates);
     }
+    
+    /**
+     * Getter
+     */
+    public String getJunctionID() {
+        return junctionID;
+    }
+    public List<Point2D> getCoordinates() {
+        return coordinates;
+    }
 
+    /**
+     * Private helper method: convert SumoGeometry to List<Point2D>
+     * @return List<Point2D> of coordinates to draw junction shape
+     */
     private List<Point2D> get_coordinates(SumoGeometry sumo_coords) {
         List<Point2D> coordinates = new java.util.ArrayList<>();
         for (de.tudresden.sumo.objects.SumoPosition2D pos : sumo_coords.coords) {

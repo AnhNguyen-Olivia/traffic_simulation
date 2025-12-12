@@ -10,20 +10,48 @@ import javafx.geometry.Point2D;
 
 /**
  * @Finished
- * @Tested
+ * @Test Completed
+ * @Javadoc Completed
  */
 
 public class TrafficLightData {
-    public String tlID;
-    public List<Coordinate> coordinates;
-    public List<String> colorList;
+    private String tlID;
+    /**
+     * Each represents the coordinates of 4 corners of 1 sub-light for a lane
+     */
+    private List<Coordinate> coordinates;
+    /**
+     * Each is a 1-char string representing the color state of corresponding sub-light ("r","g","y")
+     */
+    private List<String> colorList;
 
+    /**
+     * Constructor
+     * @param coordinates each SumoGeometry represents the coordinates of incoming lane shape for sub-light
+     * @param colorList a string representing the color states of the traffic light's sub-lights
+     */
     public TrafficLightData(String tlID, List<SumoGeometry> coordinates, String colorList) {
         this.tlID = tlID;
         this.coordinates = convertSumoGeometryToCoordinateList(coordinates);
         this.colorList = convertColorToList(colorList);
     }
 
+    /**
+     * Getter
+     */
+    public String getTlID() {
+        return tlID;
+    }
+    public List<Coordinate> getCoordinates() {
+        return coordinates;
+    }
+    public List<String> getColorList() {
+        return colorList;
+    }
+
+    /**
+     * Setter
+     */
     public void setColorList(String colorList) {
         this.colorList = convertColorToList(colorList);
     }
@@ -37,6 +65,11 @@ public class TrafficLightData {
         public Point2D p3;
         public Point2D p4;
 
+        /**
+         * Constructor
+         * Get coordinates of 4 corners to draw the sub-light on incoming lane
+         * @param geometry SumoGeometry representing the incoming lane shape for the sub-light
+         */
         public Coordinate(SumoGeometry geometry) {
             SumoPosition2D start_pos = geometry.coords.get(0); // Get the 1st point of the lane shape
             SumoPosition2D end_pos = geometry.coords.get(geometry.coords.size() - 1); // Get the last point of the lane shape
@@ -53,13 +86,18 @@ public class TrafficLightData {
             this.p4 = p1.subtract(direction);
         }
 
-        // For debugging
+        /**
+         * toString method for debugging
+         */
         @Override
         public String toString() {
             return "P1: " + p1.toString() + ", P2: " + p2.toString() + ", P3: " + p3.toString() + ", P4: " + p4.toString();
         }
     }
 
+    /**
+     * Private helper method: convert list of lanes' coordinations to list of Coordinate objects
+     */
     private List<Coordinate> convertSumoGeometryToCoordinateList(List<SumoGeometry> geometries) {
         List<Coordinate> coordinateList = new ArrayList<>();
         for (SumoGeometry geometry : geometries) {
@@ -68,7 +106,9 @@ public class TrafficLightData {
         }
         return coordinateList;
     }
-
+    /**
+     * Private helper method: convert color string to list of single-char strings for each sub-light
+     */
     private List<String> convertColorToList(String colorString) {
         List<String> colorlist = new ArrayList<>();
         for (int i = 0; i < colorString.length(); i++) {

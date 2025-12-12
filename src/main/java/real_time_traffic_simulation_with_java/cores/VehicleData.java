@@ -8,27 +8,48 @@ import javafx.geometry.Point2D;
 
 /**
  * @Finished
- * @Tested
+ * @Test Completed
+ * @Javadoc Completed
  */
 
 public class VehicleData {
-    public static final double length = Metrics.DEFAULT_VEHICLE_LENGTH;
-    public static final double width = Metrics.DEFAULT_VEHICLE_WIDTH;
+    private String vehicleID;
+    private Point2D top_left_corner;
+    private double angle;
+    private String color;
 
-    public String vehicleID;
-    public Point2D top_left_corner;
-    public double angle;
-    public String color;
-
+    /**
+     * Constructor
+     * @param color default color is white if invalid input, can modify return String in alias.Color
+     */
     public VehicleData(String vehicleID, double x, double y, double angle, SumoColor color) {
         this.vehicleID = vehicleID;
         this.top_left_corner = calculateTopLeftCorner(x, y);
         this.angle = angle;
-        this.color = Color.colorToString(color); // default color is white if no input, can modify return String in alias.Color
+        this.color = Color.colorToString(color);
     }
 
+    /**
+     * Getter
+     */
+    public String getVehicleID() {
+        return vehicleID;
+    }
+    public Point2D getTopLeftCorner() {
+        return top_left_corner;
+    }
+    public double getAngle() {
+        return angle;
+    }
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * Private helper method: calculate top-left corner from center position
+     */
     private Point2D calculateTopLeftCorner(double x, double y) {
-        double translate_vec = length/2 - width/2;
+        double translate_vec = Metrics.DEFAULT_VEHICLE_LENGTH/2 - Metrics.DEFAULT_VEHICLE_WIDTH/2;
         return new Point2D(x + translate_vec, y + translate_vec);
     }
 
