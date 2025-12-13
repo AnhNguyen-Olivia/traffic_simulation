@@ -26,12 +26,6 @@ public class Dashboard extends VBox {
     private Label congestionLabel;
     private Label avgTravelTimeLabel;
     
-    // Vehicle Density Progress Bars
-    private ProgressBar edge1Bar;
-    private ProgressBar edge2Bar;
-    private ProgressBar edge3Bar;
-    private ProgressBar edge4Bar;
-    
     // Export Filter Checkboxes
     private CheckBox redCheckBox;
     private CheckBox blueCheckBox;
@@ -124,62 +118,15 @@ public class Dashboard extends VBox {
                                     "-fx-border-radius: 6; " +
                                     "-fx-background-radius: 6;");
         
-        // Separator
-        Separator sep = new Separator();
-        
-        // Vehicle Density
-        Label densityTitle = new Label("📈 Vehicle Density");
-        densityTitle.setStyle("-fx-font-size: 13px; -fx-font-weight: 600; -fx-text-fill: #1D1D1F; -fx-padding: 8 0 0 0;");
-        
-        // Edge 1
-        VBox edge1Box = createDensityBar("Edge 1", 0);
-        edge1Bar = (ProgressBar) edge1Box.getChildren().get(1);
-        
-        // Edge 2
-        VBox edge2Box = createDensityBar("Edge 2", 0);
-        edge2Bar = (ProgressBar) edge2Box.getChildren().get(1);
-        
-        // Edge 3
-        VBox edge3Box = createDensityBar("Edge 3", 0);
-        edge3Bar = (ProgressBar) edge3Box.getChildren().get(1);
-        
-        // Edge 4
-        VBox edge4Box = createDensityBar("Edge 4", 0);
-        edge4Bar = (ProgressBar) edge4Box.getChildren().get(1);
-        
         section.getChildren().addAll(
             title,
             totalVehiclesLabel,
             avgSpeedLabel,
             congestionLabel,
-            avgTravelTimeLabel,
-            sep,
-            densityTitle,
-            edge1Box,
-            edge2Box,
-            edge3Box,
-            edge4Box
+            avgTravelTimeLabel
         );
         
         getChildren().add(section);
-    }
-    
-    /**
-     * Tạo thanh Progress Bar cho mỗi Edge
-     */
-    private VBox createDensityBar(String edgeName, double value) {
-        VBox box = new VBox(6);
-        
-        Label label = new Label(edgeName);
-        label.setStyle("-fx-font-size: 12px; -fx-text-fill: #1D1D1F;");
-        
-        ProgressBar bar = new ProgressBar(value);
-        bar.setMaxWidth(Double.MAX_VALUE);  // Responsive width
-        bar.setPrefHeight(6);
-        bar.setStyle("-fx-accent: linear-gradient(to right, #007AFF, #5AC8FA);");
-        
-        box.getChildren().addAll(label, bar);
-        return box;
     }
     
     /**
