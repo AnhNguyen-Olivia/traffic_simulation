@@ -70,6 +70,7 @@ public class TrafficLightData {
         Group lightGroup = new Group();
         lightGroup.getChildren().addAll(light_shapes);
         lightGroup.setId(tlID);
+        lightGroup.setPickOnBounds(true); // Allow mouse event on transparent area
         return lightGroup;
     }
 

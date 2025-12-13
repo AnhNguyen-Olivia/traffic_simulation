@@ -52,6 +52,8 @@ public class VehicleData {
                                         );  
         Shape.setRotate(angle);
         Shape.setFill(javafx.scene.paint.Paint.valueOf(color));
+        Shape.setArcWidth(Metrics.DEFAULT_VEHICLE_WIDTH/10);
+        Shape.setArcHeight(Metrics.DEFAULT_VEHICLE_WIDTH/10);
         Shape.setId(vehicleID);                            
         return Shape;
     }

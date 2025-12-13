@@ -147,50 +147,50 @@ public class SimulationEngine {
      * Get mapping data: edges
      * @throws Exception
      */
-    public Group getMapEdges() throws Exception {
-        Group edges =  new Group();
+    public List<Group> getMapEdges() throws Exception {
+        List<Group> edgeGroups =  new ArrayList<>();
         if(this.edgeManager.getEdgeDataList() != null) {
             for(EdgeData edgeData: this.edgeManager.getEdgeDataList()) {
-                edges.getChildren().add(edgeData.getShape());
+                edgeGroups.add(edgeData.getShape());
             }
         }
-        return edges;
+        return edgeGroups;
     }
     /**
      * Get mapping data: junctions
      * @throws Exception
      */
-    public Group getMapJunctions() throws Exception {
-        Group junctions =  new Group();
+    public List<Polygon> getMapJunctions() throws Exception {
+        List<Polygon> polygons =  new ArrayList<>();
         if(this.junctionManager.getJunctionDataList() != null) {
             for(JunctionData junctionData: this.junctionManager.getJunctionDataList()) {
-                junctions.getChildren().add(junctionData.getShape());
+                polygons.add(junctionData.getShape());
             }
         }
-        return junctions;
+        return polygons;
     }
     /**
      * Get mapping data: vehicles
      * @throws Exception
      */
-    public Group getMapVehicles() throws Exception {
-        Group vehicles =  new Group();
+    public List<Rectangle> getMapVehicles() throws Exception {
+        List<Rectangle> rectangles =  new ArrayList<>();
         if(this.vehicleManager.getVehicleDataList() != null) {
             for(VehicleData vehicleData: this.vehicleManager.getVehicleDataList()) {
-                vehicles.getChildren().add(vehicleData.getShape());
+                rectangles.add(vehicleData.getShape());
             }
         }
-        return vehicles;
+        return rectangles;
     }
     /**
      * Get mapping data: traffic lights
      * @throws Exception
      */
-    public Group getMapTls() throws Exception {
-        Group lightGroups =  new Group();
+    public List<Group> getMapTls() throws Exception {
+        List<Group> lightGroups =  new ArrayList<>();
         if(this.trafficLightManager.getTrafficLightDataList() != null) {
             for(TrafficLightData trafficLightData: this.trafficLightManager.getTrafficLightDataList()) {
-                lightGroups.getChildren().add(trafficLightData.getShape());
+                lightGroups.add(trafficLightData.getShape());
             }
         }
         return lightGroups;
