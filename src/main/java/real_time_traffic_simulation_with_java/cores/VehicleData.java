@@ -4,7 +4,7 @@ import de.tudresden.sumo.objects.SumoColor;
 import real_time_traffic_simulation_with_java.alias.Color;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
-import javafx.geometry.Point2D;
+import javafx.scene.shape.Rectangle;
 
 /**
  * @Finished
@@ -14,8 +14,7 @@ import javafx.geometry.Point2D;
 
 public class VehicleData {
     private String vehicleID;
-    private Point2D top_left_corner;
-    private double angle;
+    private Rectangle shape;
     private String color;
 
     /**
@@ -24,8 +23,7 @@ public class VehicleData {
      */
     public VehicleData(String vehicleID, double x, double y, double angle, SumoColor color) {
         this.vehicleID = vehicleID;
-        this.top_left_corner = calculateTopLeftCorner(x, y);
-        this.angle = angle;
+        this.shape = createShape(vehicleID, x, y, angle, Color.colorToString(color));
         this.color = Color.colorToString(color);
     }
 
@@ -35,11 +33,8 @@ public class VehicleData {
     public String getVehicleID() {
         return vehicleID;
     }
-    public Point2D getTopLeftCorner() {
-        return top_left_corner;
-    }
-    public double getAngle() {
-        return angle;
+    public Rectangle getShape() {
+        return shape;
     }
     public String getColor() {
         return color;
@@ -48,9 +43,17 @@ public class VehicleData {
     /**
      * Private helper method: calculate top-left corner from center position
      */
-    private Point2D calculateTopLeftCorner(double x, double y) {
+    private Rectangle createShape(String vehicleID, double x, double y, double angle, String color) {
         double translate_vec = Metrics.DEFAULT_VEHICLE_LENGTH/2 - Metrics.DEFAULT_VEHICLE_WIDTH/2;
-        return new Point2D(x + translate_vec, y + translate_vec);
+        Rectangle Shape = new Rectangle(x + translate_vec, 
+                                        y + translate_vec, 
+                                        Metrics.DEFAULT_VEHICLE_LENGTH, 
+                                        Metrics.DEFAULT_VEHICLE_WIDTH
+                                        );  
+        Shape.setRotate(angle);
+        Shape.setFill(javafx.scene.paint.Paint.valueOf(color));
+        Shape.setId(vehicleID);                            
+        return Shape;
     }
 
     

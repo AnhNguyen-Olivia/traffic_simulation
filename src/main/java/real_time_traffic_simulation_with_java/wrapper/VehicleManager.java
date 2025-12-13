@@ -3,10 +3,8 @@ package real_time_traffic_simulation_with_java.wrapper;
 import it.polito.appeal.traci.SumoTraciConnection;
 import de.tudresden.sumo.cmd.Vehicle;
 import de.tudresden.sumo.cmd.Lane;
-import de.tudresden.sumo.cmd.Route;
 import de.tudresden.sumo.objects.SumoColor;
 import de.tudresden.sumo.objects.SumoPosition2D;
-import de.tudresden.sumo.objects.SumoStringList;
 
 import java.util.List;
 import real_time_traffic_simulation_with_java.cores.VehicleData;
@@ -140,9 +138,8 @@ public class VehicleManager {
      * @throws Exception
      * @Tested
     */ 
-    public void add(String vehID, String start_edges, String end_edges, String color) throws Exception {
-        conn.do_job_set(Route.add(vehID, new SumoStringList(List.of(start_edges, end_edges))));
-        conn.do_job_set(Vehicle.addFull(vehID, vehID, "DEFAULT_VEHTYPE", "now", "best", "base", "max", "current", "max", "current", "", "", "", 0, 0));
+    public void add(String vehID, String routeID, String color) throws Exception {
+        conn.do_job_set(Vehicle.addFull(vehID, routeID, "DEFAULT_VEHTYPE", "now", "best", "base", "max", "current", "max", "current", "", "", "", 0, 0));
         this.setColor(vehID, Color.stringToColor(color));
     }
 

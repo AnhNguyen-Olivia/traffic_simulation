@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Polygon;
+import javafx.scene.Group;
 
 /**
  * @Finished
@@ -20,7 +21,7 @@ public class TrafficLightData {
     /**
      * Each Polygon represents the shape of corresponding sub-light
      */
-    private List<Polygon> shapeList;
+    private Group light_group;
     /**
      * Each is a 1-char string representing the color state of corresponding sub-light ("r","g","y")
      */
@@ -31,10 +32,10 @@ public class TrafficLightData {
      * @param coordinates each SumoGeometry represents the coordinates of incoming lane shape for sub-light
      * @param colorList a string representing the color states of the traffic light's sub-lights
      */
-    public TrafficLightData(String tlID, List<SumoGeometry> coordinates, String colorList) {
+    public TrafficLightData(String tlID, List<SumoGeometry> coordinates, String colorString) {
         this.tlID = tlID;
-        this.shapeList = convertSumoGeometryToShapeList(coordinates);
-        this.colorList = convertColorToList(colorList);
+        this.light_group = createLightGroup(tlID, coordinates, colorString);
+        this.colorList = convertColorToList(colorString);
     }
 
     /**
@@ -43,8 +44,8 @@ public class TrafficLightData {
     public String getTlID() {
         return tlID;
     }
-    public List<Polygon> getShapeList() {
-        return shapeList;
+    public Group getShape() {
+        return light_group;
     }
     public List<String> getColorList() {
         return colorList;
@@ -55,6 +56,22 @@ public class TrafficLightData {
      */
     public void setColorList(String colorList) {
         this.colorList = convertColorToList(colorList);
+    }
+
+    /**
+     * Private helper method: Grouping the sub-light shapes together
+     */
+    private Group createLightGroup(String tlID, List<SumoGeometry> geometries, String colorString) {
+        List<Polygon> light_shapes = convertSumoGeometryToShapeList(geometries);
+        List<String> color = convertColorToList(colorString);
+        for(int i = 0; i < light_shapes.size(); i++) {
+            Polygon light_shape = light_shapes.get(i);
+            light_shape.setFill(javafx.scene.paint.Paint.valueOf(color.get(i)));
+        }
+        Group lightGroup = new Group();
+        lightGroup.getChildren().addAll(light_shapes);
+        lightGroup.setId(tlID);
+        return lightGroup;
     }
 
     /**
@@ -75,7 +92,14 @@ public class TrafficLightData {
     private List<String> convertColorToList(String colorString) {
         List<String> colorlist = new ArrayList<>();
         for (int i = 0; i < colorString.length(); i++) {
-            colorlist.add(String.valueOf(colorString.charAt(i)));
+            String temp = String.valueOf(colorString.charAt(i));
+            if(temp.equals("r")) {
+                colorlist.add("RED");
+            } else if(temp.equals("g")) {
+                colorlist.add("GREEN");
+            }  else {
+                colorlist.add("YELLOW");
+            }
         }
         return colorlist;
     }
