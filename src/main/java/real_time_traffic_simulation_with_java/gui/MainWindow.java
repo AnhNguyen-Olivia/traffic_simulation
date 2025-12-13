@@ -1,4 +1,5 @@
 package real_time_traffic_simulation_with_java.gui;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
@@ -6,97 +7,93 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
-import real_time_traffic_simulation_with_java.wrapper.LaneManager;
-import real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection;
-import real_time_traffic_simulation_with_java.wrapper.VehicleManager;
 
 /**
  * MainWindow - Cửa sổ chính
- * Học cách chia cửa sổ thành 3 phần: Trái, Giữa, Phải
+ * Chia 3 phần: Trái (ControlPanel), Giữa (MapPanel), Phải (Dashboard)
  */
 public class MainWindow extends Application {
     
+    private SimulationEngine simulationEngine;
+    
     @Override
     public void start(Stage stage) {
-        // Bước 1: Đặt tên cửa sổ
-        stage.setTitle("Real Time SUMO Traffic Simulation");
-        
-        // Bước 2: Tạo BorderPane (bố cục có 5 vùng: top, bottom, left, center, right)
-        BorderPane root = new BorderPane();
-        
-        // Bước 3: Tạo 3 panels
-        ControlPanel leftPanel = new ControlPanel();
-        MapPanel centerPanel = new MapPanel();
-        Dashboard rightPanel = new Dashboard();
-        
-        // 🔥 Bước 3.5: Khởi tạo SimulationEngine (tự tạo connection và managers)
         try {
+            // Khởi tạo SimulationEngine
             System.out.println("🚀 Initializing SimulationEngine...");
-            SimulationEngine simulationEngine = new SimulationEngine();
+            simulationEngine = new SimulationEngine();
             System.out.println("✅ SimulationEngine initialized!");
             
-            // Set SimulationEngine cho ControlPanel
-            System.out.println("🔧 Setting SimulationEngine to ControlPanel...");
-            leftPanel.setSimulationEngine(simulationEngine);
-            System.out.println("✅ SimulationEngine set!");
+            // Tạo giao diện
+            initializeGui(stage);
             
-            // Lấy map và traffic lights từ SimulationEngine
-            System.out.println("🎨 Getting map visualization...");
-            javafx.scene.Group mapGroup = simulationEngine.getMapEdges();
-            System.out.println("✅ Map retrieved!");
-            
-            System.out.println("🚦 Getting traffic lights visualization...");
-            javafx.scene.Group tlGroup = simulationEngine.getMapTrafficLights();
-            System.out.println("✅ Traffic lights retrieved!");
-            
-            System.out.println("🎉 SUMO connected and map loaded successfully!");
         } catch (Exception e) {
-            System.err.println("❌ Error initializing simulation: " + e.getMessage());
+            System.err.println("❌ Error: " + e.getMessage());
             e.printStackTrace();
         }
-        
-        // Bước 3.6: Wrap panels trong ScrollPane cho vertical scrolling
-        ScrollPane leftScroll = new ScrollPane(leftPanel);
-        leftScroll.setFitToWidth(true);  // Panel sẽ chiếm full width
-        leftScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);  // Ẩn horizontal scrollbar
-        leftScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);  // Vertical scrollbar khi cần
-        leftScroll.setStyle("-fx-background: transparent; -fx-background-color: transparent;");
-        leftScroll.setPannable(true);  // Cho phép scroll bằng chuột
-        
-        ScrollPane rightScroll = new ScrollPane(rightPanel);
-        rightScroll.setFitToWidth(true);  // Panel sẽ chiếm full width
-        rightScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);  // Ẩn horizontal scrollbar
-        rightScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);  // Vertical scrollbar khi cần
-        rightScroll.setStyle("-fx-background: transparent; -fx-background-color: transparent;");
-        rightScroll.setPannable(true);  // Cho phép scroll bằng chuột
-        
-        // Bước 4: Đặt panels vào vị trí (với ScrollPane)
-        root.setLeft(leftScroll);    // Panel bên trái với scroll
-        root.setCenter(centerPanel); // Panel ở giữa (không cần scroll - có zoom)
-        root.setRight(rightScroll);   // Panel bên phải với scroll
-        
-        // Bước 5: Tạo Scene với responsive design
-        Scene scene = new Scene(root, 1200, 700);  // Kích thước khởi đầu vừa phải
-        scene.setFill(Color.web("#F5F5F7"));  // macOS background
-        
-        // Thêm global stylesheet
-        root.setStyle("-fx-background-color: #F5F5F7;");
-        
-        // Bước 6: Thiết lập responsive window
-        stage.setMinWidth(1000);   // Chiều rộng tối thiểu
-        stage.setMinHeight(600);   // Chiều cao tối thiểu
-        stage.setMaximized(false); // Không tự động maximize
-        stage.setResizable(true);  // Cho phép resize
-        
-        // Hiển thị
-        stage.setScene(scene);
-        stage.show();
-        
-        // Recenter map sau khi window hiển thị
-        centerPanel.recenterView();
     }
     
-    // Main method - chạy chương trình
+    private void initializeGui(Stage stage) throws Exception {
+        // Tạo 3 panels
+        ControlPanel leftPanel = new ControlPanel();
+        MapPanel centerPanel = new MapPanel(simulationEngine);
+        Dashboard rightPanel = new Dashboard();
+        
+        // Set SimulationEngine cho ControlPanel
+        leftPanel.setSimulationEngine(simulationEngine);
+        
+        // Wrap panels trong ScrollPane
+        ScrollPane leftScroll = new ScrollPane(leftPanel);
+        leftScroll.setFitToWidth(true);
+        leftScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        leftScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        
+        ScrollPane rightScroll = new ScrollPane(rightPanel);
+        rightScroll.setFitToWidth(true);
+        rightScroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        rightScroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        
+        // Tạo layout
+        BorderPane root = new BorderPane();
+        root.setLeft(leftScroll);
+        root.setCenter(centerPanel);
+        root.setRight(rightScroll);
+        root.setStyle("-fx-background-color: #F5F5F7;");
+        
+        // Tạo scene
+        Scene scene = new Scene(root, 1200, 700);
+        scene.setFill(Color.web("#F5F5F7"));
+        
+        stage.setTitle("Real Time SUMO Traffic Simulation");
+        stage.setScene(scene);
+        stage.setMinWidth(1000);
+        stage.setMinHeight(600);
+        stage.show();
+        
+        // Animation loop - cập nhật simulation
+        javafx.animation.AnimationTimer timer = new javafx.animation.AnimationTimer() {
+            private long last = 0;
+            private static final long INTERVAL = 200_000_000; // 200ms
+            
+            @Override
+            public void handle(long now) {
+                if (now - last < INTERVAL) return;
+                last = now;
+                
+                try {
+                    // Advance simulation
+                    simulationEngine.stepSimulation();
+                    
+                    // Update map display
+                    centerPanel.updateDisplay();
+                } catch (Exception e) {
+                    System.err.println("Error stepping simulation: " + e.getMessage());
+                }
+            }
+        };
+        timer.start();
+    }
+    
     public static void main(String[] args) {
         launch(args);
     }
