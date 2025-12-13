@@ -21,7 +21,8 @@ public class ControlPanel extends VBox {
     private boolean isSimulationRunning = false;
     
     // PHẦN 2: Vehicle Injection - Attributes
-    private ComboBox<String> edgeComboBox;
+    private ComboBox<String> startEdgeComboBox;
+    private ComboBox<String> endEdgeComboBox;
     private ComboBox<String> colorComboBox;
     private TextField quantityField;  // Nhập số lượng xe
     private Button injectButton;
@@ -136,16 +137,28 @@ public class ControlPanel extends VBox {
         title.setStyle("-fx-font-size: 15px; -fx-font-weight: 600; -fx-text-fill: #1D1D1F;");
         title.setMaxWidth(Double.MAX_VALUE);  // Responsive title
         
-        // Edge Selection
-        Label edgeLabel = new Label("Edge:");
-        edgeLabel.setStyle("-fx-font-size: 13px; -fx-text-fill: #1D1D1F;");
+        // Start Edge Selection
+        Label startEdgeLabel = new Label("Start Edge:");
+        startEdgeLabel.setStyle("-fx-font-size: 13px; -fx-text-fill: #1D1D1F;");
         
-        edgeComboBox = new ComboBox<>();
-        edgeComboBox.getItems().addAll("Edge 1", "Edge 2", "Edge 3", "Edge 4");
-        edgeComboBox.setValue("Edge 1");
-        edgeComboBox.setMaxWidth(Double.MAX_VALUE);  // Responsive width
-        edgeComboBox.setPrefHeight(32);
-        edgeComboBox.setStyle("-fx-font-size: 13px; " +
+        startEdgeComboBox = new ComboBox<>();
+        startEdgeComboBox.setPromptText("Select start edge...");
+        startEdgeComboBox.setMaxWidth(Double.MAX_VALUE);
+        startEdgeComboBox.setPrefHeight(32);
+        startEdgeComboBox.setStyle("-fx-font-size: 13px; " +
+                             "-fx-border-color: #D1D1D6; " +
+                             "-fx-border-radius: 6; " +
+                             "-fx-background-radius: 6;");
+        
+        // End Edge Selection
+        Label endEdgeLabel = new Label("End Edge:");
+        endEdgeLabel.setStyle("-fx-font-size: 13px; -fx-text-fill: #1D1D1F;");
+        
+        endEdgeComboBox = new ComboBox<>();
+        endEdgeComboBox.setPromptText("Select end edge...");
+        endEdgeComboBox.setMaxWidth(Double.MAX_VALUE);
+        endEdgeComboBox.setPrefHeight(32);
+        endEdgeComboBox.setStyle("-fx-font-size: 13px; " +
                              "-fx-border-color: #D1D1D6; " +
                              "-fx-border-radius: 6; " +
                              "-fx-background-radius: 6;");
@@ -230,7 +243,7 @@ public class ControlPanel extends VBox {
         });
         
         // Thêm vào section
-        section.getChildren().addAll(title, edgeLabel, edgeComboBox, colorLabel, colorComboBox, quantityLabel, quantityField, injectButton);
+        section.getChildren().addAll(title, startEdgeLabel, startEdgeComboBox, endEdgeLabel, endEdgeComboBox, colorLabel, colorComboBox, quantityLabel, quantityField, injectButton);
         
         getChildren().add(section);
     }
@@ -343,8 +356,12 @@ public class ControlPanel extends VBox {
         return timeLabel;
     }
     
-    public ComboBox<String> getEdgeComboBox() {
-        return edgeComboBox;
+    public ComboBox<String> getStartEdgeComboBox() {
+        return startEdgeComboBox;
+    }
+    
+    public ComboBox<String> getEndEdgeComboBox() {
+        return endEdgeComboBox;
     }
     
     public ComboBox<String> getColorComboBox() {
@@ -363,6 +380,12 @@ public class ControlPanel extends VBox {
         
         // Kết nối Start button với SimulationEngine
         startButton.setOnAction(e -> toggleSimulation());
+        
+        // Kết nối Inject button với SimulationEngine
+        injectButton.setOnAction(e -> handleInjectVehicles());
+        
+        // Load edge list
+        populateEdgeList();
     }
     
     /**
@@ -413,10 +436,42 @@ public class ControlPanel extends VBox {
     }
     
     /**
-     * Lấy Edge đã chọn
+     * Lấy Start Edge đã chọn
      */
-    public String getSelectedEdge() {
-        return edgeComboBox.getValue();
+    public String getSelectedStartEdge() {
+        return startEdgeComboBox.getValue();
+    }
+    
+    /**
+     * Lấy End Edge đã chọn
+     */
+    public String getSelectedEndEdge() {
+        return endEdgeComboBox.getValue();
+    }
+    
+    /**
+     * Populate edge list từ SimulationEngine
+     */
+    public void populateEdgeList() {
+        try {
+            if (simulationEngine != null) {
+                var edges = simulationEngine.getAllEdgeIDs();
+                startEdgeComboBox.getItems().clear();
+                endEdgeComboBox.getItems().clear();
+                startEdgeComboBox.getItems().addAll(edges);
+                endEdgeComboBox.getItems().addAll(edges);
+                
+                // Set default values
+                if (!edges.isEmpty()) {
+                    startEdgeComboBox.setValue(edges.get(0));
+                    endEdgeComboBox.setValue(edges.size() > 1 ? edges.get(1) : edges.get(0));
+                }
+                
+                System.out.println("✅ Loaded " + edges.size() + " edges into ComboBox");
+            }
+        } catch (Exception e) {
+            System.err.println("⚠️  Error loading edges: " + e.getMessage());
+        }
     }
     
     /**
@@ -431,5 +486,58 @@ public class ControlPanel extends VBox {
      */
     public boolean isSimulationRunning() {
         return isSimulationRunning;
+    }
+    
+    /**
+     * Xử lý inject xe vào simulation
+     */
+    private void handleInjectVehicles() {
+        if (simulationEngine == null) {
+            System.err.println("⚠️  SimulationEngine chưa được khởi tạo!");
+            return;
+        }
+        
+        try {
+            // Lấy giá trị từ UI
+            String startEdge = startEdgeComboBox.getValue();
+            String endEdge = endEdgeComboBox.getValue();
+            String color = colorComboBox.getValue();
+            String quantityText = quantityField.getText();
+            
+            // Validate input
+            if (startEdge == null || startEdge.isEmpty()) {
+                System.err.println("⚠️  Vui lòng chọn Start Edge!");
+                return;
+            }
+            
+            if (endEdge == null || endEdge.isEmpty()) {
+                System.err.println("⚠️  Vui lòng chọn End Edge!");
+                return;
+            }
+            
+            if (color == null || color.isEmpty()) {
+                color = "White";  // Default color
+            }
+            
+            int quantity;
+            try {
+                quantity = Integer.parseInt(quantityText);
+                if (quantity < 1 || quantity > 50) {
+                    System.err.println("⚠️  Số lượng xe phải từ 1-50!");
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                System.err.println("⚠️  Số lượng xe không hợp lệ!");
+                return;
+            }
+            
+            // Inject vehicles
+            simulationEngine.injectVehicle(quantity, startEdge, endEdge, color);
+            System.out.println("✅ Injected " + quantity + " " + color + " vehicle(s) from " + startEdge + " to " + endEdge);
+            
+        } catch (Exception e) {
+            System.err.println("⚠️  Error injecting vehicles: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
