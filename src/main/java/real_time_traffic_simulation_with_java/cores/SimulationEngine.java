@@ -185,6 +185,13 @@ public class SimulationEngine {
         }
         return lightGroups;
     }
+    /**
+     * Update mapping data: traffic lights
+     * @throws Exception
+     */
+    public void updateMapTls() throws Exception {
+        this.trafficLightManager.updateTrafficLightDataList();
+    }
 
 
     /**

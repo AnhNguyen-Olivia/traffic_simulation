@@ -54,20 +54,19 @@ public class TrafficLightData {
     /**
      * Setter
      */
-    public void setColorList(String colorList) {
-        this.colorList = convertColorToList(colorList);
+    public void setColor(String colorString) {
+        this.colorList = convertColorToList(colorString);
+        for (int i = 0; i < this.light_group.getChildren().size(); i++) {
+            Polygon light_shape = (Polygon) this.light_group.getChildren().get(i);
+            light_shape.setFill(javafx.scene.paint.Paint.valueOf(this.colorList.get(i)));
+        }
     }
 
     /**
      * Private helper method: Grouping the sub-light shapes together
      */
     private Group createLightGroup(String tlID, List<SumoGeometry> geometries, String colorString) {
-        List<Polygon> light_shapes = convertSumoGeometryToShapeList(geometries);
-        List<String> color = convertColorToList(colorString);
-        for(int i = 0; i < light_shapes.size(); i++) {
-            Polygon light_shape = light_shapes.get(i);
-            light_shape.setFill(javafx.scene.paint.Paint.valueOf(color.get(i)));
-        }
+        List<Polygon> light_shapes = convertSumoGeometryToShapeList(geometries, colorString);
         Group lightGroup = new Group();
         lightGroup.getChildren().addAll(light_shapes);
         lightGroup.setId(tlID);
@@ -77,10 +76,12 @@ public class TrafficLightData {
     /**
      * Private helper method: convert list of lanes' coordinations to list of Polygon
      */
-    private List<Polygon> convertSumoGeometryToShapeList(List<SumoGeometry> geometries) {
+    private List<Polygon> convertSumoGeometryToShapeList(List<SumoGeometry> geometries, String colorString) {
         List<Polygon> shapeList = new ArrayList<>();
-        for (SumoGeometry geometry : geometries) {
-            Polygon shape = createPolygon(geometry);
+        List<String> color = convertColorToList(colorString);
+        for (int i = 0; i < geometries.size(); i++) {
+            Polygon shape = createPolygon(geometries.get(i));
+            shape.setFill(javafx.scene.paint.Paint.valueOf(color.get(i)));
             shapeList.add(shape);
         }
         return shapeList;
