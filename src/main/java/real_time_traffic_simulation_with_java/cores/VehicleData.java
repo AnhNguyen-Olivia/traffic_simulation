@@ -15,7 +15,6 @@ import javafx.scene.shape.Rectangle;
 public class VehicleData {
     private String vehicleID;
     private Rectangle shape;
-    private String color;
 
     /**
      * Constructor
@@ -24,7 +23,6 @@ public class VehicleData {
     public VehicleData(String vehicleID, double x, double y, double angle, SumoColor color) {
         this.vehicleID = vehicleID;
         this.shape = createShape(vehicleID, x, y, angle, Color.colorToString(color));
-        this.color = Color.colorToString(color);
     }
 
     /**
@@ -35,9 +33,6 @@ public class VehicleData {
     }
     public Rectangle getShape() {
         return shape;
-    }
-    public String getColor() {
-        return color;
     }
 
     /**
@@ -52,6 +47,8 @@ public class VehicleData {
                                         );  
         Shape.setRotate(angle);
         Shape.setFill(javafx.scene.paint.Paint.valueOf(color));
+        Shape.setArcWidth(Metrics.DEFAULT_VEHICLE_WIDTH/10);
+        Shape.setArcHeight(Metrics.DEFAULT_VEHICLE_WIDTH/10);
         Shape.setId(vehicleID);                            
         return Shape;
     }

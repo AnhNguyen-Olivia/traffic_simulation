@@ -13,7 +13,6 @@ public class SimulationEngine {
     private SumoTraasConnection conn;
     private VehicleManager vehicleManager;
     private EdgeManager edgeManager;
-    private LaneManager laneManager;
     private RouteManager routeManager;
     private TrafficLightManager trafficLightManager;
     private JunctionManager junctionManager;
@@ -26,7 +25,6 @@ public class SimulationEngine {
         this.conn = new SumoTraasConnection();
         this.vehicleManager = new VehicleManager(this.conn.getConnection());
         this.edgeManager = new EdgeManager(this.conn.getConnection());
-        this.laneManager = new LaneManager(this.conn.getConnection());
         this.routeManager = new RouteManager(this.conn.getConnection());
         this.trafficLightManager = new TrafficLightManager(this.conn.getConnection());
         this.junctionManager = new JunctionManager(this.conn.getConnection());
@@ -207,20 +205,48 @@ public class SimulationEngine {
 
 
     /**
-     * Get statistics: edges
+     * Get tooltip: edges
      * @throws Exception
      */
-    public String getEdgeStats(String edgeID) throws Exception {
-        return String.format("Edge ID: %s, Vehicle Count: %d, Average Speed: %.2f m/s",
-                    edgeID,
-                    edgeManager.getVehicleCount(edgeID),
-                    edgeManager.getAverageSpeed(edgeID));
+    public String getEdgeTooltip(String edgeID) throws Exception {
+        return String.format(
+"Edge ID: %s (%d lane), Max speed: %.2f km/h, Length: %.2f m\n Vehicle Count: %d, Average Speed: %.2f km/h\nDensity: %.2f veh/km, Estimated Travel Time: %.2f s",  
+                    edgeID, edgeManager.getLaneCount(edgeID), 
+                    edgeManager.getMaxSpeed(edgeID), edgeManager.getLength(edgeID),
+                    edgeManager.getVehicleCount(edgeID), edgeManager.getAverageSpeed(edgeID),
+                    edgeManager.getDensity(edgeID), edgeManager.getTravelTime(edgeID)
+                );
     }
     /**
-     * Get statistics: vehicles
+     * Get tooltip: vehicles
+     * @throws Exception
      */
+    public String getVehicleTooltip(String vehicleID) throws Exception {
+        return String.format("Vehicle ID: %s\n Speed: %.2f km/h\n Is running on edge: %s",  
+                    vehicleID, 
+                    vehicleManager.getSpeed(vehicleID), 
+                    vehicleManager.getAngle(vehicleID),
+                    vehicleManager.getEdgeID(vehicleID)
+                );
+    }
     /**
-     * Get statistics: traffic lights
+     * Get tooltip: traffic lights
      */
+    public String getTlTooltip(String tlID) throws Exception {
+        return String.format(
+"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds",  
+                    tlID, trafficLightManager.getPhaseCount(tlID), tlID,
+                    trafficLightManager.getPhaseID(tlID), trafficLightManager.getDuration(tlID),
+                    trafficLightManager.getNextSwitch(tlID)
+                );
+    }
 
+
+    /**
+     * Debug tool: return edge ID vehicle running on
+     * @throws Exception
+     */
+    public String vehIsOnEdge(String vehicleID) throws Exception {
+        return this.vehicleManager.getEdgeID(vehicleID);
+    }
 }
