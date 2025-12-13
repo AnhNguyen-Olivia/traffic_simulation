@@ -39,7 +39,7 @@ public class vehicleLayer extends Group {
         List<Rectangle> vehicles = this.simulationEngine.getMapVehicles();
 
         // Add tooltip and mouse events
-        addToolTip(vehicles);
+        // addToolTip(vehicles);
 
         // Add vehicle shapes to the vehicle layer
         this.getChildren().addAll(vehicles);

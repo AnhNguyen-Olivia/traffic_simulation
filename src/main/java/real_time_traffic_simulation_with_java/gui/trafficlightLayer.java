@@ -81,4 +81,13 @@ public class trafficlightLayer extends Group {
     }
 
 
+    /**
+     * Public method: Refresh traffic light layer to update traffic light states
+     * @throws Exception
+     */
+    public void refreshTrafficLightLayer() throws Exception {
+        this.simulationEngine.updateMapTls();
+    }
+
+
 }
