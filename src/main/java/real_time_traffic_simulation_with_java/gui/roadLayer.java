@@ -14,8 +14,11 @@ import javafx.util.Duration;
 /**
  * roadLayer class: create road layer including junctions and edges
  * Add tooltip and mouse events for better interactivity
+ * Junction have no tooltips or mouse events, since they are just for visual purpose
  * @extends Group
  * @Finished
+ * @Test Incompleted
+ * @Javadoc Completed
  */
 public class roadLayer extends Group {
     private SimulationEngine simulationEngine;
@@ -39,7 +42,7 @@ public class roadLayer extends Group {
         List<Group> edges = this.simulationEngine.getMapEdges();
 
         // Add tooltip and mouse events
-        addToolTip(junctions, edges);
+        addToolTip(edges);
 
         // Add junction shapes to the road layer
         this.getChildren().addAll(junctions);
@@ -49,28 +52,13 @@ public class roadLayer extends Group {
 
 
     /**
-     * Private helper method: Add tooltip and mouse events to junctions and edges
+     * Private helper method: Add tooltip and mouse events to edges
      * @throws Exception
      */
-    private void addToolTip(List<Polygon> junctions, List<Group> edges) throws Exception {
-        for (Polygon junction : junctions){
-            // Install tooltip
-            Tooltip tooltip = new Tooltip("Junction: " + junction.getId());
-            tooltip.setHideDelay(Duration.millis(Metrics.HIDE_DELAY));
-            Tooltip.install(junction, tooltip);
-
-            // Add mouse entered/exited to know hovering state
-            junction.setOnMouseEntered(e -> {
-                junction.setStroke(javafx.scene.paint.Color.AQUA);
-                junction.setStrokeWidth(0.5);
-            });
-            junction.setOnMouseExited(e -> {
-                junction.setStroke(null);
-            });
-        }
+    private void addToolTip(List<Group> edges) throws Exception {
         for (Group edge : edges){
             // Install tooltip
-            Tooltip tooltip = new Tooltip("Junction: " + edge.getId());
+            Tooltip tooltip = new Tooltip(simulationEngine.getEdgeTooltip(edge.getId()));
             tooltip.setHideDelay(Duration.millis(Metrics.HIDE_DELAY));
             Tooltip.install(edge, tooltip);
             // Add mouse entered/exited to know hovering state

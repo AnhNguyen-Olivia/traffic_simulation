@@ -28,8 +28,6 @@ public class EdgeData {
      * Grouping a Polygon edge and Line objects representing lane dividers within the edge
      */
     private Group edge_group;
-    private int number_of_lanes;
-    private double width;
 
 
     /**
@@ -38,8 +36,6 @@ public class EdgeData {
      */
     public EdgeData(String edgeID, int number_of_lanes, List<SumoGeometry> coordinates) {
         this.edgeID = edgeID;
-        this.number_of_lanes = number_of_lanes;
-        this.width = number_of_lanes * Metrics.DEFAULT_LANE_WIDTH;
         this.edge_group = createEdgeGroup(edgeID, number_of_lanes, coordinates);
     }
 
@@ -51,12 +47,6 @@ public class EdgeData {
     }
     public Group getShape() {
         return edge_group;
-    }
-    public int getNumberOfLanes() {
-        return number_of_lanes;
-    }
-    public double getWidth() {
-        return width;
     }
 
 
