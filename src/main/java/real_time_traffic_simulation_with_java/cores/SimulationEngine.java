@@ -71,6 +71,14 @@ public class SimulationEngine {
     public List<String> getAllTrafficLightIDs() throws Exception {
         return this.trafficLightManager.getIDList();
     }
+    /**
+     * Validate edge ID
+     * @throws Exception
+     */
+    public boolean validateEdgeID(String edgeID) throws Exception {
+        List<String> edgeIDs = this.edgeManager.getIDList();
+        return edgeIDs.contains(edgeID);
+    }
 
 
     /**
