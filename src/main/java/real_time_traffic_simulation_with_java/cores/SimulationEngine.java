@@ -24,6 +24,7 @@ public class SimulationEngine {
         this.routeManager = new RouteManager(this.conn.getConnection());
         this.trafficLightManager = new TrafficLightManager(this.conn.getConnection());
         this.junctionManager = new JunctionManager(this.conn.getConnection());
+        this.conn.startConnection();
     }
 
 
