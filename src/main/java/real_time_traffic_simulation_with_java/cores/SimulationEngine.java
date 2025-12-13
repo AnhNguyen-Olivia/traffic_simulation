@@ -1,112 +1,224 @@
 package real_time_traffic_simulation_with_java.cores;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
-import javafx.animation.AnimationTimer;
-import real_time_traffic_simulation_with_java.gui.MapPanel;
-import real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.Group;
+import real_time_traffic_simulation_with_java.wrapper.*;
+import real_time_traffic_simulation_with_java.alias.Color;
 
-/**
- * SimulationEngine - Quản lý vòng lặp simulation của SUMO
- * Sử dụng JavaFX AnimationTimer để update UI mượt mà
- */
 public class SimulationEngine {
-    private boolean running = false;
-    private final SumoTraasConnection connection;
-    private final MapPanel mapPanel;
-    private AnimationTimer simulationLoop;
-    
-    // Callback để update time label
-    private Runnable onTimeUpdate;
-    
+    private SumoTraasConnection conn;
+    private VehicleManager vehicleManager;
+    private EdgeManager edgeManager;
+    private RouteManager routeManager;
+    private TrafficLightManager trafficLightManager;
+    private JunctionManager junctionManager;
+
     /**
      * Constructor
+     * @throws Exception
      */
-    public SimulationEngine(SumoTraasConnection connection, MapPanel mapPanel) {
-        this.connection = connection;
-        this.mapPanel = mapPanel;
-        setupSimulationLoop();
+    public SimulationEngine() throws Exception {
+        this.conn = new SumoTraasConnection();
+        this.vehicleManager = new VehicleManager(this.conn.getConnection());
+        this.edgeManager = new EdgeManager(this.conn.getConnection());
+        this.routeManager = new RouteManager(this.conn.getConnection());
+        this.trafficLightManager = new TrafficLightManager(this.conn.getConnection());
+        this.junctionManager = new JunctionManager(this.conn.getConnection());
+        this.conn.startConnection();
     }
-    
+
+
     /**
-     * Setup simulation loop với AnimationTimer
+     * Control simulation: advance simulation by one step
+     * @throws Exception
      */
-    private void setupSimulationLoop() {
-        simulationLoop = new AnimationTimer() {
-            private long lastUpdate = 0;
-            private static final long UPDATE_INTERVAL = 100_000_000; // 100ms = 0.1s
-            
-            @Override
-            public void handle(long now) {
-                if (!running) return;
-                
-                // Throttle updates to ~10 FPS
-                if (now - lastUpdate >= UPDATE_INTERVAL) {
-                    try {
-                        // Tiến SUMO 1 step
-                        connection.nextStep();
-                        
-                        // Update vehicles trên map
-                        mapPanel.updateVehicles();
-                        
-                        // Callback to update time label
-                        if (onTimeUpdate != null) {
-                            onTimeUpdate.run();
-                        }
-                        
-                        lastUpdate = now;
-                    } catch (Exception e) {
-                        System.err.println("❌ Error in simulation loop: " + e.getMessage());
-                        e.printStackTrace();
-                        stop();
-                    }
-                }
+    public void stepSimulation() throws Exception {
+        this.conn.nextStep();
+    }
+    /**
+     * Control simulation: stop
+     * @throws Exception
+     */
+    public void stopSimulation() throws Exception {
+        this.conn.closeConnection();
+    }
+
+
+    /**
+     * Get all IDs: edges
+     * @throws Exception
+     */
+    public List<String> getAllEdgeIDs() throws Exception {
+        return this.edgeManager.getIDList();
+    }
+    /**
+     * Get all IDs: vehicles
+     * @throws Exception
+     */
+    public List<String> getAllVehicleIDs() throws Exception {
+        return this.vehicleManager.getIDList();
+    }
+    /**
+     * Get all IDs: traffic lights
+     * @throws Exception
+     */
+    public List<String> getAllTrafficLightIDs() throws Exception {
+        return this.trafficLightManager.getIDList();
+    }
+    /**
+     * Validate edge ID
+     * @throws Exception
+     */
+    public boolean validateEdgeID(String edgeID) throws Exception {
+        List<String> edgeIDs = this.edgeManager.getIDList();
+        return edgeIDs.contains(edgeID);
+    }
+
+
+    /**
+     * Inject vehicle: single and batch injection
+     * Route ID format: [currentStep]
+     * Vehicle ID format: [routeID]_[index]
+     * @throws Exception
+     */
+    public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color) throws Exception {
+        // Generate a unique ID
+        String routeID = (int) this.conn.getCurrentStep() + "";
+        this.routeManager.add(routeID, start_edge_ID, end_edge_ID);
+        for (int i = 0; i < numVehicles; i++) {
+            String vehicleID = routeID + "_" + i;
+            this.vehicleManager.add(vehicleID, routeID, color);
+        }
+    }
+    /**
+     * Inject vehicle: stress test tool, inject 100 vehicles on up to 10 different random routes
+     * Route ID format: [currentStep]_[index]
+     * Vehicle ID format: [routeID]_[index_of_vehicle_in_this_stress_test]
+     * @throws Exception
+     */
+    public void stressTest(int number_of_vehicles, String start_edge_ID) throws Exception {
+        // Randomly select 10 end_edge to inject vehicles, if less than 10 edges, use all edges
+        List<String> edgeIDs =  this.getAllEdgeIDs();
+        Collections.shuffle(edgeIDs);
+        int n;
+        if(edgeIDs.size() < 10) {n = edgeIDs.size();} else {n = 10;}
+        List<String> end_edge_IDs = edgeIDs.subList(0, n);
+        // Generate a unique ID
+        String ID = (int) this.conn.getCurrentStep() + "";
+        //Generate color list to inject vehicles with random color
+        List<String> colorList = new ArrayList<>(Color.ListofAllColor);
+        // Generate n random routes to inject vehicles
+        for (int j = 0; j < n; j++) {
+            this.routeManager.add(ID + "_" + j, start_edge_ID, end_edge_IDs.get(j));
+        }
+        // Inject vehicles
+        for (int i = 0; i < number_of_vehicles; i++) {
+            for (int j = 0; j < n; j++) {
+                Collections.shuffle(colorList);
+                this.vehicleManager.add(ID + "_" + j + "_" + i, ID + "_" + j, colorList.get(0));
             }
-        };
-    }
-    
-    /**
-     * Bắt đầu simulation
-     */
-    public void start() {
-        if (!running) {
-            running = true;
-            simulationLoop.start();
-            System.out.println("▶️  Simulation started!");
         }
     }
-    
+
+
     /**
-     * Dừng simulation
+     * Control traffic lights: toggle all traffic lights
+     * @throws Exception
      */
-    public void stop() {
-        if (running) {
-            running = false;
-            simulationLoop.stop();
-            System.out.println("⏸️  Simulation stopped!");
+    public void toggleAllTls() throws Exception {
+        for (String tlsID : this.trafficLightManager.getIDList()) {
+            this.trafficLightManager.nextPhase(tlsID);
         }
     }
-    
     /**
-     * Kiểm tra xem simulation có đang chạy không
+     * Control traffic light: toggle single traffic light
+     * @throws Exception
      */
-    public boolean isRunning() {
-        return running;
+    public void toggleSingleTl(String tlID) throws Exception {
+        this.trafficLightManager.nextPhase(tlID);
     }
-    
+
+
     /**
-     * Lấy thời gian hiện tại của simulation
+     * Get mapping data: edges
+     * @throws Exception
      */
-    public double getCurrentTime() {
-        try {
-            return connection.getCurrentStep();
-        } catch (Exception e) {
-            return 0.0;
+    public Group getMapEdges() throws Exception {
+        Group edges =  new Group();
+        if(this.edgeManager.getEdgeDataList() != null) {
+            for(EdgeData edgeData: this.edgeManager.getEdgeDataList()) {
+                edges.getChildren().add(edgeData.getShape());
+            }
         }
+        return edges;
     }
-    
     /**
-     * Set callback để update time
+     * Get mapping data: junctions
+     * @throws Exception
      */
-    public void setOnTimeUpdate(Runnable callback) {
-        this.onTimeUpdate = callback;
+    public Group getMapJunctions() throws Exception {
+        Group junctions =  new Group();
+        if(this.junctionManager.getJunctionDataList() != null) {
+            for(JunctionData junctionData: this.junctionManager.getJunctionDataList()) {
+                junctions.getChildren().add(junctionData.getShape());
+            }
+        }
+        return junctions;
     }
+    /**
+     * Get mapping data: vehicles
+     * @throws Exception
+     */
+    public Group getMapVehicles() throws Exception {
+        Group vehicles =  new Group();
+        if(this.vehicleManager.getVehicleDataList() != null) {
+            for(VehicleData vehicleData: this.vehicleManager.getVehicleDataList()) {
+                vehicles.getChildren().add(vehicleData.getShape());
+            }
+        }
+        return vehicles;
+    }
+    /**
+     * Get mapping data: traffic lights
+     * @throws Exception
+     */
+    public Group getMapTls() throws Exception {
+        Group lightGroups =  new Group();
+        if(this.trafficLightManager.getTrafficLightDataList() != null) {
+            for(TrafficLightData trafficLightData: this.trafficLightManager.getTrafficLightDataList()) {
+                lightGroups.getChildren().add(trafficLightData.getShape());
+            }
+        }
+        return lightGroups;
+    }
+    /**
+     * Update mapping data: traffic lights
+     * @throws Exception
+     */
+    public void updateMapTls() throws Exception {
+        this.trafficLightManager.updateTrafficLightDataList();
+    }
+
+
+    /**
+     * Get statistics: edges
+     * @throws Exception
+     */
+    public String getEdgeStats(String edgeID) throws Exception {
+        return String.format("Edge ID: %s, Vehicle Count: %d, Average Speed: %.2f m/s",
+                    edgeID,
+                    edgeManager.getVehicleCount(edgeID),
+                    edgeManager.getAverageSpeed(edgeID));
+    }
+    /**
+     * Get statistics: vehicles
+     */
+    /**
+     * Get statistics: traffic lights
+     */
+
 }

@@ -1,34 +1,59 @@
 package real_time_traffic_simulation_with_java.cores;
 
 import de.tudresden.sumo.objects.SumoColor;
-import javafx.geometry.Point2D;
 import real_time_traffic_simulation_with_java.alias.Color;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
+import javafx.scene.shape.Rectangle;
+
 /**
  * @Finished
- * @Tested
+ * @Test Completed
+ * @Javadoc Completed
  */
 
 public class VehicleData {
-    public static final double length = Metrics.DEFAULT_VEHICLE_LENGTH;
-    public static final double width = Metrics.DEFAULT_VEHICLE_WIDTH;
+    private String vehicleID;
+    private Rectangle shape;
+    private String color;
 
-    public String vehicleID;
-    public Point2D top_left_corner;
-    public double angle;
-    public String color;
-
+    /**
+     * Constructor
+     * @param color default color is white if invalid input, can modify return String in alias.Color
+     */
     public VehicleData(String vehicleID, double x, double y, double angle, SumoColor color) {
         this.vehicleID = vehicleID;
-        this.top_left_corner = calculateTopLeftCorner(x, y);
-        this.angle = angle;
-        this.color = Color.colorToString(color); // default color is white if no input, can modify return String in alias.Color
+        this.shape = createShape(vehicleID, x, y, angle, Color.colorToString(color));
+        this.color = Color.colorToString(color);
     }
 
-    private Point2D calculateTopLeftCorner(double x, double y) {
-        double translate_vec = length/2 - width/2;
-        return new Point2D(x + translate_vec, y + translate_vec);
+    /**
+     * Getter
+     */
+    public String getVehicleID() {
+        return vehicleID;
+    }
+    public Rectangle getShape() {
+        return shape;
+    }
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     * Private helper method: calculate top-left corner from center position
+     */
+    private Rectangle createShape(String vehicleID, double x, double y, double angle, String color) {
+        double translate_vec = Metrics.DEFAULT_VEHICLE_LENGTH/2 - Metrics.DEFAULT_VEHICLE_WIDTH/2;
+        Rectangle Shape = new Rectangle(x + translate_vec, 
+                                        y + translate_vec, 
+                                        Metrics.DEFAULT_VEHICLE_LENGTH, 
+                                        Metrics.DEFAULT_VEHICLE_WIDTH
+                                        );  
+        Shape.setRotate(angle);
+        Shape.setFill(javafx.scene.paint.Paint.valueOf(color));
+        Shape.setId(vehicleID);                            
+        return Shape;
     }
 
     

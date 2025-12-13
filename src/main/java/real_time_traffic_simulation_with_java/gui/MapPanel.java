@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import de.tudresden.sumo.objects.SumoColor;
+import de.tudresden.sumo.objects.SumoGeometry;
+import de.tudresden.sumo.objects.SumoPosition2D;
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
@@ -301,22 +303,27 @@ public class MapPanel extends StackPane {
     private void renderLane(String laneID) {
         try {
             // Lấy dữ liệu lane
-            List<double[]> coordinates = laneManager.getCoordinateList(laneID);
-            double width = laneManager.getWidth(laneID);
+            SumoGeometry geometry = laneManager.getCoordinateList(laneID);
+            double width = laneManager.getLength(laneID);
             
-            System.out.println("🔧 Rendering lane: " + laneID + " (width: " + width + ", points: " + coordinates.size() + ")");
+            System.out.println("🔧 Rendering lane: " + laneID + " (width: " + width + ")");
             
-            if (coordinates == null || coordinates.isEmpty()) {
-                System.err.println("⚠️  Lane " + laneID + " has no coordinates!");
+            if (geometry == null) {
+                System.err.println("⚠️  Lane " + laneID + " has no geometry!");
                 return;
             }
             
             Group laneGroup = new Group();
             
-            // Vẽ từng đoạn của lane - đơn giản và liền mạch
-            for (int i = 0; i < coordinates.size() - 1; i++) {
-                double[] point1 = coordinates.get(i);
-                double[] point2 = coordinates.get(i + 1);
+            // Vẽ từng đoạn của lane từ geometry - đơn giản và liền mạch
+            // SumoGeometry là List<SumoPosition2D>
+            List<de.tudresden.sumo.objects.SumoPosition2D> points = (List<de.tudresden.sumo.objects.SumoPosition2D>) geometry;
+            if (points != null && points.size() > 1) {
+                for (int i = 0; i < points.size() - 1; i++) {
+                    de.tudresden.sumo.objects.SumoPosition2D p1 = points.get(i);
+                    de.tudresden.sumo.objects.SumoPosition2D p2 = points.get(i + 1);
+                    double[] point1 = {p1.x, p1.y};
+                    double[] point2 = {p2.x, p2.y};
                 
                 // Debug: In ra coordinates
                 if (i == 0) {
@@ -332,9 +339,10 @@ public class MapPanel extends StackPane {
                 laneLine.setSmooth(true); // Làm mượt đường
                 
                 laneGroup.getChildren().add(laneLine);
+                }
             }
             
-            System.out.println("   ✅ Added " + (coordinates.size() - 1) + " line segments");
+            System.out.println("   ✅ Added " + (points != null ? (points.size() - 1) : 0) + " line segments");
             
             // Lưu vào cache và thêm vào layer
             laneShapes.put(laneID, laneGroup);
@@ -394,28 +402,29 @@ public class MapPanel extends StackPane {
      */
     private void renderTrafficLight(String tlID) {
         try {
-            // Lấy controlled lanes để tìm vị trí
-            List<String> controlledLanes = trafficLightManager.getControlledLanes(tlID);
-            if (controlledLanes == null || controlledLanes.isEmpty()) {
-                System.out.println("⚠️  Traffic light " + tlID + " has no controlled lanes - SKIPPED");
+            // Lấy traffic lanes để tìm vị trí
+            List<String> trafficLanes = trafficLightManager.getLaneTraffic(tlID);
+            if (trafficLanes == null || trafficLanes.isEmpty()) {
+                System.out.println("⚠️  Traffic light " + tlID + " has no traffic lanes - SKIPPED");
                 return;
             }
             
-            System.out.println("   Processing TL " + tlID + " with " + controlledLanes.size() + " controlled lanes: " + controlledLanes);
+            System.out.println("   Processing TL " + tlID + " with " + trafficLanes.size() + " traffic lanes: " + trafficLanes);
             
             // Lấy lane đầu tiên để xác định vị trí
-            String firstLane = controlledLanes.get(0);
-            List<double[]> coordinates = laneManager.getCoordinateList(firstLane);
+            String firstLane = trafficLanes.get(0);
+            SumoGeometry geometry = laneManager.getCoordinateList(firstLane);
             
-            if (coordinates == null || coordinates.isEmpty()) {
-                System.out.println("⚠️  Lane " + firstLane + " has no coordinates - SKIPPED");
+            if (geometry == null) {
+                System.out.println("⚠️  Lane " + firstLane + " has no geometry - SKIPPED");
                 return;
             }
             
             // Vị trí traffic light = điểm cuối của lane (trước junction)
-            double[] endPoint = coordinates.get(coordinates.size() - 1);
-            double x = endPoint[0];
-            double y = -endPoint[1]; // Đảo Y
+            List<de.tudresden.sumo.objects.SumoPosition2D> tlPoints = (List<de.tudresden.sumo.objects.SumoPosition2D>) geometry;
+            de.tudresden.sumo.objects.SumoPosition2D lastPos = tlPoints != null && tlPoints.size() > 0 ? tlPoints.get(tlPoints.size() - 1) : new de.tudresden.sumo.objects.SumoPosition2D(0, 0);
+            double x = lastPos.x;
+            double y = -lastPos.y; // Đảo Y
             
             // Tạo Group chứa cột đèn và đèn tín hiệu đẹp hơn
             Group tlGroup = new Group();
@@ -630,7 +639,7 @@ public class MapPanel extends StackPane {
     private void updateVehicle(String vehicleID) {
         try {
             // Lấy dữ liệu vehicle
-            double[] position = vehicleManager.getPosition(vehicleID);
+            SumoPosition2D position = vehicleManager.getPosition(vehicleID);
             double angle = vehicleManager.getAngle(vehicleID);
             SumoColor sumoColor = vehicleManager.getColor(vehicleID);
             
@@ -679,7 +688,7 @@ public class MapPanel extends StackPane {
             // Cần convert: JavaFX angle = SUMO angle - 90°
             vehicleShape.getTransforms().clear();
             vehicleShape.getTransforms().addAll(
-                new javafx.scene.transform.Translate(position[0], -position[1]),  // Translate tới vị trí (đảo Y)
+                new javafx.scene.transform.Translate(position.x, -position.y),  // Translate tới vị trí (đảo Y)
                 new Rotate(angle - 90, 0, 0)           // Rotate quanh center (convert SUMO -> JavaFX angle)
             );
             

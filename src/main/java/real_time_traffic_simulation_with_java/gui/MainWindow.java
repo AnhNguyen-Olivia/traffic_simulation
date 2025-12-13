@@ -29,45 +29,29 @@ public class MainWindow extends Application {
         MapPanel centerPanel = new MapPanel();
         Dashboard rightPanel = new Dashboard();
         
-        // 🔥 Bước 3.5: Khởi tạo SUMO connection và render map
+        // 🔥 Bước 3.5: Khởi tạo SimulationEngine (tự tạo connection và managers)
         try {
-            System.out.println("🚀 Initializing SUMO connection...");
-            SumoTraasConnection sumoConn = new SumoTraasConnection();
-            sumoConn.startConnection();
-            System.out.println("✅ SUMO connection established!");
+            System.out.println("🚀 Initializing SimulationEngine...");
+            SimulationEngine simulationEngine = new SimulationEngine();
+            System.out.println("✅ SimulationEngine initialized!");
             
-            // Tạo managers
-            System.out.println("🔧 Creating managers...");
-            LaneManager laneManager = new LaneManager(sumoConn.getConnection());
-            VehicleManager vehicleManager = new VehicleManager(sumoConn.getConnection(), sumoConn);
-            real_time_traffic_simulation_with_java.wrapper.TrafficLightManager trafficLightManager = 
-                new real_time_traffic_simulation_with_java.wrapper.TrafficLightManager(sumoConn.getConnection());
-            System.out.println("✅ Managers created!");
-            
-            // Set managers cho MapPanel
-            System.out.println("🔧 Setting managers to MapPanel...");
-            centerPanel.setManagers(laneManager, vehicleManager, trafficLightManager);
-            System.out.println("✅ Managers set!");
-            
-            // Render map
-            System.out.println("🎨 Rendering map...");
-            centerPanel.renderMap();
-            System.out.println("✅ Map rendered!");
-            
-            // Render traffic lights
-            System.out.println("🚦 Rendering traffic lights...");
-            centerPanel.renderTrafficLights();
-            System.out.println("✅ Traffic lights rendered!");
-            
-            // 🔥 Tạo SimulationEngine và kết nối với ControlPanel
-            System.out.println("⚙️  Creating SimulationEngine...");
-            SimulationEngine simulationEngine = new SimulationEngine(sumoConn, centerPanel);
+            // Set SimulationEngine cho ControlPanel
+            System.out.println("🔧 Setting SimulationEngine to ControlPanel...");
             leftPanel.setSimulationEngine(simulationEngine);
-            System.out.println("✅ SimulationEngine created and connected!");
+            System.out.println("✅ SimulationEngine set!");
             
-            System.out.println("🎉 SUMO connected and map rendered successfully!");
+            // Lấy map và traffic lights từ SimulationEngine
+            System.out.println("🎨 Getting map visualization...");
+            javafx.scene.Group mapGroup = simulationEngine.getMapEdges();
+            System.out.println("✅ Map retrieved!");
+            
+            System.out.println("🚦 Getting traffic lights visualization...");
+            javafx.scene.Group tlGroup = simulationEngine.getMapTrafficLights();
+            System.out.println("✅ Traffic lights retrieved!");
+            
+            System.out.println("🎉 SUMO connected and map loaded successfully!");
         } catch (Exception e) {
-            System.err.println("❌ Error connecting to SUMO: " + e.getMessage());
+            System.err.println("❌ Error initializing simulation: " + e.getMessage());
             e.printStackTrace();
         }
         

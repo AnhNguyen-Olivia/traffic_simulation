@@ -2,6 +2,9 @@ package real_time_traffic_simulation_with_java.alias;
 
 import de.tudresden.sumo.objects.SumoColor;
 
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  * This is where we put all the sumo color code definitions to prevent user from generting so many color types
  * The class have methods to convert between SumoColor and String representation of colors
@@ -21,6 +24,8 @@ public final class Color {
     public static final SumoColor GREEN = new SumoColor(0,255,0,0);
     public static final SumoColor BLACK = new SumoColor(0,0,0,0);
     public static final SumoColor WHITE = new SumoColor(255,255,255,0);
+
+    public static final List<String> ListofAllColor = new ArrayList<>(List.of("RED", "GREEN", "BLUE", "BLACK", "WHITE"));
     
     public static String colorToString(SumoColor color) {
         if(color.r == RED.r && color.g == RED.g && color.b == RED.b){

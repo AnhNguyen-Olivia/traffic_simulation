@@ -363,12 +363,6 @@ public class ControlPanel extends VBox {
         
         // Kết nối Start button với SimulationEngine
         startButton.setOnAction(e -> toggleSimulation());
-        
-        // Setup callback để update time label
-        engine.setOnTimeUpdate(() -> {
-            double time = engine.getCurrentTime();
-            updateTime((int) time);
-        });
     }
     
     /**
@@ -379,7 +373,11 @@ public class ControlPanel extends VBox {
         
         if (isSimulationRunning) {
             // Stop simulation
-            simulationEngine.stop();
+            try {
+                simulationEngine.stopSimulation();
+            } catch (Exception e) {
+                System.err.println("Error stopping simulation: " + e.getMessage());
+            }
             isSimulationRunning = false;
             
             // Update button style
@@ -394,7 +392,11 @@ public class ControlPanel extends VBox {
                                 "-fx-effect: dropshadow(gaussian, rgba(52, 199, 89, 0.3), 6, 0, 0, 2);");
         } else {
             // Start simulation
-            simulationEngine.start();
+            try {
+                simulationEngine.stepSimulation();
+            } catch (Exception e) {
+                System.err.println("Error stepping simulation: " + e.getMessage());
+            }
             isSimulationRunning = true;
             
             // Update button style to red (Stop)
