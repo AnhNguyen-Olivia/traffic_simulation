@@ -1,6 +1,7 @@
 package real_time_traffic_simulation_with_java.cores;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
@@ -56,6 +57,13 @@ public class SimulationEngine {
         return this.edgeManager.getIDList();
     }
     /**
+     * Get all IDs: vehicles
+     * @throws Exception
+     */
+    public List<String> getAllVehicleIDs() throws Exception {
+        return this.vehicleManager.getIDList();
+    }
+    /**
      * Get all IDs: traffic lights
      * @throws Exception
      */
@@ -66,10 +74,13 @@ public class SimulationEngine {
 
     /**
      * Inject vehicle: single and batch injection
+     * Route ID format: [currentStep]
+     * Vehicle ID format: [routeID]_[index]
+     * @throws Exception
      */
     public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color) throws Exception {
         // Generate a unique ID
-        String routeID = this.conn.getCurrentStep() + "";
+        String routeID = (int) this.conn.getCurrentStep() + "";
         this.routeManager.add(routeID, start_edge_ID, end_edge_ID);
         for (int i = 0; i < numVehicles; i++) {
             String vehicleID = routeID + "_" + i;
@@ -77,15 +88,36 @@ public class SimulationEngine {
         }
     }
     /**
-     * Inject vehicle: stress test tool
+     * Inject vehicle: stress test tool, inject 100 vehicles on up to 10 different random routes
+     * Route ID format: [currentStep]_[index]
+     * Vehicle ID format: [routeID]_[index_of_vehicle_in_this_stress_test]
+     * @throws Exception
      */
-    public void stressTest(String start_edge_ID, String end_edge_ID, String color) throws Exception {
-        this.injectVehicle(100, start_edge_ID, end_edge_ID, color);
+    public void stressTest(String start_edge_ID, String color) throws Exception {
+        // Randomly select 10 end_edge to inject vehicles, if less than 10 edges, use all edges
+        List<String> edgeIDs =  this.getAllEdgeIDs();
+        Collections.shuffle(edgeIDs);
+        int n;
+        if(edgeIDs.size() < 10) {n = edgeIDs.size();} else {n = 10;}
+        List<String> end_edge_IDs = edgeIDs.subList(0, n);
+        // Generate a unique ID
+        String ID = (int) this.conn.getCurrentStep() + "";
+        // Generate n random routes to inject vehicles
+        for (int j = 0; j < n; j++) {
+            this.routeManager.add(ID + "_" + j, start_edge_ID, end_edge_IDs.get(j));
+        }
+        // Inject vehicles
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < n; j++) {
+                this.vehicleManager.add(ID + "_" + j + "_" + i, ID + "_" + j, color);
+            }
+        }
     }
 
 
     /**
      * Control traffic lights: toggle all traffic lights
+     * @throws Exception
      */
     public void toggleAllTls() throws Exception {
         for (String tlsID : this.trafficLightManager.getIDList()) {
@@ -94,6 +126,7 @@ public class SimulationEngine {
     }
     /**
      * Control traffic light: toggle single traffic light
+     * @throws Exception
      */
     public void toggleSingleTl(String tlID) throws Exception {
         this.trafficLightManager.nextPhase(tlID);
@@ -115,6 +148,7 @@ public class SimulationEngine {
     }
     /**
      * Get mapping data: junctions
+     * @throws Exception
      */
     public List<Polygon> getMapJunctions() throws Exception {
         List<Polygon> polygons =  new ArrayList<>();
@@ -127,6 +161,7 @@ public class SimulationEngine {
     }
     /**
      * Get mapping data: vehicles
+     * @throws Exception
      */
     public List<Rectangle> getMapVehicles() throws Exception {
         List<Rectangle> rectangles =  new ArrayList<>();
@@ -139,15 +174,29 @@ public class SimulationEngine {
     }
     /**
      * Get mapping data: traffic lights
+     * @throws Exception
      */
-    public List<TrafficLightData> getMapTrafficLights() throws Exception {
-        return this.trafficLightManager.getTrafficLightDataList();
+    public List<Group> getMapTls() throws Exception {
+        List<Group> lightGroups =  new ArrayList<>();
+        if(this.trafficLightManager.getTrafficLightDataList() != null) {
+            for(TrafficLightData trafficLightData: this.trafficLightManager.getTrafficLightDataList()) {
+                lightGroups.add(trafficLightData.getShape());
+            }
+        }
+        return lightGroups;
     }
 
 
     /**
      * Get statistics: edges
+     * @throws Exception
      */
+    public String getEdgeStats(String edgeID) throws Exception {
+        return String.format("Edge ID: %s, Vehicle Count: %d, Average Speed: %.2f m/s",
+                    edgeID,
+                    edgeManager.getVehicleCount(edgeID),
+                    edgeManager.getAverageSpeed(edgeID));
+    }
     /**
      * Get statistics: vehicles
      */
