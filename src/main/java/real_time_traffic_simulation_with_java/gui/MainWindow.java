@@ -36,11 +36,22 @@ public class MainWindow extends Application {
     private void initializeGui(Stage stage) throws Exception {
         // Tạo 3 panels
         ControlPanel leftPanel = new ControlPanel();
-        MapPanel centerPanel = new MapPanel(simulationEngine);
+        MapPanel centerPanel = new MapPanel();
         Dashboard rightPanel = new Dashboard();
         
-        // Set SimulationEngine cho ControlPanel
+        // Set SimulationEngine for panels
         leftPanel.setSimulationEngine(simulationEngine);
+        centerPanel.setSimulationEngine(simulationEngine);
+        
+        // Setup time update callback from SimulationEngine
+        simulationEngine.setOnTimeUpdate(() -> {
+            try {
+                double currentTime = simulationEngine.getCurrentTime();
+                leftPanel.updateTime((int) currentTime);
+            } catch (Exception e) {
+                System.err.println("Error updating time: " + e.getMessage());
+            }
+        });
         
         // Wrap panels trong ScrollPane
         ScrollPane leftScroll = new ScrollPane(leftPanel);
@@ -68,26 +79,53 @@ public class MainWindow extends Application {
         stage.setScene(scene);
         stage.setMinWidth(1000);
         stage.setMinHeight(600);
+        
+        // Handle stage close
+        stage.setOnCloseRequest(event -> {
+            System.out.println("🛑 Closing application...");
+            try {
+                if (simulationEngine != null) {
+                    simulationEngine.stopSimulation();
+                }
+            } catch (Exception e) {
+                System.err.println("Error closing simulation: " + e.getMessage());
+            }
+            System.exit(0);
+        });
+        
         stage.show();
         
         // Animation loop - cập nhật simulation
         javafx.animation.AnimationTimer timer = new javafx.animation.AnimationTimer() {
             private long last = 0;
             private static final long INTERVAL = 200_000_000; // 200ms
+            private boolean wasRunning = false;
             
             @Override
             public void handle(long now) {
                 if (now - last < INTERVAL) return;
                 last = now;
                 
+                boolean isRunning = leftPanel.isSimulationRunning();
+                if (isRunning != wasRunning) {
+                    System.out.println(isRunning ? "▶️  Simulation STARTED" : "⏸️  Simulation STOPPED");
+                    wasRunning = isRunning;
+                }
+                
                 try {
-                    // Advance simulation
-                    simulationEngine.stepSimulation();
+                    // Only step if simulation is running
+                    if (isRunning) {
+                        simulationEngine.stepSimulation();
+                    }
                     
                     // Update map display
-                    centerPanel.updateDisplay();
+                    try {
+                        centerPanel.updateDisplay();
+                    } catch (Exception e) {
+                        System.err.println("⚠️  updateDisplay error: " + e.getMessage());
+                    }
                 } catch (Exception e) {
-                    System.err.println("Error stepping simulation: " + e.getMessage());
+                    System.err.println("Error in animation loop: " + e.getMessage());
                 }
             }
         };

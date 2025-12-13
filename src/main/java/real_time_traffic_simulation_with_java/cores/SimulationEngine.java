@@ -1,13 +1,18 @@
 package real_time_traffic_simulation_with_java.cores;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
+import javafx.scene.Group;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.Group;
-import real_time_traffic_simulation_with_java.wrapper.*;
 import real_time_traffic_simulation_with_java.alias.Color;
+import real_time_traffic_simulation_with_java.wrapper.EdgeManager;
+import real_time_traffic_simulation_with_java.wrapper.JunctionManager;
+import real_time_traffic_simulation_with_java.wrapper.RouteManager;
+import real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection;
+import real_time_traffic_simulation_with_java.wrapper.TrafficLightManager;
+import real_time_traffic_simulation_with_java.wrapper.VehicleManager;
 
 public class SimulationEngine {
     private SumoTraasConnection conn;
@@ -16,6 +21,7 @@ public class SimulationEngine {
     private RouteManager routeManager;
     private TrafficLightManager trafficLightManager;
     private JunctionManager junctionManager;
+    private Runnable onTimeUpdate;
 
     /**
      * Constructor
@@ -38,6 +44,10 @@ public class SimulationEngine {
      */
     public void stepSimulation() throws Exception {
         this.conn.nextStep();
+        // Call time update callback if set
+        if (this.onTimeUpdate != null) {
+            this.onTimeUpdate.run();
+        }
     }
     /**
      * Control simulation: stop
@@ -220,5 +230,19 @@ public class SimulationEngine {
     /**
      * Get statistics: traffic lights
      */
+    
+    /**
+     * Get current simulation time
+     */
+    public double getCurrentTime() throws Exception {
+        return this.conn.getCurrentStep();
+    }
+    
+    /**
+     * Set callback for time update
+     */
+    public void setOnTimeUpdate(Runnable callback) {
+        this.onTimeUpdate = callback;
+    }
 
 }

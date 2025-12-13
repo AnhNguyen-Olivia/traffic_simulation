@@ -372,12 +372,7 @@ public class ControlPanel extends VBox {
         if (simulationEngine == null) return;
         
         if (isSimulationRunning) {
-            // Stop simulation
-            try {
-                simulationEngine.stopSimulation();
-            } catch (Exception e) {
-                System.err.println("Error stopping simulation: " + e.getMessage());
-            }
+            // Stop animation timer (keep SUMO connection alive)
             isSimulationRunning = false;
             
             // Update button style
@@ -391,12 +386,7 @@ public class ControlPanel extends VBox {
                                 "-fx-cursor: hand; " +
                                 "-fx-effect: dropshadow(gaussian, rgba(52, 199, 89, 0.3), 6, 0, 0, 2);");
         } else {
-            // Start simulation
-            try {
-                simulationEngine.stepSimulation();
-            } catch (Exception e) {
-                System.err.println("Error stepping simulation: " + e.getMessage());
-            }
+            // Start animation timer - will call stepSimulation() automatically
             isSimulationRunning = true;
             
             // Update button style to red (Stop)
@@ -434,5 +424,12 @@ public class ControlPanel extends VBox {
      */
     public String getSelectedColor() {
         return colorComboBox.getValue();
+    }
+    
+    /**
+     * Check xem simulation đang chạy hay không
+     */
+    public boolean isSimulationRunning() {
+        return isSimulationRunning;
     }
 }
