@@ -2,6 +2,7 @@ package real_time_traffic_simulation_with_java.cores;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import real_time_traffic_simulation_with_java.wrapper.*;
 
@@ -108,18 +109,22 @@ public class SimulationEngine {
     /**
      * Get mapping data: junctions
      */
-    public List<JunctionData> getMapJunctions() throws Exception {
-        return this.junctionManager.getJunctionDataList();
+    public List<Polygon> getMapJunctions() throws Exception {
+        List<Polygon> polygons =  new ArrayList<>();
+        for(JunctionData junctionData: this.junctionManager.getJunctionDataList()) {
+            polygons.add(junctionData.getShape());
+        }
+        return polygons;
     }
     /**
      * Get mapping data: vehicles
      */
     public List<Rectangle> getMapVehicles() throws Exception {
-        List<Rectangle> Rectangles =  new ArrayList<>();
+        List<Rectangle> rectangles =  new ArrayList<>();
         for(VehicleData vehicleData: this.vehicleManager.getVehicleDataList()) {
-            Rectangles.add(vehicleData.getShape());
+            rectangles.add(vehicleData.getShape());
         }
-        return Rectangles;
+        return rectangles;
     }
     /**
      * Get mapping data: traffic lights

@@ -19,7 +19,7 @@ public class JunctionData {
      */
     public JunctionData(String junctionID, SumoGeometry coordinates){
         this.junctionID = junctionID;
-        this.shape = createPolygon(coordinates);
+        this.shape = createPolygon(junctionID, coordinates);
     }
     
     /**
@@ -36,10 +36,12 @@ public class JunctionData {
      * Private helper method: convert SumoGeometry to Polygon
      * @return Polygon representing the junction shape
      */
-    private Polygon createPolygon(SumoGeometry sumo_coords) {
+    private Polygon createPolygon(String shapeID, SumoGeometry sumo_coords) {
         for (de.tudresden.sumo.objects.SumoPosition2D pos : sumo_coords.coords) {
             shape.getPoints().addAll(new Double[]{pos.x, pos.y});
         }
+        shape.setFill(javafx.scene.paint.Paint.valueOf("slategray"));
+        shape.setId(shapeID);
         return shape;
     }
 }
