@@ -1,6 +1,5 @@
 package real_time_traffic_simulation_with_java.cores;
 
-import de.tudresden.sumo.cmd.Vehicle;
 import de.tudresden.sumo.objects.SumoColor;
 import real_time_traffic_simulation_with_java.alias.Color;
 import real_time_traffic_simulation_with_java.alias.Metrics;

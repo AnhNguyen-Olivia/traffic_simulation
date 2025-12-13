@@ -3,10 +3,8 @@ package real_time_traffic_simulation_with_java.wrapper;
 import it.polito.appeal.traci.SumoTraciConnection;
 import de.tudresden.sumo.cmd.Vehicle;
 import de.tudresden.sumo.cmd.Lane;
-import de.tudresden.sumo.cmd.Route;
 import de.tudresden.sumo.objects.SumoColor;
 import de.tudresden.sumo.objects.SumoPosition2D;
-import de.tudresden.sumo.objects.SumoStringList;
 
 import java.util.List;
 import real_time_traffic_simulation_with_java.cores.VehicleData;

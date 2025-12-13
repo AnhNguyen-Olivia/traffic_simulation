@@ -4,6 +4,7 @@ import java.util.List;
 
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.Group;
 import real_time_traffic_simulation_with_java.wrapper.*;
 
 public class SimulationEngine {
@@ -103,16 +104,24 @@ public class SimulationEngine {
      * Get mapping data: edges
      * @throws Exception
      */
-    public List<EdgeData> getMapEdges() throws Exception {
-        return this.edgeManager.getEdgeDataList();
+    public List<Group> getMapEdges() throws Exception {
+        List<Group> edgeGroups =  new ArrayList<>();
+        if(this.edgeManager.getEdgeDataList() != null) {
+            for(EdgeData edgeData: this.edgeManager.getEdgeDataList()) {
+                edgeGroups.add(edgeData.getShape());
+            }
+        }
+        return edgeGroups;
     }
     /**
      * Get mapping data: junctions
      */
     public List<Polygon> getMapJunctions() throws Exception {
         List<Polygon> polygons =  new ArrayList<>();
-        for(JunctionData junctionData: this.junctionManager.getJunctionDataList()) {
-            polygons.add(junctionData.getShape());
+        if(this.junctionManager.getJunctionDataList() != null) {
+            for(JunctionData junctionData: this.junctionManager.getJunctionDataList()) {
+                polygons.add(junctionData.getShape());
+            }
         }
         return polygons;
     }
@@ -121,8 +130,10 @@ public class SimulationEngine {
      */
     public List<Rectangle> getMapVehicles() throws Exception {
         List<Rectangle> rectangles =  new ArrayList<>();
-        for(VehicleData vehicleData: this.vehicleManager.getVehicleDataList()) {
-            rectangles.add(vehicleData.getShape());
+        if(this.vehicleManager.getVehicleDataList() != null) {
+            for(VehicleData vehicleData: this.vehicleManager.getVehicleDataList()) {
+                rectangles.add(vehicleData.getShape());
+            }
         }
         return rectangles;
     }

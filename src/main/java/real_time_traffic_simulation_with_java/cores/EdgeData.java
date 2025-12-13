@@ -10,6 +10,7 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
+import javafx.scene.Group;
 
 /**
  * @Unfinished
@@ -23,11 +24,10 @@ public class EdgeData {
      * Lines object representing lane dividers within the edge
      * @return List<Line> using library javafx.scene.shape.Line
      */
-    private List<Line> lane_dividers;
     /**
-     * Polygon object representing the edge shape
+     * Grouping a Polygon edge and Line objects representing lane dividers within the edge
      */
-    private Polygon edge_shape;
+    private Group edge_group;
     private int number_of_lanes;
     private double width;
 
@@ -40,8 +40,7 @@ public class EdgeData {
         this.edgeID = edgeID;
         this.number_of_lanes = number_of_lanes;
         this.width = number_of_lanes * Metrics.DEFAULT_LANE_WIDTH;
-        this.edge_shape = createPolygon(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
-        this.lane_dividers = calculateLaneDividers(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
+        this.edge_group = createEdgeGroup(number_of_lanes, coordinates);
     }
 
     /**
@@ -50,11 +49,8 @@ public class EdgeData {
     public String getEdgeID() {
         return edgeID;
     }
-    public List<Line> getLaneDividers() {
-        return lane_dividers;
-    }
-    public Polygon getShape() {
-        return edge_shape;
+    public Group getShape() {
+        return edge_group;
     }
     public int getNumberOfLanes() {
         return number_of_lanes;
@@ -63,6 +59,18 @@ public class EdgeData {
         return width;
     }
 
+
+    /**
+     * Private helper method: Grouping the edge shape and lane dividers together
+     */
+    private Group createEdgeGroup(int number_of_lanes, List<SumoGeometry> coordinates) {
+        Polygon edge_shape = createPolygon(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
+        List<Line> lane_dividers = calculateLaneDividers(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
+        Group edgeGroup = new Group();
+        edgeGroup.getChildren().add(edge_shape);
+        edgeGroup.getChildren().addAll(lane_dividers);
+        return edgeGroup;
+    }
 
 
     /**
@@ -100,7 +108,7 @@ public class EdgeData {
             Point2D scaled_vector = perpendicular_vector.multiply(scale_factor);
             Point2D start_point = start.add(scaled_vector);
             Point2D end_point = end.add(scaled_vector);
-            this.lane_dividers.add(new Line(
+            lane_dividers.add(new Line(
                 start_point.getX(), start_point.getY(),
                  end_point.getX(), end_point.getY()
             ));
