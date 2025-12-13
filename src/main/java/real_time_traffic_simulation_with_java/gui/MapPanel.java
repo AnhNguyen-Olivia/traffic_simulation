@@ -38,9 +38,10 @@ public class MapPanel extends Pane {
 
     public void refresh() throws Exception {
         // Refresh vehicle layer
-        this.getChildren().set(1, new vehicleLayer(this.simulationEngine));
+        Group temp = (Group) this.getChildren().get(0);
+        temp.getChildren().set(1, new vehicleLayer(this.simulationEngine));
         // Refresh traffic light layer
-        ((trafficlightLayer)this.getChildren().get(2)).refreshTrafficLightLayer();
+        ((trafficlightLayer)temp.getChildren().get(2)).refreshTrafficLightLayer();
     }
 
 }

@@ -1,7 +1,6 @@
 package real_time_traffic_simulation_with_java;
 import javafx.application.Platform;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
-import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.gui.MainWindow;
 
 //import real_time_traffic_simulation_with_java.gui.MainWindow;
@@ -11,35 +10,27 @@ public class App {
     private volatile boolean isRun = true;
 
     public static void main(String[] args) {
+        App app = new App();
+        app.run();
+    }
+
+    private void run(){
         try{
-            App app = new App();
-            SimulationEngine simulationEngine = new SimulationEngine();
-            app.run(simulationEngine);
+            launchGui();
         }catch(Exception e){
             e.printStackTrace();
         }
     }
 
-    private void run(SimulationEngine simulationEngine){
-        try{
-            launchGui(simulationEngine);
-            for(;;){
-                simulationEngine.stepSimulation();
-                Thread.sleep(50);
-            }
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    private void launchGui(SimulationEngine simulationEngine){
+    private void launchGui(){
         Platform.startup(() -> {
             try {
                 simulationEngine = new SimulationEngine();
-                MainWindow mainWindow = new MainWindow();
+                MainWindow mainWindow = new MainWindow(simulationEngine);
                 mainWindow.show();
 
                 startSimThread();
+                mainWindow.startAnimationTimer();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -66,4 +57,3 @@ public class App {
     }
     
 }
-
