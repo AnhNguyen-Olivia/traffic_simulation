@@ -15,4 +15,5 @@ public final class Metrics {
     public static final double DEFAULT_VEHICLE_WIDTH = 1.8;  // in meters
     public static final double DEFAULT_LANE_WIDTH = 3.2;    // in meters
     public static final double TLS_WIDTH = 0.53; // For drawing traffic light box
+    public static final double HIDE_DELAY = 100; // Hide delay for tooltips in milliseconds
 }
