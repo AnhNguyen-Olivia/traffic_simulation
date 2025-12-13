@@ -40,7 +40,7 @@ public class EdgeData {
         this.edgeID = edgeID;
         this.number_of_lanes = number_of_lanes;
         this.width = number_of_lanes * Metrics.DEFAULT_LANE_WIDTH;
-        this.edge_group = createEdgeGroup(number_of_lanes, coordinates);
+        this.edge_group = createEdgeGroup(edgeID, number_of_lanes, coordinates);
     }
 
     /**
@@ -63,12 +63,21 @@ public class EdgeData {
     /**
      * Private helper method: Grouping the edge shape and lane dividers together
      */
-    private Group createEdgeGroup(int number_of_lanes, List<SumoGeometry> coordinates) {
+    private Group createEdgeGroup(String edgeID, int number_of_lanes, List<SumoGeometry> coordinates) {
+        // Draw edge shape
         Polygon edge_shape = createPolygon(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
+        edge_shape.setFill(javafx.scene.paint.Color.SLATEGRAY);
+        // Draw lane dividers
         List<Line> lane_dividers = calculateLaneDividers(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
+        for(Line lane_divider: lane_dividers) {
+            lane_divider.setStroke(javafx.scene.paint.Color.WHITE);
+            lane_divider.getStrokeDashArray().addAll(10.0, 5.0);
+        }
+        // Grouping
         Group edgeGroup = new Group();
         edgeGroup.getChildren().add(edge_shape);
         edgeGroup.getChildren().addAll(lane_dividers);
+        edgeGroup.setId(edgeID);
         return edgeGroup;
     }
 

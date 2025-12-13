@@ -24,15 +24,15 @@ public final class Color {
     
     public static String colorToString(SumoColor color) {
         if(color.r == RED.r && color.g == RED.g && color.b == RED.b){
-            return "red";
+            return "RED";
         } else if(color.r == BLUE.r && color.g == BLUE.g && color.b == BLUE.b){
-            return "blue";
+            return "BLUE";
         } else if(color.r == GREEN.r && color.g == GREEN.g && color.b == GREEN.b){
-            return "green";
+            return "GREEN";
         } else if(color.r == BLACK.r && color.g == BLACK.g && color.b == BLACK.b){
-            return "black";
+            return "BLACK";
         } else {
-            return "white";
+            return "WHITE";
         }
     }
 

@@ -40,7 +40,7 @@ public class JunctionData {
         for (de.tudresden.sumo.objects.SumoPosition2D pos : sumo_coords.coords) {
             shape.getPoints().addAll(new Double[]{pos.x, pos.y});
         }
-        shape.setFill(javafx.scene.paint.Paint.valueOf("slategray"));
+        shape.setFill(javafx.scene.paint.Color.SLATEGRAY);
         shape.setId(shapeID);
         return shape;
     }
