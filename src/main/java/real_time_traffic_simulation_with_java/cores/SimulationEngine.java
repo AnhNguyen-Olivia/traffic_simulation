@@ -7,6 +7,7 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.Group;
 import real_time_traffic_simulation_with_java.wrapper.*;
+import real_time_traffic_simulation_with_java.alias.Color;
 
 public class SimulationEngine {
     private SumoTraasConnection conn;
@@ -93,7 +94,7 @@ public class SimulationEngine {
      * Vehicle ID format: [routeID]_[index_of_vehicle_in_this_stress_test]
      * @throws Exception
      */
-    public void stressTest(String start_edge_ID, String color) throws Exception {
+    public void stressTest(int number_of_vehicles, String start_edge_ID) throws Exception {
         // Randomly select 10 end_edge to inject vehicles, if less than 10 edges, use all edges
         List<String> edgeIDs =  this.getAllEdgeIDs();
         Collections.shuffle(edgeIDs);
@@ -102,14 +103,17 @@ public class SimulationEngine {
         List<String> end_edge_IDs = edgeIDs.subList(0, n);
         // Generate a unique ID
         String ID = (int) this.conn.getCurrentStep() + "";
+        //Generate color list to inject vehicles with random color
+        List<String> colorList = new ArrayList<>(Color.ListofAllColor);
         // Generate n random routes to inject vehicles
         for (int j = 0; j < n; j++) {
             this.routeManager.add(ID + "_" + j, start_edge_ID, end_edge_IDs.get(j));
         }
         // Inject vehicles
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < number_of_vehicles; i++) {
             for (int j = 0; j < n; j++) {
-                this.vehicleManager.add(ID + "_" + j + "_" + i, ID + "_" + j, color);
+                Collections.shuffle(colorList);
+                this.vehicleManager.add(ID + "_" + j + "_" + i, ID + "_" + j, colorList.get(0));
             }
         }
     }
@@ -184,6 +188,13 @@ public class SimulationEngine {
             }
         }
         return lightGroups;
+    }
+    /**
+     * Update mapping data: traffic lights
+     * @throws Exception
+     */
+    public void updateMapTls() throws Exception {
+        this.trafficLightManager.updateTrafficLightDataList();
     }
 
 

@@ -171,35 +171,42 @@ public class TrafficLightManager{
 
 
     /**
-     * Create and get a List of TrafficLightData for all traffic lights
+     * Initiate a List of TrafficLightData for all traffic lights
      * @return a List of TrafficLightData for all traffic lights
      * @throws Exception
      * @Tested
     */
     public List<TrafficLightData> getTrafficLightDataList() throws Exception {
         List<String> IDs = this.getIDList();
-        if(trafficLightDataList.isEmpty()) {
-            for (String id : IDs) {
-                // Get coordinates of start lanes by lane IDs
-                List<SumoGeometry> LandGeometries = new java.util.ArrayList<>();
-                for(SumoLink link : this.getLinksTraffic(id)){
-                    SumoGeometry laneGeometry = (SumoGeometry) conn.do_job_get(de.tudresden.sumo.cmd.Lane.getShape(link.from));
-                    LandGeometries.add(laneGeometry);
-                }
-                TrafficLightData trafficLightData = new TrafficLightData(
-                    id,
-                    LandGeometries,
-                    this.getState(id)
-                );
-                trafficLightDataList.add(trafficLightData);
+        for (String id : IDs) {
+            // Get coordinates of start lanes by lane IDs
+            List<SumoGeometry> LandGeometries = new java.util.ArrayList<>();
+            for(SumoLink link : this.getLinksTraffic(id)){
+                SumoGeometry laneGeometry = (SumoGeometry) conn.do_job_get(de.tudresden.sumo.cmd.Lane.getShape(link.from));
+                LandGeometries.add(laneGeometry);
             }
-        } else {
-            // Update color list only
-            for (TrafficLightData trafficLightData : trafficLightDataList) {
-                trafficLightData.setColorList(this.getState(trafficLightData.getTlID()));
-            }
+            TrafficLightData trafficLightData = new TrafficLightData(
+                id,
+                LandGeometries,
+                this.getState(id)
+            );
+            trafficLightDataList.add(trafficLightData);
         }
         return trafficLightDataList;
     }
+
+
+    /**
+     * Update the TrafficLightData List with current states from simulation
+     * @throws Exception
+     * @Tested
+    */
+    public void updateTrafficLightDataList() throws Exception {
+        for (TrafficLightData trafficLightData : this.trafficLightDataList) {
+            String colorString = this.getState(trafficLightData.getTlID());
+            trafficLightData.setColor(colorString);
+        }
+    }
+
 
 }
