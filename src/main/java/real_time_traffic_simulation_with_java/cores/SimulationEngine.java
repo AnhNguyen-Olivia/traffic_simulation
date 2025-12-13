@@ -234,7 +234,7 @@ public class SimulationEngine {
      */
     public String getTlTooltip(String tlID) throws Exception {
         return String.format(
-"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %d seconds)\n Remain: %d seconds",  
+"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds",  
                     tlID, trafficLightManager.getPhaseCount(tlID), tlID,
                     trafficLightManager.getPhaseID(tlID), trafficLightManager.getDuration(tlID),
                     trafficLightManager.getNextSwitch(tlID)

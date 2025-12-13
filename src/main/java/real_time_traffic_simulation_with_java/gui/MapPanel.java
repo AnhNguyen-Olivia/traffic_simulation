@@ -15,7 +15,7 @@ public class MapPanel extends Pane {
     public MapPanel(SimulationEngine engine) throws Exception {
         this.simulationEngine = engine;
         this.setStyle("-fx-background-color: transparent;");
-        // createMapPanel(engine);
+        createMapPanel(engine);
     }
 
 
