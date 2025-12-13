@@ -1,18 +1,13 @@
 package real_time_traffic_simulation_with_java.cores;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Collections;
 
-import javafx.scene.Group;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.Group;
+import real_time_traffic_simulation_with_java.wrapper.*;
 import real_time_traffic_simulation_with_java.alias.Color;
-import real_time_traffic_simulation_with_java.wrapper.EdgeManager;
-import real_time_traffic_simulation_with_java.wrapper.JunctionManager;
-import real_time_traffic_simulation_with_java.wrapper.RouteManager;
-import real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection;
-import real_time_traffic_simulation_with_java.wrapper.TrafficLightManager;
-import real_time_traffic_simulation_with_java.wrapper.VehicleManager;
 
 public class SimulationEngine {
     private SumoTraasConnection conn;
@@ -21,7 +16,6 @@ public class SimulationEngine {
     private RouteManager routeManager;
     private TrafficLightManager trafficLightManager;
     private JunctionManager junctionManager;
-    private Runnable onTimeUpdate;
 
     /**
      * Constructor
@@ -44,10 +38,6 @@ public class SimulationEngine {
      */
     public void stepSimulation() throws Exception {
         this.conn.nextStep();
-        // Call time update callback if set
-        if (this.onTimeUpdate != null) {
-            this.onTimeUpdate.run();
-        }
     }
     /**
      * Control simulation: stop
@@ -157,50 +147,50 @@ public class SimulationEngine {
      * Get mapping data: edges
      * @throws Exception
      */
-    public List<Group> getMapEdges() throws Exception {
-        List<Group> edgeGroups =  new ArrayList<>();
+    public Group getMapEdges() throws Exception {
+        Group edges =  new Group();
         if(this.edgeManager.getEdgeDataList() != null) {
             for(EdgeData edgeData: this.edgeManager.getEdgeDataList()) {
-                edgeGroups.add(edgeData.getShape());
+                edges.getChildren().add(edgeData.getShape());
             }
         }
-        return edgeGroups;
+        return edges;
     }
     /**
      * Get mapping data: junctions
      * @throws Exception
      */
-    public List<Polygon> getMapJunctions() throws Exception {
-        List<Polygon> polygons =  new ArrayList<>();
+    public Group getMapJunctions() throws Exception {
+        Group junctions =  new Group();
         if(this.junctionManager.getJunctionDataList() != null) {
             for(JunctionData junctionData: this.junctionManager.getJunctionDataList()) {
-                polygons.add(junctionData.getShape());
+                junctions.getChildren().add(junctionData.getShape());
             }
         }
-        return polygons;
+        return junctions;
     }
     /**
      * Get mapping data: vehicles
      * @throws Exception
      */
-    public List<Rectangle> getMapVehicles() throws Exception {
-        List<Rectangle> rectangles =  new ArrayList<>();
+    public Group getMapVehicles() throws Exception {
+        Group vehicles =  new Group();
         if(this.vehicleManager.getVehicleDataList() != null) {
             for(VehicleData vehicleData: this.vehicleManager.getVehicleDataList()) {
-                rectangles.add(vehicleData.getShape());
+                vehicles.getChildren().add(vehicleData.getShape());
             }
         }
-        return rectangles;
+        return vehicles;
     }
     /**
      * Get mapping data: traffic lights
      * @throws Exception
      */
-    public List<Group> getMapTls() throws Exception {
-        List<Group> lightGroups =  new ArrayList<>();
+    public Group getMapTls() throws Exception {
+        Group lightGroups =  new Group();
         if(this.trafficLightManager.getTrafficLightDataList() != null) {
             for(TrafficLightData trafficLightData: this.trafficLightManager.getTrafficLightDataList()) {
-                lightGroups.add(trafficLightData.getShape());
+                lightGroups.getChildren().add(trafficLightData.getShape());
             }
         }
         return lightGroups;
@@ -230,19 +220,5 @@ public class SimulationEngine {
     /**
      * Get statistics: traffic lights
      */
-    
-    /**
-     * Get current simulation time
-     */
-    public double getCurrentTime() throws Exception {
-        return this.conn.getCurrentStep();
-    }
-    
-    /**
-     * Set callback for time update
-     */
-    public void setOnTimeUpdate(Runnable callback) {
-        this.onTimeUpdate = callback;
-    }
 
 }

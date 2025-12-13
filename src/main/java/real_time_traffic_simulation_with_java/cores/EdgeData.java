@@ -78,7 +78,6 @@ public class EdgeData {
         edgeGroup.getChildren().add(edge_shape);
         edgeGroup.getChildren().addAll(lane_dividers);
         edgeGroup.setId(edgeID);
-        edgeGroup.setPickOnBounds(false); // Allow mouse event only on the shape, not the bounding box
         return edgeGroup;
     }
 
