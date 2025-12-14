@@ -2,6 +2,7 @@ package real_time_traffic_simulation_with_java;
 import javafx.application.Platform;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.gui.MainWindow;
+import real_time_traffic_simulation_with_java.alias.Metrics;
 
 //import real_time_traffic_simulation_with_java.gui.MainWindow;
 
@@ -27,6 +28,7 @@ public class App {
             try {
                 simulationEngine = new SimulationEngine();
                 MainWindow mainWindow = new MainWindow(simulationEngine);
+                mainWindow.setOnCloseRequest(e -> {this.shutdown();});
                 mainWindow.show();
 
                 startSimThread();
@@ -42,7 +44,7 @@ public class App {
             try {
                 while (isRun){
                     simulationEngine.stepSimulation();
-                    Thread.sleep(50);
+                    Thread.sleep(Metrics.CONNECT_SPEED);
                 }
             }catch (Exception e){
                 e.printStackTrace();
@@ -54,6 +56,7 @@ public class App {
 
     public void shutdown(){
         isRun = false;
+        Platform.exit();
     }
     
 }

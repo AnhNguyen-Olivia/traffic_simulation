@@ -114,7 +114,7 @@ public class SimulationEngine {
         // Generate n random routes to inject vehicles
         for (int j = 0; j < n; j++) {
             this.routeManager.add(ID + "_" + j, start_edge_ID, end_edge_IDs.get(j));
-        }
+        } 
         // Inject vehicles
         for (int i = 0; i < number_of_vehicles; i++) {
             for (int j = 0; j < n; j++) {
