@@ -1,19 +1,18 @@
 package real_time_traffic_simulation_with_java.gui.mapLayer;
-import real_time_traffic_simulation_with_java.cores.SimulationEngine;
-import real_time_traffic_simulation_with_java.alias.Metrics;
-
 import java.util.List;
 
-import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Group;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+import real_time_traffic_simulation_with_java.alias.Metrics;
+import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
 
 /**
@@ -74,7 +73,7 @@ public class roadLayer extends Group {
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS)));
+            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED)));
             updateTooltip.setCycleCount(Animation.INDEFINITE);
             tooltip.setShowDelay(Duration.ZERO);
             tooltip.setShowDuration(Duration.INDEFINITE);

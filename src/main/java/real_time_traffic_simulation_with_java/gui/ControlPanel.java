@@ -7,62 +7,60 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
+/**
+ * ControlPanel - Left side control panel
+ * Contains 3 sections: Connection, Vehicle Injection, Traffic Light Management
+ */
 public class ControlPanel extends VBox {
     
-    // PHẦN 1: Connect to SUMO - Attributes (Biến)
+    // Section 1: Connection controls
     private Button startButton;
     private Label timeLabel;
     private SimulationEngine simulationEngine;
     private boolean isSimulationRunning = false;
     
-    // PHẦN 2: Vehicle Injection - Attributes
+    // Section 2: Vehicle injection controls
     private ComboBox<String> startEdgeComboBox;
     private ComboBox<String> endEdgeComboBox;
     private ComboBox<String> colorComboBox;
-    private TextField quantityField;  // Nhập số lượng xe
+    private TextField quantityField;
     private Button injectButton;
     
-    // PHẦN 3: Traffic Light Management - Attributes
+    // Section 3: Traffic light controls
     private ComboBox<String> trafficLightComboBox;
     
-    /**
-     * Constructor - Khởi tạo ControlPanel
-     */
     public ControlPanel() {
-        // Thiết lập VBox chính - macOS style với responsive
+        // Setup main panel
         setPadding(new Insets(12));
-        setMinWidth(220);   // Chiều rộng tối thiểu
-        setPrefWidth(240);  // Chiều rộng ưa thích
-        setMaxWidth(280);   // Chiều rộng tối đa
-        setSpacing(12);     // 12px spacing (giảm từ 16px)
+        setMinWidth(220);
+        setPrefWidth(240);
+        setMaxWidth(280);
+        setSpacing(12);
         setAlignment(Pos.TOP_CENTER);
         setStyle("-fx-background-color: #FFFFFF; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 2, 0);");
         
-        // Tạo 3 phần
-        createConnectSection();      // Phần 1
-        getChildren().add(new Separator());  // Đường kẻ phân cách
-        
-        createVehicleSection();      // Phần 2
+        // Create 3 sections
+        createConnectSection();
         getChildren().add(new Separator());
         
-        createTrafficLightManagementSection(); // Phần 3
+        createVehicleSection();
+        getChildren().add(new Separator());
+        
+        createTrafficLightManagementSection();
     }
     
     /**
-     * PHẦN 1: Connect to SUMO
-     * Học: Tách code thành method nhỏ (Clean Code)
+     * Section 1: Connection to SUMO
      */
     private void createConnectSection() {
-        // VBox con - macOS card style - Responsive
         VBox section = new VBox(10);
         section.setAlignment(Pos.CENTER);
-        section.setMaxWidth(Double.MAX_VALUE);  // Responsive width
-        VBox.setVgrow(section, Priority.ALWAYS);  // Grow vertically
+        section.setMaxWidth(Double.MAX_VALUE);
+        VBox.setVgrow(section, Priority.ALWAYS);
         section.setStyle("-fx-background-color: #FFFFFF; " +
                          "-fx-padding: 14; " +
                          "-fx-border-radius: 10; " +
@@ -70,11 +68,11 @@ public class ControlPanel extends VBox {
                          "-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);");
         
         // Title
-        Label title = new Label("🔗 Connect to SUMO");
+        Label title = new Label("🔗 Connection");
         title.setStyle("-fx-font-size: 15px; -fx-font-weight: 600; -fx-text-fill: #1D1D1F;");
-        title.setMaxWidth(Double.MAX_VALUE);  // Responsive title
+        title.setMaxWidth(Double.MAX_VALUE);
         
-        // Start Button - macOS green with shadow
+        // Start Button
         startButton = new Button("▶ Start Simulation");
         startButton.setMaxWidth(Double.MAX_VALUE);  // Chiếm toàn bộ width có sẵn
         startButton.setPrefHeight(36);
@@ -122,13 +120,13 @@ public class ControlPanel extends VBox {
     }
     
     /**
-     * PHẦN 2: Vehicle Injection & Control
+     * Section 2: Vehicle Injection
      */
     private void createVehicleSection() {
         VBox section = new VBox(8);
         section.setAlignment(Pos.CENTER);
-        section.setMaxWidth(Double.MAX_VALUE);  // Responsive width
-        VBox.setVgrow(section, Priority.ALWAYS);  // Grow vertically
+        section.setMaxWidth(Double.MAX_VALUE);
+        VBox.setVgrow(section, Priority.ALWAYS);
         section.setStyle("-fx-background-color: #FFFFFF; " +
                          "-fx-padding: 14; " +
                          "-fx-border-radius: 10; " +
@@ -212,7 +210,7 @@ public class ControlPanel extends VBox {
             }
         });
         
-        // Inject Button - macOS blue
+        // Inject Button
         injectButton = new Button("➕ Inject Vehicles");
         injectButton.setMaxWidth(Double.MAX_VALUE);  // Responsive width
         injectButton.setPrefHeight(32);
@@ -252,13 +250,13 @@ public class ControlPanel extends VBox {
     }
     
     /**
-     * PHẦN 3: Traffic Light Management
+     * Section 3: Traffic Light Management
      */
     private void createTrafficLightManagementSection() {
         VBox section = new VBox(8);
         section.setAlignment(Pos.CENTER);
-        section.setMaxWidth(Double.MAX_VALUE);  // Responsive width
-        VBox.setVgrow(section, Priority.ALWAYS);  // Grow vertically
+        section.setMaxWidth(Double.MAX_VALUE);
+        VBox.setVgrow(section, Priority.ALWAYS);
         section.setStyle("-fx-background-color: #FFFFFF; " +
                          "-fx-padding: 12; " +
                          "-fx-border-radius: 10; " +
@@ -311,8 +309,7 @@ public class ControlPanel extends VBox {
     
 
     
-    // ===== GETTER METHODS (Encapsulation) =====
-    // Cho phép class khác truy cập các thành phần
+    // Getter methods
     
     public Button getStartButton() {
         return startButton;
@@ -339,18 +336,13 @@ public class ControlPanel extends VBox {
     }
     
     /**
-     * Set SimulationEngine và kết nối với Start button
+     * Set SimulationEngine and connect buttons
      */
     public void setSimulationEngine(SimulationEngine engine) {
         this.simulationEngine = engine;
         
-        // Kết nối Start button với SimulationEngine
         startButton.setOnAction(e -> toggleSimulation());
-        
-        // Kết nối Inject button với SimulationEngine
         injectButton.setOnAction(e -> handleInjectVehicles());
-        
-        // Load edge list and traffic light list
         populateEdgeList();
         populateTrafficLightList();
     }
@@ -365,7 +357,6 @@ public class ControlPanel extends VBox {
             // Stop animation timer (keep SUMO connection alive)
             isSimulationRunning = false;
             
-            // Update button style
             startButton.setText("▶ Start Simulation");
             startButton.setStyle("-fx-background-color: #34C759; " +
                                 "-fx-text-fill: white; " +
@@ -379,7 +370,6 @@ public class ControlPanel extends VBox {
             // Start animation timer - will call stepSimulation() automatically
             isSimulationRunning = true;
             
-            // Update button style to red (Stop)
             startButton.setText("⏸ Stop Simulation");
             startButton.setStyle("-fx-background-color: #FF3B30; " +
                                 "-fx-text-fill: white; " +
@@ -392,32 +382,31 @@ public class ControlPanel extends VBox {
         }
     }
     
-    // ===== HELPER METHODS =====
-    // Methods tiện ích để làm việc dễ hơn
+    // Helper methods
     
     /**
-     * Cập nhật thời gian hiển thị
+     * Update time display
      */
     public void updateTime(int seconds) {
         timeLabel.setText("Time: " + seconds + "s");
     }
     
     /**
-     * Lấy Start Edge đã chọn
+     * Get selected start edge
      */
     public String getSelectedStartEdge() {
         return startEdgeComboBox.getValue();
     }
     
     /**
-     * Lấy End Edge đã chọn
+     * Get selected end edge
      */
     public String getSelectedEndEdge() {
         return endEdgeComboBox.getValue();
     }
     
     /**
-     * Populate edge list từ SimulationEngine
+     * Populate edge list from SUMO
      */
     public void populateEdgeList() {
         try {
@@ -434,76 +423,56 @@ public class ControlPanel extends VBox {
                     endEdgeComboBox.setValue(edges.size() > 1 ? edges.get(1) : edges.get(0));
                 }
                 
-                System.out.println("✅ Loaded " + edges.size() + " edges into ComboBox");
             }
         } catch (Exception e) {
-            System.err.println("⚠️  Error loading edges: " + e.getMessage());
+            e.printStackTrace();
         }
     }
     
     /**
-     * Lấy Color đã chọn
+     * Get selected color
      */
     public String getSelectedColor() {
         return colorComboBox.getValue();
     }
     
     /**
-     * Check xem simulation đang chạy hay không
+     * Check if simulation is running
      */
     public boolean isSimulationRunning() {
         return isSimulationRunning;
     }
     
     /**
-     * Xử lý inject xe vào simulation
+     * Handle vehicle injection
      */
     private void handleInjectVehicles() {
-        if (simulationEngine == null) {
-            System.err.println("⚠️  SimulationEngine chưa được khởi tạo!");
-            return;
-        }
+        if (simulationEngine == null) return;
         
         try {
-            // Lấy giá trị từ UI
             String startEdge = startEdgeComboBox.getValue();
             String endEdge = endEdgeComboBox.getValue();
             String color = colorComboBox.getValue();
             String quantityText = quantityField.getText();
             
-            // Validate input
-            if (startEdge == null || startEdge.isEmpty()) {
-                System.err.println("⚠️  Vui lòng chọn Start Edge!");
-                return;
-            }
-            
-            if (endEdge == null || endEdge.isEmpty()) {
-                System.err.println("⚠️  Vui lòng chọn End Edge!");
-                return;
-            }
+            if (startEdge == null || startEdge.isEmpty()) return;
+            if (endEdge == null || endEdge.isEmpty()) return;
             
             if (color == null || color.isEmpty()) {
-                color = "White";  // Default color
+                color = "White";
             }
             
             int quantity;
             try {
                 quantity = Integer.parseInt(quantityText);
-                if (quantity < 1 || quantity > 50) {
-                    System.err.println("⚠️  Số lượng xe phải từ 1-50!");
-                    return;
-                }
+                if (quantity < 1 || quantity > 50) return;
             } catch (NumberFormatException e) {
-                System.err.println("⚠️  Số lượng xe không hợp lệ!");
                 return;
             }
             
-            // Inject vehicles
             simulationEngine.injectVehicle(quantity, startEdge, endEdge, color);
-            System.out.println("✅ Injected " + quantity + " " + color + " vehicle(s) from " + startEdge + " to " + endEdge);
             
         } catch (Exception e) {
-            System.err.println("⚠️  Error injecting vehicles: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -516,9 +485,8 @@ public class ControlPanel extends VBox {
             java.util.List<String> tlIDs = simulationEngine.getAllTrafficLightIDs();
             trafficLightComboBox.getItems().clear();
             trafficLightComboBox.getItems().addAll(tlIDs);
-            System.out.println("✅ Loaded " + tlIDs.size() + " traffic lights");
         } catch (Exception e) {
-            System.err.println("⚠️  Error loading traffic lights: " + e.getMessage());
+            e.printStackTrace();
         }
     }
     
@@ -528,16 +496,11 @@ public class ControlPanel extends VBox {
     private void handleToggleSingleTrafficLight() {
         try {
             String selectedTL = trafficLightComboBox.getValue();
-            if (selectedTL == null || selectedTL.isEmpty()) {
-                System.out.println("⚠️  Please select a traffic light");
-                return;
-            }
+            if (selectedTL == null || selectedTL.isEmpty()) return;
             
             simulationEngine.toggleSingleTl(selectedTL);
-            System.out.println("✅ Toggled traffic light: " + selectedTL);
             
         } catch (Exception e) {
-            System.err.println("⚠️  Error toggling traffic light: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -551,10 +514,7 @@ public class ControlPanel extends VBox {
             for (String tlID : allTLs) {
                 simulationEngine.toggleSingleTl(tlID);
             }
-            System.out.println("✅ Toggled all " + allTLs.size() + " traffic lights");
-            
         } catch (Exception e) {
-            System.err.println("⚠️  Error toggling all traffic lights: " + e.getMessage());
             e.printStackTrace();
         }
     }

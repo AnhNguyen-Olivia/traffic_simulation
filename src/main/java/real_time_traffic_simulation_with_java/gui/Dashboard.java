@@ -12,6 +12,7 @@ import javafx.scene.control.Separator;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
 /**
  * Dashboard - Panel thống kê bên phải
@@ -19,11 +20,15 @@ import javafx.scene.layout.VBox;
  */
 public class Dashboard extends VBox {
     
-    // Statistics Labels (để cập nhật sau)
+    // Reference to SimulationEngine for fetching real-time data
+    private SimulationEngine simulationEngine;
+    
+    // Statistics Labels (updated with real data)
     private Label totalVehiclesLabel;
     private Label avgSpeedLabel;
-    private Label congestionLabel;
     private Label avgTravelTimeLabel;
+    private Label densityLabel;
+    private Label simulationTimeLabel;
     
     // Export Filter Checkboxes
     private CheckBox redCheckBox;
@@ -90,6 +95,14 @@ public class Dashboard extends VBox {
                                     "-fx-border-radius: 6; " +
                                     "-fx-background-radius: 6;");
         
+        densityLabel = new Label("📏 Density\n0.0 veh/km");
+        densityLabel.setMaxWidth(Double.MAX_VALUE);  // Responsive
+        densityLabel.setStyle("-fx-font-size: 11px; " +
+                      "-fx-text-fill: #86868B; " +
+                      "-fx-background-color: #F5F5F7; " +
+                      "-fx-padding: 8; " +
+                      "-fx-border-radius: 6; " +
+                      "-fx-background-radius: 6;");
         avgSpeedLabel = new Label("⚡ Avg Speed\n0.0 km/h");
         avgSpeedLabel.setMaxWidth(Double.MAX_VALUE);  // Responsive
         avgSpeedLabel.setStyle("-fx-font-size: 11px; " +
@@ -99,16 +112,7 @@ public class Dashboard extends VBox {
                                "-fx-border-radius: 6; " +
                                "-fx-background-radius: 6;");
         
-        congestionLabel = new Label("🔴 Congestion\n0 points");
-        congestionLabel.setMaxWidth(Double.MAX_VALUE);  // Responsive
-        congestionLabel.setStyle("-fx-font-size: 11px; " +
-                                 "-fx-text-fill: #86868B; " +
-                                 "-fx-background-color: #F5F5F7; " +
-                                 "-fx-padding: 8; " +
-                                 "-fx-border-radius: 6; " +
-                                 "-fx-background-radius: 6;");
-        
-        avgTravelTimeLabel = new Label("⏱️ Travel Time\n0.0s");
+        avgTravelTimeLabel = new Label("⏱️ Avg Travel Time\n0.0 s");
         avgTravelTimeLabel.setMaxWidth(Double.MAX_VALUE);  // Responsive
         avgTravelTimeLabel.setStyle("-fx-font-size: 11px; " +
                                     "-fx-text-fill: #86868B; " +
@@ -117,12 +121,22 @@ public class Dashboard extends VBox {
                                     "-fx-border-radius: 6; " +
                                     "-fx-background-radius: 6;");
         
+        simulationTimeLabel = new Label("⏰ Simulation Time\n0.0 s");
+        simulationTimeLabel.setMaxWidth(Double.MAX_VALUE);  // Responsive
+        simulationTimeLabel.setStyle("-fx-font-size: 11px; " +
+                                     "-fx-text-fill: #86868B; " +
+                                     "-fx-background-color: #F5F5F7; " +
+                                     "-fx-padding: 8; " +
+                                     "-fx-border-radius: 6; " +
+                                     "-fx-background-radius: 6;");
+        
         section.getChildren().addAll(
             title,
             totalVehiclesLabel,
             avgSpeedLabel,
-            congestionLabel,
-            avgTravelTimeLabel
+            avgTravelTimeLabel,
+            densityLabel,
+            simulationTimeLabel
         );
         
         getChildren().add(section);
@@ -237,38 +251,70 @@ public class Dashboard extends VBox {
         getChildren().add(section);
     }
     
+    // ===== SETTER METHOD =====
+    
+    /**
+     * Set SimulationEngine reference
+     */
+    public void setSimulationEngine(SimulationEngine engine) {
+        this.simulationEngine = engine;
+    }
+    
     // ===== GETTER METHODS =====
     
     public Label getTotalVehiclesLabel() {
         return totalVehiclesLabel;
     }
     
+    
     public Label getAvgSpeedLabel() {
         return avgSpeedLabel;
-    }
-    
-    public Label getCongestionLabel() {
-        return congestionLabel;
     }
     
     public Label getAvgTravelTimeLabel() {
         return avgTravelTimeLabel;
     }
     
+    public Label getSimulationTimeLabel() {
+        return simulationTimeLabel;
+    }
+    
     public Button getExportButton() {
         return exportButton;
     }
     
-    // ===== HELPER METHODS =====
+    // ===== UPDATE METHODS =====
     
     /**
-     * Cập nhật thống kê
+     * Update all statistics with real data from SimulationEngine
+     * This method fetches live data from SUMO and updates all labels
      */
-    public void updateStatistics(int totalVehicles, double avgSpeed, int congestionPoints, double avgTravelTime) {
-        totalVehiclesLabel.setText("🚗 Total Vehicles\n" + totalVehicles);
-        avgSpeedLabel.setText("⚡ Avg Speed\n" + String.format("%.1f", avgSpeed) + " km/h");
-        congestionLabel.setText("🔴 Congestion\n" + congestionPoints + " points");
-        avgTravelTimeLabel.setText("⏱️ Travel Time\n" + String.format("%.1f", avgTravelTime) + "s");
+    public void updateStatistics() {
+        if (simulationEngine == null) {
+            return;  // Engine not set yet, skip update
+        }
+        
+        try {
+            // 1. Get total vehicles (running only - vehicles that finished are not counted)
+            int totalVehicles = simulationEngine.getVehicleCount();
+            // 2. Get average speed across all edges (km/h)
+            double avgSpeed = simulationEngine.getAverageSpeed();
+            // 3. Get average travel time across all edges (seconds)
+            double avgTravelTime = simulationEngine.getAverageTravelTime();
+            // 4. Get average density across all edges (veh/km)
+            double avgDensity = simulationEngine.getAverageDensity();
+            // 5. Get current simulation time
+            double simulationTime = simulationEngine.getCurrentTime();
+
+            // Update all labels with formatted data
+            totalVehiclesLabel.setText("🚗 Total Vehicles\n" + totalVehicles);
+            avgSpeedLabel.setText("⚡ Avg Speed\n" + (avgSpeed > 0 ? String.format("%.1f", avgSpeed) : "-") + " km/h");
+            avgTravelTimeLabel.setText("⏱️ Avg Travel Time\n" + (avgTravelTime > 0 ? String.format("%.1f", avgTravelTime) : "-") + " s");
+            densityLabel.setText("📏 Density\n" + (avgDensity > 0 ? String.format("%.2f", avgDensity) : "-") + " veh/km");
+            simulationTimeLabel.setText("⏰ Simulation Time\n" + String.format("%.1f", simulationTime) + " s");
+        } catch (Exception e) {
+            System.err.println("Error updating Dashboard statistics: " + e.getMessage());
+        }
     }
     
     /**

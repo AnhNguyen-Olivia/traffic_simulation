@@ -14,6 +14,31 @@ import real_time_traffic_simulation_with_java.wrapper.TrafficLightManager;
 import real_time_traffic_simulation_with_java.wrapper.VehicleManager;
 
 public class SimulationEngine {
+        /**
+         * Get statistics: average density across all edges (veh/km)
+         * @return average density in veh/km
+         * @throws Exception
+         */
+        public double getAverageDensity() throws Exception {
+            List<String> edgeIDs = this.edgeManager.getIDList();
+            if (edgeIDs.isEmpty()) {
+                return 0.0;
+            }
+            double totalDensity = 0.0;
+            int validEdges = 0;
+            for (String edgeID : edgeIDs) {
+                try {
+                    double density = this.edgeManager.getDensity(edgeID);
+                    if (!Double.isNaN(density) && density > 0) {
+                        totalDensity += density;
+                        validEdges++;
+                    }
+                } catch (Exception e) {
+                    // Skip edges with errors
+                }
+            }
+            return validEdges > 0 ? totalDensity / validEdges : 0.0;
+        }
     private SumoTraasConnection conn;
     private VehicleManager vehicleManager;
     private EdgeManager edgeManager;
@@ -261,5 +286,79 @@ public class SimulationEngine {
      */
     public String vehIsOnEdge(String vehicleID) throws Exception {
         return this.vehicleManager.getEdgeID(vehicleID);
+    }
+
+
+    /**
+     * Get statistics: average speed across all edges (km/h)
+     * @return average speed in km/h
+     * @throws Exception
+     */
+    public double getAverageSpeed() throws Exception {
+        List<String> edgeIDs = this.edgeManager.getIDList();
+        if (edgeIDs.isEmpty()) {
+            return 0.0;
+        }
+        double totalSpeed = 0.0;
+        int validEdges = 0;
+        for (String edgeID : edgeIDs) {
+            try {
+                double speed = this.edgeManager.getAverageSpeed(edgeID);
+                if (!Double.isNaN(speed)) {
+                    totalSpeed += speed;
+                    validEdges++;
+                }
+            } catch (Exception e) {
+                // Skip edges with errors
+            }
+        }
+        return validEdges > 0 ? totalSpeed / validEdges : 0.0;
+    }
+
+
+    /**
+     * Get statistics: average travel time across all edges (seconds)
+     * @return average travel time in seconds
+     * @throws Exception
+     */
+    public double getAverageTravelTime() throws Exception {
+        List<String> edgeIDs = this.edgeManager.getIDList();
+        if (edgeIDs.isEmpty()) {
+            return 0.0;
+        }
+        double totalTravelTime = 0.0;
+        int validEdges = 0;
+        for (String edgeID : edgeIDs) {
+            try {
+                double travelTime = this.edgeManager.getTravelTime(edgeID);
+                if (!Double.isNaN(travelTime) && travelTime > 0) {
+                    totalTravelTime += travelTime;
+                    validEdges++;
+                }
+            } catch (Exception e) {
+                // Skip edges with errors
+            }
+        }
+        return validEdges > 0 ? totalTravelTime / validEdges : 0.0;
+    }
+
+
+    /**
+     * Get statistics: total vehicle count (running vehicles only)
+     * @return number of running vehicles
+     * @throws Exception
+     */
+    public int getVehicleCount() throws Exception {
+        return this.vehicleManager.getCount();
+    }
+
+
+    /**
+     * Get statistics: traffic light count
+     * @return number of traffic lights
+     * @throws Exception
+     */
+    public int getTrafficLightCount() throws Exception {
+        return this.trafficLightManager.getCount();
     }
 }

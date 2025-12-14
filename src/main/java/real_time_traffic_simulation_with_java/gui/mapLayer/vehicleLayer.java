@@ -1,10 +1,8 @@
 package real_time_traffic_simulation_with_java.gui.mapLayer;
-import real_time_traffic_simulation_with_java.cores.SimulationEngine;
-
 import java.util.List;
 
 import javafx.scene.Group;
-import javafx.scene.shape.Rectangle;
+import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
 
 /**
@@ -33,8 +31,8 @@ public class vehicleLayer extends Group {
      * @throws Exception
      */
     private void createVehicleLayer() throws Exception {
-        List<Rectangle> vehicles = this.simulationEngine.getMapVehicles();
-        // Add vehicle shapes to the vehicle layer
+        List<Group> vehicles = this.simulationEngine.getMapVehicles();
+        // Add vehicle shapes (groups) to the vehicle layer
         this.getChildren().addAll(vehicles);
     }
 }
