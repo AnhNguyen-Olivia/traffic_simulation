@@ -14,6 +14,7 @@ public final class Metrics {
     public static final double DEFAULT_VEHICLE_LENGTH = 5.0; // in meters
     public static final double DEFAULT_VEHICLE_WIDTH = 1.8;  // in meters
     public static final double DEFAULT_LANE_WIDTH = 3.2;    // in meters
+    public static final double DEFAULT_VEHICLE_ARC = 1.8;   // Arc size for vehicle corners (DEFAULT_VEHICLE_WIDTH for semi-circle corners)
     public static final double TLS_WIDTH = 1.0; // For drawing traffic light box
     public static final double EDGE_DIVIDER_WEIGHT = 0.2;
     public static final double LANE_DIVIDER_WEIGHT = 0.4;
