@@ -12,9 +12,6 @@ import java.util.ArrayList;
  * We use final class and private constructor to make it unextendable and not be use as an object.
  *
 */
-
-
-
 public final class Color {
     private Color(){
     }
