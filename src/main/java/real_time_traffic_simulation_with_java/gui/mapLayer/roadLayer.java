@@ -4,7 +4,12 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import java.util.List;
 
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Group;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
@@ -58,9 +63,24 @@ public class roadLayer extends Group {
     private void addToolTip(List<Group> edges) throws Exception {
         for (Group edge : edges){
             // Install tooltip
-            Tooltip tooltip = new Tooltip(simulationEngine.getEdgeTooltip(edge.getId()));
+            Label tooltipLabel = new Label();
+            // Install tooltip
+            Tooltip tooltip = new Tooltip();
+            tooltip.setGraphic(tooltipLabel);
+            tooltip.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            Timeline updateTooltip = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+                try{
+                    tooltipLabel.setText(simulationEngine.getEdgeTooltip(edge.getId()));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS)));
+            updateTooltip.setCycleCount(Animation.INDEFINITE);
             tooltip.setShowDelay(Duration.ZERO);
+            tooltip.setShowDuration(Duration.INDEFINITE);
             tooltip.setHideDelay(Duration.millis(Metrics.HIDE_DELAY));
+            tooltip.setOnShown(e->updateTooltip.play());
+            tooltip.setOnHidden(e->updateTooltip.stop());
             Tooltip.install(edge, tooltip);
             // Add mouse entered/exited to know hovering state
             // Since edge is a Group, we need to get the Rectangle inside it (1st child, see in cores/EdgeData.java)

@@ -220,19 +220,8 @@ public class SimulationEngine {
                 );
     }
     /**
-     * Get tooltip: vehicles
-     * @throws Exception
-     */
-    public String getVehicleTooltip(String vehicleID) throws Exception {
-        return String.format("Vehicle ID: %s\n Speed: %.2f km/h\n Is running on edge: %s",  
-                    vehicleID, 
-                    vehicleManager.getSpeed(vehicleID), 
-                    vehicleManager.getAngle(vehicleID),
-                    vehicleManager.getEdgeID(vehicleID)
-                );
-    }
-    /**
      * Get tooltip: traffic lights
+     * @throws Exception
      */
     public String getTlTooltip(String tlID) throws Exception {
         return String.format(
@@ -240,6 +229,18 @@ public class SimulationEngine {
                     tlID, trafficLightManager.getPhaseCount(tlID), tlID,
                     trafficLightManager.getPhaseID(tlID), trafficLightManager.getDuration(tlID),
                     trafficLightManager.getNextSwitch(tlID)
+                );
+    }
+    /**
+     * Get statistic: vehicle
+     * @throws Exception
+     */
+    public String getVehicleStats(String vehicleID) throws Exception {
+        return String.format("Vehicle ID: %s\n Speed: %.2f km/h\n Is running on edge: %s",  
+                    vehicleID, 
+                    vehicleManager.getSpeed(vehicleID), 
+                    vehicleManager.getAngle(vehicleID),
+                    vehicleManager.getEdgeID(vehicleID)
                 );
     }
 

@@ -7,7 +7,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
@@ -41,15 +40,15 @@ public class MainWindow extends Stage {
         */
         placeHolderMap = new MapPanel(this.simulationEngine);
         DashBoard dashBoard = new DashBoard(this.simulationEngine);
-        dashBoard.setPrefWidth(250);
-        dashBoard.setMaxWidth(250);
+        dashBoard.setPrefWidth(Metrics.DASHBOARD_WIDTH);
+        dashBoard.setMaxWidth(Metrics.WINDOW_HEIGHT);
 
         /**
          * Statistic panel still a placeholder image for now
         */
         Statistic statistic = new Statistic();
-        statistic.setPrefWidth(250);
-        statistic.setMaxWidth(250);
+        statistic.setPrefWidth(Metrics.STATISTIC_WIDTH);
+        statistic.setMaxWidth(Metrics.WINDOW_HEIGHT);
         
         /**
          * Separate the main window into 3 parts using BorderPane layout: 
@@ -59,7 +58,7 @@ public class MainWindow extends Stage {
         root.setCenter(placeHolderMap);
         root.setLeft(dashBoard);
         root.setRight(statistic);
-        Scene scene = new Scene(root,1400, 830, Color.WHITE);
+        Scene scene = new Scene(root,Metrics.WINDOW_WIDTH, Metrics.WINDOW_HEIGHT);
 
         /**
          * set alignment for each part in BorderPane 
@@ -85,7 +84,7 @@ public class MainWindow extends Stage {
      * then create an AnimationTimer object and override its handle method. The reason we need to override handle method is becaus
     */
     public void startAnimationTimer(){
-        final long stepIntervalNanos = Metrics.CONNECT_SPEED_MS;;
+        final long stepIntervalNanos = Metrics.CONNECT_SPEED_MS * 1_000_000L;
         animationTimer = new AnimationTimer() {
             private long lastStepTime = 0L;
             @Override

@@ -10,7 +10,7 @@ package real_time_traffic_simulation_with_java.alias;
 public final class Metrics {
     private Metrics() {
     }
-
+    // Metrics to draw map
     public static final double DEFAULT_VEHICLE_LENGTH = 5.0; // in meters
     public static final double DEFAULT_VEHICLE_WIDTH = 1.8;  // in meters
     public static final double DEFAULT_LANE_WIDTH = 3.2;    // in meters
@@ -20,13 +20,19 @@ public final class Metrics {
     public static final double LANE_DASHED_LENGTH = 5.0; // Length of dash in lane divider
     public static final double LANE_DASHED_GAP = 4.0;    // Gap between dashes in lane divider
 
+    // Metrics for tooltip
     public static final double HIDE_DELAY = 100; // Hide delay for tooltips in milliseconds
 
+    // Metrics for zooming
     public static final double ENLARGE_FACTOR = 1.05; // Factor to zoom out the map
     public static final double SHRINK_FACTOR = 0.95;      // Factor to zoom in the map
 
-    /* Simulation step interval in nanosecond (200ms and because we use AnimationTimer which use nanosecond) 
-       we use long instead of int and multiply by 1_000_000L.
-    */
-    public static final long CONNECT_SPEED_MS = 200 * 1_000_000L;
+    // Metrics for connection speed (how often does the simulation update)
+    public static final int CONNECT_SPEED_MS = 200; // in milliseconds
+
+    // Metrics for window pane size
+    public static final double WINDOW_WIDTH = 1400;
+    public static final double WINDOW_HEIGHT = 810;
+    public static final double DASHBOARD_WIDTH = 250;
+    public static final double STATISTIC_WIDTH = 250;
 }
