@@ -81,7 +81,7 @@ public class MapPanel extends StackPane {
         // (Optional) nếu bạn vẫn cần “flip Y” như SUMO -> JavaFX:
         // Cách “đúng” nhất là flip ở WORLD để mọi layer đồng bộ, và pivot tại 0.
         // Nếu roadLayer/vehicleLayer/trafficlightLayer đã tự flip thì comment dòng này.
-        world.setScaleY(-1);
+        //world.setScaleY(-1);
 
         world.getTransforms().setAll(viewTransform);
 
@@ -192,7 +192,7 @@ public class MapPanel extends StackPane {
             double dx = e.getX() - anchorX;
             double dy = e.getY() - anchorY;
             viewTransform.setTx(anchorTx + dx);
-            viewTransform.setTy(anchorTy - dy);
+            viewTransform.setTy(anchorTy + dy);
         });
 
         viewport.setOnMouseReleased(e -> viewport.setCursor(Cursor.DEFAULT));
