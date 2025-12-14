@@ -1,4 +1,4 @@
-package real_time_traffic_simulation_with_java.gui;
+package real_time_traffic_simulation_with_java.gui.mapLayer;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
@@ -6,8 +6,6 @@ import java.util.List;
 
 import javafx.scene.control.Tooltip;
 import javafx.scene.Group;
-import javafx.geometry.Bounds;
-import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 /**
@@ -57,6 +55,7 @@ public class trafficlightLayer extends Group {
         for (Group Tl : Tls){
             // Install tooltip
             Tooltip tooltip = new Tooltip(simulationEngine.getTlTooltip(Tl.getId()));
+            tooltip.setShowDelay(Duration.ZERO);
             tooltip.setHideDelay(Duration.millis(Metrics.HIDE_DELAY));
             Tooltip.install(Tl, tooltip);
         }
