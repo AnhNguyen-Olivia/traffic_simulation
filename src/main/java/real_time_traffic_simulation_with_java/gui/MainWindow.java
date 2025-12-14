@@ -1,6 +1,5 @@
 package real_time_traffic_simulation_with_java.gui;
 import real_time_traffic_simulation_with_java.alias.Path;
-//import real_time_traffic_simulation_with_java.gui.MapPanel;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import javafx.animation.AnimationTimer;
 import javafx.geometry.Pos;
@@ -21,12 +20,11 @@ public class MainWindow extends Stage {
     }
 
     private void initializeGui() throws Exception {
-        //placeHolderMap.setTranslateX(-200);
         placeHolderMap = new MapPanel(this.simulationEngine);
         placeHolderMap.setTranslateY(-200);
         placeHolderMap.setScaleY(-1.5);
         placeHolderMap.setScaleX(1.5);
-        DashBoard dashBoard = new DashBoard();
+        DashBoard dashBoard = new DashBoard(this.simulationEngine);
         dashBoard.setPrefWidth(250);
         dashBoard.setMaxWidth(250);
 
