@@ -13,7 +13,7 @@ public class SumoTraasConnection {
     private int port = 8813;
 
     /** added waiting time for Sumo in ms */
-    private int wait = 500;
+    private int wait = 2000;
 
     /** declare field variable*/
     private SumoTraciConnection connection;

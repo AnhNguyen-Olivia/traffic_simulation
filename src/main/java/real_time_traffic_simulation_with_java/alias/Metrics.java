@@ -31,8 +31,8 @@ public final class Metrics {
     public static final int CONNECT_SPEED = 200;
 
     // Metrics for window pane size
-    public static final double WINDOW_WIDTH = 1400;
+    public static final double WINDOW_WIDTH = 900;
     public static final double WINDOW_HEIGHT = 810;
-    public static final double DASHBOARD_WIDTH = 250;
+    public static final double DASHBOARD_WIDTH = 150;
     public static final double STATISTIC_WIDTH = 250;
 }
