@@ -1,8 +1,8 @@
 package real_time_traffic_simulation_with_java.gui;
 import real_time_traffic_simulation_with_java.alias.Path;
-import real_time_traffic_simulation_with_java.gui.MapPanel;
+//import real_time_traffic_simulation_with_java.gui.MapPanel;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
-
+import javafx.animation.AnimationTimer;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 public class MainWindow extends Stage {
     private SimulationEngine simulationEngine;
+    private MapPanel placeHolderMap;
 
     public MainWindow(SimulationEngine engine) throws Exception {
         this.simulationEngine = engine;
@@ -20,8 +21,8 @@ public class MainWindow extends Stage {
     }
 
     private void initializeGui() throws Exception {
-        MapPanel placeHolderMap = new MapPanel(this.simulationEngine);
         //placeHolderMap.setTranslateX(-200);
+        placeHolderMap = new MapPanel(this.simulationEngine);
         placeHolderMap.setTranslateY(-200);
         placeHolderMap.setScaleY(-1.5);
         placeHolderMap.setScaleX(1.5);
@@ -52,4 +53,18 @@ public class MainWindow extends Stage {
         this.show();
     }
 
-}
+    public void startAnimationTimer(){
+        AnimationTimer timer = new AnimationTimer() {
+            @Override
+            public void handle(long now){
+                try{
+                    placeHolderMap.refresh();
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
+        timer.start();
+    }                                                                                                                                                             
+
+}                       
