@@ -1,9 +1,7 @@
 package real_time_traffic_simulation_with_java.gui;
 import javafx.event.*;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-//import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
@@ -14,12 +12,31 @@ import real_time_traffic_simulation_with_java.alias.Color;
 import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
-public class DashBoard extends Pane {
+public class ControlPanel extends Pane {
+
+    /**
+     * Create instance of SimulationEngine
+    */
     private SimulationEngine simulationEngine;
 
-    public DashBoard(SimulationEngine simulationEngine){
+    /**
+     * Create control panel pane including vehicle injection tool, stress test tool, toggle all traffic light tool
+     * Group all tools in Hboxes then add them to the Vbox and add the VBox to control panel pane.
+     * Add a cat cover as background image 
+     * (Happy Christmas!) ᓚ₍⑅^- .-^₎ -ᶻ 𝗓 𐰁
+     * @param simulationEngine
+    */
+
+    public ControlPanel(SimulationEngine simulationEngine){
+
+        /**
+         * Initialize simulationEngine
+        */
         this.simulationEngine = simulationEngine;
 
+        /**
+         * Create vehicle text field, set perfered width and max width, add tooltip
+        */
         TextField inputVnumber = new TextField();
         inputVnumber.setPromptText("1");
         inputVnumber.setPrefWidth(100);
@@ -28,15 +45,24 @@ public class DashBoard extends Pane {
         inputToolTip.setShowDelay(Duration.ZERO);
         Tooltip.install(inputVnumber, inputToolTip);
 
+        /**
+         * Create vehicle color combobox, add all color options, add tooltip.
+         * Use Color alias class to get all color options.
+        */
         ComboBox<String> vehicleColor = new ComboBox<>();
         vehicleColor.getItems().addAll(Color.ListofAllColor);
-
         Tooltip vehicleColorTooltip = new Tooltip("Select color for your vehicle(s)");
         vehicleColorTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(vehicleColor, vehicleColorTooltip);
 
+        /**
+         * Group vehicle number input and color selection in an HBox
+        */
         HBox inputAndColor = new HBox(10, inputVnumber, vehicleColor);
 
+        /**
+         * Create start edge combobox, add all edge IDs from simulationEngine, add tooltip
+        */
         ComboBox<String> startEdge = new ComboBox<>();
         try {
             startEdge.getItems().addAll(simulationEngine.getAllEdgeIDs());
@@ -47,6 +73,9 @@ public class DashBoard extends Pane {
         startEdgeTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(startEdge, startEdgeTooltip);
 
+        /**
+         * Create end edge combobox, add all edge IDs from simulationEngine, add tooltip
+        */
         ComboBox<String> EndEdge = new ComboBox<>();
         try {
             EndEdge.getItems().addAll(simulationEngine.getAllEdgeIDs());
@@ -57,22 +86,37 @@ public class DashBoard extends Pane {
         EndEdgeTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(EndEdge, EndEdgeTooltip);
 
+        /**
+         * Group start edge and target edge in an HBox
+        */
         HBox startAndEnd = new HBox(10, startEdge, EndEdge);
 
+        /**
+         * Create vehicle injection button, add tooltip, add event handler for injection
+        */
         Button vehicleInjection = new Button("Vehicle Injection");;
         Tooltip vehicleInjectionTooltip = new Tooltip("Press to inject vehicle");
         vehicleInjectionTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(vehicleInjection, vehicleInjectionTooltip);
 
-        //event for injection vehicle
+        /**
+         * Event handler for vehicle injection button
+        */
         EventHandler<ActionEvent> injectEvent = new EventHandler<ActionEvent>(){
             public void handle(ActionEvent e){
                 injectVehicle(inputVnumber, vehicleColor, startEdge, EndEdge);
             }
         };
 
+        /**
+         * add event handler to vehicle injection button
+        */
         vehicleInjection.setOnAction(injectEvent);
-        
+    
+        /**
+         * Create stress test tool components: input field for number of vehicle, start edge combobox, 
+         * stress test button, add tooltips.
+        */
         TextField inputStressVnumber = new TextField();
         inputStressVnumber.setPromptText("100");
         inputStressVnumber.setPrefWidth(100);
@@ -98,15 +142,23 @@ public class DashBoard extends Pane {
         StressTestTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(StressTest, StressTestTooltip);
 
-        //event for stress test
+        /**
+         * Event handler for stress test button
+        */
         EventHandler<ActionEvent> stressEvent = new EventHandler<ActionEvent>(){
             public void handle(ActionEvent e){
                 stressVehicle(inputStressVnumber, startStressEdge);
             }
         };
 
+        /**
+         * add event handler to stress test button
+        */
         StressTest.setOnAction(stressEvent);
 
+        /**
+         * Create toggle all traffic light button, add tooltip, add event handler for toggling all traffic light
+        */
         Button toggleAllTl = new Button("Toggle All Traffic Light");
         Tooltip toggleAllTlTooltip = new Tooltip("Press to toggle all traffic light.");
         toggleAllTlTooltip.setShowDelay(Duration.ZERO);
@@ -123,13 +175,19 @@ public class DashBoard extends Pane {
         };
 
         toggleAllTl.setOnAction(toggleAllEvent);
-        
+
+        /**
+         * Group all tools in a VBox and add the VBox to control panel pane
+        */
         VBox vbox = new VBox();
         vbox.getChildren().addAll(inputAndColor, startAndEnd, vehicleInjection, VandStart, StressTest, toggleAllTl);
         vbox.setSpacing(20);
         this.getChildren().add(vbox);
 
-        this.setStyle("-fx-background-image: url('" + getClass().getResource(Path.DashboardImage).toExternalForm() + "'); " +
+        /**
+         * Set background image for control panel pane, add a cat cover /ᐠ - ˕ -マ ᶻ 𝗓 𐰁
+        */
+        this.setStyle("-fx-background-image: url('" + getClass().getResource(Path.ConTrolPanelImage).toExternalForm() + "'); " +
                       "-fx-background-size: cover;" + 
                       "-fx-background-repeated: no-repeat;"
                     );
@@ -138,20 +196,28 @@ public class DashBoard extends Pane {
         this.setVisible(true);
     }
 
+    /***
+     * Method to inject vehicle into the simulation, takes the following parameters:
+     * @param inputVnumber
+     * @param vehicleColor
+     * @param startEdge
+     * @param EndEdge
+     * 
+    */
     public void injectVehicle(TextField inputVnumber, ComboBox<String> vehicleColor, ComboBox<String> startEdge, ComboBox<String> EndEdge){
         try{
-            String vehicleNumber = inputVnumber.getText().trim();
+            String vehicleNumber = inputVnumber.getText().trim(); // Trim whitespace
             String vColor = vehicleColor.getValue();
             String startE = startEdge.getValue();
             String endE = EndEdge.getValue();
 
             if(vehicleNumber.isEmpty()){
-                vehicleNumber = "1";
+                vehicleNumber = "1"; // Default to 1
             }
             int vNumber = Integer.parseInt(vehicleNumber);
 
             if(vColor == null || vColor.isEmpty()){
-                vColor = "RED";
+                vColor = "RED"; // Default to RED
                 return;
             }
 
@@ -166,6 +232,7 @@ public class DashBoard extends Pane {
             }
 
             try {
+                // Inject vehicle(s) into the simulation, send the data to simulation engine method of injectVehicle
                 this.simulationEngine.injectVehicle(vNumber, startE, endE, vColor);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -176,7 +243,11 @@ public class DashBoard extends Pane {
         }
     }
     
-
+    /**
+     * Method to start stress test mode, takes the following parameters:
+     * @param inputStressVnumber
+     * @param startStressEdge
+    */
     public void stressVehicle(TextField inputStressVnumber, ComboBox<String> startStressEdge){
         try{
             String vehicleNumber = inputStressVnumber.getText().trim();
@@ -201,13 +272,4 @@ public class DashBoard extends Pane {
             System.out.println("Error: Please enter a positive interger number. \n(Will change this to logging later)");
         }
     }
-
-
-
-
-
-
-
-
-    
 }
