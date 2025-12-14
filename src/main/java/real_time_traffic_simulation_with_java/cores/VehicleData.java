@@ -46,6 +46,7 @@ public class VehicleData {
                                         Metrics.DEFAULT_VEHICLE_LENGTH, 
                                         Metrics.DEFAULT_VEHICLE_WIDTH
                                         );  
+        // JavaFX rotation is (anti-clockwise when show in cartesian coordinate), SUMO rotation is clockwise when show in cartesian coordinate
         Shape.setRotate(-(angle + 90)); // JavaFx 0 degree is to the right, SUMO 0 degree is to the top
         Shape.setFill(javafx.scene.paint.Paint.valueOf(color));
         Shape.setArcWidth(Metrics.DEFAULT_VEHICLE_WIDTH/10);

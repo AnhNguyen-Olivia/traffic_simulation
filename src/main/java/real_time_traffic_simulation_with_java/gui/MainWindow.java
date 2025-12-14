@@ -7,7 +7,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
@@ -32,19 +31,19 @@ public class MainWindow extends Stage {
     private void initializeGui() throws Exception {
         placeHolderMap = new MapPanel(this.simulationEngine);
         DashBoard dashBoard = new DashBoard(this.simulationEngine);
-        dashBoard.setPrefWidth(250);
-        dashBoard.setMaxWidth(250);
+        dashBoard.setPrefWidth(Metrics.DASHBOARD_WIDTH);
+        dashBoard.setMaxWidth(Metrics.WINDOW_HEIGHT);
 
         Statistic statistic = new Statistic();
-        statistic.setPrefWidth(250);
-        statistic.setMaxWidth(250);
+        statistic.setPrefWidth(Metrics.STATISTIC_WIDTH);
+        statistic.setMaxWidth(Metrics.WINDOW_HEIGHT);
         
         // Separate the main window into 3 parts using BorderPane
         BorderPane root = new BorderPane();
         root.setCenter(placeHolderMap);
         root.setLeft(dashBoard);
         root.setRight(statistic);
-        Scene scene = new Scene(root,1400, 830, Color.WHITE);
+        Scene scene = new Scene(root,Metrics.WINDOW_WIDTH, Metrics.WINDOW_HEIGHT);
 
         BorderPane.setAlignment(placeHolderMap,Pos.CENTER);
         BorderPane.setAlignment(dashBoard,Pos.CENTER);

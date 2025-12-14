@@ -30,7 +30,7 @@ public class DashBoard extends Pane {
         ComboBox<String> vehicleColor = new ComboBox<>();
         vehicleColor.getItems().addAll(Color.ListofAllColor);
 
-        Tooltip vehicleColorTooltip = new Tooltip("Selec color for your vehicle(s)");
+        Tooltip vehicleColorTooltip = new Tooltip("Select color for your vehicle(s)");
         vehicleColorTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(vehicleColor, vehicleColorTooltip);
 
@@ -42,7 +42,7 @@ public class DashBoard extends Pane {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Tooltip startEdgeTooltip = new Tooltip("Selec your start edge");
+        Tooltip startEdgeTooltip = new Tooltip("Select your start edge");
         startEdgeTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(startEdge, startEdgeTooltip);
 
@@ -52,7 +52,7 @@ public class DashBoard extends Pane {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Tooltip EndEdgeTooltip = new Tooltip("Selec your end edge");
+        Tooltip EndEdgeTooltip = new Tooltip("Select your end edge");
         EndEdgeTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(EndEdge, EndEdgeTooltip);
 
@@ -86,7 +86,7 @@ public class DashBoard extends Pane {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Tooltip startStressEdgeTooltip = new Tooltip("Selec your start edge");
+        Tooltip startStressEdgeTooltip = new Tooltip("Select your start edge");
         startStressEdgeTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(startStressEdge, startStressEdgeTooltip);
 
