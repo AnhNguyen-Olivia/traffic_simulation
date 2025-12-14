@@ -7,7 +7,6 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import java.util.List;
 
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.animation.Animation;
@@ -64,26 +63,30 @@ public class roadLayer extends Group {
      */
     private void addToolTip(List<EdgeData> edges) throws Exception {
         for (EdgeData edge : edges){
-            // Install tooltip
             Label tooltipLabel = new Label();
-            // Install tooltip
             Tooltip tooltip = new Tooltip();
+            // Tooltip does not repaint when visible if setText, Label is a live node that can be updated dynamically
+            // Tooltip text is treated as static String, tooltip graphic is treated as Node that can be updated dynamically
             tooltip.setGraphic(tooltipLabel);
-            tooltip.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            // Add Timeline to update tooltip content with simulation speed
             Timeline updateTooltip = new Timeline(new KeyFrame(Duration.ZERO, e -> {
                 try{
                     tooltipLabel.setText(simulationEngine.getEdgeTooltip(edge.getId()));
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS)));
+            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS))); // Time line stop after this duration (or loop if setCycleCount)
+            // Ensure the timeline runs indefinitely
             updateTooltip.setCycleCount(Animation.INDEFINITE);
+            // To prevent tooltip delay and automatical hide
             tooltip.setShowDelay(Duration.ZERO);
             tooltip.setShowDuration(Duration.INDEFINITE);
             tooltip.setHideDelay(Duration.millis(Metrics.HIDE_DELAY));
+            // Update tooltip content when shown
             tooltip.setOnShown(e->updateTooltip.play());
             tooltip.setOnHidden(e->updateTooltip.stop());
             Tooltip.install(edge, tooltip);
+            
             // Add mouse entered/exited to know hovering state
             // Since edge is a Group, we need to get the Rectangle inside it (1st child, see in cores/EdgeData.java)
             edge.setOnMouseEntered(e -> {
