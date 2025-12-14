@@ -22,10 +22,6 @@ public class TrafficLightData {
      * Each Polygon represents the shape of corresponding sub-light
      */
     private Group light_group;
-    /**
-     * Each is a 1-char string representing the color state of corresponding sub-light ("r","g","y")
-     */
-    private List<String> colorList;
 
     /**
      * Constructor
@@ -35,7 +31,6 @@ public class TrafficLightData {
     public TrafficLightData(String tlID, List<SumoGeometry> coordinates, String colorString) {
         this.tlID = tlID;
         this.light_group = createLightGroup(tlID, coordinates, colorString);
-        this.colorList = convertColorToList(colorString);
     }
 
     /**
@@ -47,18 +42,15 @@ public class TrafficLightData {
     public Group getShape() {
         return light_group;
     }
-    public List<String> getColorList() {
-        return colorList;
-    }
 
     /**
      * Setter
      */
     public void setColor(String colorString) {
-        this.colorList = convertColorToList(colorString);
+        List<String> colorList = convertColorToList(colorString);
         for (int i = 0; i < this.light_group.getChildren().size(); i++) {
             Polygon light_shape = (Polygon) this.light_group.getChildren().get(i);
-            light_shape.setFill(javafx.scene.paint.Paint.valueOf(this.colorList.get(i)));
+            light_shape.setFill(javafx.scene.paint.Paint.valueOf(colorList.get(i)));
         }
     }
 
@@ -70,6 +62,7 @@ public class TrafficLightData {
         Group lightGroup = new Group();
         lightGroup.getChildren().addAll(light_shapes);
         lightGroup.setId(tlID);
+        lightGroup.setPickOnBounds(true); // Allow mouse event on transparent area
         return lightGroup;
     }
 
@@ -114,9 +107,9 @@ public class TrafficLightData {
         Point2D end_point = new Point2D(end_pos.x, end_pos.y);
         // Get vector from start to end and perpendicular vector
         Point2D direction
-            = new Point2D(end_pos.x - start_pos.x, end_pos.y - start_pos.y).normalize().multiply(Metrics.DEFAULT_LANE_WIDTH);
+            = new Point2D(end_pos.x - start_pos.x, end_pos.y - start_pos.y).normalize().multiply(Metrics.TLS_WIDTH);
         Point2D perpendicular_vec 
-            = new Point2D(end_pos.y - start_pos.y, -(end_pos.x - start_pos.x)).normalize().multiply(Metrics.TLS_WIDTH);
+            = new Point2D(end_pos.y - start_pos.y, -(end_pos.x - start_pos.x)).normalize().multiply(Metrics.DEFAULT_LANE_WIDTH/2);
         // Calculate 4 corner points
         Point2D p1 = end_point.add(perpendicular_vec);
         Point2D p2 = end_point.subtract(perpendicular_vec);

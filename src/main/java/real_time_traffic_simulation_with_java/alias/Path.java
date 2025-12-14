@@ -21,7 +21,9 @@ public final class Path {
 
     /** Image path if needed*/
     public static final String IconImage = "/real_time_traffic_simulation_with_java/gui/resources/cat.png";
-    
+    public static final String CatMapImage = "/real_time_traffic_simulation_with_java/gui/resources/please do not the cat.jpg";
+    public static final String DashboardImage = "/real_time_traffic_simulation_with_java/gui/resources/please do not the cat.jpg";
+    public static final String StatisticImage = "/real_time_traffic_simulation_with_java/gui/resources/please do not the cat.jpg";
 }
 
 // py findAllRoutes.py -n map.net.xml -o map.rou.xml -s -t

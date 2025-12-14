@@ -28,8 +28,6 @@ public class EdgeData {
      * Grouping a Polygon edge and Line objects representing lane dividers within the edge
      */
     private Group edge_group;
-    private int number_of_lanes;
-    private double width;
 
 
     /**
@@ -38,8 +36,6 @@ public class EdgeData {
      */
     public EdgeData(String edgeID, int number_of_lanes, List<SumoGeometry> coordinates) {
         this.edgeID = edgeID;
-        this.number_of_lanes = number_of_lanes;
-        this.width = number_of_lanes * Metrics.DEFAULT_LANE_WIDTH;
         this.edge_group = createEdgeGroup(edgeID, number_of_lanes, coordinates);
     }
 
@@ -52,12 +48,6 @@ public class EdgeData {
     public Group getShape() {
         return edge_group;
     }
-    public int getNumberOfLanes() {
-        return number_of_lanes;
-    }
-    public double getWidth() {
-        return width;
-    }
 
 
     /**
@@ -67,17 +57,21 @@ public class EdgeData {
         // Draw edge shape
         Polygon edge_shape = createPolygon(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
         edge_shape.setFill(javafx.scene.paint.Color.SLATEGRAY);
+        edge_shape.setStroke(javafx.scene.paint.Color.WHITE);
+        edge_shape.setStrokeWidth(Metrics.EDGE_DIVIDER_WEIGHT);
         // Draw lane dividers
         List<Line> lane_dividers = calculateLaneDividers(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
         for(Line lane_divider: lane_dividers) {
             lane_divider.setStroke(javafx.scene.paint.Color.WHITE);
-            lane_divider.getStrokeDashArray().addAll(10.0, 5.0);
+            lane_divider.setStrokeWidth(Metrics.LANE_DIVIDER_WEIGHT);
+            lane_divider.getStrokeDashArray().addAll(Metrics.LANE_DASHED_LENGTH, Metrics.LANE_DASHED_GAP);
         }
         // Grouping
         Group edgeGroup = new Group();
         edgeGroup.getChildren().add(edge_shape);
         edgeGroup.getChildren().addAll(lane_dividers);
         edgeGroup.setId(edgeID);
+        edgeGroup.setPickOnBounds(false); // Allow mouse event only on the shape, not the bounding box
         return edgeGroup;
     }
 
