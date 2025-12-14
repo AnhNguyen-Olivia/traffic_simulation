@@ -1,4 +1,7 @@
 package real_time_traffic_simulation_with_java.gui.mapLayer;
+
+import real_time_traffic_simulation_with_java.cores.EdgeData;
+import real_time_traffic_simulation_with_java.cores.JunctionData;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
@@ -11,7 +14,6 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Group;
-import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
@@ -43,8 +45,8 @@ public class roadLayer extends Group {
      * @throws Exception
      */
     private void createRoadLayer() throws Exception {
-        List<Polygon> junctions = this.simulationEngine.getMapJunctions();
-        List<Group> edges = this.simulationEngine.getMapEdges();
+        List<JunctionData> junctions = this.simulationEngine.getMapJunctions();
+        List<EdgeData> edges = this.simulationEngine.getMapEdges();
 
         // Add tooltip and mouse events
         addToolTip(edges);
@@ -60,8 +62,8 @@ public class roadLayer extends Group {
      * Private helper method: Add tooltip and mouse events to edges
      * @throws Exception
      */
-    private void addToolTip(List<Group> edges) throws Exception {
-        for (Group edge : edges){
+    private void addToolTip(List<EdgeData> edges) throws Exception {
+        for (EdgeData edge : edges){
             // Install tooltip
             Label tooltipLabel = new Label();
             // Install tooltip

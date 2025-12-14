@@ -18,45 +18,15 @@ import javafx.scene.Group;
  * @Javadoc Completed
  */
 
-public class EdgeData {
-    private String edgeID;
-    /**
-     * Lines object representing lane dividers within the edge
-     * @return List<Line> using library javafx.scene.shape.Line
-     */
-    /**
-     * Grouping a Polygon edge and Line objects representing lane dividers within the edge
-     */
-    private Group edge_group;
-
-
+public class EdgeData extends Group {
     /**
      * Constructor
      * @param coordinates each SumoGeometry represents the coordinates of 1 lane within the edge
      */
     public EdgeData(String edgeID, int number_of_lanes, List<SumoGeometry> coordinates) {
-        this.edgeID = edgeID;
-        this.edge_group = createEdgeGroup(edgeID, number_of_lanes, coordinates);
-    }
-
-    /**
-     * Getter
-     */
-    public String getEdgeID() {
-        return edgeID;
-    }
-    public Group getShape() {
-        return edge_group;
-    }
-
-
-    /**
-     * Private helper method: Grouping the edge shape and lane dividers together
-     */
-    private Group createEdgeGroup(String edgeID, int number_of_lanes, List<SumoGeometry> coordinates) {
         // Draw edge shape
         Polygon edge_shape = createPolygon(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
-        edge_shape.setFill(javafx.scene.paint.Color.SLATEGRAY);
+        edge_shape.setFill(javafx.scene.paint.Color.DIMGRAY);
         edge_shape.setStroke(javafx.scene.paint.Color.WHITE);
         edge_shape.setStrokeWidth(Metrics.EDGE_DIVIDER_WEIGHT);
         // Draw lane dividers
@@ -67,12 +37,10 @@ public class EdgeData {
             lane_divider.getStrokeDashArray().addAll(Metrics.LANE_DASHED_LENGTH, Metrics.LANE_DASHED_GAP);
         }
         // Grouping
-        Group edgeGroup = new Group();
-        edgeGroup.getChildren().add(edge_shape);
-        edgeGroup.getChildren().addAll(lane_dividers);
-        edgeGroup.setId(edgeID);
-        edgeGroup.setPickOnBounds(false); // Allow mouse event only on the shape, not the bounding box
-        return edgeGroup;
+        this.getChildren().add(edge_shape);
+        this.getChildren().addAll(lane_dividers);
+        this.setId(edgeID);
+        this.setPickOnBounds(false); // Allow mouse event only on the shape, not the bounding box
     }
 
 
@@ -99,6 +67,8 @@ public class EdgeData {
 
     /**
      * Private helper method: Calculate coordinations of lane dividers within the edge
+     * Lines object representing lane dividers within the edge
+     * @return List<Line> using library javafx.scene.shape.Line
      */
     private List<Line> calculateLaneDividers(int number_of_lanes, double edge_width, List<SumoGeometry> coordinates) {
         List<Line> lane_dividers = new ArrayList<>();

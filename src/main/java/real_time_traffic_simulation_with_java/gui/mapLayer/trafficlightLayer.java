@@ -1,5 +1,7 @@
 package real_time_traffic_simulation_with_java.gui.mapLayer;
+
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
+import real_time_traffic_simulation_with_java.cores.TrafficLightData;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import java.util.List;
@@ -41,7 +43,7 @@ public class trafficlightLayer extends Group {
      * @throws Exception
      */
     private void createTrafficLightLayer() throws Exception {
-        List<Group> Tls = this.simulationEngine.getMapTls();
+        List<TrafficLightData> Tls = this.simulationEngine.getMapTls();
 
         // Add tooltip and mouse events
         addToolTip(Tls);
@@ -56,8 +58,8 @@ public class trafficlightLayer extends Group {
      * Private helper method: Add tooltip and mouse events to traffic lights
      * @throws Exception
      */
-    private void addToolTip(List<Group> Tls) throws Exception {
-        for (Group Tl : Tls){
+    private void addToolTip(List<TrafficLightData> Tls) throws Exception {
+        for (TrafficLightData Tl : Tls){
             Label tooltipLabel = new Label();
             // Install tooltip
             Tooltip tooltip = new Tooltip();
@@ -84,8 +86,8 @@ public class trafficlightLayer extends Group {
     /**
      * Private helper method: Set double-click event to toggle traffic lights to change state
      */
-    private void setToggleEvent(List<Group> Tls) {
-        for (Group Tl : Tls){
+    private void setToggleEvent(List<TrafficLightData> Tls) {
+        for (TrafficLightData Tl : Tls){
             Tl.setOnMouseClicked(event -> {
                 try {
                     if (event.getClickCount() == 2) {
