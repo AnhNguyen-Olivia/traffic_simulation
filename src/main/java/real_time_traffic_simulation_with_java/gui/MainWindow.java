@@ -20,7 +20,7 @@ public class MainWindow extends Stage {
     private AnimationTimer animationTimer;
     
     /**
-     * MainWindow contructor. Its have simulation engine as parameter to pass to other components 
+     * MainWindow contructor. Its have simulation engine as parameter to pass to other comfponents 
      * @param engine
      * @throws Exception
     */
@@ -29,27 +29,48 @@ public class MainWindow extends Stage {
         initializeGui();
     }
 
+    /**
+     * initializeGui method to setup the main window gui
+     * @throws Exception
+    */
     private void initializeGui() throws Exception {
+        /**
+         * Create map panel, dashboard and statistic panel
+         * Pass simulation engine to map panel and dashboard
+         * Set preferred width, max width for dashboard and statistic panel because we want to fix their width.
+        */
         placeHolderMap = new MapPanel(this.simulationEngine);
         DashBoard dashBoard = new DashBoard(this.simulationEngine);
         dashBoard.setPrefWidth(250);
         dashBoard.setMaxWidth(250);
 
+        /**
+         * Statistic panel still a placeholder image for now
+        */
         Statistic statistic = new Statistic();
         statistic.setPrefWidth(250);
         statistic.setMaxWidth(250);
         
-        // Separate the main window into 3 parts using BorderPane
+        /**
+         * Separate the main window into 3 parts using BorderPane layout: 
+         * center for map panel, left for dashboard, right for statistic panel.
+        */ 
         BorderPane root = new BorderPane();
         root.setCenter(placeHolderMap);
         root.setLeft(dashBoard);
         root.setRight(statistic);
         Scene scene = new Scene(root,1400, 830, Color.WHITE);
 
+        /**
+         * set alignment for each part in BorderPane 
+        */
         BorderPane.setAlignment(placeHolderMap,Pos.CENTER);
         BorderPane.setAlignment(dashBoard,Pos.CENTER);
         BorderPane.setAlignment(statistic,Pos.CENTER);
 
+        /**
+         * Set up title, icon and scene for main window
+        */
         Image icon = new Image(getClass().getResource(Path.IconImage).toExternalForm());
         this.getIcons().add(icon);
         this.setTitle("Traffic Simulation Beta");
@@ -57,9 +78,14 @@ public class MainWindow extends Stage {
         this.setScene(scene);
         this.show();
     }
-
+    
+    /**
+     * Start animation timer method to update simulation and refresh map panel at fixed interval definned in Metrics.CONNECT_SPEED_MS.
+     * This method works by create a stepIntervalNanos variable to store the interval time in nanoseconds.
+     * then create an AnimationTimer object and override its handle method. The reason we need to override handle method is becaus
+    */
     public void startAnimationTimer(){
-        final long stepIntervalNanos = Metrics.CONNECT_SPEED * 1_000_000L;
+        final long stepIntervalNanos = Metrics.CONNECT_SPEED_MS;;
         animationTimer = new AnimationTimer() {
             private long lastStepTime = 0L;
             @Override

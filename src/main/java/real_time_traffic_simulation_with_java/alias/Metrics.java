@@ -24,5 +24,9 @@ public final class Metrics {
 
     public static final double ENLARGE_FACTOR = 1.05; // Factor to zoom out the map
     public static final double SHRINK_FACTOR = 0.95;      // Factor to zoom in the map
-    public static final int CONNECT_SPEED = 200;
+
+    /* Simulation step interval in nanosecond (200ms and because we use AnimationTimer which use nanosecond) 
+       we use long instead of int and multiply by 1_000_000L.
+    */
+    public static final long CONNECT_SPEED_MS = 200 * 1_000_000L;
 }
