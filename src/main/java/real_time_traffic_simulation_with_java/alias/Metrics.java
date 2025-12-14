@@ -24,5 +24,5 @@ public final class Metrics {
 
     public static final double ENLARGE_FACTOR = 1.05; // Factor to zoom out the map
     public static final double SHRINK_FACTOR = 0.95;      // Factor to zoom in the map
-    public static final int CONNECT_SPEED = 100;
+    public static final int CONNECT_SPEED = 200;
 }
