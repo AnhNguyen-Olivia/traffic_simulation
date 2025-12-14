@@ -35,7 +35,7 @@ public class MapPanel extends StackPane {
         setupZooming();
         setupPanning();
         setupRotating();
-        Rectangle clip = new Rectangle(900, 830);
+        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.DASHBOARD_WIDTH - Metrics.STATISTIC_WIDTH, Metrics.WINDOW_HEIGHT);
         this.setClip(clip);
     }
 

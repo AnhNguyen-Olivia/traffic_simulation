@@ -52,7 +52,7 @@ public class DashBoard extends Pane {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Tooltip EndEdgeTooltip = new Tooltip("Selec your end edge");
+        Tooltip EndEdgeTooltip = new Tooltip("Select your end edge");
         EndEdgeTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(EndEdge, EndEdgeTooltip);
 
@@ -86,7 +86,7 @@ public class DashBoard extends Pane {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Tooltip startStressEdgeTooltip = new Tooltip("Selec your start edge");
+        Tooltip startStressEdgeTooltip = new Tooltip("Select your start edge");
         startStressEdgeTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(startStressEdge, startStressEdgeTooltip);
 
