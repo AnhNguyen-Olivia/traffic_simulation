@@ -45,7 +45,7 @@ public class VehicleData {
                                         Metrics.DEFAULT_VEHICLE_LENGTH, 
                                         Metrics.DEFAULT_VEHICLE_WIDTH
                                         );  
-        Shape.setRotate(angle);
+        Shape.setRotate(angle + 90); // JavaFx 0 degree is to the right, SUMO 0 degree is to the top
         Shape.setFill(javafx.scene.paint.Paint.valueOf(color));
         Shape.setArcWidth(Metrics.DEFAULT_VEHICLE_WIDTH/10);
         Shape.setArcHeight(Metrics.DEFAULT_VEHICLE_WIDTH/10);

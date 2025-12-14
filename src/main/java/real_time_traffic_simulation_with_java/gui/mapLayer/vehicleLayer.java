@@ -1,4 +1,4 @@
-package real_time_traffic_simulation_with_java.gui;
+package real_time_traffic_simulation_with_java.gui.mapLayer;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
@@ -54,6 +54,7 @@ public class vehicleLayer extends Group {
         for (Rectangle vehicle : vehicles){
             // Install tooltip
             Tooltip tooltip = new Tooltip(simulationEngine.getVehicleTooltip(vehicle.getId()));
+            tooltip.setShowDelay(Duration.ZERO);
             tooltip.setHideDelay(Duration.millis(Metrics.HIDE_DELAY));
             Tooltip.install(vehicle, tooltip);
             // Add mouse entered/exited to know hovering state
