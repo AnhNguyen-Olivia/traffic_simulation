@@ -4,7 +4,12 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import java.util.List;
 
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Tooltip;
+import javafx.scene.control.Label;
+import javafx.animation.Timeline;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
 import javafx.scene.Group;
 import javafx.util.Duration;
 
@@ -53,10 +58,24 @@ public class trafficlightLayer extends Group {
      */
     private void addToolTip(List<Group> Tls) throws Exception {
         for (Group Tl : Tls){
+            Label tooltipLabel = new Label();
             // Install tooltip
-            Tooltip tooltip = new Tooltip(simulationEngine.getTlTooltip(Tl.getId()));
+            Tooltip tooltip = new Tooltip();
+            tooltip.setGraphic(tooltipLabel);
+            tooltip.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            Timeline updateTooltip = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+                try{
+                    tooltipLabel.setText(simulationEngine.getTlTooltip(Tl.getId()));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS)));
+            updateTooltip.setCycleCount(Animation.INDEFINITE);
             tooltip.setShowDelay(Duration.ZERO);
+            tooltip.setShowDuration(Duration.INDEFINITE);
             tooltip.setHideDelay(Duration.millis(Metrics.HIDE_DELAY));
+            tooltip.setOnShown(e->updateTooltip.play());
+            tooltip.setOnHidden(e->updateTooltip.stop());
             Tooltip.install(Tl, tooltip);
         }
     }
