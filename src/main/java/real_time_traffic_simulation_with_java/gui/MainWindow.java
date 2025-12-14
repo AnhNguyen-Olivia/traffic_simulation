@@ -67,7 +67,6 @@ public class MainWindow extends Application {
         
         
         // ========== STEP 3: WRAP PANELS IN SCROLLPANES ==========
-        // Why? Left and right panels might have lots of content
         // ScrollPane allows vertical scrolling when content is too tall
         
         // Wrap left panel
@@ -216,14 +215,7 @@ public class MainWindow extends Application {
         timer.start();
     }
     
-    /**
-     * Main method - program entry point
-     * This is where Java starts running when you execute the program
-     * For JavaFX applications, we just call launch() which will:
-     * 1. Create JavaFX application
-     * 2. Call our start() method
-     * 3. Show the window
-     */
+
     public static void main(String[] args) {
         launch(args);  // Start JavaFX application
     }
