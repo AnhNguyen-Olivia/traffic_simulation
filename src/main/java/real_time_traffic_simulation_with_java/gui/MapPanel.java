@@ -30,12 +30,12 @@ public class MapPanel extends StackPane {
      */
     public MapPanel(SimulationEngine engine) throws Exception {
         this.simulationEngine = engine;
-        this.setStyle("-fx-background-color: rgba(248, 217, 185, 0.9);");
         createMapPanel(engine);
         setupZooming();
         setupPanning();
         setupRotating();
-        Rectangle clip = new Rectangle(900, 830);
+        // Set clip to prevent overflow drawing
+        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.DASHBOARD_WIDTH - Metrics.STATISTIC_WIDTH, Metrics.WINDOW_HEIGHT);
         this.setClip(clip);
     }
 

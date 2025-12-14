@@ -214,10 +214,8 @@ public class TrafficLightManager{
     */
     public void updateTrafficLightDataList() throws Exception {
         for (TrafficLightData trafficLightData : this.trafficLightDataList) {
-            String colorString = this.getState(trafficLightData.getTlID());
+            String colorString = this.getState(trafficLightData.getId());
             trafficLightData.setColor(colorString);
         }
     }
-
-
 }

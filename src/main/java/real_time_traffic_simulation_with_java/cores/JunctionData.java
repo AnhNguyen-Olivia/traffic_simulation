@@ -9,39 +9,16 @@ import javafx.scene.shape.Polygon;
  * @Test Completed
  * @Javadoc Completed
  */
-public class JunctionData {
-    private String junctionID;
-    private Polygon shape = new Polygon();
-
+public class JunctionData extends Polygon {
     /**
      * Constructor
      * @param coordinates SumoGeometry representing the coordinates of the junction shape
      */
     public JunctionData(String junctionID, SumoGeometry coordinates){
-        this.junctionID = junctionID;
-        this.shape = createPolygon(junctionID, coordinates);
-    }
-    
-    /**
-     * Getter
-     */
-    public String getJunctionID() {
-        return junctionID;
-    }
-    public Polygon getShape() {
-        return shape;
-    }
-
-    /**
-     * Private helper method: convert SumoGeometry to Polygon
-     * @return Polygon representing the junction shape
-     */
-    private Polygon createPolygon(String shapeID, SumoGeometry sumo_coords) {
-        for (de.tudresden.sumo.objects.SumoPosition2D pos : sumo_coords.coords) {
-            shape.getPoints().addAll(new Double[]{pos.x, pos.y});
+        for (de.tudresden.sumo.objects.SumoPosition2D pos : coordinates.coords) {
+            this.getPoints().addAll(new Double[]{pos.x, pos.y});
         }
-        shape.setFill(javafx.scene.paint.Color.DIMGRAY);
-        shape.setId(shapeID);
-        return shape;
+        this.setFill(javafx.scene.paint.Color.DIMGRAY);
+        this.setId(junctionID);
     }
 }
