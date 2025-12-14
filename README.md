@@ -14,7 +14,7 @@ It simulates:
 - Traffic lights switching between red/yellow/green states
 - Roads and map layout
 - A GUI built using JavaFx (similar to SUMO-GUI)  
-- Real-time behavior controlled by a Swing `Timer`
+- Real-time behavior controlled by a JavaFx `Timer`
 
 ## Project Structure
 
@@ -68,7 +68,7 @@ traffic_simulation
 ## Features
 
 - Object-oriented design with multiple classes  
-- Traffic lights change using timers
+- Traffic lights changes
 - Road network rendering (horizontal + vertical)  
 - Smooth animations  
 - Modular structure split across multiple classes  
@@ -88,7 +88,7 @@ traffic_simulation
 |Nguyen Thuy Anh                   | Developer                          | Writes Java source code, including SUMO connection, step simulation, GUI draws main window and dashboard. |
 |Dieu Ngoc Thien An                | GUI designer                    | Writes Java source code, including design, layout, appearance. |
 |Huynh Bao Tran                    | Developer                    | Writes Java source code, including design wrappers, GUI draw maps, and user controls.|
-|Nguyen Ho Tuyet Phuong            | Developer, Document Writer                          | Write Java source code including traffic light, create diagrams, Javadoc and write a report. |
+|Nguyen Ho Tuyet Phuong            | Developer, Document Writer                          | Write Java source code including traffic light, create diagrams, Javadoc and write report. |
 
 ---
 
