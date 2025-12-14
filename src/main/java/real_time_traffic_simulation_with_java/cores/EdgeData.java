@@ -57,11 +57,14 @@ public class EdgeData {
         // Draw edge shape
         Polygon edge_shape = createPolygon(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
         edge_shape.setFill(javafx.scene.paint.Color.SLATEGRAY);
+        edge_shape.setStroke(javafx.scene.paint.Color.WHITE);
+        edge_shape.setStrokeWidth(Metrics.EDGE_DIVIDER_WEIGHT);
         // Draw lane dividers
         List<Line> lane_dividers = calculateLaneDividers(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
         for(Line lane_divider: lane_dividers) {
             lane_divider.setStroke(javafx.scene.paint.Color.WHITE);
-            lane_divider.getStrokeDashArray().addAll(10.0, 5.0);
+            lane_divider.setStrokeWidth(Metrics.LANE_DIVIDER_WEIGHT);
+            lane_divider.getStrokeDashArray().addAll(Metrics.LANE_DASHED_LENGTH, Metrics.LANE_DASHED_GAP);
         }
         // Grouping
         Group edgeGroup = new Group();

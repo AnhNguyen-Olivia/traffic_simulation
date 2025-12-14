@@ -107,9 +107,9 @@ public class TrafficLightData {
         Point2D end_point = new Point2D(end_pos.x, end_pos.y);
         // Get vector from start to end and perpendicular vector
         Point2D direction
-            = new Point2D(end_pos.x - start_pos.x, end_pos.y - start_pos.y).normalize().multiply(Metrics.DEFAULT_LANE_WIDTH);
+            = new Point2D(end_pos.x - start_pos.x, end_pos.y - start_pos.y).normalize().multiply(Metrics.TLS_WIDTH);
         Point2D perpendicular_vec 
-            = new Point2D(end_pos.y - start_pos.y, -(end_pos.x - start_pos.x)).normalize().multiply(Metrics.TLS_WIDTH);
+            = new Point2D(end_pos.y - start_pos.y, -(end_pos.x - start_pos.x)).normalize().multiply(Metrics.DEFAULT_LANE_WIDTH/2);
         // Calculate 4 corner points
         Point2D p1 = end_point.add(perpendicular_vec);
         Point2D p2 = end_point.subtract(perpendicular_vec);
