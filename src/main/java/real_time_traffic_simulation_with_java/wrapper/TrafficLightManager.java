@@ -83,7 +83,7 @@ public class TrafficLightManager{
 
 
     /**
-     * Set the duration of the current phase of the traffic light (second)
+     * Get the duration of the current phase of the traffic light (second)
      * @throws Exception
      * @Tested
     */ 
@@ -114,6 +114,19 @@ public class TrafficLightManager{
 
 
     /**
+     * Get number of phases of the traffic light
+     * @return int of number of phases
+     * @throws Exception
+     * @Tested
+     */
+    public int getPhaseCount(String tlId) throws Exception{
+        SumoTLSController controller = (SumoTLSController) conn.do_job_get(Trafficlight.getCompleteRedYellowGreenDefinition(tlId));
+        SumoTLSProgram program = controller.programs.values().iterator().next();
+        return program.phases.size();
+    }
+
+
+    /**
      * Toggle traffic light to next phase: get the current phase index
      * and then add 1 to convert to next phase
      * @throws Exception
@@ -121,9 +134,7 @@ public class TrafficLightManager{
      */
     public void nextPhase(String tlId) throws Exception{
         int phase = (int) conn.do_job_get(Trafficlight.getPhase(tlId));
-        SumoTLSController controller = (SumoTLSController) conn.do_job_get(Trafficlight.getCompleteRedYellowGreenDefinition(tlId));
-        SumoTLSProgram program = controller.programs.values().iterator().next();
-        if(phase == program.phases.size() - 1){
+        if(phase == this.getPhaseCount(tlId) - 1){
             conn.do_job_set(Trafficlight.setPhase(tlId, 0));
         } else {
             conn.do_job_set(Trafficlight.setPhase(tlId, phase+1));
@@ -203,10 +214,8 @@ public class TrafficLightManager{
     */
     public void updateTrafficLightDataList() throws Exception {
         for (TrafficLightData trafficLightData : this.trafficLightDataList) {
-            String colorString = this.getState(trafficLightData.getTlID());
+            String colorString = this.getState(trafficLightData.getId());
             trafficLightData.setColor(colorString);
         }
     }
-
-
 }

@@ -108,13 +108,13 @@ public class EdgeManager {
 
 
     /**
-     * Get max speed allowed on the edge (m/s)
-     * @return a double max speed allowed on the edge (m/s)
+     * Get max speed allowed on the edge (km/h)
+     * @return a double max speed allowed on the edge (km/h)
      * @throws Exception
      * @Tested
     */ 
     public double getMaxSpeed(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0"));
+        return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0")) * 3.6;
     }
 
 
@@ -153,25 +153,25 @@ public class EdgeManager {
 
 
     /**
-     * Get average speed of vehicles on the edge in the last step (m/s)
-     * @return a double average speed of vehicles on the edge in the last step (m/s)
+     * Get average speed of vehicles on the edge in the last step (km/h)
+     * @return a double average speed of vehicles on the edge in the last step (km/h)
      * @throws Exception
      * @Tested
     */
     public double getAverageSpeed(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID));
+        return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID)) * 3.6;
     }
 
 
     /**
-     * Get density of vehicles on the edge in the last step (vehicle/m)
-     * @return a double density of vehicles on the edge in the last step (vehicle/m)
+     * Get density of vehicles on the edge in the last step (vehicle/km)
+     * @return a double density of vehicles on the edge in the last step (vehicle/km)
      * @throws Exception
      * @Tested
     */
     public double getDensity(String edgeID) throws Exception {
         double vehicleCount = (int) conn.do_job_get(Edge.getLastStepVehicleNumber(edgeID));
-        return vehicleCount / this.getLength(edgeID);
+        return vehicleCount / this.getLength(edgeID) * 1000;
     }
 
 
