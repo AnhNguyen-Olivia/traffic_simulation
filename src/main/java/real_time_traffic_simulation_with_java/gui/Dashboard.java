@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Separator;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -256,22 +255,6 @@ public class Dashboard extends VBox {
         return avgTravelTimeLabel;
     }
     
-    public ProgressBar getEdge1Bar() {
-        return edge1Bar;
-    }
-    
-    public ProgressBar getEdge2Bar() {
-        return edge2Bar;
-    }
-    
-    public ProgressBar getEdge3Bar() {
-        return edge3Bar;
-    }
-    
-    public ProgressBar getEdge4Bar() {
-        return edge4Bar;
-    }
-    
     public Button getExportButton() {
         return exportButton;
     }
@@ -286,16 +269,6 @@ public class Dashboard extends VBox {
         avgSpeedLabel.setText("⚡ Avg Speed\n" + String.format("%.1f", avgSpeed) + " km/h");
         congestionLabel.setText("🔴 Congestion\n" + congestionPoints + " points");
         avgTravelTimeLabel.setText("⏱️ Travel Time\n" + String.format("%.1f", avgTravelTime) + "s");
-    }
-    
-    /**
-     * Cập nhật Vehicle Density
-     */
-    public void updateDensity(double edge1, double edge2, double edge3, double edge4) {
-        edge1Bar.setProgress(edge1);
-        edge2Bar.setProgress(edge2);
-        edge3Bar.setProgress(edge3);
-        edge4Bar.setProgress(edge4);
     }
     
     /**

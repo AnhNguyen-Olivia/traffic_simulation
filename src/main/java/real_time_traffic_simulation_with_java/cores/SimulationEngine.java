@@ -1,13 +1,17 @@
 package real_time_traffic_simulation_with_java.cores;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
-import javafx.scene.shape.Polygon;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.Group;
-import real_time_traffic_simulation_with_java.wrapper.*;
+import javafx.scene.shape.Polygon;
 import real_time_traffic_simulation_with_java.alias.Color;
+import real_time_traffic_simulation_with_java.wrapper.EdgeManager;
+import real_time_traffic_simulation_with_java.wrapper.JunctionManager;
+import real_time_traffic_simulation_with_java.wrapper.RouteManager;
+import real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection;
+import real_time_traffic_simulation_with_java.wrapper.TrafficLightManager;
+import real_time_traffic_simulation_with_java.wrapper.VehicleManager;
 
 public class SimulationEngine {
     private SumoTraasConnection conn;
@@ -47,6 +51,13 @@ public class SimulationEngine {
         this.conn.closeConnection();
     }
 
+    /**
+     * Get current simulation time
+     * @throws Exception
+     */
+    public double getCurrentTime() throws Exception {
+        return this.conn.getCurrentStep();
+    }
 
     /**
      * Get all IDs: edges
@@ -172,17 +183,17 @@ public class SimulationEngine {
         return polygons;
     }
     /**
-     * Get mapping data: vehicles
+     * Get mapping data: vehicles (as car groups with nice appearance)
      * @throws Exception
      */
-    public List<Rectangle> getMapVehicles() throws Exception {
-        List<Rectangle> rectangles =  new ArrayList<>();
+    public List<Group> getMapVehicles() throws Exception {
+        List<Group> carGroups =  new ArrayList<>();
         if(this.vehicleManager.getVehicleDataList() != null) {
             for(VehicleData vehicleData: this.vehicleManager.getVehicleDataList()) {
-                rectangles.add(vehicleData.getShape());
+                carGroups.add(vehicleData.getCarGroup());
             }
         }
-        return rectangles;
+        return carGroups;
     }
     /**
      * Get mapping data: traffic lights

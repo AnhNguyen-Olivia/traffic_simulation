@@ -206,6 +206,13 @@ public class MapPanel extends StackPane {
      */
     private void setupPanZoom() {
         // Pan with mouse
+        // Double-click to toggle traffic light
+        viewport.setOnMouseClicked(e -> {
+            if (e.getButton() == MouseButton.PRIMARY && e.getClickCount() == 2) {
+                handleDoubleClick(e.getSceneX(), e.getSceneY());
+            }
+        });
+        
         viewport.setOnMousePressed(e -> {
             if (e.getButton() != MouseButton.PRIMARY) return;
             anchorX = e.getX();
@@ -365,6 +372,33 @@ public class MapPanel extends StackPane {
             isMapCentered = true;
         } catch (Exception e) {
             System.err.println("⚠️  Error centering map: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Handle double-click to toggle traffic light
+     */
+    private void handleDoubleClick(double sceneX, double sceneY) {
+        try {
+            // Convert scene coordinates to world coordinates
+            Point2D worldPoint = world.sceneToLocal(sceneX, sceneY);
+            
+            // Check each traffic light shape if it contains the click point
+            for (javafx.scene.Node node : trafficLightLayer.getChildren()) {
+                if (node instanceof Group) {
+                    Group tlGroup = (Group) node;
+                    if (tlGroup.contains(tlGroup.sceneToLocal(sceneX, sceneY))) {
+                        String tlID = tlGroup.getId();
+                        if (tlID != null && simulationEngine != null) {
+                            simulationEngine.toggleSingleTl(tlID);
+                            System.out.println("🚦 Double-clicked traffic light: " + tlID);
+                            return;
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error handling double-click: " + e.getMessage());
         }
     }
 }

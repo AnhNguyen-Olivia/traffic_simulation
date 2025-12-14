@@ -27,6 +27,9 @@ public class ControlPanel extends VBox {
     private TextField quantityField;  // Nhập số lượng xe
     private Button injectButton;
     
+    // PHẦN 3: Traffic Light Management - Attributes
+    private ComboBox<String> trafficLightComboBox;
+    
     /**
      * Constructor - Khởi tạo ControlPanel
      */
@@ -268,82 +271,45 @@ public class ControlPanel extends VBox {
         title.setMaxWidth(Double.MAX_VALUE);  // Responsive title
         section.getChildren().add(title);
         
-        // Tạo 4 cột đèn giao thông
-        section.getChildren().add(createTrafficLightBox("TL-01"));
-        section.getChildren().add(createTrafficLightBox("TL-02"));
-        section.getChildren().add(createTrafficLightBox("TL-03"));
-        section.getChildren().add(createTrafficLightBox("TL-04"));
+        // ComboBox to select traffic light
+        trafficLightComboBox = new ComboBox<>();
+        trafficLightComboBox.setPromptText("Select Traffic Light");
+        trafficLightComboBox.setMaxWidth(Double.MAX_VALUE);
+        trafficLightComboBox.setStyle("-fx-font-size: 12px;");
+        section.getChildren().add(trafficLightComboBox);
+        
+        // Toggle Single Button
+        Button toggleSingleButton = new Button("Toggle Selected");
+        toggleSingleButton.setMaxWidth(Double.MAX_VALUE);
+        toggleSingleButton.setStyle("-fx-font-size: 12px; " +
+                                   "-fx-background-color: #FF9500; " +
+                                   "-fx-text-fill: white; " +
+                                   "-fx-font-weight: 600; " +
+                                   "-fx-padding: 8; " +
+                                   "-fx-border-radius: 6; " +
+                                   "-fx-background-radius: 6; " +
+                                   "-fx-cursor: hand;");
+        toggleSingleButton.setOnAction(e -> handleToggleSingleTrafficLight());
+        section.getChildren().add(toggleSingleButton);
+        
+        // Toggle All Button
+        Button toggleAllButton = new Button("Toggle All Traffic Lights");
+        toggleAllButton.setMaxWidth(Double.MAX_VALUE);
+        toggleAllButton.setStyle("-fx-font-size: 12px; " +
+                                "-fx-background-color: #FF3B30; " +
+                                "-fx-text-fill: white; " +
+                                "-fx-font-weight: 600; " +
+                                "-fx-padding: 8; " +
+                                "-fx-border-radius: 6; " +
+                                "-fx-background-radius: 6; " +
+                                "-fx-cursor: hand;");
+        toggleAllButton.setOnAction(e -> handleToggleAllTrafficLights());
+        section.getChildren().add(toggleAllButton);
         
         getChildren().add(section);
     }
     
-    /**
-     * Tạo một box cho 1 cột đèn
-     * Học: Method tái sử dụng (Reusable Code)
-     * 
-     * @param lightName - Tên cột đèn (VD: "TL-01")
-     * @return HBox chứa tên + 3 buttons màu
-     */
-    private HBox createTrafficLightBox(String lightName) {
-        HBox box = new HBox(8);
-        box.setAlignment(Pos.CENTER);
-        box.setMaxWidth(Double.MAX_VALUE);  // Responsive width
-        box.setStyle("-fx-background-color: #F5F5F7; " +
-                     "-fx-padding: 6; " +
-                     "-fx-border-radius: 6; " +
-                     "-fx-background-radius: 6;");
-        
-        // Tên cột đèn
-        Label nameLabel = new Label(lightName);
-        nameLabel.setStyle("-fx-font-size: 12px; -fx-font-weight: 600; -fx-text-fill: #1D1D1F;");
-        nameLabel.setMaxWidth(Double.MAX_VALUE);  // Chiếm hết không gian còn lại
-        HBox.setHgrow(nameLabel, Priority.ALWAYS);  // Đẩy buttons sang phải
-        
-        // Container cho 3 buttons (căn phải)
-        HBox buttonsBox = new HBox(4);  // Spacing 4px giữa các button
-        buttonsBox.setAlignment(Pos.CENTER_RIGHT);
-        
-        // Button Xanh (Green) - Modern traffic light style
-        Button greenBtn = new Button("");
-        greenBtn.setPrefSize(16, 16);
-        greenBtn.setMinSize(16, 16);
-        greenBtn.setMaxSize(16, 16);
-        greenBtn.setStyle("-fx-background-color: #34C759; " +
-                         "-fx-border-radius: 8; " +
-                         "-fx-background-radius: 8; " +
-                         "-fx-cursor: hand; " +
-                         "-fx-effect: dropshadow(gaussian, rgba(52, 199, 89, 0.4), 4, 0, 0, 1);");
-        
-        // Button Vàng (Yellow)
-        Button yellowBtn = new Button("");
-        yellowBtn.setPrefSize(16, 16);
-        yellowBtn.setMinSize(16, 16);
-        yellowBtn.setMaxSize(16, 16);
-        yellowBtn.setStyle("-fx-background-color: #FFCC00; " +
-                          "-fx-border-radius: 8; " +
-                          "-fx-background-radius: 8; " +
-                          "-fx-cursor: hand; " +
-                          "-fx-effect: dropshadow(gaussian, rgba(255, 204, 0, 0.4), 4, 0, 0, 1);");
-        
-        // Button Đỏ (Red)
-        Button redBtn = new Button("");
-        redBtn.setPrefSize(16, 16);
-        redBtn.setMinSize(16, 16);
-        redBtn.setMaxSize(16, 16);
-        redBtn.setStyle("-fx-background-color: #FF3B30; " +
-                       "-fx-border-radius: 8; " +
-                       "-fx-background-radius: 8; " +
-                       "-fx-cursor: hand; " +
-                       "-fx-effect: dropshadow(gaussian, rgba(255, 59, 48, 0.4), 4, 0, 0, 1);");
-        
-        // Thêm buttons vào container
-        buttonsBox.getChildren().addAll(greenBtn, yellowBtn, redBtn);
-        
-        // Thêm vào HBox chính
-        box.getChildren().addAll(nameLabel, buttonsBox);
-        
-        return box;
-    }
+
     
     // ===== GETTER METHODS (Encapsulation) =====
     // Cho phép class khác truy cập các thành phần
@@ -384,8 +350,9 @@ public class ControlPanel extends VBox {
         // Kết nối Inject button với SimulationEngine
         injectButton.setOnAction(e -> handleInjectVehicles());
         
-        // Load edge list
+        // Load edge list and traffic light list
         populateEdgeList();
+        populateTrafficLightList();
     }
     
     /**
@@ -537,6 +504,57 @@ public class ControlPanel extends VBox {
             
         } catch (Exception e) {
             System.err.println("⚠️  Error injecting vehicles: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * Populate traffic light list from SUMO
+     */
+    private void populateTrafficLightList() {
+        try {
+            java.util.List<String> tlIDs = simulationEngine.getAllTrafficLightIDs();
+            trafficLightComboBox.getItems().clear();
+            trafficLightComboBox.getItems().addAll(tlIDs);
+            System.out.println("✅ Loaded " + tlIDs.size() + " traffic lights");
+        } catch (Exception e) {
+            System.err.println("⚠️  Error loading traffic lights: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Handle toggle single traffic light
+     */
+    private void handleToggleSingleTrafficLight() {
+        try {
+            String selectedTL = trafficLightComboBox.getValue();
+            if (selectedTL == null || selectedTL.isEmpty()) {
+                System.out.println("⚠️  Please select a traffic light");
+                return;
+            }
+            
+            simulationEngine.toggleSingleTl(selectedTL);
+            System.out.println("✅ Toggled traffic light: " + selectedTL);
+            
+        } catch (Exception e) {
+            System.err.println("⚠️  Error toggling traffic light: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * Handle toggle all traffic lights
+     */
+    private void handleToggleAllTrafficLights() {
+        try {
+            java.util.List<String> allTLs = simulationEngine.getAllTrafficLightIDs();
+            for (String tlID : allTLs) {
+                simulationEngine.toggleSingleTl(tlID);
+            }
+            System.out.println("✅ Toggled all " + allTLs.size() + " traffic lights");
+            
+        } catch (Exception e) {
+            System.err.println("⚠️  Error toggling all traffic lights: " + e.getMessage());
             e.printStackTrace();
         }
     }

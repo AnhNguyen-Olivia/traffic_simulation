@@ -43,16 +43,6 @@ public class MainWindow extends Application {
         leftPanel.setSimulationEngine(simulationEngine);
         centerPanel.setSimulationEngine(simulationEngine);
         
-        // Setup time update callback from SimulationEngine
-        simulationEngine.setOnTimeUpdate(() -> {
-            try {
-                double currentTime = simulationEngine.getCurrentTime();
-                leftPanel.updateTime((int) currentTime);
-            } catch (Exception e) {
-                System.err.println("Error updating time: " + e.getMessage());
-            }
-        });
-        
         // Wrap panels trong ScrollPane
         ScrollPane leftScroll = new ScrollPane(leftPanel);
         leftScroll.setFitToWidth(true);
@@ -116,6 +106,8 @@ public class MainWindow extends Application {
                     // Only step if simulation is running
                     if (isRunning) {
                         simulationEngine.stepSimulation();
+                        // Update time display after simulation step
+                        leftPanel.updateTime((int) simulationEngine.getCurrentTime());
                     }
                     
                     // Update map display
