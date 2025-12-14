@@ -35,7 +35,8 @@ public class MapPanel extends StackPane {
         setupPanning();
         setupRotating();
         // Set clip to prevent overflow drawing
-        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.DASHBOARD_WIDTH - Metrics.STATISTIC_WIDTH, Metrics.WINDOW_HEIGHT);
+        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.CONTROL_PANEL_WIDTH - Metrics.STATISTIC_WIDTH, Metrics.WINDOW_HEIGHT);
+        this.setStyle("-fx-background-color: rgba(248, 217, 185, 0.9);");
         this.setClip(clip);
     }
 

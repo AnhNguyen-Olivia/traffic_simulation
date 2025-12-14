@@ -220,7 +220,7 @@ public class SimulationEngine {
 
 
     /**
-     * Debug tool: return edge ID vehicle running on
+     * Debug tool (might for future dashboard): return edge ID vehicle running on
      * @throws Exception
      */
     public String vehIsOnEdge(String vehicleID) throws Exception {
