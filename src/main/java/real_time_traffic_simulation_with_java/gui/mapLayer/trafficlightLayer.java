@@ -71,7 +71,7 @@ public class trafficlightLayer extends Group {
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS)));
+            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS))); // Time line stop after this duration (or loop if setCycleCount)
             // Ensure the timeline runs indefinitely
             updateTooltip.setCycleCount(Animation.INDEFINITE);
             // To prevent tooltip delay and automatical hide
