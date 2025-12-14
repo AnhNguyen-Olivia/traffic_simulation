@@ -42,9 +42,9 @@ public class DashBoard extends Pane {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Tooltip startEdgeTooltip = new Tooltip("Selec your start edge");
         startEdgeTooltip.setShowDelay(Duration.ZERO);
         Tooltip.install(startEdge, startEdgeTooltip);
+        Tooltip startEdgeTooltip = new Tooltip("Selec your start edge");
 
         ComboBox<String> EndEdge = new ComboBox<>();
         try {

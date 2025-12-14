@@ -21,9 +21,6 @@ public class MainWindow extends Stage {
 
     private void initializeGui() throws Exception {
         placeHolderMap = new MapPanel(this.simulationEngine);
-        placeHolderMap.setTranslateY(-200);
-        placeHolderMap.setScaleY(-1.5);
-        placeHolderMap.setScaleX(1.5);
         DashBoard dashBoard = new DashBoard(this.simulationEngine);
         dashBoard.setPrefWidth(250);
         dashBoard.setMaxWidth(250);
