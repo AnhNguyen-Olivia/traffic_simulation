@@ -56,7 +56,7 @@ public class EdgeData {
     private Group createEdgeGroup(String edgeID, int number_of_lanes, List<SumoGeometry> coordinates) {
         // Draw edge shape
         Polygon edge_shape = createPolygon(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
-        edge_shape.setFill(javafx.scene.paint.Color.SLATEGRAY);
+        edge_shape.setFill(javafx.scene.paint.Color.DIMGRAY);
         edge_shape.setStroke(javafx.scene.paint.Color.WHITE);
         edge_shape.setStrokeWidth(Metrics.EDGE_DIVIDER_WEIGHT);
         // Draw lane dividers

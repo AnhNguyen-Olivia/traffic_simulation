@@ -11,6 +11,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import real_time_traffic_simulation_with_java.alias.Color;
+import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
 public class DashBoard extends Pane {
@@ -127,6 +128,13 @@ public class DashBoard extends Pane {
         vbox.getChildren().addAll(inputAndColor, startAndEnd, vehicleInjection, VandStart, StressTest, toggleAllTl);
         vbox.setSpacing(20);
         this.getChildren().add(vbox);
+
+        this.setStyle("-fx-background-image: url('" + getClass().getResource(Path.DashboardImage).toExternalForm() + "'); " +
+                      "-fx-background-size: cover;" + 
+                      "-fx-background-repeated: no-repeat;"
+                    );
+
+
         this.setVisible(true);
     }
 
