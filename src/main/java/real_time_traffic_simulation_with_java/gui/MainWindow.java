@@ -1,6 +1,6 @@
 package real_time_traffic_simulation_with_java.gui;
+import real_time_traffic_simulation_with_java.alias.Metrics;
 import real_time_traffic_simulation_with_java.alias.Path;
-//import real_time_traffic_simulation_with_java.gui.MapPanel;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import javafx.animation.AnimationTimer;
 import javafx.geometry.Pos;
@@ -12,21 +12,26 @@ import javafx.stage.Stage;
 
 
 public class MainWindow extends Stage {
+    /**
+     * Calling simulation engine, map panel, dashboard and statistic panel (currently only display an image)
+    */
     private SimulationEngine simulationEngine;
     private MapPanel placeHolderMap;
-
+    private AnimationTimer animationTimer;
+    
+    /**
+     * MainWindow contructor. Its have simulation engine as parameter to pass to other components 
+     * @param engine
+     * @throws Exception
+    */
     public MainWindow(SimulationEngine engine) throws Exception {
         this.simulationEngine = engine;
         initializeGui();
     }
 
     private void initializeGui() throws Exception {
-        //placeHolderMap.setTranslateX(-200);
         placeHolderMap = new MapPanel(this.simulationEngine);
-        placeHolderMap.setTranslateY(-200);
-        placeHolderMap.setScaleY(-1.5);
-        placeHolderMap.setScaleX(1.5);
-        DashBoard dashBoard = new DashBoard();
+        DashBoard dashBoard = new DashBoard(this.simulationEngine);
         dashBoard.setPrefWidth(250);
         dashBoard.setMaxWidth(250);
 
@@ -54,17 +59,31 @@ public class MainWindow extends Stage {
     }
 
     public void startAnimationTimer(){
-        AnimationTimer timer = new AnimationTimer() {
+        final long stepIntervalNanos = Metrics.CONNECT_SPEED * 1_000_000L;
+        animationTimer = new AnimationTimer() {
+            private long lastStepTime = 0L;
             @Override
             public void handle(long now){
+                if (now - lastStepTime < stepIntervalNanos)return;
                 try{
+                    simulationEngine.stepSimulation();
                     placeHolderMap.refresh();
+                    lastStepTime = now;
+                }catch(IllegalStateException closed){
+                    // SUMO already closed; stop timer to avoid noisy stack traces
+                    this.stop();
                 }catch(Exception e){
                     e.printStackTrace();
                 }
             }
         };
-        timer.start();
+        animationTimer.start();
     }                                                                                                                                                             
+
+    public void stopAnimationTimer(){
+        if(animationTimer != null){
+            animationTimer.stop();
+        }
+    }
 
 }                       
