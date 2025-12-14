@@ -12,10 +12,18 @@ import javafx.stage.Stage;
 
 
 public class MainWindow extends Stage {
+    /**
+     * Calling simulation engine, map panel, dashboard and statistic panel (currently only display an image)
+    */
     private SimulationEngine simulationEngine;
     private MapPanel placeHolderMap;
     private AnimationTimer animationTimer;
-
+    
+    /**
+     * MainWindow contructor. Its have simulation engine as parameter to pass to other components 
+     * @param engine
+     * @throws Exception
+    */
     public MainWindow(SimulationEngine engine) throws Exception {
         this.simulationEngine = engine;
         initializeGui();

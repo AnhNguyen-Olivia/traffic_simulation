@@ -81,22 +81,24 @@ public class SimulationEngine {
 
     /**
      * Inject vehicle: single and batch injection
-     * Route ID format: [currentStep]
+     * Route ID format: [currentTime]
      * Vehicle ID format: [routeID]_[index]
      * @throws Exception
      */
     public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color) throws Exception {
         // Generate a unique ID
-        String routeID = (int) this.conn.getCurrentStep() + "";
+        String routeID = (long) System.currentTimeMillis() + "";
         this.routeManager.add(routeID, start_edge_ID, end_edge_ID);
         for (int i = 0; i < numVehicles; i++) {
             String vehicleID = routeID + "_" + i;
             this.vehicleManager.add(vehicleID, routeID, color);
         }
     }
+
+    
     /**
      * Inject vehicle: stress test tool, inject 100 vehicles on up to 10 different random routes
-     * Route ID format: [currentStep]_[index]
+     * Route ID format: [currentTime]_[index]
      * Vehicle ID format: [routeID]_[index_of_vehicle_in_this_stress_test]
      * @throws Exception
      */
@@ -108,7 +110,7 @@ public class SimulationEngine {
         if(edgeIDs.size() < 10) {n = edgeIDs.size();} else {n = 10;}
         List<String> end_edge_IDs = edgeIDs.subList(0, n);
         // Generate a unique ID
-        String ID = (int) this.conn.getCurrentStep() + "";
+        String ID = (long) System.currentTimeMillis() + "";
         //Generate color list to inject vehicles with random color
         List<String> colorList = new ArrayList<>(Color.ListofAllColor);
         // Generate n random routes to inject vehicles
