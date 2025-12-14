@@ -27,8 +27,8 @@ public final class Metrics {
     public static final double ENLARGE_FACTOR = 1.05; // Factor to zoom out the map
     public static final double SHRINK_FACTOR = 0.95;      // Factor to zoom in the map
 
-    // Metrics for connection
-    public static final int CONNECT_SPEED = 200;
+    // Metrics for connection speed (how often does the simulation update)
+    public static final int CONNECT_SPEED_MS = 200; // in milliseconds
 
     // Metrics for window pane size
     public static final double WINDOW_WIDTH = 1400;

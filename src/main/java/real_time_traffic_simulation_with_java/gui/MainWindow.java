@@ -58,7 +58,7 @@ public class MainWindow extends Stage {
     }
 
     public void startAnimationTimer(){
-        final long stepIntervalNanos = Metrics.CONNECT_SPEED * 1_000_000L;
+        final long stepIntervalNanos = Metrics.CONNECT_SPEED_MS * 1_000_000L;
         animationTimer = new AnimationTimer() {
             private long lastStepTime = 0L;
             @Override
