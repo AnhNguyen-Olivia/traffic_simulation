@@ -13,8 +13,8 @@ import javafx.util.Duration;
  * Add tooltip for better interactivity
  * No mouse events needed
  * @extends Group
- * @Unfinished
- * @Test Incomplete
+ * @Finished
+ * @Test Completed
  * @Javadoc Completed
  */
 public class trafficlightLayer extends Group {
