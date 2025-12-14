@@ -168,13 +168,13 @@ traffic_simulation
 
 ## Achitechture Diagram and Class Design
 
-![Architecture Diagram](src\main\java\real_time_traffic_simulation_with_java\gui\resources\AchitechDia.jpg)
+![Architecture Diagram](src/main/java/real_time_traffic_simulation_with_java/gui/resources/AchitechDia.jpg)
 
-![Class Design Diagram](src\main\java\real_time_traffic_simulation_with_java\gui\resources\ClassDia.jpg)
+![Class Design Diagram](src/main/java/real_time_traffic_simulation_with_java/gui/resources/ClassDia.jpg)
 
 ## Demo UI
 
-![Demo UI](src\main\java\real_time_traffic_simulation_with_java\gui\resources\DemoUI.jpg)
+![Demo UI](src/main/java/real_time_traffic_simulation_with_java/gui/resources/DemoUI.jpg)
 
 ## License
 
