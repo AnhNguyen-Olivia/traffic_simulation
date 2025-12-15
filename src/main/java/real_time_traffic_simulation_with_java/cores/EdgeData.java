@@ -12,16 +12,18 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.Group;
 
-/**
- * @Unfinished
- * @Test Completed
- * @Javadoc Completed
- */
 
+/**
+ * Represents the visual data of an edge in the simulation, 
+ * grouping a rectangle representing the edge and dashed lines representing lane dividers.
+ */
 public class EdgeData extends Group {
     /**
-     * Constructor
-     * @param coordinates each SumoGeometry represents the coordinates of 1 lane within the edge
+     * Represents the visual data of an edge in the simulation, 
+     * grouping a rectangle representing the edge and dashed lines representing lane dividers.
+     * @param edgeID ID of the edge
+     * @param number_of_lanes number of lanes within the edge
+     * @param coordinates List of SumoGeometry objects representing the coordinates of each lane within the edge
      */
     public EdgeData(String edgeID, int number_of_lanes, List<SumoGeometry> coordinates) {
         // Draw edge shape
@@ -66,7 +68,7 @@ public class EdgeData extends Group {
     }
 
     /**
-     * Private helper method: Calculate coordinations of lane dividers within the edge
+     * Private helper method: Calculate coordinations of lane dividers within the edge.
      * Lines object representing lane dividers within the edge
      * @return List<Line> using library javafx.scene.shape.Line
      */

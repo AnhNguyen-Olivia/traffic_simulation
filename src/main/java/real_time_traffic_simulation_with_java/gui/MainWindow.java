@@ -46,9 +46,9 @@ public class MainWindow extends Stage {
         /**
          * Statistic panel still a placeholder image for now
         */
-        Statistic statistic = new Statistic();
-        statistic.setPrefWidth(Metrics.STATISTIC_WIDTH);
-        statistic.setMaxWidth(Metrics.WINDOW_HEIGHT);
+        Dashboard dashboard = new Dashboard();
+        dashboard.setPrefWidth(Metrics.DASHBOARD_WIDTH);
+        dashboard.setMaxWidth(Metrics.WINDOW_HEIGHT);
         
         /**
          * Separate the main window into 3 parts using BorderPane layout: 
@@ -57,7 +57,7 @@ public class MainWindow extends Stage {
         BorderPane root = new BorderPane();
         root.setCenter(placeHolderMap);
         root.setLeft(controlPanel);
-        root.setRight(statistic);
+        root.setRight(dashboard);
         Scene scene = new Scene(root,Metrics.WINDOW_WIDTH, Metrics.WINDOW_HEIGHT);
 
         /**
@@ -65,7 +65,7 @@ public class MainWindow extends Stage {
         */
         BorderPane.setAlignment(placeHolderMap,Pos.CENTER);
         BorderPane.setAlignment(controlPanel,Pos.CENTER);
-        BorderPane.setAlignment(statistic,Pos.CENTER);
+        BorderPane.setAlignment(dashboard,Pos.CENTER);
 
         /**
          * Set up title, icon and scene for main window
@@ -79,25 +79,25 @@ public class MainWindow extends Stage {
     }
     
     /**
-     * Start animation timer method to update simulation and refresh map panel at fixed interval definned in Metrics.CONNECT_SPEED_MS.
-     * This method works by create a stepIntervalNanos variable to store the interval time in nanoseconds.
-     * then create an AnimationTimer object and override its handle method.
-     * 
-     * class AnimationTimer allows us to create a timer, that is called in each frame while it is active. 
-     * An extending class has to override the method handle(long) which will be called in every frame
+     * Start animation timer method to update simulation and refresh map panel at fixed interval definned in Metrics.CONNECT_SPEED_MS. <br>
+     * This method works by create a stepIntervalNanos variable to store the interval time in nanoseconds. <br>
+     * then create an AnimationTimer object and override its handle method. <br>
+     * <p>
+     * class AnimationTimer allows us to create a timer, that is called in each frame while it is active. <br>
+     * An extending class has to override the method handle(long) which will be called in every frame. <br>
      *                                                              -Oracle AnimationTimer Doc-
-     * 
+     * <p>
      * Which is what we want because we need a method to update the simulation (call SimulationEngine and use it stepSimulation method)
      * and call Map panel refresh methos to update the map in each frame. The method will be talk over the MapPanel.java
-     * 
+     * <p>
      * the handle parameter "now" is the timestamp of the current frame given in nanoseconds. 
      * This value will be the same for all AnimationTimers called during one frame. (Read more at the Oracle documentation! really recommended)
-     * 
+     * <p>
      * Inside the handle method, we check if the time between the current frame (now) 
      * and the last time step is less than the stepIntervalNanos, if yes we simply return and do nothing.
      * But if not, meaning the time has passesd more than the interval we set, 
      * we call the stepSimulation method and refresh the map, then update the lastStepTime to the current time.
-     * 
+     * <p>
      * Incase Sumo connection gets closed, we catch the IllegalStateException and stop the animation timer.
      */
     public void startAnimationTimer(){

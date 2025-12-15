@@ -10,8 +10,8 @@ import real_time_traffic_simulation_with_java.alias.Path;
  * Use to display statistic infomation
  * It is currently placeing an image as a placeholder, we will implement it later
 */
-public class Statistic extends Pane {
-    public Statistic(){
+public class Dashboard extends Pane {
+    public Dashboard(){
         /**
          * This is the placeholder image, yopu can replace it by changinge the path
         */

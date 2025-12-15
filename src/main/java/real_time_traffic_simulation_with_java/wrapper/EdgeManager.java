@@ -9,24 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 import real_time_traffic_simulation_with_java.cores.EdgeData;
 
-/**
- * EdgeManager is a wrapper class for SumoTraciConnection to manage edges in the simulation
- * @Test Incomplete: Retest getEdgeDataList after EdgeData class is completed
- * @Javadoc Completed
- */
 
+/**
+ * Wrapper class for TraaS to manage edges in the simulation
+ */
 public class EdgeManager {
 
-    /**
-     * private SumoTraciConnection conn
-     * private List<EdgeData> edgeDataList
-    */
+    /** Connection to Sumo */
     private final SumoTraciConnection conn;
+    /** Stores List of visualization objects for edges */
     private List<EdgeData> edgeDataList = new java.util.ArrayList<>();
 
     /**
-     * Connection to Sumo
-     * @param connection
+     * Wrapper class for TraaS to manage edges in the simulation
+     * @param connection connection to Sumo
      * @throws Exception
     */
     public EdgeManager(SumoTraciConnection connection) throws Exception {
@@ -38,7 +34,6 @@ public class EdgeManager {
      * Get list of edge IDs, excluding junction edges
      * @return a List type String of edge IDs, excluding junction edges
      * @throws Exception
-     * @Tested
     */ 
     public List<String> getIDList() throws Exception {
         List<String> IDs = new ArrayList<>();
@@ -58,7 +53,6 @@ public class EdgeManager {
      * Get number of edges, excluding junction edges
      * @return an int number of edges, excluding junction edges
      * @throws Exception
-     * @Tested
     */
     public int getCount() throws Exception {
         return this.getIDList().size();
@@ -67,9 +61,9 @@ public class EdgeManager {
 
     /**
      * Get number of lanes on the edge
+     * @param edgeID the ID of the edge
      * @return an int number of lanes on the edge
      * @throws Exception
-     * @Tested
     */ 
     public int getLaneCount(String edgeID) throws Exception {
         return (int) conn.do_job_get(Edge.getLaneNumber(edgeID));
@@ -78,9 +72,9 @@ public class EdgeManager {
 
     /**
      * Get lane IDs on the edge
+     * @param edgeID the ID of the edge
      * @return a List of lane IDs on the edge
      * @throws Exception
-     * @Tested
     */ 
     public List<String> getLaneIDList(String edgeID) throws Exception {
         List<String> laneIDs = new ArrayList<>();
@@ -93,9 +87,9 @@ public class EdgeManager {
 
     /**
      * Get coordinations of lanes the edge
+     * @param edgeID the ID of the edge
      * @return a List of SumoGeometry type coordinations of the lanes on the edge
      * @throws Exception
-     * @Tested
     */
     public List<SumoGeometry> getLanesCoordinate(String edgeID) throws Exception {
         List<SumoGeometry> laneCoords = new ArrayList<>();
@@ -109,9 +103,9 @@ public class EdgeManager {
 
     /**
      * Get max speed allowed on the edge (km/h)
+     * @param edgeID the ID of the edge
      * @return a double max speed allowed on the edge (km/h)
      * @throws Exception
-     * @Tested
     */ 
     public double getMaxSpeed(String edgeID) throws Exception {
         return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0")) * 3.6;
@@ -120,9 +114,9 @@ public class EdgeManager {
 
     /**
      * Get length of the edge (m)
+     * @param edgeID the ID of the edge
      * @return a double length of the edge (m)
      * @throws Exception
-     * @Tested
     */ 
     public double getLength(String edgeID) throws Exception {
         return (double) conn.do_job_get(Lane.getLength(edgeID + "_0"));
@@ -131,9 +125,9 @@ public class EdgeManager {
 
     /**
      * Get vehicle ID and number of vehicles on the edge in the last step
+     * @param edgeID the ID of the edge
      * @return an List type String of vehicle IDs on the edge in the last step
      * @throws Exception
-     * @Tested
     */ 
     @SuppressWarnings("unchecked")
     public List<String> getVehicleIDList(String edgeID) throws Exception {
@@ -143,9 +137,9 @@ public class EdgeManager {
     
     /**
      * Get number of vehicles on the edge in the last step
+     * @param edgeID the ID of the edge
      * @return an int number of vehicles on the edge in the last step
      * @throws Exception
-     * @Tested
     */
     public int getVehicleCount(String edgeID) throws Exception {
         return (int) conn.do_job_get(Edge.getLastStepVehicleNumber(edgeID));
@@ -154,9 +148,9 @@ public class EdgeManager {
 
     /**
      * Get average speed of vehicles on the edge in the last step (km/h)
+     * @param edgeID the ID of the edge
      * @return a double average speed of vehicles on the edge in the last step (km/h)
      * @throws Exception
-     * @Tested
     */
     public double getAverageSpeed(String edgeID) throws Exception {
         return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID)) * 3.6;
@@ -165,9 +159,9 @@ public class EdgeManager {
 
     /**
      * Get density of vehicles on the edge in the last step (vehicle/km)
+     * @param edgeID the ID of the edge
      * @return a double density of vehicles on the edge in the last step (vehicle/km)
      * @throws Exception
-     * @Tested
     */
     public double getDensity(String edgeID) throws Exception {
         double vehicleCount = (int) conn.do_job_get(Edge.getLastStepVehicleNumber(edgeID));
@@ -177,11 +171,10 @@ public class EdgeManager {
 
     /**
      * Get estimate travel time on the edge in the last step (s)
+     * @param edgeID the ID of the edge
      * @return a double estimate travel time on the edge in the last step (s)
      * @throws Exception
-     * @Tested
     */
-    // Get estimate travel time on the edge last step (s)
     public double getTravelTime(String edgeID) throws Exception {
         return (double) conn.do_job_get(Edge.getTraveltime(edgeID));
     }
@@ -191,7 +184,6 @@ public class EdgeManager {
      * Create and get a List of EdgeData for all edges
      * @return a List of EdgeData for all edges
      * @throws Exception
-     * @Tested
     */
     public List<EdgeData> getEdgeDataList() throws Exception {
         if(edgeDataList.isEmpty()){

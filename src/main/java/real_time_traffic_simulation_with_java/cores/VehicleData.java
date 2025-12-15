@@ -6,16 +6,18 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import javafx.scene.shape.Rectangle;
 
-/**
- * @Finished
- * @Test Completed
- * @Javadoc Completed
- */
 
+/**
+ * Represents the visual data of a vehicle in the simulation.
+ */
 public class VehicleData extends Rectangle {
     /**
-     * Constructor
-     * @param color default color is white if invalid input, can modify return String in alias.Color
+     * Represents the visual data of a vehicle in the simulation.
+     * @param vehicleID The unique identifier for the vehicle.
+     * @param x The x-coordinate of the vehicle's position.
+     * @param y The y-coordinate of the vehicle's position.
+     * @param angle The orientation angle of the vehicle.
+     * @param color The color of the vehicle, represented as a SumoColor.
      */
     public VehicleData(String vehicleID, double x, double y, double angle, SumoColor color) {
         String colorString =  Color.colorToString(color);

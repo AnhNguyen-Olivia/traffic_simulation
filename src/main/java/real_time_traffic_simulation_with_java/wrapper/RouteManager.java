@@ -6,22 +6,16 @@ import de.tudresden.sumo.objects.SumoStringList;
 
 import java.util.List;
 
-/**
- * RouteManager is a wrapper class for SumoTraciConnection to manage routes in the simulation
- * @Test Completed
- * @Javadoc Completed
- */
 
+/** Wrapper class for TraaS to manage routes in the simulation */
 public class RouteManager {
 
-    /**
-     * private SumoTraciConnection conn
-    */
+    /** Connection to Sumo */
     private final SumoTraciConnection conn;
 
     /**
-     * Connection to Sumo
-     * @param connection
+     * Wrapper class for TraaS to manage routes in the simulation
+     * @param connection connection to Sumo
      * @throws Exception
     */
     public RouteManager(SumoTraciConnection connection) throws Exception {
@@ -33,7 +27,6 @@ public class RouteManager {
      * Get list of route IDs in current simulation
      * @return a List type String of route IDs
      * @throws Exception
-     * @Tested
     */ 
     @SuppressWarnings("unchecked")
     public List<String> getIDList() throws Exception {
@@ -45,7 +38,6 @@ public class RouteManager {
      * Get number of routes in current simulation
      * @return an int number of routes
      * @throws Exception
-     * @Tested
     */ 
     public int getCount() throws Exception {
         return (int) conn.do_job_get(Route.getIDCount());
@@ -54,9 +46,9 @@ public class RouteManager {
 
     /**
      * Get the edges of a route in order, route with disconnected edges are allowed 
+     * @param routeID ID of the route
      * @return a List type String of edges in the route
      * @throws Exception
-     * @Tested
     */ 
     @SuppressWarnings("unchecked")
     public List<String> getEdges(String routeID) throws Exception {
@@ -66,8 +58,10 @@ public class RouteManager {
 
     /**
      * Add a new route to the simulation (disconnected edges are allowed)
+     * @param routeID ID of the route
+     * @param start_edge where the route starts
+     * @param end_edge where the route ends
      * @throws Exception
-     * @Tested
     */
     public void add(String routeID, String start_edge, String end_edge) throws Exception {
         conn.do_job_set(Route.add(routeID, new SumoStringList(List.of(start_edge, end_edge))));

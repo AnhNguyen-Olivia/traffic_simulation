@@ -11,21 +11,22 @@ import real_time_traffic_simulation_with_java.gui.mapLayer.*;
 
 
 /**
- * MapPanel class: create map panel including 3 layers: road layer, vehicle layer, traffic light layer (top-most)
- * MapPanel supports zooming, panning, rotating functionalities
- * @extends StackPane
- * @Finished
- * @Test Completed
- * @Javadoc Completed
+ * Create map panel including 3 layers: road layer (bottom-most), vehicle layer, traffic light layer (top-most). <br>
+ * MapPanel supports zooming, panning, rotating functionalities. 
+ * Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse <br>
+ * MapPanel is clipped to prevent overflow drawing. 
+ * Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
  */
 public class MapPanel extends StackPane {
     private SimulationEngine simulationEngine;
 
     /**
-     * Constructor for MapPanel, MapPanel size: 900x830
-     * MapPanel is clipped to prevent overflow drawing
-     * Shouldn't apply transformation to the clip, or the clip will be distorted, only apply transformation to the children nodes
-     * Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse
+     * Create map panel including 3 layers: road layer (bottom-most), vehicle layer, traffic light layer (top-most). <br>
+     * MapPanel supports zooming, panning, rotating functionalities. 
+     * Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse <br>
+     * MapPanel is clipped to prevent overflow drawing. 
+     * Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
+     * @param engine SimulationEngine instance
      * @throws Exception
      */
     public MapPanel(SimulationEngine engine) throws Exception {
@@ -35,7 +36,7 @@ public class MapPanel extends StackPane {
         setupPanning();
         setupRotating();
         // Set clip to prevent overflow drawing
-        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.CONTROL_PANEL_WIDTH - Metrics.STATISTIC_WIDTH, Metrics.WINDOW_HEIGHT);
+        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.CONTROL_PANEL_WIDTH - Metrics.DASHBOARD_WIDTH, Metrics.WINDOW_HEIGHT);
         this.setStyle("-fx-background-color: rgba(248, 217, 185, 0.9);");
         this.setClip(clip);
     }
