@@ -81,7 +81,7 @@ public class MapPanel extends StackPane {
         // (Optional) nếu bạn vẫn cần “flip Y” như SUMO -> JavaFX:
         // Cách “đúng” nhất là flip ở WORLD để mọi layer đồng bộ, và pivot tại 0.
         // Nếu roadLayer/vehicleLayer/trafficlightLayer đã tự flip thì comment dòng này.
-        //world.setScaleY(-1);
+        world.setScaleY(-1);
 
         world.getTransforms().setAll(viewTransform);
 
@@ -100,7 +100,6 @@ public class MapPanel extends StackPane {
 
         addZoomButtons();     // GUI zoom +/- (đoạn 1)
 
-        System.out.println("✅ MapPanel merged initialized (Affine + mapLayer + tooltips + optimized refresh)");
     }
 
     public MapPanel(SimulationEngine engine) {
@@ -192,7 +191,7 @@ public class MapPanel extends StackPane {
             double dx = e.getX() - anchorX;
             double dy = e.getY() - anchorY;
             viewTransform.setTx(anchorTx + dx);
-            viewTransform.setTy(anchorTy + dy);
+            viewTransform.setTy(anchorTy - dy);
         });
 
         viewport.setOnMouseReleased(e -> viewport.setCursor(Cursor.DEFAULT));
@@ -281,7 +280,6 @@ public class MapPanel extends StackPane {
         try {
             Bounds worldBounds = world.getBoundsInLocal();
             if (worldBounds == null || worldBounds.isEmpty()) {
-                System.err.println("⚠️ World bounds empty!");
                 return;
             }
 
@@ -293,7 +291,6 @@ public class MapPanel extends StackPane {
             viewTransform.setTy(offsetY);
 
             isMapCentered = true;
-            System.out.println("✅ Map centered");
         } catch (Exception e) {
             System.err.println("⚠️ Error centering map: " + e.getMessage());
         }
