@@ -4,14 +4,14 @@ import de.tudresden.sumo.objects.SumoGeometry;
 
 import javafx.scene.shape.Polygon;
 
+
 /**
- * @Finished
- * @Test Completed
- * @Javadoc Completed
+ * Represents the visual data of a junction in the simulation.
  */
 public class JunctionData extends Polygon {
     /**
-     * Constructor
+     * Represents the visual data of a junction in the simulation.
+     * @param junctionID ID of the junction
      * @param coordinates SumoGeometry representing the coordinates of the junction shape
      */
     public JunctionData(String junctionID, SumoGeometry coordinates){

@@ -14,34 +14,24 @@ import javafx.animation.KeyFrame;
 import javafx.scene.Group;
 import javafx.util.Duration;
 
+
 /**
- * trafficlightLayer class: create traffic light layer including traffic lights
- * Add tooltip for better interactivity
- * No mouse events needed
- * @extends Group
- * @Finished
- * @Test Completed
- * @Javadoc Completed
+ * Create traffic lights layer including traffic lights, 
+ * with tooltip for better interactivity. <br>
+ * Double-clicked mouse events is set to toggle traffic light state.
  */
 public class trafficlightLayer extends Group {
     private SimulationEngine simulationEngine;
 
-
     /**
-     * Constructor for trafficlightLayer
+     * Create traffic lights layer including traffic lights, 
+     * with tooltip for better interactivity. <br>
+     * Double-clicked mouse events is set to toggle traffic light state.
+     * @param engine SimulationEngine instance
      * @throws Exception
      */
     public trafficlightLayer(SimulationEngine engine) throws Exception {
         this.simulationEngine = engine;
-        createTrafficLightLayer();
-    }
-
-
-    /**
-     * Private helper method: Grouping traffic lights into 1 group for traffic light layer
-     * @throws Exception
-     */
-    private void createTrafficLightLayer() throws Exception {
         List<TrafficLightData> Tls = this.simulationEngine.getMapTls();
 
         // Add tooltip and mouse events
@@ -105,7 +95,7 @@ public class trafficlightLayer extends Group {
 
 
     /**
-     * Public method: Refresh traffic light layer to update traffic light states
+     * Refresh traffic light layer to update traffic light states
      * @throws Exception
      */
     public void refreshTrafficLightLayer() throws Exception {

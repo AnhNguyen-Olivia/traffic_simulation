@@ -10,17 +10,20 @@ import javafx.geometry.Point2D;
 import javafx.scene.shape.Polygon;
 import javafx.scene.Group;
 
-/**
- * @Finished
- * @Test Completed
- * @Javadoc Completed
- */
 
+/**
+ * Represents the visual data of a traffic light in the simulation, 
+ * grouping multiple Polygons representing the sub-lights of the traffic light. <br>
+ * Each sub-light's shape is derived from the coordinates of the incoming lanes, and its color is determined by the traffic light's current state.
+ */
 public class TrafficLightData extends Group {
     /**
-     * Constructor: each Polygon in the group represents the shape of corresponding sub-light
-     * @param coordinates each SumoGeometry represents the coordinates of incoming lane shape for sub-light
-     * @param colorList a string representing the color states of the traffic light's sub-lights
+     * Represents the visual data of a traffic light in the simulation, 
+     * grouping multiple Polygons representing the sub-lights of the traffic light. <br>
+     * Each sub-light's shape is derived from the coordinates of the incoming lanes, and its color is determined by the traffic light's current state.
+     * @param tlID the unique identifier of the traffic light
+     * @param coordinates a list of SumoGeometry objects representing the shapes of incoming lanes controlled by the traffic light
+     * @param colorString a string representing the color states of the traffic light
      */
     public TrafficLightData(String tlID, List<SumoGeometry> coordinates, String colorString) {
         List<Polygon> light_shapes = convertSumoGeometryToShapeList(coordinates, colorString);
@@ -30,7 +33,8 @@ public class TrafficLightData extends Group {
     }
 
     /**
-     * Setter to refresh the color of the traffic light's sub-lights
+     * Refresh the color of the traffic light's sub-lights
+     * @param colorString a string representing the new color states of the traffic light
      */
     public void setColor(String colorString) {
         List<String> colorList = convertColorToList(colorString);
