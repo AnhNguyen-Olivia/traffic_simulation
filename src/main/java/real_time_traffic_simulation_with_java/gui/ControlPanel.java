@@ -223,7 +223,7 @@ public class ControlPanel extends Pane {
             int vNumber = Integer.parseInt(vehicleNumber);
 
             if(vColor == null || vColor.isEmpty()){
-                vColor = "RED"; // Default to RED
+                vColor = "WHITE"; // Default to WHITE
                 return;
             }
 

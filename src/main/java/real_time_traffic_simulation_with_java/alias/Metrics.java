@@ -35,6 +35,10 @@ public final class Metrics {
     public static final double ENLARGE_FACTOR = 1.05;
     /** Factor to zoom in the map */
     public static final double SHRINK_FACTOR = 0.95;
+    /** Maximum zoom level */
+    public static final double MAX_ZOOM_LEVEL = 15.0;
+    /** Minimum zoom level */
+    public static final double MIN_ZOOM_LEVEL = 0.5;
 
     /** Connection speed (in milliseconds): How often does the simulation update */
     public static final int CONNECT_SPEED_MS = 200;

@@ -19,6 +19,8 @@ import real_time_traffic_simulation_with_java.gui.mapLayer.*;
  */
 public class MapPanel extends StackPane {
     private SimulationEngine simulationEngine;
+    /** Current zoom level of the map panel */
+    private double currentZoomLevel = 1.0;
 
     /**
      * Create map panel including 3 layers: road layer (bottom-most), vehicle layer, traffic light layer (top-most). <br>
@@ -89,6 +91,10 @@ public class MapPanel extends StackPane {
         Group mapGroup = (Group) this.getChildren().get(0);
         mapGroup.setOnScroll(event -> {
             double zoomFactor = event.getDeltaY() > 0 ? Metrics.ENLARGE_FACTOR : Metrics.SHRINK_FACTOR;
+            // Limit the zoom level within the range [MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL]
+            zoomFactor = Math.max(Math.min(zoomFactor, Metrics.MAX_ZOOM_LEVEL/currentZoomLevel), Metrics.MIN_ZOOM_LEVEL/currentZoomLevel);
+            currentZoomLevel *= zoomFactor;
+            // Apply zooming at mouse cursor position
             Scale scale = new Scale(zoomFactor, zoomFactor, event.getX(), event.getY());
             mapGroup.getTransforms().add(scale);
             event.consume();
