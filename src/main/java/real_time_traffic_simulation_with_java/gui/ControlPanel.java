@@ -1,4 +1,5 @@
 package real_time_traffic_simulation_with_java.gui;
+import java.util.List;
 import javafx.event.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -52,6 +53,17 @@ public class ControlPanel extends Pane {
         Tooltip.install(inputVnumber, inputToolTip);
 
         /**
+         * Create speed text field, set perfered width and max width, add tooltip
+        */
+        TextField inputSpeed = new TextField();
+        inputSpeed.setPromptText("max");
+        inputSpeed.setPrefWidth(100);
+        inputSpeed.setMaxWidth(100);
+        Tooltip inputSpeedToolTip = new Tooltip("Enter the speed of vehicle you want to inject (in km/h)");
+        inputSpeedToolTip.setShowDelay(Duration.ZERO);
+        Tooltip.install(inputSpeed, inputSpeedToolTip);
+
+        /**
          * Create vehicle color combobox, add all color options, add tooltip.
          * Use Color alias class to get all color options.
         */
@@ -64,7 +76,7 @@ public class ControlPanel extends Pane {
         /**
          * Group vehicle number input and color selection in an HBox
         */
-        HBox inputAndColor = new HBox(10, inputVnumber, vehicleColor);
+        HBox inputSpeedColor = new HBox(10, inputVnumber, inputSpeed,vehicleColor);
 
         /**
          * Create start edge combobox, add all edge IDs from simulationEngine, add tooltip
@@ -110,7 +122,7 @@ public class ControlPanel extends Pane {
         */
         EventHandler<ActionEvent> injectEvent = new EventHandler<ActionEvent>(){
             public void handle(ActionEvent e){
-                injectVehicle(inputVnumber, vehicleColor, startEdge, EndEdge);
+                injectVehicle(inputVnumber, inputSpeed, vehicleColor, startEdge, EndEdge);
             }
         };
 
@@ -183,10 +195,81 @@ public class ControlPanel extends Pane {
         toggleAllTl.setOnAction(toggleAllEvent);
 
         /**
+         * Create vehicle color combobox, add all color options, add tooltip.
+         * Use Color alias class to get all color options.
+        */
+        ComboBox<String> vehicleFilterColor = new ComboBox<>();
+        List<String> colorOptions = new java.util.ArrayList<>(Color.ListofAllColor);
+        colorOptions.add(0, ""); // Add empty option for no color filter
+        vehicleFilterColor.getItems().addAll(colorOptions);
+        Tooltip vehicleFilterColorTooltip = new Tooltip("Select color to filter vehicles");
+        vehicleFilterColorTooltip.setShowDelay(Duration.ZERO);
+        Tooltip.install(vehicleFilterColor, vehicleFilterColorTooltip);
+
+        
+
+        /**
+         * Create a filtered edge combobox, add all edge IDs from simulationEngine, add tooltip
+        */
+        ComboBox<String> filteredEdge = new ComboBox<>();
+        try {
+            List<String> EdgeOptions = new java.util.ArrayList<>(simulationEngine.getAllEdgeIDs());
+            EdgeOptions.add(0, ""); // Add empty option for no edge filter
+            filteredEdge.getItems().addAll(EdgeOptions);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Tooltip filteredEdgeTooltip = new Tooltip("Select your filtered edge");
+        filteredEdgeTooltip.setShowDelay(Duration.ZERO);
+        Tooltip.install(filteredEdge, filteredEdgeTooltip);
+
+        HBox filtered = new HBox(10, vehicleFilterColor, filteredEdge);
+
+        Button filteredButton = new Button("Filter Vehicles");
+        Tooltip filterTooltip = new Tooltip("Press to filter vehicles by color and edge.");
+        filterTooltip.setShowDelay(Duration.ZERO);
+        Tooltip.install(filteredButton, filterTooltip);
+
+        /**
+         * Event handler for filter button
+        */
+        EventHandler<ActionEvent> filterEvent = new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent e){
+                try {
+                    simulationEngine.setVehicleFilter(vehicleFilterColor.getValue(), filteredEdge.getValue());
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        };
+        filteredButton.setOnAction(filterEvent);
+
+        Button resetFilterButton = new Button("Reset Filter");
+        Tooltip reSetFilTooltip = new Tooltip("Press to filter vehicles by color and edge.");
+        reSetFilTooltip.setShowDelay(Duration.ZERO);
+        Tooltip.install(resetFilterButton, reSetFilTooltip);
+
+        /**
+         * Event handler for reset filter button
+        */
+        EventHandler<ActionEvent> resetFilterEvent = new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent e){
+                try {
+                    simulationEngine.setVehicleFilter("", "");
+                    vehicleFilterColor.setValue("");
+                    filteredEdge.setValue("");
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        };
+        resetFilterButton.setOnAction(resetFilterEvent);
+
+        /**
          * Group all tools in a VBox and add the VBox to control panel pane
         */
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(inputAndColor, startAndEnd, vehicleInjection, VandStart, StressTest, toggleAllTl);
+        vbox.getChildren().addAll(inputSpeedColor, startAndEnd, vehicleInjection, VandStart, StressTest, toggleAllTl, filtered, filteredButton, resetFilterButton);
         vbox.setSpacing(20);
         this.getChildren().add(vbox);
 
@@ -210,9 +293,10 @@ public class ControlPanel extends Pane {
      * @param EndEdge
      * 
     */
-    public void injectVehicle(TextField inputVnumber, ComboBox<String> vehicleColor, ComboBox<String> startEdge, ComboBox<String> EndEdge){
+    public void injectVehicle(TextField inputVnumber, TextField inputSpeed, ComboBox<String> vehicleColor, ComboBox<String> startEdge, ComboBox<String> EndEdge){
         try{
             String vehicleNumber = inputVnumber.getText().trim(); // Trim whitespace
+            String speed = inputSpeed.getText().trim();
             String vColor = vehicleColor.getValue();
             String startE = startEdge.getValue();
             String endE = EndEdge.getValue();
@@ -221,6 +305,13 @@ public class ControlPanel extends Pane {
                 vehicleNumber = "1"; // Default to 1
             }
             int vNumber = Integer.parseInt(vehicleNumber);
+
+            String fSpeed;
+            if(speed.isEmpty()){
+                fSpeed = "max"; // Default to max speed
+            } else {
+                fSpeed = Float.toString(Float.parseFloat(speed) / 3.6f); // Convert km/h to m/s
+            }
 
             if(vColor == null || vColor.isEmpty()){
                 vColor = "WHITE"; // Default to WHITE
@@ -234,18 +325,18 @@ public class ControlPanel extends Pane {
 
             if(endE == null || endE.isEmpty()){
                 System.out.println("Error, end edge is emtpy");
-                return;
+                return; 
             }
 
             try {
                 // Inject vehicle(s) into the simulation, send the data to simulation engine method of injectVehicle
-                this.simulationEngine.injectVehicle(vNumber, startE, endE, vColor);
+                this.simulationEngine.injectVehicle(vNumber, startE, endE, vColor, fSpeed);
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }catch(NumberFormatException ex){
-            System.out.println("Error: Please enter a positive interger number. \n(Will change this to logging later)");
+            System.out.println("Error: Please enter a positive interger number. \n(Will change this to logging late r)");
         }
     }
     
