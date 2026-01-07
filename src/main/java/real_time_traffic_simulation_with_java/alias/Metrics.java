@@ -2,7 +2,7 @@ package real_time_traffic_simulation_with_java.alias;
 
 /**
  * Utility class: Stores all the metrics used in the simulation, 
- * thus make the code easier to look and fix.
+ *      thus make the code easier to look and fix.
 */
 
 public final class Metrics {

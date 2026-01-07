@@ -19,7 +19,7 @@ import javafx.util.Duration;
 
 /**
  * Create road layer including junctions and edges, 
- * with tooltips and mouse events on edges. <br>
+ *      with tooltips and mouse events on edges. <br>
  * Junction have no tooltips or mouse events, since they are just for visual purpose.
  */
 public class roadLayer extends Group {
@@ -27,7 +27,7 @@ public class roadLayer extends Group {
 
     /**
      * Create road layer including junctions and edges, 
-     * with tooltips and mouse events on edges. <br>
+     *          with tooltips and mouse events on edges. <br>
      * Junction have no tooltips or mouse events, since they are just for visual purpose.
      * @param engine SimulationEngine instance
      * @throws Exception

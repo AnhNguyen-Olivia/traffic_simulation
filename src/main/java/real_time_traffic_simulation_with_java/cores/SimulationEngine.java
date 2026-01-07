@@ -97,20 +97,20 @@ public class SimulationEngine {
      * @param color Color of the vehicles
      * @throws Exception
      */
-    public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color) throws Exception {
+    public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color, String speed) throws Exception {
         // Generate a unique ID
         String routeID = (long) System.currentTimeMillis() + "";
         this.routeManager.add(routeID, start_edge_ID, end_edge_ID);
         for (int i = 0; i < numVehicles; i++) {
             String vehicleID = routeID + "_" + i;
-            this.vehicleManager.add(vehicleID, routeID, color);
+            this.vehicleManager.add(vehicleID, routeID, color, speed);
         }
     }
 
     
     /**
      * Inject vehicle: stress test tool, inject 100 vehicles on up to 10 different random routes. 
-     * Create routes first then create vehicles on those routes. <br>
+     *      Create routes first then create vehicles on those routes. <br>
      * Route ID format: [currentTime]_[index] <br>
      * Vehicle ID format: [routeID]_[index_of_vehicle_in_this_stress_test]
      * @param number_of_vehicles Number of vehicles to inject
@@ -136,7 +136,7 @@ public class SimulationEngine {
         for (int i = 0; i < number_of_vehicles; i++) {
             for (int j = 0; j < n; j++) {
                 Collections.shuffle(colorList);
-                this.vehicleManager.add(ID + "_" + j + "_" + i, ID + "_" + j, colorList.get(0));
+                this.vehicleManager.add(ID + "_" + j + "_" + i, ID + "_" + j, colorList.get(0), "max");
             }
         }
     }
@@ -225,10 +225,11 @@ public class SimulationEngine {
      */
     public String getTlTooltip(String tlID) throws Exception {
         return String.format(
-"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds",  
+"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds \n Current time step: %.0f",  
                     tlID, trafficLightManager.getPhaseCount(tlID), tlID,
                     trafficLightManager.getPhaseID(tlID), trafficLightManager.getDuration(tlID),
-                    trafficLightManager.getNextSwitch(tlID)
+                    trafficLightManager.getNextSwitch(tlID),
+                    conn.getCurrentStep()
                 );
     }
     /**

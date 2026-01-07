@@ -19,11 +19,19 @@ public class SumoTraasConnection {
     private SumoTraciConnection connection;
 
     /** 
-     * Sumo binary, netfile and route file path. 
+     * Sumo binary file path. <br>
      * To change the path go to alias folder and change the path.java file
     */
     private String SumoBinary = Path.SumoPath;
+    /** 
+     * Sumo net file path. <br>
+     * To change the path go to alias folder and change the path.java file
+    */
     private String netFile = Path.NetFilePath;
+    /** 
+     * Sumo route file path. <br>
+     * To change the path go to alias folder and change the path.java file
+    */
     private String rouFile = Path.RouFilePath;
     
     /** 

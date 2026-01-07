@@ -15,12 +15,12 @@ import javafx.scene.Group;
 
 /**
  * Represents the visual data of an edge in the simulation, 
- * grouping a rectangle representing the edge and dashed lines representing lane dividers.
+ *      grouping a rectangle representing the edge and dashed lines representing lane dividers.
  */
 public class EdgeData extends Group {
     /**
      * Represents the visual data of an edge in the simulation, 
-     * grouping a rectangle representing the edge and dashed lines representing lane dividers.
+     *      grouping a rectangle representing the edge and dashed lines representing lane dividers.
      * @param edgeID ID of the edge
      * @param number_of_lanes number of lanes within the edge
      * @param coordinates List of SumoGeometry objects representing the coordinates of each lane within the edge

@@ -13,9 +13,12 @@ import real_time_traffic_simulation_with_java.gui.mapLayer.*;
 /**
  * Create map panel including 3 layers: road layer (bottom-most), vehicle layer, traffic light layer (top-most). <br>
  * MapPanel supports zooming, panning, rotating functionalities. 
- * Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse <br>
+ *      Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse. <br>
+ * <i><b>Note:</b> Drag to quadrant IV of Cartesian plane to rotate clockwise, 
+ *      drag to quadrant II of Cartesian plane to rotate counter-clockwise. 
+ *      Rotation might be unpredictable when dragging to other quadrants of Cartesian plane</i> <br>
  * MapPanel is clipped to prevent overflow drawing. 
- * Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
+ *      Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
  */
 public class MapPanel extends StackPane {
     private SimulationEngine simulationEngine;
@@ -24,10 +27,10 @@ public class MapPanel extends StackPane {
 
     /**
      * Create map panel including 3 layers: road layer (bottom-most), vehicle layer, traffic light layer (top-most). <br>
-     * MapPanel supports zooming, panning, rotating functionalities. 
-     * Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse <br>
+     *      MapPanel supports zooming, panning, rotating functionalities. 
+     *      Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse <br>
      * MapPanel is clipped to prevent overflow drawing. 
-     * Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
+     *      Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
      * @param engine SimulationEngine instance
      * @throws Exception
      */
@@ -129,8 +132,8 @@ public class MapPanel extends StackPane {
 
     /**
      * Private helper method: Rotating functionality for MapPanel by dragging right mouse button
-     * Drag to bottom-right to rotate clockwise, drag to top-left to rotate counter-clockwise
-     * Rotation might be unpredictable when dragging to other directions
+     * Drag to quadrant IV of Cartesian plane to rotate clockwise, drag to quadrant II of Cartesian plane to rotate counter-clockwise
+     * Rotation might be unpredictable when dragging to other quadrants of Cartesian plane
      */
     private void setupRotating() {
         double[] delta = new double[3];

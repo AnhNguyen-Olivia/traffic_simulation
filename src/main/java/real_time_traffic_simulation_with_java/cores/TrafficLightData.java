@@ -13,13 +13,13 @@ import javafx.scene.Group;
 
 /**
  * Represents the visual data of a traffic light in the simulation, 
- * grouping multiple Polygons representing the sub-lights of the traffic light. <br>
+ *      grouping multiple Polygons representing the sub-lights of the traffic light. <br>
  * Each sub-light's shape is derived from the coordinates of the incoming lanes, and its color is determined by the traffic light's current state.
  */
 public class TrafficLightData extends Group {
     /**
      * Represents the visual data of a traffic light in the simulation, 
-     * grouping multiple Polygons representing the sub-lights of the traffic light. <br>
+     *      grouping multiple Polygons representing the sub-lights of the traffic light. <br>
      * Each sub-light's shape is derived from the coordinates of the incoming lanes, and its color is determined by the traffic light's current state.
      * @param tlID the unique identifier of the traffic light
      * @param coordinates a list of SumoGeometry objects representing the shapes of incoming lanes controlled by the traffic light

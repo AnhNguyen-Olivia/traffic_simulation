@@ -17,7 +17,7 @@ import javafx.util.Duration;
 
 /**
  * Create traffic lights layer including traffic lights, 
- * with tooltip for better interactivity. <br>
+ *      with tooltip for better interactivity. <br>
  * Double-clicked mouse events is set to toggle traffic light state.
  */
 public class trafficlightLayer extends Group {
@@ -25,7 +25,7 @@ public class trafficlightLayer extends Group {
 
     /**
      * Create traffic lights layer including traffic lights, 
-     * with tooltip for better interactivity. <br>
+     *      with tooltip for better interactivity. <br>
      * Double-clicked mouse events is set to toggle traffic light state.
      * @param engine SimulationEngine instance
      * @throws Exception

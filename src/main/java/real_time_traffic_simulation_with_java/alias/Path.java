@@ -2,7 +2,7 @@ package real_time_traffic_simulation_with_java.alias;
 
 /**
 * Utility class: Stores all the paths used in the simulation, 
-* thus make the code easier to look and fix. <br>
+*       thus make the code easier to look and fix. <br>
 * <i>"Design and document for inheritance or else prohibit it" -Effective Java by Joshua Bloch</i>
 */
 public final class Path {

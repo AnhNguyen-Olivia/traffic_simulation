@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Utility classs: Stores all the sumo color code definitions to prevent user from generting so many color types, 
- * thus make the code easier to look and fix.
+ *      thus make the code easier to look and fix.
 */
 public final class Color {
     private Color(){

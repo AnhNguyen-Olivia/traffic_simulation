@@ -133,8 +133,8 @@ public class VehicleManager {
      * @param color String representing the color of the vehicle
      * @throws Exception
     */ 
-    public void add(String vehID, String routeID, String color) throws Exception {
-        conn.do_job_set(Vehicle.addFull(vehID, routeID, "DEFAULT_VEHTYPE", "now", "best", "base", "max", "current", "max", "current", "", "", "", 0, 0));
+    public void add(String vehID, String routeID, String color, String speed_in_kmh) throws Exception {
+        conn.do_job_set(Vehicle.addFull(vehID, routeID, "DEFAULT_VEHTYPE", "now", "best", "base", speed_in_kmh, "current", "max", "current", "", "", "", 0, 0));
         this.setColor(vehID, Color.stringToColor(color));
     }
 
