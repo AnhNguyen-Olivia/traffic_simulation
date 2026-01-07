@@ -16,8 +16,8 @@ public class VehicleManager {
 
     /** Connection to Sumo */
     private final SumoTraciConnection conn;
-    private String filter_color = null;
-    private String filter_edge = null;
+    private String filter_color = "";
+    private String filter_edge = "";
 
     /**
      * Wrapper class for TraaS to manage vehicles in the simulation
@@ -58,18 +58,18 @@ public class VehicleManager {
      */
     public List<String> getFilteredIDList() throws Exception {
         List<String> allIDs = this.getIDList();
-        if(this.filter_color == null && this.filter_edge == null) {
+        if(this.filter_color.isEmpty() && this.filter_edge.isEmpty()) {
             return allIDs;
         }
         List<String> filteredIDs = new java.util.ArrayList<>();
         for (String id : allIDs) {
-            if(this.filter_color != null) {
+            if(!this.filter_color.isEmpty()) {
                 String vehColor = Color.colorToString(this.getColor(id));
                 if(vehColor != this.filter_color) {
                     continue;
                 }
             }
-            if(this.filter_edge != null) {
+            if(!this.filter_edge.isEmpty()) {
                 String vehEdgeID = this.getEdgeID(id);
                 if(vehEdgeID != this.filter_edge) {
                     continue;
@@ -125,13 +125,13 @@ public class VehicleManager {
 
 
     /**
-     * Get speed of a vehicle (m/s)
+     * Get speed of a vehicle (km/h)
      * @param vehicleID ID of the vehicle
-     * @return a double speed of the vehicle (m/s)
+     * @return a double speed of the vehicle (km/h)
      * @throws Exception
     */ 
     public double getSpeed(String vehicleID) throws Exception {
-        return (double) conn.do_job_get(Vehicle.getSpeed(vehicleID));
+        return (double) conn.do_job_get(Vehicle.getSpeed(vehicleID)) * 3.6f;
     }
 
 

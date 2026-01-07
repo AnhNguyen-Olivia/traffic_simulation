@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import de.tudresden.sumo.objects.SumoGeometry;
 import de.tudresden.sumo.objects.SumoPosition2D;
 import real_time_traffic_simulation_with_java.alias.Metrics;
+import real_time_traffic_simulation_with_java.alias.Color;
 
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Line;
@@ -18,6 +19,12 @@ import javafx.scene.Group;
  *      grouping a rectangle representing the edge and dashed lines representing lane dividers.
  */
 public class EdgeData extends Group {
+    /** Congestion status */
+    private boolean congested = false;
+    /** High travel time index status */
+    private boolean highTTI = false;
+    /** Duration of high travel time index */
+    private int highTTIDuration = 0;
     /**
      * Represents the visual data of an edge in the simulation, 
      *      grouping a rectangle representing the edge and dashed lines representing lane dividers.
@@ -28,13 +35,13 @@ public class EdgeData extends Group {
     public EdgeData(String edgeID, int number_of_lanes, List<SumoGeometry> coordinates) {
         // Draw edge shape
         Polygon edge_shape = createPolygon(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
-        edge_shape.setFill(javafx.scene.paint.Color.DIMGRAY);
-        edge_shape.setStroke(javafx.scene.paint.Color.WHITE);
+        edge_shape.setFill(Color.ROAD);
+        edge_shape.setStroke(Color.ROAD_BORDER);
         edge_shape.setStrokeWidth(Metrics.EDGE_DIVIDER_WEIGHT);
         // Draw lane dividers
         List<Line> lane_dividers = calculateLaneDividers(number_of_lanes, number_of_lanes * Metrics.DEFAULT_LANE_WIDTH, coordinates);
         for(Line lane_divider: lane_dividers) {
-            lane_divider.setStroke(javafx.scene.paint.Color.WHITE);
+            lane_divider.setStroke(Color.LANE_DIVIDER);
             lane_divider.setStrokeWidth(Metrics.LANE_DIVIDER_WEIGHT);
             lane_divider.getStrokeDashArray().addAll(Metrics.LANE_DASHED_LENGTH, Metrics.LANE_DASHED_GAP);
         }
@@ -46,6 +53,49 @@ public class EdgeData extends Group {
     }
 
 
+    /** Getter for congestion status */
+    public boolean isCongested() {
+        return congested;
+    }
+
+    /** */
+    public void setColor() {
+        Polygon edge_shape = (Polygon)this.getChildren().get(0);
+        if(isCongested() && edge_shape.getFill() != Color.CONGESTED_ROAD) {
+            edge_shape.setFill(Color.CONGESTED_ROAD);
+        } else if (!isCongested() && edge_shape.getFill() != Color.ROAD) {
+            edge_shape.setFill(Color.ROAD);
+        }
+    }
+
+
+    /**
+     * Update congested status based on TTI
+     * An edge is considered congested if its Travel Time Index (TTI) 
+     *      maintain above a certain threshold for a certain duration.
+     * @param TTI current Travel Time Index = Current Travel Time / Free Flow Travel Time
+     */
+    public void updateCongestedStatus(double TTI) {
+        if(TTI >= Metrics.HIGH_TTI_THRESHOLD) {
+            highTTIDuration++;
+            if(highTTI == false)
+                highTTI = true;
+            if(highTTIDuration >= Metrics.HIGH_TTI_DURATION_THRESHOLD)
+                congested = true;
+        } else {
+            if(highTTI == true) {
+                if(congested == true)
+                    congested = false;
+                highTTI = false;
+                highTTIDuration = 0;
+            }
+        }
+    }
+
+
+    // ---------------------------------------------------------
+    // Private helper methods for drawing edge shape and lane dividers
+    // ---------------------------------------------------------
     /**
      * Private helper method: Create Polygon by calculating coordinations of the edge corners
      */
