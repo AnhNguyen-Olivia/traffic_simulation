@@ -57,4 +57,13 @@ public final class Color {
                 return WHITE;
         }
     }
+
+    /** Check if a given color name is valid and return color name (return WHITE if invalid) */
+    public static String checkAvailableColor(String colorName) {
+        if (ListofAllColor.contains(colorName.toUpperCase())) {
+            return colorName.toUpperCase();
+        } else {
+            return "WHITE";
+        }
+    }
 }

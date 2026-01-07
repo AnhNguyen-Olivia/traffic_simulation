@@ -186,6 +186,13 @@ public class SimulationEngine {
         return this.vehicleManager.getVehicleDataList();
     }
     /**
+     * Set mapping data: filter vehicles by color and edge
+     * @throws Exception
+     */
+    public void setVehicleFilter(String color, String edgeID) throws Exception {
+        vehicleManager.setFilter(color, edgeID);
+    }
+    /**
      * Get mapping data: traffic lights
      * @return List of TrafficLightData representing traffic lights shape to be rendered
      * @throws Exception

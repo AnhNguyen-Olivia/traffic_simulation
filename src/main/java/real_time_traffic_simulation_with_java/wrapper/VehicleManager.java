@@ -16,6 +16,8 @@ public class VehicleManager {
 
     /** Connection to Sumo */
     private final SumoTraciConnection conn;
+    private String filter_color = null;
+    private String filter_edge = null;
 
     /**
      * Wrapper class for TraaS to manage vehicles in the simulation
@@ -28,6 +30,17 @@ public class VehicleManager {
 
 
     /**
+     * Set filter for vehicles (color, edge)
+     * @return
+     * @throws Exception
+     */
+    public void setFilter(String color, String edge) throws Exception {
+        this.filter_color = Color.checkAvailableColor(color);
+        this.filter_edge = edge;
+    }
+
+
+    /**
      * Get list of running vehicle IDs, vehicles finished route or not yet be injected are not included
      * @return a List type String of running vehicle IDs
      * @throws Exception
@@ -35,6 +48,36 @@ public class VehicleManager {
     @SuppressWarnings("unchecked")
     public List<String> getIDList() throws Exception {
         return (List<String>) conn.do_job_get(Vehicle.getIDList());
+    }
+
+
+    /** 
+     * Get list of filtered running vehicle IDs, vehicles finished route or not yet be injected are not included
+     * @return a List type String of filtered running vehicle IDs
+     * @throws Exception
+     */
+    public List<String> getFilteredIDList() throws Exception {
+        List<String> allIDs = this.getIDList();
+        if(this.filter_color == null && this.filter_edge == null) {
+            return allIDs;
+        }
+        List<String> filteredIDs = new java.util.ArrayList<>();
+        for (String id : allIDs) {
+            if(this.filter_color != null) {
+                String vehColor = Color.colorToString(this.getColor(id));
+                if(vehColor != this.filter_color) {
+                    continue;
+                }
+            }
+            if(this.filter_edge != null) {
+                String vehEdgeID = this.getEdgeID(id);
+                if(vehEdgeID != this.filter_edge) {
+                    continue;
+                }
+            }
+            filteredIDs.add(id);
+        }
+        return filteredIDs;
     }
 
 
@@ -146,7 +189,7 @@ public class VehicleManager {
     */
     public List<VehicleData> getVehicleDataList() throws Exception {
         List<VehicleData> vehicleDataList = new java.util.ArrayList<>();
-        List<String> IDs = this.getIDList();
+        List<String> IDs = this.getFilteredIDList();
         for (String id : IDs) {
             SumoPosition2D pos = this.getPosition(id);
             VehicleData vehicledata = new VehicleData(
