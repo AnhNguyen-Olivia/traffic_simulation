@@ -61,9 +61,9 @@ public class VehicleManager {
 
     /**
      * Get lane ID that the vehicle is currently on, including junction lanes
-     * @param vehicleID ID of the vehicle
      * @return a String lane ID that the vehicle is currently on
      * @throws Exception
+     * @Tested
     */ 
     public String getLaneID(String vehicleID) throws Exception {
         return (String) conn.do_job_get(Vehicle.getLaneID(vehicleID));
@@ -142,7 +142,7 @@ public class VehicleManager {
     /**
      * Create and get a List of VehicleData for all vehicles
      * @return a List of VehicleData for all vehicles
-     * @throws Exception
+     * @throws Exception                
     */
     public List<VehicleData> getVehicleDataList() throws Exception {
         List<VehicleData> vehicleDataList = new java.util.ArrayList<>();
