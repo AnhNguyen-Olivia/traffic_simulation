@@ -12,6 +12,13 @@ import real_time_traffic_simulation_with_java.alias.Color;
 import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
+
+/**
+ * Control panel pane including vehicle injection tool, stress test tool, toggle all traffic light tool. <br>
+ * Group all tools in Hboxes then add them to the Vbox and add the VBox to control panel pane. <br>
+ * Add a cat cover as background image <br>
+ * (Happy Christmas!) ᓚ₍⑅^- .-^₎ -ᶻ 𝗓 𐰁
+*/
 public class ControlPanel extends Pane {
 
     /**
@@ -20,13 +27,12 @@ public class ControlPanel extends Pane {
     private SimulationEngine simulationEngine;
 
     /**
-     * Create control panel pane including vehicle injection tool, stress test tool, toggle all traffic light tool
-     * Group all tools in Hboxes then add them to the Vbox and add the VBox to control panel pane.
-     * Add a cat cover as background image 
+     * Control panel pane including vehicle injection tool, stress test tool, toggle all traffic light tool. <br>
+     * Group all tools in Hboxes then add them to the Vbox and add the VBox to control panel pane. <br>
+     * Add a cat cover as background image <br>
      * (Happy Christmas!) ᓚ₍⑅^- .-^₎ -ᶻ 𝗓 𐰁
      * @param simulationEngine
     */
-
     public ControlPanel(SimulationEngine simulationEngine){
 
         /**
@@ -197,7 +203,7 @@ public class ControlPanel extends Pane {
     }
 
     /***
-     * Method to inject vehicle into the simulation, takes the following parameters:
+     * Method to inject vehicle into the simulation.
      * @param inputVnumber
      * @param vehicleColor
      * @param startEdge
@@ -217,7 +223,7 @@ public class ControlPanel extends Pane {
             int vNumber = Integer.parseInt(vehicleNumber);
 
             if(vColor == null || vColor.isEmpty()){
-                vColor = "RED"; // Default to RED
+                vColor = "WHITE"; // Default to WHITE
                 return;
             }
 
@@ -244,7 +250,7 @@ public class ControlPanel extends Pane {
     }
     
     /**
-     * Method to start stress test mode, takes the following parameters:
+     * Method to start stress test mode.
      * @param inputStressVnumber
      * @param startStressEdge
     */

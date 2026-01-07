@@ -7,6 +7,11 @@ import java.util.Collections;
 import real_time_traffic_simulation_with_java.wrapper.*;
 import real_time_traffic_simulation_with_java.alias.Color;
 
+
+/**
+ * Core to control the simulation, center of backend operations. <br>
+ * Manages all other manager classes.
+ */
 public class SimulationEngine {
     private SumoTraasConnection conn;
     private VehicleManager vehicleManager;
@@ -16,7 +21,8 @@ public class SimulationEngine {
     private JunctionManager junctionManager;
 
     /**
-     * Constructor
+     * Core to control the simulation, center of backend operations. <br>
+     * Manages all other manager classes.
      * @throws Exception
      */
     public SimulationEngine() throws Exception {
@@ -48,6 +54,7 @@ public class SimulationEngine {
 
     /**
      * Get all IDs: edges
+     * @return List of String edge IDs
      * @throws Exception
      */
     public List<String> getAllEdgeIDs() throws Exception {
@@ -55,6 +62,7 @@ public class SimulationEngine {
     }
     /**
      * Get all IDs: vehicles
+     * @return List of String vehicle IDs
      * @throws Exception
      */
     public List<String> getAllVehicleIDs() throws Exception {
@@ -62,6 +70,7 @@ public class SimulationEngine {
     }
     /**
      * Get all IDs: traffic lights
+     * @return List of String traffic light IDs
      * @throws Exception
      */
     public List<String> getAllTrafficLightIDs() throws Exception {
@@ -69,6 +78,7 @@ public class SimulationEngine {
     }
     /**
      * Validate edge ID
+     * @return true if valid, false otherwise
      * @throws Exception
      */
     public boolean validateEdgeID(String edgeID) throws Exception {
@@ -78,26 +88,33 @@ public class SimulationEngine {
 
 
     /**
-     * Inject vehicle: single and batch injection
-     * Route ID format: [currentTime]
+     * Inject vehicle: single and batch injection, create route first then create vehicles on that route. <br>
+     * Route ID format: [currentTime] <br>
      * Vehicle ID format: [routeID]_[index]
+     * @param numVehicles Number of vehicles to inject
+     * @param start_edge_ID Starting edge ID
+     * @param end_edge_ID Ending edge ID
+     * @param color Color of the vehicles
      * @throws Exception
      */
-    public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color) throws Exception {
+    public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color, String speed) throws Exception {
         // Generate a unique ID
         String routeID = (long) System.currentTimeMillis() + "";
         this.routeManager.add(routeID, start_edge_ID, end_edge_ID);
         for (int i = 0; i < numVehicles; i++) {
             String vehicleID = routeID + "_" + i;
-            this.vehicleManager.add(vehicleID, routeID, color);
+            this.vehicleManager.add(vehicleID, routeID, color, speed);
         }
     }
 
     
     /**
-     * Inject vehicle: stress test tool, inject 100 vehicles on up to 10 different random routes
-     * Route ID format: [currentTime]_[index]
+     * Inject vehicle: stress test tool, inject 100 vehicles on up to 10 different random routes. 
+     *      Create routes first then create vehicles on those routes. <br>
+     * Route ID format: [currentTime]_[index] <br>
      * Vehicle ID format: [routeID]_[index_of_vehicle_in_this_stress_test]
+     * @param number_of_vehicles Number of vehicles to inject
+     * @param start_edge_ID Edge ID to inject to
      * @throws Exception
      */
     public void stressTest(int number_of_vehicles, String start_edge_ID) throws Exception {
@@ -119,7 +136,7 @@ public class SimulationEngine {
         for (int i = 0; i < number_of_vehicles; i++) {
             for (int j = 0; j < n; j++) {
                 Collections.shuffle(colorList);
-                this.vehicleManager.add(ID + "_" + j + "_" + i, ID + "_" + j, colorList.get(0));
+                this.vehicleManager.add(ID + "_" + j + "_" + i, ID + "_" + j, colorList.get(0), "max");
             }
         }
     }
@@ -136,6 +153,7 @@ public class SimulationEngine {
     }
     /**
      * Control traffic light: toggle single traffic light
+     * @param tlID Traffic light ID
      * @throws Exception
      */
     public void toggleSingleTl(String tlID) throws Exception {
@@ -145,6 +163,7 @@ public class SimulationEngine {
 
     /**
      * Get mapping data: edges
+     * @return List of EdgeData representing edges shape to be rendered
      * @throws Exception
      */
     public List<EdgeData> getMapEdges() throws Exception {
@@ -152,6 +171,7 @@ public class SimulationEngine {
     }
     /**
      * Get mapping data: junctions
+     * @return List of JunctionData representing junctions shape to be rendered
      * @throws Exception
      */
     public List<JunctionData> getMapJunctions() throws Exception {
@@ -159,6 +179,7 @@ public class SimulationEngine {
     }
     /**
      * Get mapping data: vehicles
+     * @return List of VehicleData representing vehicles shape to be rendered
      * @throws Exception
      */
     public List<VehicleData> getMapVehicles() throws Exception {
@@ -166,6 +187,7 @@ public class SimulationEngine {
     }
     /**
      * Get mapping data: traffic lights
+     * @return List of TrafficLightData representing traffic lights shape to be rendered
      * @throws Exception
      */
     public List<TrafficLightData> getMapTls() throws Exception {
@@ -182,6 +204,8 @@ public class SimulationEngine {
 
     /**
      * Get tooltip: edges
+     * @param edgeID ID of the edge
+     * @return Formatted tooltip string
      * @throws Exception
      */
     public String getEdgeTooltip(String edgeID) throws Exception {
@@ -195,18 +219,23 @@ public class SimulationEngine {
     }
     /**
      * Get tooltip: traffic lights
+     * @param tlID ID of the traffic light
+     * @return Formatted tooltip string
      * @throws Exception
      */
     public String getTlTooltip(String tlID) throws Exception {
         return String.format(
-"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds",  
+"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds \n Current time step: %.0f",  
                     tlID, trafficLightManager.getPhaseCount(tlID), tlID,
                     trafficLightManager.getPhaseID(tlID), trafficLightManager.getDuration(tlID),
-                    trafficLightManager.getNextSwitch(tlID)
+                    trafficLightManager.getNextSwitch(tlID),
+                    conn.getCurrentStep()
                 );
     }
     /**
      * Get statistic: vehicle
+     * @param vehicleID ID of the vehicle
+     * @return Formatted statistic string for Dashboard
      * @throws Exception
      */
     public String getVehicleStats(String vehicleID) throws Exception {
@@ -221,6 +250,8 @@ public class SimulationEngine {
 
     /**
      * Debug tool (might for future dashboard): return edge ID vehicle running on
+     * @param vehicleID ID of the vehicle
+     * @return ID of the edge the vehicle is on
      * @throws Exception
      */
     public String vehIsOnEdge(String vehicleID) throws Exception {

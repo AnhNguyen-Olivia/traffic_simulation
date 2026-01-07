@@ -18,32 +18,22 @@ import javafx.util.Duration;
 
 
 /**
- * roadLayer class: create road layer including junctions and edges
- * Add tooltip and mouse events for better interactivity
- * Junction have no tooltips or mouse events, since they are just for visual purpose
- * @extends Group
- * @Finished
- * @Test Completed
- * @Javadoc Completed
+ * Create road layer including junctions and edges, 
+ *      with tooltips and mouse events on edges. <br>
+ * Junction have no tooltips or mouse events, since they are just for visual purpose.
  */
 public class roadLayer extends Group {
     private SimulationEngine simulationEngine;
 
     /**
-     * Constructor for roadLayer
+     * Create road layer including junctions and edges, 
+     *          with tooltips and mouse events on edges. <br>
+     * Junction have no tooltips or mouse events, since they are just for visual purpose.
+     * @param engine SimulationEngine instance
      * @throws Exception
      */
     public roadLayer(SimulationEngine engine) throws Exception {
         this.simulationEngine = engine;
-        createRoadLayer();
-    }
-
-
-    /**
-     * Private helper method: Grouping junctions and edges into 1 group for road layer
-     * @throws Exception
-     */
-    private void createRoadLayer() throws Exception {
         List<JunctionData> junctions = this.simulationEngine.getMapJunctions();
         List<EdgeData> edges = this.simulationEngine.getMapEdges();
 

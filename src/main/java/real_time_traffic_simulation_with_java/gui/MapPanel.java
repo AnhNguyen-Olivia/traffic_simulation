@@ -11,21 +11,27 @@ import real_time_traffic_simulation_with_java.gui.mapLayer.*;
 
 
 /**
- * MapPanel class: create map panel including 3 layers: road layer, vehicle layer, traffic light layer (top-most)
- * MapPanel supports zooming, panning, rotating functionalities
- * @extends StackPane
- * @Finished
- * @Test Completed
- * @Javadoc Completed
+ * Create map panel including 3 layers: road layer (bottom-most), vehicle layer, traffic light layer (top-most). <br>
+ * MapPanel supports zooming, panning, rotating functionalities. 
+ *      Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse. <br>
+ * <i><b>Note:</b> Drag to quadrant IV of Cartesian plane to rotate clockwise, 
+ *      drag to quadrant II of Cartesian plane to rotate counter-clockwise. 
+ *      Rotation might be unpredictable when dragging to other quadrants of Cartesian plane</i> <br>
+ * MapPanel is clipped to prevent overflow drawing. 
+ *      Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
  */
 public class MapPanel extends StackPane {
     private SimulationEngine simulationEngine;
+    /** Current zoom level of the map panel */
+    private double currentZoomLevel = 1.0;
 
     /**
-     * Constructor for MapPanel, MapPanel size: 900x830
-     * MapPanel is clipped to prevent overflow drawing
-     * Shouldn't apply transformation to the clip, or the clip will be distorted, only apply transformation to the children nodes
-     * Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse
+     * Create map panel including 3 layers: road layer (bottom-most), vehicle layer, traffic light layer (top-most). <br>
+     *      MapPanel supports zooming, panning, rotating functionalities. 
+     *      Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse <br>
+     * MapPanel is clipped to prevent overflow drawing. 
+     *      Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
+     * @param engine SimulationEngine instance
      * @throws Exception
      */
     public MapPanel(SimulationEngine engine) throws Exception {
@@ -35,7 +41,7 @@ public class MapPanel extends StackPane {
         setupPanning();
         setupRotating();
         // Set clip to prevent overflow drawing
-        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.CONTROL_PANEL_WIDTH - Metrics.STATISTIC_WIDTH, Metrics.WINDOW_HEIGHT);
+        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.CONTROL_PANEL_WIDTH - Metrics.DASHBOARD_WIDTH, Metrics.WINDOW_HEIGHT);
         this.setStyle("-fx-background-color: rgba(248, 217, 185, 0.9);");
         this.setClip(clip);
     }
@@ -88,6 +94,10 @@ public class MapPanel extends StackPane {
         Group mapGroup = (Group) this.getChildren().get(0);
         mapGroup.setOnScroll(event -> {
             double zoomFactor = event.getDeltaY() > 0 ? Metrics.ENLARGE_FACTOR : Metrics.SHRINK_FACTOR;
+            // Limit the zoom level within the range [MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL]
+            zoomFactor = Math.max(Math.min(zoomFactor, Metrics.MAX_ZOOM_LEVEL/currentZoomLevel), Metrics.MIN_ZOOM_LEVEL/currentZoomLevel);
+            currentZoomLevel *= zoomFactor;
+            // Apply zooming at mouse cursor position
             Scale scale = new Scale(zoomFactor, zoomFactor, event.getX(), event.getY());
             mapGroup.getTransforms().add(scale);
             event.consume();
@@ -122,8 +132,8 @@ public class MapPanel extends StackPane {
 
     /**
      * Private helper method: Rotating functionality for MapPanel by dragging right mouse button
-     * Drag to bottom-right to rotate clockwise, drag to top-left to rotate counter-clockwise
-     * Rotation might be unpredictable when dragging to other directions
+     * Drag to quadrant IV of Cartesian plane to rotate clockwise, drag to quadrant II of Cartesian plane to rotate counter-clockwise
+     * Rotation might be unpredictable when dragging to other quadrants of Cartesian plane
      */
     private void setupRotating() {
         double[] delta = new double[3];
