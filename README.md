@@ -84,7 +84,7 @@ traffic_simulation
 
 |Name                              | Role                 | Description |
 |----------------------------------|----------------------|-------------|
-|Pham Tran Minh Anh                | GUI Designer            | Writes Java source code, including GUI and draw map.|
+|Pham Tran Minh Anh                | GUI Designer            | Writes Java source code, including GUI, map visualization and render vehicles.|
 |Nguyen Thuy Anh                   | Developer                          | Writes Java source code, including SUMO connection, step simulation, GUI draws main window and dashboard. |
 |Dieu Ngoc Thien An                | GUI designer                    | Writes Java source code, including design, layout, appearance. |
 |Huynh Bao Tran                    | Developer                    | Writes Java source code, including design wrappers, GUI draw maps, and user controls.|

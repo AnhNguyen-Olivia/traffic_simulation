@@ -28,10 +28,10 @@ public final class Metrics {
     /** Gap between dashes in lane divider */
     public static final double LANE_DASHED_GAP = 4.0;
 
-    /** Threshold for high travel time index duration (in simulation seconds) to determine congestion */
-    public static final int HIGH_TTI_DURATION_THRESHOLD = 45;
-    /** Threshold for high travel time index (TTI = Current Travel Time / Free Flow Travel Time) */
-    public static final double HIGH_TTI_THRESHOLD = 2.0;
+    /** Threshold for high halting duration (in simulation seconds) to determine congestion */
+    public static final int HIGH_HALTING_DURATION_THRESHOLD = 60;
+    /** Threshold for high halting rate (average halting vehicles/lane) */
+    public static final double HIGH_HALTING_RATE_THRESHOLD = 5.0;
 
     /** Hide delay for tooltips (in milliseconds) */
     public static final double HIDE_DELAY = 100;

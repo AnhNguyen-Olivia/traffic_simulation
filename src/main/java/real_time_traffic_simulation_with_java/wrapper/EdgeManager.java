@@ -124,7 +124,7 @@ public class EdgeManager {
      * @throws Exception
     */ 
     public double getMaxSpeed(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0")) * 3.6f;
+        return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0")) * 3.6;
     }
 
 
@@ -169,7 +169,7 @@ public class EdgeManager {
      * @throws Exception
     */
     public double getAverageSpeed(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID)) * 3.6f;
+        return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID)) * 3.6;
     }
 
 
@@ -193,6 +193,10 @@ public class EdgeManager {
     */
     public double getTravelTime(String edgeID) throws Exception {
         return (double) conn.do_job_get(Edge.getTraveltime(edgeID));
+    }
+
+    public int getHaltingNumber(String edgeID) throws Exception {
+        return (int) conn.do_job_get(Edge.getLastStepHaltingNumber(edgeID));
     }
 
 
@@ -222,21 +226,9 @@ public class EdgeManager {
      * @throws Exception
      */
     public void updateEdgeDataList() throws Exception {
-        if(edgeDataList.isEmpty()){
-            List<String> IDs = this.getIDList();
-            for (String id : IDs) {
-                EdgeData edgedata = new EdgeData(
-                        id,
-                        this.getLaneCount(id),
-                        this.getLanesCoordinate(id)
-                );
-                edgeDataList.add(edgedata);
-            }
-        }
         for (EdgeData edge : this.edgeDataList) {
-            // free flow travel time = length / max speed ( m / (km/h) = (m / (m/s)) )
-            double freeFlowTravelTime = this.getLength(edge.getId()) / (this.getMaxSpeed(edge.getId()) / 3.6);
-            edge.updateCongestedStatus(this.getTravelTime(edge.getId()) / freeFlowTravelTime);
+            // Halting rate = halting vehicles / number of lanes
+            edge.updateCongestedStatus(this.getHaltingNumber(edge.getId())/this.getLaneCount(edge.getId()));
             edge.setColor();
         }
     }

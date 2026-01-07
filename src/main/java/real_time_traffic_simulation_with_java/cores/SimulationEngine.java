@@ -105,7 +105,7 @@ public class SimulationEngine {
         this.routeManager.add(routeID, start_edge_ID, end_edge_ID);
         for (int i = 0; i < numVehicles; i++) {
             String vehicleID = routeID + "_" + i;
-            this.vehicleManager.add(vehicleID, routeID, color, "5");
+            this.vehicleManager.add(vehicleID, routeID, color, speed);
         }
     }
 
@@ -201,13 +201,6 @@ public class SimulationEngine {
      */
     public List<TrafficLightData> getMapTls() throws Exception {
         return this.trafficLightManager.getTrafficLightDataList();
-    }
-    /**
-     * Update mapping data: traffic lights and edge colors
-     * @throws Exception
-     */
-    public void updateMap() throws Exception {
-        this.trafficLightManager.updateTrafficLightDataList();
     }
 
 
