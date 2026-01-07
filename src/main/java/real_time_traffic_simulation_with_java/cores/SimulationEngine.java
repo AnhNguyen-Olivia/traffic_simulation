@@ -105,7 +105,7 @@ public class SimulationEngine {
         this.routeManager.add(routeID, start_edge_ID, end_edge_ID);
         for (int i = 0; i < numVehicles; i++) {
             String vehicleID = routeID + "_" + i;
-            this.vehicleManager.add(vehicleID, routeID, color, speed);
+            this.vehicleManager.add(vehicleID, routeID, color, "5");
         }
     }
 
