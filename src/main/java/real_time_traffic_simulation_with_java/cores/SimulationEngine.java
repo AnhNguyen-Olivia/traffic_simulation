@@ -37,12 +37,12 @@ public class SimulationEngine {
 
 
     /**
-     * Control simulation: advance simulation by one step
+     * Control simulation: advance simulation by one step & update edge congestion status and traffic light states
      * @throws Exception
      */
     public void stepSimulation() throws Exception {
         this.conn.nextStep();
-        this.edgeManager.updateCongestedStatus();
+        this.edgeManager.updateEdgeDataList();
         this.trafficLightManager.updateTrafficLightDataList();
     }
     /**
@@ -244,13 +244,31 @@ public class SimulationEngine {
 
 
     /**
-     * Get congestion hotspots: edges
+     * Get statistics: current time step and number of entities in the simulation
+     * @return Formatted statistic string for Dashboard
+     * @throws Exception
+     */
+    public String getBasicInfo() throws Exception {
+        return String.format("Time step: %.1f\n    Total vehicles: %d\n    Total edges: %d\n    Total traffic lights: %d",  
+                    conn.getCurrentStep(), 
+                    vehicleManager.getCount(),
+                    edgeManager.getCount(),
+                    trafficLightManager.getCount()
+                );
+    }
+    /**
+     * Get statistics: congestion hotspots
      * @return Formatted statistic string of congested edge IDs for Dashboard
      * @throws Exception
      */
     public String getCongestionHotspots() throws Exception {
-        return String.format("Congestion hotspots (edges): %s",  
-                    String.join(", ", edgeManager.getCongestedEdgeIDList())
+        List<String> congestedEdgeIDs = edgeManager.getCongestedEdgeIDList();
+        if (congestedEdgeIDs.size() == 0) {
+            return "No congestion hotspots detected.";
+        }
+        return String.format("%d Congestion hotspots (edges)\n    ID: %s",  
+                    congestedEdgeIDs.size(),
+                    String.join(", ", congestedEdgeIDs)
                 );
     }
     /**

@@ -1,6 +1,7 @@
 package real_time_traffic_simulation_with_java.gui;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -11,26 +12,41 @@ import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
 /**
  * The statistic panel on the right side of the main window
- * Use to display statistic infomation
- * It is currently placeing an image as a placeholder, we will implement it later
+ * Use to display statistics about the simulation
 */
 public class Dashboard extends Pane {
-    SimulationEngine simulationEngine;
+    private SimulationEngine simulationEngine;
+    private VBox textSection;
+    
 
     public Dashboard(SimulationEngine engine) throws Exception {
         this.simulationEngine = engine;
-        showCongestionHotspots();
+        setupTextSection();
+        this.getChildren().add(textSection);
     }
     
 
-    private void showCongestionHotspots() throws Exception {
+
+
+    /**
+     * Private helper method: show live data about congestion hotspots
+     * @throws Exception
+     */
+    private void setupTextSection() throws Exception {
+        // Basic info labels
+        Label basicInfo = new Label();
+        basicInfo.setWrapText(true);
+        basicInfo.setPrefWidth(Metrics.DASHBOARD_WIDTH - 20);
+        basicInfo.setText(simulationEngine.getBasicInfo());
+        // Congestion hotspot labels
         Label congestedEdgeIDs = new Label();
         congestedEdgeIDs.setWrapText(true);
         congestedEdgeIDs.setPrefWidth(Metrics.DASHBOARD_WIDTH - 20);
-
-        // Add Timeline to update tooltip content with simulation speed
+        congestedEdgeIDs.setText(simulationEngine.getCongestionHotspots());
+        // Add Timeline to update content with simulation speed
         Timeline update = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             try{
+                basicInfo.setText(simulationEngine.getBasicInfo());
                 congestedEdgeIDs.setText(simulationEngine.getCongestionHotspots());
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -39,8 +55,8 @@ public class Dashboard extends Pane {
         // Ensure the timeline runs indefinitely
         update.setCycleCount(Animation.INDEFINITE);
         update.play();
-
-
-        this.getChildren().add(congestedEdgeIDs);
+        this.getChildren().addAll(basicInfo, congestedEdgeIDs);
+        // Add to text section
+        textSection = new VBox(10, basicInfo, congestedEdgeIDs);
     }
 }

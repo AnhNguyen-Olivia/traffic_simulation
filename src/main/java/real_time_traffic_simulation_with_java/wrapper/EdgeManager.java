@@ -221,7 +221,7 @@ public class EdgeManager {
      * Update congestion status for all edges based on TTI and set edge colors
      * @throws Exception
      */
-    public void updateCongestedStatus() throws Exception {
+    public void updateEdgeDataList() throws Exception {
         if(edgeDataList.isEmpty()){
             List<String> IDs = this.getIDList();
             for (String id : IDs) {
