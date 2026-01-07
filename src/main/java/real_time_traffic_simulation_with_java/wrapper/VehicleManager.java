@@ -125,13 +125,13 @@ public class VehicleManager {
 
 
     /**
-     * Get speed of a vehicle (m/s)
+     * Get speed of a vehicle (km/h)
      * @param vehicleID ID of the vehicle
-     * @return a double speed of the vehicle (m/s)
+     * @return a double speed of the vehicle (km/h)
      * @throws Exception
     */ 
     public double getSpeed(String vehicleID) throws Exception {
-        return (double) conn.do_job_get(Vehicle.getSpeed(vehicleID));
+        return (double) conn.do_job_get(Vehicle.getSpeed(vehicleID)) * 3.6f;
     }
 
 

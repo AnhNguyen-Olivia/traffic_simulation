@@ -42,6 +42,8 @@ public class SimulationEngine {
      */
     public void stepSimulation() throws Exception {
         this.conn.nextStep();
+        this.edgeManager.updateCongestedStatus();
+        this.trafficLightManager.updateTrafficLightDataList();
     }
     /**
      * Control simulation: stop
@@ -201,10 +203,10 @@ public class SimulationEngine {
         return this.trafficLightManager.getTrafficLightDataList();
     }
     /**
-     * Update mapping data: traffic lights
+     * Update mapping data: traffic lights and edge colors
      * @throws Exception
      */
-    public void updateMapTls() throws Exception {
+    public void updateMap() throws Exception {
         this.trafficLightManager.updateTrafficLightDataList();
     }
 
@@ -237,6 +239,18 @@ public class SimulationEngine {
                     trafficLightManager.getPhaseID(tlID), trafficLightManager.getDuration(tlID),
                     trafficLightManager.getNextSwitch(tlID),
                     conn.getCurrentStep()
+                );
+    }
+
+
+    /**
+     * Get congestion hotspots: edges
+     * @return Formatted statistic string of congested edge IDs for Dashboard
+     * @throws Exception
+     */
+    public String getCongestionHotspots() throws Exception {
+        return String.format("Congestion hotspots (edges): %s",  
+                    String.join(", ", edgeManager.getCongestedEdgeIDList())
                 );
     }
     /**

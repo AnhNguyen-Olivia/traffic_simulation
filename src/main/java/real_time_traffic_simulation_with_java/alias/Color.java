@@ -13,6 +13,15 @@ public final class Color {
     private Color(){
     }
 
+    /** Color to draw road */
+    public static final javafx.scene.paint.Color ROAD = javafx.scene.paint.Color.DIMGRAY;
+    /** Color to draw road border */
+    public static final javafx.scene.paint.Color ROAD_BORDER = javafx.scene.paint.Color.WHITE;
+    /** Color to draw lane divider */
+    public static final javafx.scene.paint.Color LANE_DIVIDER = javafx.scene.paint.Color.WHITE;
+    /** Color to draw congested road */
+    public static final javafx.scene.paint.Color CONGESTED_ROAD = javafx.scene.paint.Color.CHOCOLATE;
+
     /** Sumo Color(255,0,0,0) */
     public static final SumoColor RED = new SumoColor(255,0,0,0);
     /** Sumo Color(0,0,255,0) */

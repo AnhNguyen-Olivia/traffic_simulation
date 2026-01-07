@@ -18,7 +18,7 @@ public class EdgeManager {
     /** Connection to Sumo */
     private final SumoTraciConnection conn;
     /** Stores List of visualization objects for edges */
-    private List<EdgeData> edgeDataList = new java.util.ArrayList<>();
+    private List<EdgeData> edgeDataList = new ArrayList<>();
 
     /**
      * Wrapper class for TraaS to manage edges in the simulation
@@ -46,6 +46,22 @@ public class EdgeManager {
             IDs.add(ID);
         }
         return IDs;
+    }
+
+    
+    /** 
+     * Get list of congested edges IDs
+     * @return a List type String of congested edge IDs, excluding junction edges
+     * @throws Exception
+     */
+    public List<String> getCongestedEdgeIDList() throws Exception {
+        List<String> congestedEdgeIDs = new ArrayList<>();
+        for (EdgeData edge : this.edgeDataList) {
+            if (edge.isCongested()) {
+                congestedEdgeIDs.add(edge.getId());
+            }
+        }
+        return congestedEdgeIDs;
     }
 
 
@@ -108,7 +124,7 @@ public class EdgeManager {
      * @throws Exception
     */ 
     public double getMaxSpeed(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0")) * 3.6;
+        return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0")) * 3.6f;
     }
 
 
@@ -153,7 +169,7 @@ public class EdgeManager {
      * @throws Exception
     */
     public double getAverageSpeed(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID)) * 3.6;
+        return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID)) * 3.6f;
     }
 
 
@@ -198,6 +214,31 @@ public class EdgeManager {
             }
         }
         return edgeDataList;
+    }
+
+
+    /**
+     * Update congestion status for all edges based on TTI and set edge colors
+     * @throws Exception
+     */
+    public void updateCongestedStatus() throws Exception {
+        if(edgeDataList.isEmpty()){
+            List<String> IDs = this.getIDList();
+            for (String id : IDs) {
+                EdgeData edgedata = new EdgeData(
+                        id,
+                        this.getLaneCount(id),
+                        this.getLanesCoordinate(id)
+                );
+                edgeDataList.add(edgedata);
+            }
+        }
+        for (EdgeData edge : this.edgeDataList) {
+            // free flow travel time = length / max speed ( m / (km/h) = (m / (m/s)) )
+            double freeFlowTravelTime = this.getLength(edge.getId()) / (this.getMaxSpeed(edge.getId()) / 3.6);
+            edge.updateCongestedStatus(this.getTravelTime(edge.getId()) / freeFlowTravelTime);
+            edge.setColor();
+        }
     }
 
 }

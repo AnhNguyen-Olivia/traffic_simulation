@@ -52,11 +52,9 @@ public class MapPanel extends StackPane {
      * @throws Exception
      */
     public void refresh() throws Exception {
-        // Refresh vehicle layer
+        // Redraw vehicle layer
         Group temp = (Group) this.getChildren().get(0);
         temp.getChildren().set(1, new vehicleLayer(this.simulationEngine));
-        // Refresh traffic light layer
-        ((trafficlightLayer)temp.getChildren().get(2)).refreshTrafficLightLayer();
     }
 
 

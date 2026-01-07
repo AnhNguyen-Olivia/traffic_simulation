@@ -1,8 +1,8 @@
 package real_time_traffic_simulation_with_java.cores;
 
 import de.tudresden.sumo.objects.SumoGeometry;
-
 import javafx.scene.shape.Polygon;
+import real_time_traffic_simulation_with_java.alias.Color;
 
 
 /**
@@ -18,7 +18,7 @@ public class JunctionData extends Polygon {
         for (de.tudresden.sumo.objects.SumoPosition2D pos : coordinates.coords) {
             this.getPoints().addAll(new Double[]{pos.x, pos.y});
         }
-        this.setFill(javafx.scene.paint.Color.DIMGRAY);
+        this.setFill(Color.ROAD);
         this.setId(junctionID);
     }
 }
