@@ -161,6 +161,15 @@ public class SimulationEngine {
     public void toggleSingleTl(String tlID) throws Exception {
         this.trafficLightManager.nextPhase(tlID);
     }
+    /**
+     * Control traffic light: set phase durations for a traffic light
+     * @param tlID Traffic light ID
+     * @param durations List of durations for each phase
+     * @throws Exception
+     */
+    public void setTlPhaseDurations(String tlID, List<Integer> durations) throws Exception {
+        this.trafficLightManager.setPhaseDuration(tlID, durations);
+    }
 
 
     /**
@@ -227,11 +236,10 @@ public class SimulationEngine {
      */
     public String getTlTooltip(String tlID) throws Exception {
         return String.format(
-"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds \n Current time step: %.0f",  
+"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds",  
                     tlID, trafficLightManager.getPhaseCount(tlID), tlID,
                     trafficLightManager.getPhaseID(tlID), trafficLightManager.getDuration(tlID),
-                    trafficLightManager.getNextSwitch(tlID),
-                    conn.getCurrentStep()
+                    trafficLightManager.getNextSwitch(tlID)
                 );
     }
 

@@ -5,9 +5,12 @@ import real_time_traffic_simulation_with_java.cores.TrafficLightData;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import java.util.List;
+import java.util.Optional;
 
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.animation.Timeline;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -18,7 +21,8 @@ import javafx.util.Duration;
 /**
  * Create traffic lights layer including traffic lights, 
  *      with tooltip for better interactivity. <br>
- * Double-clicked mouse events is set to toggle traffic light state.
+ * Double-clicked left mouse events is set to toggle traffic light state. <br>
+ * Double-clicked right mouse events is set to adjust traffic light phase durations.
  */
 public class trafficlightLayer extends Group {
     private SimulationEngine simulationEngine;
@@ -26,7 +30,8 @@ public class trafficlightLayer extends Group {
     /**
      * Create traffic lights layer including traffic lights, 
      *      with tooltip for better interactivity. <br>
-     * Double-clicked mouse events is set to toggle traffic light state.
+     * Double-clicked left mouse events is set to toggle traffic light state. <br>
+     * Double-clicked right mouse events is set to adjust traffic light phase durations.
      * @param engine SimulationEngine instance
      * @throws Exception
      */
@@ -37,6 +42,7 @@ public class trafficlightLayer extends Group {
         // Add tooltip and mouse events
         addToolTip(Tls);
         setToggleEvent(Tls);
+        setAdjustPhaseEvent(Tls);
 
         // Add traffic light groups to the traffic light layer
         this.getChildren().addAll(Tls);
@@ -44,7 +50,7 @@ public class trafficlightLayer extends Group {
 
 
     /**
-     * Private helper method: Add tooltip and mouse events to traffic lights
+     * Private helper method: Add tooltip to traffic lights
      * @throws Exception
      */
     private void addToolTip(List<TrafficLightData> Tls) throws Exception {
@@ -77,14 +83,46 @@ public class trafficlightLayer extends Group {
 
     
     /**
-     * Private helper method: Set double-click event to toggle traffic lights to change state
+     * Private helper method: Set double-click left mouse event to toggle traffic lights to change state
      */
     private void setToggleEvent(List<TrafficLightData> Tls) {
         for (TrafficLightData Tl : Tls){
-            Tl.setOnMouseClicked(event -> {
+            // MOUSE_CLICKED fired when mouse button is released
+            Tl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 try {
-                    if (event.getClickCount() == 2) {
+                    // event.isPrimaryButtonDown() not working because mouse button has been released at this time
+                    if (event.getClickCount() == 2 && event.getButton() == MouseButton.PRIMARY) {
                         simulationEngine.toggleSingleTl(Tl.getId());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
+
+    /**
+     * Private helper method: Set double-click right mouse event to adjust traffic lights phase durations
+     */
+    private void setAdjustPhaseEvent(List<TrafficLightData> Tls) {
+        for (TrafficLightData Tl : Tls){
+            // MOUSE_CLICKED fired when mouse button is released
+            Tl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                try {
+                    // event.isSecondaryButtonDown() not working because mouse button has been released at this time
+                    if (event.getClickCount() == 2 && event.getButton() == MouseButton.SECONDARY) {
+                        // Open popup window to adjust phase durations and get the result
+                        trafficlightPopupWindow popup = new trafficlightPopupWindow(Tl.getId(), Tl.getPhasesDuration());
+                        Optional<List<Integer>> result = popup.showAndWait();
+                        // If result is not null, set new phase durations to the simulation engine
+                        result.ifPresent(phaseDurations -> {
+                            try {
+                                simulationEngine.setTlPhaseDurations(Tl.getId(), phaseDurations);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        });
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

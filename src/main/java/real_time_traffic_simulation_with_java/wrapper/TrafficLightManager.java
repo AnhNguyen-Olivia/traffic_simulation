@@ -7,8 +7,10 @@ import de.tudresden.sumo.objects.SumoGeometry;
 import de.tudresden.sumo.objects.SumoLink;
 import de.tudresden.sumo.objects.SumoTLSController;
 import de.tudresden.sumo.objects.SumoTLSProgram;
+import de.tudresden.sumo.objects.SumoTLSPhase;
 
 import java.util.List;
+import java.util.ArrayList;
 import real_time_traffic_simulation_with_java.cores.TrafficLightData;
 
 
@@ -84,17 +86,6 @@ public class TrafficLightManager{
         return (double) conn.do_job_get(Trafficlight.getPhaseDuration(tlId));
     }
 
-    /**
-     * Set the duration of the current phase of the traffic light (second)
-     * Currently not working for unknown reason
-     * @param tlId ID of the traffic light
-     * @param duration double of duration of the current phase in seconds
-     * @throws Exception
-    */ 
-    public void setDuration(String tlId, double duration) throws Exception{
-        conn.do_job_set(Trafficlight.setPhaseDuration(tlId, duration));
-    }
-
 
     /**
      * Get the current phase index of the traffic light
@@ -121,8 +112,58 @@ public class TrafficLightManager{
 
 
     /**
+     * Get initial list of durations for each phase of the traffic light set in net file
+     * @param tlId ID of the traffic light
+     * @return a List of Double type durations for each phase
+     * @throws Exception
+    */
+    public List<Integer> getPhasesDuration(String tlId) throws Exception{
+        SumoTLSController controller = (SumoTLSController) conn.do_job_get(Trafficlight.getCompleteRedYellowGreenDefinition(tlId));
+        ArrayList<SumoTLSPhase> phases = (ArrayList<SumoTLSPhase>) controller.programs.get("0").phases;
+        List<Integer> durations = new ArrayList<>();
+        for (SumoTLSPhase phase : phases) {
+            durations.add((int) phase.maxDur);
+        }
+        return durations;
+    }
+
+
+    /**
+     * Set new duration for each phase of the traffic light and update TrafficLightData phasesDuration
+     * @param tlId ID of the traffic light
+     * @param durations List of durations for each phase
+     * @throws Exception
+     */
+    public void setPhaseDuration(String tlId, List<Integer> durations) throws Exception{
+        // Validate input durations
+        if(durations.size() != this.getPhaseCount(tlId)){
+            throw new Exception("Error: Number of durations does not match number of phases.");
+        }
+        SumoTLSController controller = (SumoTLSController) conn.do_job_get(Trafficlight.getCompleteRedYellowGreenDefinition(tlId));
+        ArrayList<SumoTLSPhase> phases = (ArrayList<SumoTLSPhase>) controller.programs.get("0").phases;
+        List<Integer> newDurations = new ArrayList<>();
+        // Create new SumoTLSProgram with updated durations
+        SumoTLSProgram newProgram = new SumoTLSProgram();
+        for (int i = 0; i < phases.size(); i++) {
+            newProgram.add(new SumoTLSPhase(durations.get(i), phases.get(i).phasedef));
+            newDurations.add(durations.get(i));
+        }
+        // Update the phases in TrafficLightData
+        for(TrafficLightData trafficLightData : this.trafficLightDataList) {
+            if(trafficLightData.getId().equals(tlId)) {
+                trafficLightData.setPhasesDuration(newDurations);
+                break;
+            }
+        }
+        // Set the new program in the simulation
+        conn.do_job_set(Trafficlight.setCompleteRedYellowGreenDefinition(tlId, newProgram));
+    }
+
+
+
+    /**
      * Toggle traffic light to next phase: get the current phase index
-     * and then add 1 to convert to next phase
+     *      and then add 1 to convert to next phase
      * @param tlId ID of the traffic light
      * @throws Exception
      */
@@ -189,7 +230,8 @@ public class TrafficLightManager{
             TrafficLightData trafficLightData = new TrafficLightData(
                 id,
                 LandGeometries,
-                this.getState(id)
+                this.getState(id),
+                this.getPhasesDuration(id)
             );
             trafficLightDataList.add(trafficLightData);
         }
@@ -198,7 +240,7 @@ public class TrafficLightManager{
 
 
     /**
-     * Update the TrafficLightData List with current states from simulation
+     * Update mapping data of the TrafficLightData List with current states from simulation
      * @throws Exception
     */
     public void updateTrafficLightDataList() throws Exception {
