@@ -245,13 +245,20 @@ public class SimulationEngine {
 
 
     /**
-     * Get statistics: current time step and number of entities in the simulation
+     * Get statistics: current time step
+     * @return Formatted statistic string for Dashboard
+     * @throws Exception
+     */
+    public String getCurrentTimeStep() throws Exception {
+        return String.format("Current Time Step: %.1f", this.conn.getCurrentStep());
+    }
+    /**
+     * Get statistics: number of entities in the simulation
      * @return Formatted statistic string for Dashboard
      * @throws Exception
      */
     public String getBasicInfo() throws Exception {
-        return String.format("Time step: %.1f\n    Total vehicles: %d\n    Total edges: %d\n    Total traffic lights: %d",  
-                    conn.getCurrentStep(), 
+        return String.format("    Total vehicles: %d\n    Total edges: %d\n    Total traffic lights: %d",   
                     vehicleManager.getCount(),
                     edgeManager.getCount(),
                     trafficLightManager.getCount()
@@ -273,18 +280,17 @@ public class SimulationEngine {
                 );
     }
     /**
-     * Get statistic: vehicle
+     * Get statistics: chart values (average speed (km/h), density (veh/km), halting number (veh)) of a specific edge
      * @param vehicleID ID of the vehicle
      * @return Formatted statistic string for Dashboard
      * @throws Exception
      */
-    public String getVehicleStats(String vehicleID) throws Exception {
-        return String.format("Vehicle ID: %s\n Speed: %.2f km/h\n Is running on edge: %s",  
-                    vehicleID, 
-                    vehicleManager.getSpeed(vehicleID), 
-                    vehicleManager.getAngle(vehicleID),
-                    vehicleManager.getEdgeID(vehicleID)
-                );
+    public double[] getEdgeStats(String edgeID) throws Exception {
+        return new double[] {
+            edgeManager.getAverageSpeed(edgeID),
+            edgeManager.getDensity(edgeID),
+            edgeManager.getHaltingNumber(edgeID)
+        };
     }
 
 

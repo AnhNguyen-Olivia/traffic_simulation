@@ -5,6 +5,9 @@ import de.tudresden.sumo.cmd.Simulation;
 import it.polito.appeal.traci.SumoTraciConnection;
 import real_time_traffic_simulation_with_java.alias.Path;
 
+/** 
+ * Learn more about SumoTraciConnection on https://sumo.dlr.de/javadoc/traas/it/polito/appeal/traci/SumoTraciConnection.html 
+*/
 public class SumoTraasConnection {
     
     /** 
@@ -107,7 +110,3 @@ public class SumoTraasConnection {
         System.out.println("Sumo close successfully, thank you for using!");
     }
 }
-
-/** 
- * Learn more about SumoTraciConnection on https://sumo.dlr.de/javadoc/traas/it/polito/appeal/traci/SumoTraciConnection.html 
-*/

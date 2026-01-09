@@ -56,5 +56,5 @@ public final class Metrics {
     public static final double  CONTROL_PANEL_WIDTH = 250;
 
     /** Dashboard panel width (in pixels) */
-    public static final double DASHBOARD_WIDTH = 250;
+    public static final double DASHBOARD_WIDTH = 300;
 }
