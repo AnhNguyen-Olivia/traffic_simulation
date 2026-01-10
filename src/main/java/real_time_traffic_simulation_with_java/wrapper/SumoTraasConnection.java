@@ -1,11 +1,15 @@
 package real_time_traffic_simulation_with_java.wrapper;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import de.tudresden.sumo.cmd.Simulation;
 import it.polito.appeal.traci.SumoTraciConnection;
 import real_time_traffic_simulation_with_java.alias.Path;
 
 public class SumoTraasConnection {
+    
+    private static final Logger LOGGER = Logger.getLogger( SumoTraasConnection.class.getName() );
     
     /** 
      * Private Sumo port 
@@ -44,7 +48,7 @@ public class SumoTraasConnection {
             connection = new SumoTraciConnection(SumoBinary, netFile, rouFile);
             /** Throws (output) the errors */
         } catch(Exception e){
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error initializing SumoTraciConnection: ", e);
             throw e;
         }
     }
@@ -78,6 +82,7 @@ public class SumoTraasConnection {
             Thread.sleep(wait);
  
             System.out.println("Sumo start successfully! Thank you for waiting.");
+            LOGGER.log(Level.INFO, "Sumo started successfully on port " + port);
     }
 
     /** 
@@ -102,9 +107,13 @@ public class SumoTraasConnection {
      * @throws Exception
     */
     public void closeConnection() throws Exception{
-        Objects.requireNonNull(connection, "Connection isn't initialize");
+        if (connection == null){
+            LOGGER.log(Level.SEVERE, "Connection is null, cannot close connection.");
+            throw new Exception("Connection is null, cannot close connection.");
+        }
         connection.close();
         System.out.println("Sumo close successfully, thank you for using!");
+        LOGGER.log(Level.INFO, "Sumo connection closed successfully.");
     }
 }
 
