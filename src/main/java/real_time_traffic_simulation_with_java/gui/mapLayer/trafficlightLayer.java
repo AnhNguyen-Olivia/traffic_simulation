@@ -33,9 +33,8 @@ public class trafficlightLayer extends Group {
      * Double-clicked left mouse events is set to toggle traffic light state. <br>
      * Double-clicked right mouse events is set to adjust traffic light phase durations.
      * @param engine SimulationEngine instance
-     * @throws Exception
      */
-    public trafficlightLayer(SimulationEngine engine) throws Exception {
+    public trafficlightLayer(SimulationEngine engine) {
         this.simulationEngine = engine;
         List<TrafficLightData> Tls = this.simulationEngine.getMapTls();
 
@@ -51,9 +50,8 @@ public class trafficlightLayer extends Group {
 
     /**
      * Private helper method: Add tooltip to traffic lights
-     * @throws Exception
      */
-    private void addToolTip(List<TrafficLightData> Tls) throws Exception {
+    private void addToolTip(List<TrafficLightData> Tls) {
         for (TrafficLightData Tl : Tls){
             Label tooltipLabel = new Label();
             Tooltip tooltip = new Tooltip();
@@ -62,11 +60,7 @@ public class trafficlightLayer extends Group {
             tooltip.setGraphic(tooltipLabel);
             // Add Timeline to update tooltip content with simulation speed
             Timeline updateTooltip = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-                try{
-                    tooltipLabel.setText(simulationEngine.getTlTooltip(Tl.getId()));
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
+                tooltipLabel.setText(simulationEngine.getTlTooltip(Tl.getId()));
             }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS))); // Time line stop after this duration (or loop if setCycleCount)
             // Ensure the timeline runs indefinitely
             updateTooltip.setCycleCount(Animation.INDEFINITE);
@@ -89,13 +83,9 @@ public class trafficlightLayer extends Group {
         for (TrafficLightData Tl : Tls){
             // MOUSE_CLICKED fired when mouse button is released
             Tl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                try {
-                    // event.isPrimaryButtonDown() not working because mouse button has been released at this time
-                    if (event.getClickCount() == 2 && event.getButton() == MouseButton.PRIMARY) {
-                        simulationEngine.toggleSingleTl(Tl.getId());
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+                // event.isPrimaryButtonDown() not working because mouse button has been released at this time
+                if (event.getClickCount() == 2 && event.getButton() == MouseButton.PRIMARY) {
+                    simulationEngine.toggleSingleTl(Tl.getId());
                 }
             });
         }
@@ -109,23 +99,19 @@ public class trafficlightLayer extends Group {
         for (TrafficLightData Tl : Tls){
             // MOUSE_CLICKED fired when mouse button is released
             Tl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                try {
-                    // event.isSecondaryButtonDown() not working because mouse button has been released at this time
-                    if (event.getClickCount() == 2 && event.getButton() == MouseButton.SECONDARY) {
-                        // Open popup window to adjust phase durations and get the result
-                        trafficlightPopupWindow popup = new trafficlightPopupWindow(Tl.getId(), Tl.getPhasesDuration());
-                        Optional<List<Integer>> result = popup.showAndWait();
-                        // If result is not null, set new phase durations to the simulation engine
-                        result.ifPresent(phaseDurations -> {
-                            try {
-                                simulationEngine.setTlPhaseDurations(Tl.getId(), phaseDurations);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        });
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+                // event.isSecondaryButtonDown() not working because mouse button has been released at this time
+                if (event.getClickCount() == 2 && event.getButton() == MouseButton.SECONDARY) {
+                    // Open popup window to adjust phase durations and get the result
+                    trafficlightPopupWindow popup = new trafficlightPopupWindow(Tl.getId(), Tl.getPhasesDuration());
+                    Optional<List<Integer>> result = popup.showAndWait();
+                    // If result is not null, set new phase durations to the simulation engine
+                    result.ifPresent(phaseDurations -> {
+                        try {
+                            simulationEngine.setTlPhaseDurations(Tl.getId(), phaseDurations);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
                 }
             });
         }

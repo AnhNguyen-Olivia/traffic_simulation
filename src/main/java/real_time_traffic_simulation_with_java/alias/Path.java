@@ -18,6 +18,13 @@ public final class Path {
     /** Relative path to SUMO configuration file rou */
     public static final String RouFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/map.rou.xml";
 
+    /** Relative path to CSV log folder directory */
+    public static final String CsvLogFolder = "src/log/java/real_time_traffic_simulation_with_java/csv/";
+    /** Relative path to PDF log folder directory */
+    public static final String PdfLogFolder = "src/log/java/real_time_traffic_simulation_with_java/pdf/";
+    /** Relative path to log file */
+    public static final String LogFile = "src/log/java/real_time_traffic_simulation_with_java/app.log";
+
     
     public static final String IconImage = "/real_time_traffic_simulation_with_java/gui/resources/cat.png";
     public static final String ConTrolPanelImage = "/real_time_traffic_simulation_with_java/gui/resources/ChristmasCat.jpg";

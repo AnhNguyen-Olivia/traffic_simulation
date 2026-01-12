@@ -19,9 +19,8 @@ public class vehicleLayer extends Group {
      * Create vehicle layer including vehicles. <br>
      * No tooltip or mouse events needed, vehicle run too fast to interact.
      * @param engine SimulationEngine instance
-     * @throws Exception
      */
-    public vehicleLayer(SimulationEngine engine) throws Exception {
+    public vehicleLayer(SimulationEngine engine) {
         this.simulationEngine = engine;
         List<VehicleData> vehicles = this.simulationEngine.getMapVehicles();
         // Add vehicle shapes to the vehicle layer

@@ -11,11 +11,14 @@ import de.tudresden.sumo.objects.SumoTLSPhase;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import real_time_traffic_simulation_with_java.cores.TrafficLightData;
 
 
 /** Wrapper class for TraaS to manage traffic lights in the simulation */
 public class TrafficLightManager{
+    private static final Logger LOGGER = Logger.getLogger(TrafficLightManager.class.getName());
 
     /** Connection to Sumo */
     private final SumoTraciConnection conn;
@@ -25,9 +28,8 @@ public class TrafficLightManager{
     /**
      * Wrapper class for TraaS to manage traffic lights in the simulation
      * @param connection connection to Sumo
-     * @throws Exception
-    */
-    public TrafficLightManager(SumoTraciConnection connection) throws Exception {
+     */
+    public TrafficLightManager(SumoTraciConnection connection) {
         this.conn = connection;
     }
 
@@ -35,7 +37,6 @@ public class TrafficLightManager{
     /**
      * Get list of traffic light IDs
      * @return a List type String of traffic light IDs
-     * @throws Exception
     */ 
     @SuppressWarnings("unchecked")    
     public List<String> getIDList() throws Exception{
@@ -46,10 +47,14 @@ public class TrafficLightManager{
     /**
      * Get number of traffic light in the simulation
      * @return a int number of traffic lights
-     * @throws Exception
     */  
-    public int getCount() throws Exception{
-        return (int) conn.do_job_get(Trafficlight.getIDCount());
+    public int getCount() {
+        try{
+            return (int) conn.do_job_get(Trafficlight.getIDCount());
+        } catch (Exception e){
+            LOGGER.log(Level.WARNING, "Error getting traffic light count.");
+            return -1;
+        }
     }
 
 
@@ -57,22 +62,24 @@ public class TrafficLightManager{
      * Get the current state of the traffic light ('r', 'y', 'g' sequence)
      * @param tlId ID of the traffic light
      * @return String of traffic light current state
-     * @throws Exception
     */ 
     public String getState(String tlId) throws Exception{
-        return(String) conn.do_job_get(Trafficlight.getRedYellowGreenState(tlId));
+        return (String) conn.do_job_get(Trafficlight.getRedYellowGreenState(tlId));
     }
-
 
     /**
      * Get remaining time of the current phase of the traffic light (second)
      * @param tlId ID of the traffic light
      * @return double of remaining time in seconds
-     * @throws Exception
     */ 
-    public double getNextSwitch(String tlId) throws Exception{
-        double timeSeconds = (double)conn.do_job_get(Simulation.getTime());
-        return (double) conn.do_job_get(Trafficlight.getNextSwitch(tlId)) - timeSeconds;
+    public double getNextSwitch(String tlId) {
+        try{
+            double timeSeconds = (double)conn.do_job_get(Simulation.getTime());
+            return (double) conn.do_job_get(Trafficlight.getNextSwitch(tlId)) - timeSeconds;
+        } catch (Exception e){
+            LOGGER.log(Level.WARNING, "Error getting traffic light remaining time until next switch.");
+            return -1;
+        }
     }
 
 
@@ -80,10 +87,14 @@ public class TrafficLightManager{
      * Get the duration of the current phase of the traffic light (second)
      * @param tlId ID of the traffic light
      * @return double of duration of the current phase in seconds
-     * @throws Exception
     */ 
-    public double getDuration(String tlId) throws Exception{
-        return (double) conn.do_job_get(Trafficlight.getPhaseDuration(tlId));
+    public double getDuration(String tlId) {
+        try{
+            return (double) conn.do_job_get(Trafficlight.getPhaseDuration(tlId));
+        } catch (Exception e){
+            LOGGER.log(Level.WARNING, "Error getting traffic light current phase duration.");
+            return -1;
+        }
     }
 
 
@@ -91,10 +102,14 @@ public class TrafficLightManager{
      * Get the current phase index of the traffic light
      * @param tlId ID of the traffic light
      * @return int of current phase index
-     * @throws Exception
     */ 
-    public int getPhaseID(String tlId) throws Exception{
-        return (int) conn.do_job_get(Trafficlight.getPhase(tlId));
+    public int getPhaseID(String tlId) {
+        try{
+            return (int) conn.do_job_get(Trafficlight.getPhase(tlId));
+        } catch (Exception e){
+            LOGGER.log(Level.WARNING, "Error getting traffic light current phase index.");
+            return -1;
+        }
     }
 
 
@@ -102,7 +117,6 @@ public class TrafficLightManager{
      * Get number of phases of the traffic light
      * @param tlId ID of the traffic light
      * @return int of number of phases
-     * @throws Exception
      */
     public int getPhaseCount(String tlId) throws Exception{
         SumoTLSController controller = (SumoTLSController) conn.do_job_get(Trafficlight.getCompleteRedYellowGreenDefinition(tlId));
@@ -115,7 +129,6 @@ public class TrafficLightManager{
      * Get initial list of durations for each phase of the traffic light set in net file
      * @param tlId ID of the traffic light
      * @return a List of Double type durations for each phase
-     * @throws Exception
     */
     public List<Integer> getPhasesDuration(String tlId) throws Exception{
         SumoTLSController controller = (SumoTLSController) conn.do_job_get(Trafficlight.getCompleteRedYellowGreenDefinition(tlId));
@@ -132,31 +145,35 @@ public class TrafficLightManager{
      * Set new duration for each phase of the traffic light and update TrafficLightData phasesDuration
      * @param tlId ID of the traffic light
      * @param durations List of durations for each phase
-     * @throws Exception
      */
-    public void setPhaseDuration(String tlId, List<Integer> durations) throws Exception{
-        // Validate input durations
-        if(durations.size() != this.getPhaseCount(tlId)){
-            throw new Exception("Error: Number of durations does not match number of phases.");
-        }
-        SumoTLSController controller = (SumoTLSController) conn.do_job_get(Trafficlight.getCompleteRedYellowGreenDefinition(tlId));
-        ArrayList<SumoTLSPhase> phases = (ArrayList<SumoTLSPhase>) controller.programs.get("0").phases;
-        List<Integer> newDurations = new ArrayList<>();
-        // Create new SumoTLSProgram with updated durations
-        SumoTLSProgram newProgram = new SumoTLSProgram();
-        for (int i = 0; i < phases.size(); i++) {
-            newProgram.add(new SumoTLSPhase(durations.get(i), phases.get(i).phasedef));
-            newDurations.add(durations.get(i));
-        }
-        // Update the phases in TrafficLightData
-        for(TrafficLightData trafficLightData : this.trafficLightDataList) {
-            if(trafficLightData.getId().equals(tlId)) {
-                trafficLightData.setPhasesDuration(newDurations);
-                break;
+    public void setPhaseDuration(String tlId, List<Integer> durations) {
+        try{
+            // Validate input durations
+            if(durations.size() != this.getPhaseCount(tlId)){
+                LOGGER.log(Level.WARNING, "Number of durations does not match number of phases. Cannot adjust phase durations for traffic light " + tlId + ".");
+                return;
             }
+            SumoTLSController controller = (SumoTLSController) conn.do_job_get(Trafficlight.getCompleteRedYellowGreenDefinition(tlId));
+            ArrayList<SumoTLSPhase> phases = (ArrayList<SumoTLSPhase>) controller.programs.get("0").phases;
+            List<Integer> newDurations = new ArrayList<>();
+            // Create new SumoTLSProgram with updated durations
+            SumoTLSProgram newProgram = new SumoTLSProgram();
+            for (int i = 0; i < phases.size(); i++) {
+                newProgram.add(new SumoTLSPhase(durations.get(i), phases.get(i).phasedef));
+                newDurations.add(durations.get(i));
+            }
+            // Set the new program in the simulation
+            conn.do_job_set(Trafficlight.setCompleteRedYellowGreenDefinition(tlId, newProgram));
+            // Update the phases in TrafficLightData
+            for(TrafficLightData trafficLightData : this.trafficLightDataList) {
+                if(trafficLightData.getId().equals(tlId)) {
+                    trafficLightData.setPhasesDuration(newDurations);
+                    break;
+                }
+            }
+        } catch (Exception e){
+            LOGGER.log(Level.WARNING, "Error adjusting phase durations for traffic light " + tlId + ".");
         }
-        // Set the new program in the simulation
-        conn.do_job_set(Trafficlight.setCompleteRedYellowGreenDefinition(tlId, newProgram));
     }
 
 
@@ -165,27 +182,18 @@ public class TrafficLightManager{
      * Toggle traffic light to next phase: get the current phase index
      *      and then add 1 to convert to next phase
      * @param tlId ID of the traffic light
-     * @throws Exception
      */
-    public void nextPhase(String tlId) throws Exception{
-        int phase = (int) conn.do_job_get(Trafficlight.getPhase(tlId));
-        if(phase == this.getPhaseCount(tlId) - 1){
-            conn.do_job_set(Trafficlight.setPhase(tlId, 0));
-        } else {
-            conn.do_job_set(Trafficlight.setPhase(tlId, phase+1));
+    public void nextPhase(String tlId) {
+        try{
+            int phase = (int) conn.do_job_get(Trafficlight.getPhase(tlId));
+            if(phase == this.getPhaseCount(tlId) - 1){
+                conn.do_job_set(Trafficlight.setPhase(tlId, 0));
+            } else {
+                conn.do_job_set(Trafficlight.setPhase(tlId, phase+1));
+            }
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Error toggling to next phase for traffic light " + tlId + ".");
         }
-    }
-
-
-    /**
-     * Method to get lanes controlled by the traffic light
-     * @param tlID ID of the traffic light
-     * @return a list type String lane ids controlled by the traffic light
-     * @throws Exception
-    */
-    @SuppressWarnings("unchecked")
-    public List<String> getLaneTraffic(String tlID) throws Exception{
-        return (List<String>)conn.do_job_get(Trafficlight.getControlledLanes(tlID));
     }
 
 
@@ -198,18 +206,6 @@ public class TrafficLightManager{
     @SuppressWarnings("unchecked")
     public List<SumoLink> getLinksTraffic(String tlID) throws Exception{
         return (List<SumoLink>)conn.do_job_get(Trafficlight.getControlledLinks(tlID));
-    }
-    
-
-    /**
-     * Method to get junctions controlled by the traffic light
-     * @param tlID ID of the traffic light
-     * @return a list type String junction ids controlled by the traffic light
-     * @throws Exception
-    */
-    @SuppressWarnings("unchecked")
-    public List<String> getJunctionTraffic(String tlID) throws Exception{
-        return (List<String>)conn.do_job_get(Trafficlight.getControlledJunctions(tlID));
     }
 
 

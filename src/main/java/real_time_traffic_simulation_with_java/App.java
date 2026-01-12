@@ -1,10 +1,20 @@
 package real_time_traffic_simulation_with_java;
+
+import java.util.logging.Logger;
+import java.util.logging.Level;
+import java.io.IOException;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
+import java.util.logging.SimpleFormatter;
+
 import javafx.application.Platform;
+import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.gui.MainWindow;
 
 public class App {
     private SimulationEngine simulationEngine;
+    private static final Logger ROOT_LOGGER = Logger.getLogger("");
 
     /**
      * The main application entry point to launch and run the traffic simulation GUI
@@ -12,6 +22,7 @@ public class App {
     */
     public static void main(String[] args) {
         App app = new App();
+        setupLogger();
         app.run();
     }
 
@@ -72,6 +83,27 @@ public class App {
                 e.printStackTrace();
             }
         });
+    }
+
+    /**
+     * private static method to setup logger configuration
+    */
+    private static void setupLogger(){
+        try {
+            ROOT_LOGGER.setLevel(Level.INFO);
+
+            ConsoleHandler consoleHandler = new ConsoleHandler();
+            consoleHandler.setLevel(Level.INFO);
+            consoleHandler.setFormatter(new SimpleFormatter());
+
+            FileHandler fileHandler = new FileHandler(Path.LogFile, true);
+            fileHandler.setLevel(Level.INFO);
+            fileHandler.setFormatter(new SimpleFormatter());
+            ROOT_LOGGER.addHandler(fileHandler);
+
+        } catch (IOException e) {
+            ROOT_LOGGER.log(Level.SEVERE, "Failed to initialize logger", e);
+        }
     }
     
 }   

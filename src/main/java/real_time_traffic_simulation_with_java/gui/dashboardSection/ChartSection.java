@@ -1,6 +1,8 @@
 package real_time_traffic_simulation_with_java.gui.dashboardSection;
 
 import java.util.List;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
@@ -18,6 +20,8 @@ import real_time_traffic_simulation_with_java.cores.SimulationEngine;
  * It shows average speed, density, and halting number for each edge, updating periodically.
  */
 public class ChartSection extends BarChart<Number, String> {
+    private static final Logger logger = Logger.getLogger(ChartSection.class.getName());
+
     private NumberAxis xAxis;
     private CategoryAxis yAxis;
     private SimulationEngine simulationEngine;
@@ -30,15 +34,19 @@ public class ChartSection extends BarChart<Number, String> {
     /** 
      * Constructor for ChartSection.
      * @param simulationEngine The simulation engine to fetch edge statistics from.
-     * @throws Exception
      */
-    public ChartSection(SimulationEngine simulationEngine) throws Exception {
+    public ChartSection(SimulationEngine simulationEngine) {
         // Initialize self and fields
         super(new NumberAxis(), new CategoryAxis());
         this.xAxis = (NumberAxis) this.getXAxis();
         this.yAxis = (CategoryAxis) this.getYAxis();
         this.simulationEngine = simulationEngine;
-        this.edgeIds = simulationEngine.getAllEdgeIDs();
+        try{
+            this.edgeIds = simulationEngine.getAllEdgeIDs();
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Failed to fetch edge IDs from simulation engine.", e);
+            this.edgeIds = List.of();
+        }
         this.edgeIds.sort(String::compareTo);
 
         this.avgSpeed = new XYChart.Series<>();
@@ -81,9 +89,8 @@ public class ChartSection extends BarChart<Number, String> {
 
     /**
      * Private helper method: update chart values.
-     * @throws Exception
      */
-    private void setValue() throws Exception {
+    private void setValue() {
         avgSpeed.getData().clear();
         density.getData().clear();
         haltingNumber.getData().clear();

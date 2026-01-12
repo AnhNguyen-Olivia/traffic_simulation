@@ -17,22 +17,24 @@ public class MainWindow extends Stage {
     private SimulationEngine simulationEngine;
     private MapPanel mapPanel;
     private AnimationTimer animationTimer;
+    private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(MainWindow.class.getName());
     
     /**
      * MainWindow contructor. Its have simulation engine as parameter to pass to other comfponents 
      * @param engine
-     * @throws Exception
     */
-    public MainWindow(SimulationEngine engine) throws Exception {
+    public MainWindow(SimulationEngine engine) {
         this.simulationEngine = engine;
-        initializeGui();
+        try {initializeGui();} catch(Exception e){
+            LOGGER.severe("Initialize GUI incompleted.");
+        }
+        LOGGER.info("Main window initialized.");
     }
 
     /**
      * initializeGui method to setup the main window gui
-     * @throws Exception
     */
-    private void initializeGui() throws Exception {
+    private void initializeGui() {
         /**
          * Create map panel, control panel and statistic panel
          * Pass simulation engine to map panel and control panel

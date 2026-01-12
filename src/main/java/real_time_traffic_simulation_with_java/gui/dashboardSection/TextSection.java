@@ -18,9 +18,8 @@ public class TextSection extends VBox {
     /**
      * Constructor: Create a TextSection VBox with labels that update with simulation data
      * @param simulationEngine The simulation engine to get data
-     * @throws Exception
      */
-    public TextSection(SimulationEngine simulationEngine) throws Exception {
+    public TextSection(SimulationEngine simulationEngine) {
         // Time steps label
         Label timeSteps = new Label();
         timeSteps.setWrapText(true);
