@@ -1,5 +1,7 @@
 package real_time_traffic_simulation_with_java.gui;
 
+import java.util.logging.Logger;
+
 import javafx.scene.layout.StackPane;
 import javafx.scene.Group;
 import javafx.scene.shape.Rectangle;
@@ -22,6 +24,7 @@ import real_time_traffic_simulation_with_java.gui.mapLayer.*;
  */
 public class MapPanel extends StackPane {
     private SimulationEngine simulationEngine;
+    private static final Logger LOGGER = Logger.getLogger(MapPanel.class.getName());
     /** Current zoom level of the map panel */
     private double currentZoomLevel = 1.0;
 
@@ -32,29 +35,40 @@ public class MapPanel extends StackPane {
      * MapPanel is clipped to prevent overflow drawing. 
      *      Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
      * @param engine SimulationEngine instance
-     * @throws Exception
      */
-    public MapPanel(SimulationEngine engine) throws Exception {
-        this.simulationEngine = engine;
-        createMapPanel(engine);
-        setupZooming();
-        setupPanning();
-        setupRotating();
-        // Set clip to prevent overflow drawing
-        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.CONTROL_PANEL_WIDTH - Metrics.DASHBOARD_WIDTH, Metrics.WINDOW_HEIGHT);
-        this.setStyle("-fx-background-color: rgba(248, 217, 185, 0.9);");
-        this.setClip(clip);
+    public MapPanel(SimulationEngine engine) {
+        try{
+            this.simulationEngine = engine;
+            createMapPanel(engine);
+            setupZooming();
+            setupPanning();
+            setupRotating();
+            // Set clip to prevent overflow drawing
+            Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.CONTROL_PANEL_WIDTH - Metrics.DASHBOARD_WIDTH, Metrics.WINDOW_HEIGHT);
+            this.setStyle("-fx-background-color: rgba(248, 217, 185, 0.9);");
+            this.setClip(clip);
+        } catch (Exception e) {
+            LOGGER.severe("Failed to initialize MapPanel.");
+        }
+        
+        LOGGER.info("MapPanel initialized.");
     }
 
 
     /**
      * Public method: Refresh map panel by redraw vehicle layer and set color of traffic light layer
-     * @throws Exception
      */
-    public void refresh() throws Exception {
-        // Redraw vehicle layer
-        Group temp = (Group) this.getChildren().get(0);
-        temp.getChildren().set(1, new vehicleLayer(this.simulationEngine));
+    public void refresh() throws IllegalStateException{
+        try{
+            // Redraw vehicle layer
+            Group temp = (Group) this.getChildren().get(0);
+            temp.getChildren().set(1, new vehicleLayer(this.simulationEngine));
+        } catch (IllegalStateException e) {
+            LOGGER.severe("Simulation has ended or connection lost while refreshing MapPanel.");
+            throw e;
+        } catch (Exception e) {
+            LOGGER.warning("Failed to refresh vehicle layer in MapPanel.");
+        }
     }
 
 
@@ -62,9 +76,8 @@ public class MapPanel extends StackPane {
 
     /**
      * Private helper method: Create map panel by grouping 3 layers: road layer, vehicle layer, traffic light layer than add the Group to MapPanel StackPane
-     * @throws Exception
      */
-    private void createMapPanel(SimulationEngine engine) throws Exception {
+    private void createMapPanel(SimulationEngine engine) {
         // Generate road layer for map panel
         roadLayer RoadLayer = new roadLayer(engine);
         vehicleLayer VehicleLayer = new vehicleLayer(engine);

@@ -2,6 +2,8 @@ package real_time_traffic_simulation_with_java.cores;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
+import java.util.logging.Level; 
 import java.util.Collections;
 
 import real_time_traffic_simulation_with_java.wrapper.*;
@@ -13,6 +15,8 @@ import real_time_traffic_simulation_with_java.alias.Color;
  * Manages all other manager classes.
  */
 public class SimulationEngine {
+    private static final Logger LOGGER = Logger.getLogger(SimulationEngine.class.getName());
+
     private SumoTraasConnection conn;
     private VehicleManager vehicleManager;
     private EdgeManager edgeManager;
@@ -36,31 +40,52 @@ public class SimulationEngine {
     }
 
 
+    // ----------------------------------------------------------------------------
+    // Simulation Control Methods
+    // ----------------------------------------------------------------------------
     /**
-     * Control simulation: advance simulation by one step
-     * @throws Exception
+     * Control simulation: advance simulation by one step & update edge congestion status and traffic light states
      */
-    public void stepSimulation() throws Exception {
-        this.conn.nextStep();
-        this.edgeManager.updateCongestedStatus();
-        this.trafficLightManager.updateTrafficLightDataList();
+    public void stepSimulation() throws IllegalStateException {
+        try {this.conn.nextStep();} catch(IllegalStateException e){
+            LOGGER.log(Level.SEVERE, "Simulation has ended or connection lost: ", e);
+            throw e;
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Error advancing simulation step: ", e);
+            return; // Stop method execution here if step fails
+        }
+        try {this.edgeManager.updateEdgeDataList();}catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to re-render edge.", e);
+        }
+        try {this.trafficLightManager.updateTrafficLightDataList();} catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to re-render traffic lights.", e);
+        }
     }
     /**
      * Control simulation: stop
-     * @throws Exception
      */
-    public void stopSimulation() throws Exception {
-        this.conn.closeConnection();
+    public void stopSimulation() {
+        try {this.conn.closeConnection();} catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Error closing Sumo connection: ", e);
+        }
     }
 
 
+    // ----------------------------------------------------------------------------
+    // Object ID Management Methods
+    // ----------------------------------------------------------------------------
     /**
      * Get all IDs: edges
      * @return List of String edge IDs
      * @throws Exception
      */
     public List<String> getAllEdgeIDs() throws Exception {
-        return this.edgeManager.getIDList();
+        try{
+            return this.edgeManager.getIDList();
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve edge IDs.", e);
+            throw e;
+        }
     }
     /**
      * Get all IDs: vehicles
@@ -68,7 +93,12 @@ public class SimulationEngine {
      * @throws Exception
      */
     public List<String> getAllVehicleIDs() throws Exception {
-        return this.vehicleManager.getIDList();
+        try {
+            return this.vehicleManager.getIDList();
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve vehicle IDs.", e);
+            throw e;
+        }
     }
     /**
      * Get all IDs: traffic lights
@@ -76,16 +106,12 @@ public class SimulationEngine {
      * @throws Exception
      */
     public List<String> getAllTrafficLightIDs() throws Exception {
-        return this.trafficLightManager.getIDList();
-    }
-    /**
-     * Validate edge ID
-     * @return true if valid, false otherwise
-     * @throws Exception
-     */
-    public boolean validateEdgeID(String edgeID) throws Exception {
-        List<String> edgeIDs = this.edgeManager.getIDList();
-        return edgeIDs.contains(edgeID);
+        try {
+            return this.trafficLightManager.getIDList();
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve traffic light IDs.", e);
+            throw e;
+        }
     }
 
 
@@ -97,19 +123,22 @@ public class SimulationEngine {
      * @param start_edge_ID Starting edge ID
      * @param end_edge_ID Ending edge ID
      * @param color Color of the vehicles
-     * @throws Exception
      */
-    public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color, String speed) throws Exception {
+    public void injectVehicle(int numVehicles, String start_edge_ID, String end_edge_ID, String color, String speed) {
         // Generate a unique ID
         String routeID = (long) System.currentTimeMillis() + "";
-        this.routeManager.add(routeID, start_edge_ID, end_edge_ID);
+        try {this.routeManager.add(routeID, start_edge_ID, end_edge_ID);} catch (Exception e) {return;}
         for (int i = 0; i < numVehicles; i++) {
             String vehicleID = routeID + "_" + i;
-            this.vehicleManager.add(vehicleID, routeID, color, "5");
+            this.vehicleManager.add(vehicleID, routeID, color, speed);
         }
+        LOGGER.log(Level.INFO, String.format("Injected %d vehicles from %s to %s.", numVehicles, start_edge_ID, end_edge_ID));
     }
 
     
+    // ----------------------------------------------------------------------------
+    // Vehicle Injection Methods
+    // ----------------------------------------------------------------------------
     /**
      * Inject vehicle: stress test tool, inject 100 vehicles on up to 10 different random routes. 
      *      Create routes first then create vehicles on those routes. <br>
@@ -117,11 +146,16 @@ public class SimulationEngine {
      * Vehicle ID format: [routeID]_[index_of_vehicle_in_this_stress_test]
      * @param number_of_vehicles Number of vehicles to inject
      * @param start_edge_ID Edge ID to inject to
-     * @throws Exception
      */
-    public void stressTest(int number_of_vehicles, String start_edge_ID) throws Exception {
+    public void stressTest(int number_of_vehicles, String start_edge_ID) {
         // Randomly select 10 end_edge to inject vehicles, if less than 10 edges, use all edges
-        List<String> edgeIDs =  this.getAllEdgeIDs();
+        List<String> edgeIDs;
+        try {
+            edgeIDs =  this.getAllEdgeIDs();
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Stress test failed.");
+            return;
+        }
         Collections.shuffle(edgeIDs);
         int n;
         if(edgeIDs.size() < 10) {n = edgeIDs.size();} else {n = 10;}
@@ -132,7 +166,10 @@ public class SimulationEngine {
         List<String> colorList = new ArrayList<>(Color.ListofAllColor);
         // Generate n random routes to inject vehicles
         for (int j = 0; j < n; j++) {
-            this.routeManager.add(ID + "_" + j, start_edge_ID, end_edge_IDs.get(j));
+            // If route creation fails, generate route of 1 edge (start_edge to start_edge)
+            try{this.routeManager.add(ID + "_" + j, start_edge_ID, end_edge_IDs.get(j));} catch (Exception e) {
+                try{this.routeManager.add(ID + "_" + j, start_edge_ID, end_edge_IDs.get(j));} catch (Exception ex) {}
+            }
         } 
         // Inject vehicles
         for (int i = 0; i < number_of_vehicles; i++) {
@@ -141,86 +178,119 @@ public class SimulationEngine {
                 this.vehicleManager.add(ID + "_" + j + "_" + i, ID + "_" + j, colorList.get(0), "max");
             }
         }
+        LOGGER.log(Level.INFO, String.format("Stress test: Injected %d vehicles to edge: %s.", number_of_vehicles, start_edge_ID));
     }
 
 
+    // ----------------------------------------------------------------------------
+    // Traffic Light Control Methods
+    // ----------------------------------------------------------------------------
     /**
      * Control traffic lights: toggle all traffic lights
-     * @throws Exception
      */
-    public void toggleAllTls() throws Exception {
-        for (String tlsID : this.trafficLightManager.getIDList()) {
+    public void toggleAllTls() {
+        List<String> tlsIDs;
+        try{tlsIDs = this.trafficLightManager.getIDList();} catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to toggle all traffic lights.");
+            return;
+        }
+        for (String tlsID : tlsIDs) {
             this.trafficLightManager.nextPhase(tlsID);
         }
+        LOGGER.log(Level.INFO, "Toggled all traffic lights.");
     }
     /**
      * Control traffic light: toggle single traffic light
      * @param tlID Traffic light ID
-     * @throws Exception
      */
-    public void toggleSingleTl(String tlID) throws Exception {
+    public void toggleSingleTl(String tlID) {
         this.trafficLightManager.nextPhase(tlID);
+        LOGGER.log(Level.INFO, "Toggled traffic light: " + tlID);
+    }
+    /**
+     * Control traffic light: set phase durations for a traffic light
+     * @param tlID Traffic light ID
+     * @param durations List of durations for each phase
+     */
+    public void setTlPhaseDurations(String tlID, List<Integer> durations) {
+        this.trafficLightManager.setPhaseDuration(tlID, durations);
+        LOGGER.log(Level.INFO, "Set phase durations for traffic light: " + tlID + " to " + durations.toString());
     }
 
 
+    // ----------------------------------------------------------------------------
+    // Data Retrieval Methods for Map Rendering
+    // ----------------------------------------------------------------------------
     /**
      * Get mapping data: edges
      * @return List of EdgeData representing edges shape to be rendered
-     * @throws Exception
      */
-    public List<EdgeData> getMapEdges() throws Exception {
-        return this.edgeManager.getEdgeDataList();
+    public List<EdgeData> getMapEdges() {
+        try {return this.edgeManager.getEdgeDataList();} catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve edge data for map rendering.", e);
+            return new ArrayList<>();
+        }
     }
     /**
      * Get mapping data: junctions
      * @return List of JunctionData representing junctions shape to be rendered
-     * @throws Exception
      */
-    public List<JunctionData> getMapJunctions() throws Exception {
-        return this.junctionManager.getJunctionDataList();
+    public List<JunctionData> getMapJunctions() {
+        try {return this.junctionManager.getJunctionDataList();} catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve junction data for map rendering.", e);
+            return new ArrayList<>();
+        }
     }
     /**
      * Get mapping data: vehicles
      * @return List of VehicleData representing vehicles shape to be rendered
-     * @throws Exception
      */
-    public List<VehicleData> getMapVehicles() throws Exception {
-        return this.vehicleManager.getVehicleDataList();
+    public List<VehicleData> getMapVehicles(){
+        try {return this.vehicleManager.getVehicleDataList();} catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve vehicle data for map rendering.", e);
+            return new ArrayList<>();
+        }
     }
     /**
      * Set mapping data: filter vehicles by color and edge
-     * @throws Exception
      */
-    public void setVehicleFilter(String color, String edgeID) throws Exception {
+    public void setVehicleFilter(String color, String edgeID) {
         vehicleManager.setFilter(color, edgeID);
+        if (color.equals("") && edgeID.equals("")) {
+            LOGGER.log(Level.INFO, "Clear vehicle filter.");
+        } else {
+            String colorString = color.equals("") ? "" : color + " ";
+            String edgeString = edgeID.equals("") ? "" : " on edge " + edgeID;
+            LOGGER.log(Level.INFO, String.format("Filter %svehicles%s.", colorString, edgeString));
+        }
     }
     /**
      * Get mapping data: traffic lights
      * @return List of TrafficLightData representing traffic lights shape to be rendered
-     * @throws Exception
      */
-    public List<TrafficLightData> getMapTls() throws Exception {
-        return this.trafficLightManager.getTrafficLightDataList();
+    public List<TrafficLightData> getMapTls() {
+        try {return this.trafficLightManager.getTrafficLightDataList();} catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve traffic light data for map rendering.", e);
+            return new ArrayList<>();
+        }
     }
-    /**
-     * Update mapping data: traffic lights and edge colors
-     * @throws Exception
-     */
-    public void updateMap() throws Exception {
-        this.trafficLightManager.updateTrafficLightDataList();
-    }
-
 
     /**
      * Get tooltip: edges
      * @param edgeID ID of the edge
      * @return Formatted tooltip string
-     * @throws Exception
      */
-    public String getEdgeTooltip(String edgeID) throws Exception {
+    public String getEdgeTooltip(String edgeID) {
+        int laneCount;
+        try {
+            laneCount = edgeManager.getLaneCount(edgeID);
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Unable to get lane count for edge ID: " + edgeID, e);
+            laneCount = -1;
+        }
         return String.format(
 "Edge ID: %s (%d lane), Max speed: %.2f km/h, Length: %.2f m\n Vehicle Count: %d, Average Speed: %.2f km/h\nDensity: %.2f veh/km, Estimated Travel Time: %.2f s",  
-                    edgeID, edgeManager.getLaneCount(edgeID), 
+                    edgeID, laneCount, 
                     edgeManager.getMaxSpeed(edgeID), edgeManager.getLength(edgeID),
                     edgeManager.getVehicleCount(edgeID), edgeManager.getAverageSpeed(edgeID),
                     edgeManager.getDensity(edgeID), edgeManager.getTravelTime(edgeID)
@@ -230,52 +300,116 @@ public class SimulationEngine {
      * Get tooltip: traffic lights
      * @param tlID ID of the traffic light
      * @return Formatted tooltip string
-     * @throws Exception
      */
-    public String getTlTooltip(String tlID) throws Exception {
+    public String getTlTooltip(String tlID) {
+        int phaseCount;
+        try {
+            phaseCount = trafficLightManager.getPhaseCount(tlID);
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Unable to get phase count for traffic light ID: " + tlID, e);
+            phaseCount = -1;
+        }
         return String.format(
-"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds \n Current time step: %.0f",  
-                    tlID, trafficLightManager.getPhaseCount(tlID), tlID,
+"Traffic Light ID: %s (%d phase) controlled Junction: %s\n Currently at phase: %d (Total: %.0f seconds)\n Remain: %.0f seconds",  
+                    tlID, phaseCount, tlID,
                     trafficLightManager.getPhaseID(tlID), trafficLightManager.getDuration(tlID),
-                    trafficLightManager.getNextSwitch(tlID),
-                    conn.getCurrentStep()
+                    trafficLightManager.getNextSwitch(tlID)
                 );
     }
 
 
+    // ----------------------------------------------------------------------------
+    // Statistics Retrieval Methods for Dashboard
+    // ----------------------------------------------------------------------------
     /**
-     * Get congestion hotspots: edges
-     * @return Formatted statistic string of congested edge IDs for Dashboard
-     * @throws Exception
+     * Get statistics: current time step
+     * @return Formatted statistic string for Dashboard
      */
-    public String getCongestionHotspots() throws Exception {
-        return String.format("Congestion hotspots (edges): %s",  
-                    String.join(", ", edgeManager.getCongestedEdgeIDList())
+    public String getCurrentTimeStep() throws IllegalStateException{
+        try {return String.format("Current Time Step: %.1f", this.conn.getCurrentStep());
+        } catch(IllegalStateException e){
+            throw e;
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve current time step.", e);
+            return "Current Time Step: N/A";
+        }
+    }
+    /**
+     * Get statistics: number of entities in the simulation
+     * @return Formatted statistic string for Dashboard
+     */
+    public String getBasicInfo() {
+        return String.format("    Total vehicles: %d\n    Total edges: %d\n    Total traffic lights: %d",   
+                    vehicleManager.getCount(),
+                    edgeManager.getCount(),
+                    trafficLightManager.getCount()
                 );
     }
     /**
-     * Get statistic: vehicle
+     * Get statistics: congestion hotspots
+     * @return Formatted statistic string of congested edge IDs for Dashboard
+     */
+    public String getCongestionHotspots() {
+        List<String> congestedEdgeIDs = edgeManager.getCongestedEdgeIDList();
+        if (congestedEdgeIDs.size() == 0) {
+            return "No congestion hotspots detected.";
+        }
+        return String.format("%d Congestion hotspots (edges)\n    ID: %s",  
+                    congestedEdgeIDs.size(),
+                    String.join(", ", congestedEdgeIDs)
+                );
+    }
+    /**
+     * Get statistics: chart values (average speed (km/h), density (veh/km), halting number (veh)) of a specific edge
      * @param vehicleID ID of the vehicle
      * @return Formatted statistic string for Dashboard
-     * @throws Exception
      */
-    public String getVehicleStats(String vehicleID) throws Exception {
-        return String.format("Vehicle ID: %s\n Speed: %.2f km/h\n Is running on edge: %s",  
-                    vehicleID, 
-                    vehicleManager.getSpeed(vehicleID), 
-                    vehicleManager.getAngle(vehicleID),
-                    vehicleManager.getEdgeID(vehicleID)
-                );
+    public double[] getEdgeStats(String edgeID) throws IllegalStateException {
+        int haltingNumber;
+        try{
+            haltingNumber = edgeManager.getHaltingNumber(edgeID);
+        } catch(IllegalStateException e){
+            throw e;
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Unable to get halting number for edge ID: " + edgeID, e);
+            haltingNumber = -1;
+        }
+        return new double[] {
+            edgeManager.getAverageSpeed(edgeID),
+            edgeManager.getDensity(edgeID),
+            haltingNumber
+        };
     }
 
 
-    /**
-     * Debug tool (might for future dashboard): return edge ID vehicle running on
-     * @param vehicleID ID of the vehicle
-     * @return ID of the edge the vehicle is on
-     * @throws Exception
-     */
-    public String vehIsOnEdge(String vehicleID) throws Exception {
-        return this.vehicleManager.getEdgeID(vehicleID);
+    // ---------------------------------------------------------------------------
+    // DEBUG TOOL
+    // ---------------------------------------------------------------------------
+    public List<String[]> dataForCSV() {
+        // Time step
+        String currentTimeStep;
+        try {
+            currentTimeStep = String.format("%.1f", this.conn.getCurrentStep());
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve current time step for CSV.");
+            currentTimeStep = "";
+        }
+        // Vehicles
+        List<String> vehicleIDs = new ArrayList<>();
+        try {
+            vehicleIDs = this.vehicleManager.getIDList();
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to retrieve vehicle IDs for CSV.");
+            return new ArrayList<>();
+        }
+        // Return data
+        List<String[]> data = new ArrayList<>();
+        for (String vehicleID: vehicleIDs) {
+            String speed = String.format("%.2f", this.vehicleManager.getSpeed(vehicleID));
+            String angle = String.format("%.2f", this.vehicleManager.getAngle(vehicleID));
+            String[] row = {currentTimeStep, vehicleID, speed, angle};
+            data.add(row);
+        }
+        return data;
     }
 }

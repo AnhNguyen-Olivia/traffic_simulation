@@ -1,5 +1,4 @@
 package real_time_traffic_simulation_with_java.wrapper;
-import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -88,8 +87,12 @@ public class SumoTraasConnection {
     /** 
      * Make a Sumo-move-to-the-next-step method 
     */
-    public void nextStep() throws Exception{
-        connection.do_timestep();
+    public void nextStep() throws Exception {
+        try{
+            connection.do_timestep();
+        } catch(Exception e){
+            throw e;
+        }
     }
 
     /** 
@@ -97,8 +100,12 @@ public class SumoTraasConnection {
      * @return double time in seconds
     */
     public double getCurrentStep() throws Exception{
-        double timeSeconds = (double)connection.do_job_get(Simulation.getTime());
-        return timeSeconds; 
+        try{
+            double timeSeconds = (double)connection.do_job_get(Simulation.getTime());
+            return timeSeconds; 
+        } catch(Exception e){
+            throw e;
+        }
     }
 
     /** 

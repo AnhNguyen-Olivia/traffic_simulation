@@ -7,6 +7,8 @@ import de.tudresden.sumo.objects.SumoGeometry;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import real_time_traffic_simulation_with_java.cores.EdgeData;
 
 
@@ -14,6 +16,7 @@ import real_time_traffic_simulation_with_java.cores.EdgeData;
  * Wrapper class for TraaS to manage edges in the simulation
  */
 public class EdgeManager {
+    private static final Logger LOGGER = Logger.getLogger(EdgeManager.class.getName());
 
     /** Connection to Sumo */
     private final SumoTraciConnection conn;
@@ -23,9 +26,8 @@ public class EdgeManager {
     /**
      * Wrapper class for TraaS to manage edges in the simulation
      * @param connection connection to Sumo
-     * @throws Exception
     */
-    public EdgeManager(SumoTraciConnection connection) throws Exception {
+    public EdgeManager(SumoTraciConnection connection) {
         this.conn = connection;
     }
 
@@ -33,7 +35,6 @@ public class EdgeManager {
     /**
      * Get list of edge IDs, excluding junction edges
      * @return a List type String of edge IDs, excluding junction edges
-     * @throws Exception
     */ 
     public List<String> getIDList() throws Exception {
         List<String> IDs = new ArrayList<>();
@@ -52,9 +53,8 @@ public class EdgeManager {
     /** 
      * Get list of congested edges IDs
      * @return a List type String of congested edge IDs, excluding junction edges
-     * @throws Exception
      */
-    public List<String> getCongestedEdgeIDList() throws Exception {
+    public List<String> getCongestedEdgeIDList() {
         List<String> congestedEdgeIDs = new ArrayList<>();
         for (EdgeData edge : this.edgeDataList) {
             if (edge.isCongested()) {
@@ -68,10 +68,14 @@ public class EdgeManager {
     /**
      * Get number of edges, excluding junction edges
      * @return an int number of edges, excluding junction edges
-     * @throws Exception
     */
-    public int getCount() throws Exception {
-        return this.getIDList().size();
+    public int getCount() {
+        try{
+            return this.getIDList().size();
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Failed to get number of edges.", e);
+            return -1;
+        }
     }
 
 
@@ -79,7 +83,6 @@ public class EdgeManager {
      * Get number of lanes on the edge
      * @param edgeID the ID of the edge
      * @return an int number of lanes on the edge
-     * @throws Exception
     */ 
     public int getLaneCount(String edgeID) throws Exception {
         return (int) conn.do_job_get(Edge.getLaneNumber(edgeID));
@@ -90,7 +93,6 @@ public class EdgeManager {
      * Get lane IDs on the edge
      * @param edgeID the ID of the edge
      * @return a List of lane IDs on the edge
-     * @throws Exception
     */ 
     public List<String> getLaneIDList(String edgeID) throws Exception {
         List<String> laneIDs = new ArrayList<>();
@@ -105,7 +107,6 @@ public class EdgeManager {
      * Get coordinations of lanes the edge
      * @param edgeID the ID of the edge
      * @return a List of SumoGeometry type coordinations of the lanes on the edge
-     * @throws Exception
     */
     public List<SumoGeometry> getLanesCoordinate(String edgeID) throws Exception {
         List<SumoGeometry> laneCoords = new ArrayList<>();
@@ -121,10 +122,14 @@ public class EdgeManager {
      * Get max speed allowed on the edge (km/h)
      * @param edgeID the ID of the edge
      * @return a double max speed allowed on the edge (km/h)
-     * @throws Exception
     */ 
-    public double getMaxSpeed(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0")) * 3.6f;
+    public double getMaxSpeed(String edgeID) {
+        try{
+            return (double) conn.do_job_get(Lane.getMaxSpeed(edgeID + "_0")) * 3.6;
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Unable to get edge max speed from SUMO for edge ID: " + edgeID, e);
+            return -1;
+        }
     }
 
 
@@ -132,22 +137,14 @@ public class EdgeManager {
      * Get length of the edge (m)
      * @param edgeID the ID of the edge
      * @return a double length of the edge (m)
-     * @throws Exception
     */ 
-    public double getLength(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Lane.getLength(edgeID + "_0"));
-    }
-
-
-    /**
-     * Get vehicle ID and number of vehicles on the edge in the last step
-     * @param edgeID the ID of the edge
-     * @return an List type String of vehicle IDs on the edge in the last step
-     * @throws Exception
-    */ 
-    @SuppressWarnings("unchecked")
-    public List<String> getVehicleIDList(String edgeID) throws Exception {
-        return (List<String>) conn.do_job_get(Edge.getLastStepVehicleIDs(edgeID));
+    public double getLength(String edgeID) {
+        try{
+            return (double) conn.do_job_get(Lane.getLength(edgeID + "_0"));
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Unable to get edge length from SUMO for edge ID: " + edgeID, e);
+            return -1;
+        }
     }
 
     
@@ -155,10 +152,14 @@ public class EdgeManager {
      * Get number of vehicles on the edge in the last step
      * @param edgeID the ID of the edge
      * @return an int number of vehicles on the edge in the last step
-     * @throws Exception
     */
-    public int getVehicleCount(String edgeID) throws Exception {
-        return (int) conn.do_job_get(Edge.getLastStepVehicleNumber(edgeID));
+    public int getVehicleCount(String edgeID) {
+        try{
+            return (int) conn.do_job_get(Edge.getLastStepVehicleNumber(edgeID));
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Unable to get edge vehicle count from SUMO for edge ID: " + edgeID, e);
+            return -1;
+        }
     }
 
 
@@ -166,10 +167,14 @@ public class EdgeManager {
      * Get average speed of vehicles on the edge in the last step (km/h)
      * @param edgeID the ID of the edge
      * @return a double average speed of vehicles on the edge in the last step (km/h)
-     * @throws Exception
     */
-    public double getAverageSpeed(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID)) * 3.6f;
+    public double getAverageSpeed(String edgeID) {
+        try{
+            return (double) conn.do_job_get(Edge.getLastStepMeanSpeed(edgeID)) * 3.6;
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Unable to get edge average speed from SUMO for edge ID: " + edgeID, e);
+            return -1;
+        }
     }
 
 
@@ -177,11 +182,15 @@ public class EdgeManager {
      * Get density of vehicles on the edge in the last step (vehicle/km)
      * @param edgeID the ID of the edge
      * @return a double density of vehicles on the edge in the last step (vehicle/km)
-     * @throws Exception
     */
-    public double getDensity(String edgeID) throws Exception {
-        double vehicleCount = (int) conn.do_job_get(Edge.getLastStepVehicleNumber(edgeID));
-        return vehicleCount / this.getLength(edgeID) * 1000;
+    public double getDensity(String edgeID) {
+        try{
+            double vehicleCount = (int) conn.do_job_get(Edge.getLastStepVehicleNumber(edgeID));
+            return vehicleCount / this.getLength(edgeID) * 1000;
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Unable to get edge density from SUMO for edge ID: " + edgeID, e);
+            return -1;
+        }
     }
 
 
@@ -189,10 +198,24 @@ public class EdgeManager {
      * Get estimate travel time on the edge in the last step (s)
      * @param edgeID the ID of the edge
      * @return a double estimate travel time on the edge in the last step (s)
-     * @throws Exception
     */
-    public double getTravelTime(String edgeID) throws Exception {
-        return (double) conn.do_job_get(Edge.getTraveltime(edgeID));
+    public double getTravelTime(String edgeID) {
+        try{
+            return (double) conn.do_job_get(Edge.getTraveltime(edgeID));
+        } catch (Exception e) {
+            LOGGER.log(Level.WARNING, "Unable to get edge travel time from SUMO for edge ID: " + edgeID, e);
+            return -1;
+        }
+    }
+
+
+    /**
+     * Get number of halting vehicles on the edge in the last step
+     * @param edgeID the ID of the edge
+     * @return an int number of halting vehicles on the edge in the last step
+    */
+    public int getHaltingNumber(String edgeID) throws Exception {
+        return (int) conn.do_job_get(Edge.getLastStepHaltingNumber(edgeID));
     }
 
 
@@ -221,22 +244,10 @@ public class EdgeManager {
      * Update congestion status for all edges based on TTI and set edge colors
      * @throws Exception
      */
-    public void updateCongestedStatus() throws Exception {
-        if(edgeDataList.isEmpty()){
-            List<String> IDs = this.getIDList();
-            for (String id : IDs) {
-                EdgeData edgedata = new EdgeData(
-                        id,
-                        this.getLaneCount(id),
-                        this.getLanesCoordinate(id)
-                );
-                edgeDataList.add(edgedata);
-            }
-        }
+    public void updateEdgeDataList() throws Exception {
         for (EdgeData edge : this.edgeDataList) {
-            // free flow travel time = length / max speed ( m / (km/h) = (m / (m/s)) )
-            double freeFlowTravelTime = this.getLength(edge.getId()) / (this.getMaxSpeed(edge.getId()) / 3.6);
-            edge.updateCongestedStatus(this.getTravelTime(edge.getId()) / freeFlowTravelTime);
+            // Halting rate = halting vehicles / number of lanes
+            edge.updateCongestedStatus(this.getHaltingNumber(edge.getId())/this.getLaneCount(edge.getId()));
             edge.setColor();
         }
     }

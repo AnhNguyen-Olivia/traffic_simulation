@@ -22,9 +22,9 @@ public class EdgeData extends Group {
     /** Congestion status */
     private boolean congested = false;
     /** High travel time index status */
-    private boolean highTTI = false;
+    private boolean highHaltingRate = false;
     /** Duration of high travel time index */
-    private int highTTIDuration = 0;
+    private int highHaltingDuration = 0;
     /**
      * Represents the visual data of an edge in the simulation, 
      *      grouping a rectangle representing the edge and dashed lines representing lane dividers.
@@ -70,24 +70,24 @@ public class EdgeData extends Group {
 
 
     /**
-     * Update congested status based on TTI
-     * An edge is considered congested if its Travel Time Index (TTI) 
+     * Update congested status based on average number of halting vehicles/edge's lane
+     * An edge is considered congested if number of halting vehicles/lane 
      *      maintain above a certain threshold for a certain duration.
-     * @param TTI current Travel Time Index = Current Travel Time / Free Flow Travel Time
+     * @param haltingRate current average number of halting vehicles per lane
      */
-    public void updateCongestedStatus(double TTI) {
-        if(TTI >= Metrics.HIGH_TTI_THRESHOLD) {
-            highTTIDuration++;
-            if(highTTI == false)
-                highTTI = true;
-            if(highTTIDuration >= Metrics.HIGH_TTI_DURATION_THRESHOLD)
+    public void updateCongestedStatus(double haltingRate) {
+        if(haltingRate >= Metrics.HIGH_HALTING_RATE_THRESHOLD) {
+            highHaltingDuration++;
+            if(highHaltingRate == false)
+                highHaltingRate = true;
+            if(highHaltingDuration >= Metrics.HIGH_HALTING_DURATION_THRESHOLD)
                 congested = true;
         } else {
-            if(highTTI == true) {
+            if(highHaltingRate == true) {
                 if(congested == true)
                     congested = false;
-                highTTI = false;
-                highTTIDuration = 0;
+                highHaltingRate = false;
+                highHaltingDuration = 0;
             }
         }
     }
