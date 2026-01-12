@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.application.Platform;
 
 
 public class MainWindow extends Stage {
@@ -115,7 +116,7 @@ public class MainWindow extends Stage {
                     lastStepTime = now;
                 }catch(IllegalStateException closed){   
                     this.stop();
-                    MainWindow.this.close();
+                    Platform.runLater(() -> MainWindow.this.close());
                 }catch(Exception e){
                     e.printStackTrace();
                 }

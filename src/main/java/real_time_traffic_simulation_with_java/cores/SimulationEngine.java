@@ -364,10 +364,12 @@ public class SimulationEngine {
      * @param vehicleID ID of the vehicle
      * @return Formatted statistic string for Dashboard
      */
-    public double[] getEdgeStats(String edgeID) {
+    public double[] getEdgeStats(String edgeID) throws IllegalStateException {
         int haltingNumber;
         try{
             haltingNumber = edgeManager.getHaltingNumber(edgeID);
+        } catch(IllegalStateException e){
+            throw e;
         } catch (Exception e) {
             LOGGER.log(Level.WARNING, "Unable to get halting number for edge ID: " + edgeID, e);
             haltingNumber = -1;
