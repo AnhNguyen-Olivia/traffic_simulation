@@ -73,7 +73,6 @@ public class App {
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
-                    Platform.exit();
                 });
 
                 mainWindow.show();
@@ -91,10 +90,6 @@ public class App {
     private static void setupLogger(){
         try {
             ROOT_LOGGER.setLevel(Level.INFO);
-
-            ConsoleHandler consoleHandler = new ConsoleHandler();
-            consoleHandler.setLevel(Level.INFO);
-            consoleHandler.setFormatter(new SimpleFormatter());
 
             FileHandler fileHandler = new FileHandler(Path.LogFile, true);
             fileHandler.setLevel(Level.INFO);

@@ -66,7 +66,7 @@ public class trafficlightPopupWindow extends Dialog<List<Integer>> {
         Label IDLabel = new Label("Traffic Light ID: " + tlID);
         IDLabel.setStyle("-fx-font-size: 18px; -fx-text-fill: darkcyan; -fx-font-weight: bold;");
         Label instructionLabel = new Label("Enter new duration for each phase and click Confirm to apply changes.\nLeave a field empty to keep the current duration.");
-        instructionLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: darkcyan; -fx-font-weight: italic;");
+        instructionLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: darkcyan; -fx-font-style: italic;");
         VBox content = new VBox(10, IDLabel, instructionLabel, grid);
         // Set content to the dialog pane
         this.getDialogPane().setContent(content);
