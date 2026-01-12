@@ -31,6 +31,8 @@ public class ChartSection extends BarChart<Number, String> {
     private XYChart.Series<Number, String> density;
     private XYChart.Series<Number, String> haltingNumber;
 
+    private Timeline updateChart;
+
     /** 
      * Constructor for ChartSection.
      * @param simulationEngine The simulation engine to fetch edge statistics from.
@@ -73,16 +75,18 @@ public class ChartSection extends BarChart<Number, String> {
         this.getData().add(haltingNumber);
 
         // Update data periodically
-        Timeline updateChart = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+        this.updateChart = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             try{
                 setValue();
-            } catch (Exception ex) {
+            } catch(IllegalStateException ex) {
+                this.updateChart.stop();
+            }catch (Exception ex) {
                 ex.printStackTrace();
             }
         }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS))); // Time line stop after this duration (or loop if setCycleCount)
         // Ensure the timeline runs indefinitely
-        updateChart.setCycleCount(Animation.INDEFINITE);
-        updateChart.play();
+        this.updateChart.setCycleCount(Animation.INDEFINITE);
+        this.updateChart.play();
 
     }
 

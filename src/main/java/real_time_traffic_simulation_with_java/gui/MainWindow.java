@@ -115,6 +115,7 @@ public class MainWindow extends Stage {
                     lastStepTime = now;
                 }catch(IllegalStateException closed){   
                     this.stop();
+                    MainWindow.this.close();
                 }catch(Exception e){
                     e.printStackTrace();
                 }

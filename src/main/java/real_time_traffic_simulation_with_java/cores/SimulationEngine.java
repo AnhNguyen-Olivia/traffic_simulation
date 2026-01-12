@@ -46,11 +46,15 @@ public class SimulationEngine {
     /**
      * Control simulation: advance simulation by one step & update edge congestion status and traffic light states
      */
-    public void stepSimulation() {
-        try {this.conn.nextStep();} catch (Exception e) {
+    public void stepSimulation() throws IllegalStateException {
+        try {this.conn.nextStep();} catch(IllegalStateException e){
+            LOGGER.log(Level.SEVERE, "Simulation has ended or connection lost: ", e);
+            throw e;
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Error advancing simulation step: ", e);
             return; // Stop method execution here if step fails
         }
-        try {this.edgeManager.updateEdgeDataList();} catch (Exception e) {
+        try {this.edgeManager.updateEdgeDataList();}catch (Exception e) {
             LOGGER.log(Level.WARNING, "Failed to re-render edge.", e);
         }
         try {this.trafficLightManager.updateTrafficLightDataList();} catch (Exception e) {
@@ -241,7 +245,7 @@ public class SimulationEngine {
      * Get mapping data: vehicles
      * @return List of VehicleData representing vehicles shape to be rendered
      */
-    public List<VehicleData> getMapVehicles() {
+    public List<VehicleData> getMapVehicles(){
         try {return this.vehicleManager.getVehicleDataList();} catch (Exception e) {
             LOGGER.log(Level.WARNING, "Failed to retrieve vehicle data for map rendering.", e);
             return new ArrayList<>();
@@ -321,8 +325,11 @@ public class SimulationEngine {
      * Get statistics: current time step
      * @return Formatted statistic string for Dashboard
      */
-    public String getCurrentTimeStep() {
-        try {return String.format("Current Time Step: %.1f", this.conn.getCurrentStep());} catch (Exception e) {
+    public String getCurrentTimeStep() throws IllegalStateException{
+        try {return String.format("Current Time Step: %.1f", this.conn.getCurrentStep());
+        } catch(IllegalStateException e){
+            throw e;
+        } catch (Exception e) {
             LOGGER.log(Level.WARNING, "Failed to retrieve current time step.", e);
             return "Current Time Step: N/A";
         }

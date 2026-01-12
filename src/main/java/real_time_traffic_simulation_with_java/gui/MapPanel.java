@@ -58,11 +58,14 @@ public class MapPanel extends StackPane {
     /**
      * Public method: Refresh map panel by redraw vehicle layer and set color of traffic light layer
      */
-    public void refresh() {
+    public void refresh() throws IllegalStateException{
         try{
             // Redraw vehicle layer
             Group temp = (Group) this.getChildren().get(0);
             temp.getChildren().set(1, new vehicleLayer(this.simulationEngine));
+        } catch (IllegalStateException e) {
+            LOGGER.severe("Simulation has ended or connection lost while refreshing MapPanel.");
+            throw e;
         } catch (Exception e) {
             LOGGER.warning("Failed to refresh vehicle layer in MapPanel.");
         }
