@@ -40,41 +40,59 @@ public class ChartSection extends BarChart<Number, String> {
     public ChartSection(SimulationEngine simulationEngine) {
         // Initialize self and fields
         super(new NumberAxis(), new CategoryAxis());
+        initializeCoreAttributes(simulationEngine);
+        setupChart();
+        setupUpdateChart();
+    }
+
+
+    /**
+     * Private helper method: initialize attributes.
+     */
+    private void initializeCoreAttributes(SimulationEngine simulationEngine) {
         this.xAxis = (NumberAxis) this.getXAxis();
         this.yAxis = (CategoryAxis) this.getYAxis();
         this.simulationEngine = simulationEngine;
         try{
             this.edgeIds = simulationEngine.getAllEdgeIDs();
-        } catch (Exception e) {
+        } catch (IllegalStateException e) {
             logger.log(Level.SEVERE, "Failed to fetch edge IDs from simulation engine.", e);
-            this.edgeIds = List.of();
+            logger.log(Level.SEVERE, "ChartSection was not fully initialized.");
+            return;
         }
         this.edgeIds.sort(String::compareTo);
-
+        // Chart series
         this.avgSpeed = new XYChart.Series<>();
         this.avgSpeed.setName("Average Speed (km/h)");
         this.density = new XYChart.Series<>();
         this.density.setName("Density (veh/km)");
         this.haltingNumber = new XYChart.Series<>();
         this.haltingNumber.setName("Travel Time (s)");
+    }
 
+    /**
+     * Private helper method: set up chart.
+     */
+    private void setupChart() {
         // Setup chart properties
         this.setPrefHeight(edgeIds.size() * 30 + 50);
         this.setPrefWidth(Metrics.DASHBOARD_WIDTH + 50);
         this.setAnimated(false);
-
         // Setup axes
         this.setTitle("Live Statistics");
         xAxis.setLabel("Value");
         xAxis.setTickLabelRotation(90);
         yAxis.setLabel("Edge ID");
-
         // Add series to chart
         this.getData().add(avgSpeed);
         this.getData().add(density);
         this.getData().add(haltingNumber);
+    }
 
-        // Update data periodically
+    /**
+     * Private helper method: setup updating chart periodically.
+     */
+    public void setupUpdateChart() {
         this.updateChart = new Timeline(new KeyFrame(Duration.ZERO, e -> {
             try{
                 setValue();
@@ -87,9 +105,7 @@ public class ChartSection extends BarChart<Number, String> {
         // Ensure the timeline runs indefinitely
         this.updateChart.setCycleCount(Animation.INDEFINITE);
         this.updateChart.play();
-
     }
-
 
     /**
      * Private helper method: update chart values.
