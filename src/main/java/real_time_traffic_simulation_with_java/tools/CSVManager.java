@@ -32,7 +32,10 @@ public class CSVManager {
         this.timeStamp = this.timeStamp.replaceAll(":", "_");
         this.filePath = Path.CsvLogFolder + this.timeStamp + ".csv";
         try {
-            this.writer = new CSVWriter(new FileWriter(this.filePath, true));
+            this.writer = new CSVWriter(new FileWriter(this.filePath, true), CSVWriter.DEFAULT_SEPARATOR,
+                                        CSVWriter.NO_QUOTE_CHARACTER,
+                                        CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                                        CSVWriter.DEFAULT_LINE_END);
             this.writer.writeNext(headers);
             this.writer.flush();
         } catch (IOException e) {

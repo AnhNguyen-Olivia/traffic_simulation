@@ -119,7 +119,7 @@ public class MainWindow extends Stage {
                 try{
                     simulationEngine.stepSimulation();
                     mapPanel.refresh();
-                    LOGGER.log(Level.INFO, "[QUEUE] Thread: " + Thread.currentThread().getName());
+                    LOGGER.log(Level.FINE, "[QUEUE] Thread: " + Thread.currentThread().getName());
                     exportingFiles.queueCSV(simulationEngine.dataForCSV());
                     lastStepTime = now;
                     LOGGER.log(Level.FINE, "MainWindow AnimationTimer step executed at: " + now);

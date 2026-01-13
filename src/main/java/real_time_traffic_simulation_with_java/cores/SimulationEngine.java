@@ -412,8 +412,8 @@ public class SimulationEngine {
             String speed = this.vehicleManager.getSpeed(vehicleID) == -1? 
                             "" : String.format("%.2f", this.vehicleManager.getSpeed(vehicleID));
             String edgeID = this.getVehicleEdgeIDForCSV(vehicleID);
-            String edgeCongestionStatus = edgeID.equals("")? 
-                            "" : (String.valueOf(this.edgeManager.getCongestedStatus(edgeID)));
+            String edgeCongestionStatus = (edgeID.equals("") || edgeID.startsWith(":") ||edgeID.startsWith("J") || edgeID.startsWith("-J"))? 
+                            "" : String.valueOf(this.edgeManager.getCongestedStatus(edgeID));
             String edgeAverageSpeed = this.getEdgeStatForCSV(edgeID, "average_speed");
             String edgeDensity = this.getEdgeStatForCSV(edgeID, "density");
             String[] row = {currentTimeStep, vehicleID, color, speed, 

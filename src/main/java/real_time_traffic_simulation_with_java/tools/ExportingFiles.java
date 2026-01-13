@@ -41,7 +41,7 @@ public class ExportingFiles {
                     ReportData data = queue.poll(500, TimeUnit.MILLISECONDS);
 
                     if (data!= null && data.getVehicleData() != null){
-                        LOGGER.log(Level.INFO, "[WRITE] Thread: " + Thread.currentThread().getName());
+                        LOGGER.log(Level.FINE, "[WRITE] Thread: " + Thread.currentThread().getName());
                         if(data.shouldExportCSV()){
                             csvManager.updateCSV(data.getVehicleData());
                         }
