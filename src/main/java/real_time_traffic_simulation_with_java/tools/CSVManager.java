@@ -1,6 +1,7 @@
 package real_time_traffic_simulation_with_java.tools;
 
 import real_time_traffic_simulation_with_java.alias.Path;
+import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import com.opencsv.CSVWriter;
 
@@ -20,7 +21,7 @@ public class CSVManager {
     private String timeStamp;
     private String filePath;
     private CSVWriter writer;
-    private static final String[] headers = {"Simulation step", "vehicle_id","speed","angle"};
+    private static final String[] headers = Metrics.HEADERS;
 
     /**
      * Manages CSV log files for the traffic simulation.

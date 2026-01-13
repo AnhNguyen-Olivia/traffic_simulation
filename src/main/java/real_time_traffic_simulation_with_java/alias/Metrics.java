@@ -57,4 +57,9 @@ public final class Metrics {
 
     /** Dashboard panel width (in pixels) */
     public static final double DASHBOARD_WIDTH = 300;
+
+    /** Header for CSV file to write */
+    public static final String[] HEADERS = {"Simulation step", "vehicle id","vehicle color", "vehicle speed",
+                                                "vehicle is on edge", "edge congestion status", 
+                                                "edge average speed", "edge density" };
 }
