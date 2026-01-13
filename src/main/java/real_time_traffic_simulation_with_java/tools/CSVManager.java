@@ -6,6 +6,7 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 import com.opencsv.CSVWriter;
 
 import java.util.List;
+import java.util.logging.Level;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -15,6 +16,8 @@ import java.time.LocalDateTime;
  * It creates a new CSV file with a timestamped name upon instantiation
  */
 public class CSVManager {
+    private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(CSVManager.class.getName());
+
     private String timeStamp;
     private String filePath;
     private CSVWriter writer;
@@ -33,7 +36,7 @@ public class CSVManager {
             this.writer.writeNext(headers);
             this.writer.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.WARNING, "Failed to write headers to CSV file: " + e.getMessage(), e);
         }
     }
 
@@ -61,7 +64,19 @@ public class CSVManager {
             this.writer.writeAll(data);
             this.writer.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.WARNING, "Failed to write data to CSV file: " + e.getMessage(), e);
+        }
+    }
+
+    /** Closes the CSV writer to release file resources. Currently Beta testing*/
+    public void closeCSV() {
+        try {
+            if (writer != null) {
+                writer.close();
+                LOGGER.log(Level.INFO, "CSV file closed successfully.");
+            }
+        } catch (IOException e) {
+            LOGGER.log(Level.WARNING, "Failed to close CSV file: " + e.getMessage(), e);
         }
     }
 }
