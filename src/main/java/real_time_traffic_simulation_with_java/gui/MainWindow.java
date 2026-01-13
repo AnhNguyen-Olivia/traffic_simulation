@@ -2,6 +2,10 @@ package real_time_traffic_simulation_with_java.gui;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
+import real_time_traffic_simulation_with_java.tools.ExportingFiles;
+
+import java.util.logging.Level;
+
 import javafx.animation.AnimationTimer;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -19,17 +23,19 @@ public class MainWindow extends Stage {
     private MapPanel mapPanel;
     private AnimationTimer animationTimer;
     private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(MainWindow.class.getName());
-    
+    private ExportingFiles exportingFiles;
+
     /**
      * MainWindow contructor. Its have simulation engine as parameter to pass to other comfponents 
      * @param engine
     */
     public MainWindow(SimulationEngine engine) {
         this.simulationEngine = engine;
+        this.exportingFiles = new ExportingFiles();
         try {initializeGui();} catch(Exception e){
-            LOGGER.severe("Initialize GUI incompleted.");
+            LOGGER.log(Level.SEVERE, "Failed to initialize MainWindow GUI: " + e.getMessage(), e);
         }
-        LOGGER.info("Main window initialized.");
+        LOGGER.log(Level.INFO, "MainWindow initialized successfully.");
     }
 
     /**
@@ -42,7 +48,7 @@ public class MainWindow extends Stage {
          * Set preferred width, max width for control panel and statistic panel because we want to fix their width.
         */
         mapPanel = new MapPanel(this.simulationEngine);
-        ControlPanel controlPanel = new ControlPanel(this.simulationEngine); 
+        ControlPanel controlPanel = new ControlPanel(this.simulationEngine, this.exportingFiles); 
         controlPanel.setPrefWidth(Metrics.CONTROL_PANEL_WIDTH);
         controlPanel.setMaxWidth(Metrics.WINDOW_HEIGHT);
 
@@ -113,12 +119,17 @@ public class MainWindow extends Stage {
                 try{
                     simulationEngine.stepSimulation();
                     mapPanel.refresh();
+                    LOGGER.log(Level.INFO, "[QUEUE] Thread: " + Thread.currentThread().getName());
+                    exportingFiles.queueCSV(simulationEngine.dataForCSV());
                     lastStepTime = now;
+                    LOGGER.log(Level.FINE, "MainWindow AnimationTimer step executed at: " + now);
                 }catch(IllegalStateException closed){   
                     this.stop();
                     Platform.runLater(() -> MainWindow.this.close());
+                    LOGGER.log(Level.WARNING, "Simulation connection closed. AnimationTimer stopped.");
                 }catch(Exception e){
                     e.printStackTrace();
+                    LOGGER.log(Level.SEVERE, "Error during AnimationTimer step: " + e.getMessage(), e);
                 }
             }
         };
@@ -131,6 +142,11 @@ public class MainWindow extends Stage {
     public void stopAnimationTimer(){
         if(animationTimer != null){ //This means the animation timer is running, stop it
             animationTimer.stop();
+            LOGGER.log(Level.INFO, "MainWindow AnimationTimer stopped.");
+        }
+        if (exportingFiles != null) {
+            exportingFiles.shutdown();
+            LOGGER.log(Level.INFO, "ExportingFiles service shut down initiated.");
         }
     }
 

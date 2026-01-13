@@ -91,6 +91,7 @@ public class SumoTraasConnection {
         try{
             connection.do_timestep();
         } catch(Exception e){
+            LOGGER.log(Level.SEVERE, "Error advancing to next timestep: ", e);
             throw e;
         }
     }
@@ -104,6 +105,7 @@ public class SumoTraasConnection {
             double timeSeconds = (double)connection.do_job_get(Simulation.getTime());
             return timeSeconds; 
         } catch(Exception e){
+            LOGGER.log(Level.SEVERE, "Error getting current simulation time: ", e);
             throw e;
         }
     }

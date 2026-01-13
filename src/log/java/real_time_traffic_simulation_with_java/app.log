@@ -1,0 +1,2717 @@
+Jan 13, 2026 1:02:48 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 13, 2026 1:02:52 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 13, 2026 1:02:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles service started. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 13_02_52.csv
+Jan 13, 2026 1:02:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread started.
+Jan 13, 2026 1:02:53 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 13, 2026 1:02:53 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 13, 2026 1:02:54 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 13, 2026 1:03:07 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 13, 2026 1:03:14 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E21.
+Jan 13, 2026 1:03:16 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E24.
+Jan 13, 2026 1:03:20 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E31.
+Jan 13, 2026 1:03:22 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E24.
+Jan 13, 2026 1:03:36 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E35.
+Jan 13, 2026 1:03:40 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E36.
+Jan 13, 2026 1:03:43 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E10.
+Jan 13, 2026 1:04:26 PM real_time_traffic_simulation_with_java.cores.SimulationEngine toggleSingleTl
+INFO: Toggled traffic light: J19
+Jan 13, 2026 1:04:26 PM real_time_traffic_simulation_with_java.cores.SimulationEngine toggleSingleTl
+INFO: Toggled traffic light: J19
+Jan 13, 2026 1:10:07 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @e2d56bf'
+Jan 13, 2026 1:10:08 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 13, 2026 1:10:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles service started. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 13_10_08.csv
+Jan 13, 2026 1:10:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread started.
+Jan 13, 2026 1:10:09 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 13, 2026 1:10:09 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 13, 2026 1:10:10 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 13, 2026 1:10:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E0.
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:25 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E25.
+Jan 13, 2026 1:10:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:27 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:27 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:27 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:27 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E32.
+Jan 13, 2026 1:10:27 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:29 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:29 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:29 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:29 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E36.
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:32 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:32 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:32 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:32 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E32.
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:35 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E14.
+Jan 13, 2026 1:10:35 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:35 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:35 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:35 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E11.
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E10.
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:40 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:40 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:40 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:40 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:41 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:42 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:42 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:42 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E28.
+Jan 13, 2026 1:10:42 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:42 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:42 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:42 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:42 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:42 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E30.
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:45 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:45 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:45 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:45 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E10.
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:10:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:27 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:27 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:27 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:27 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:27 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:28 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:29 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:29 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:29 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:29 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:34 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:35 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:36 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:36 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:36 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:36 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:41 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:41 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:41 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:41 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:41 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:42 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:43 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:43 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:43 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:43 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:43 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:46 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:47 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:48 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:11:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:14 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:15 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:16 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:17 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:21 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:22 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles service...
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread stopped.
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles service shut down successfully. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 13_10_08.csv
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 13, 2026 1:12:26 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection getCurrentStep
+SEVERE: Error getting current simulation time: 
+java.lang.IllegalStateException: connection is closed
+	at it.polito.appeal.traci.SumoTraciConnection.do_job_get(SumoTraciConnection.java:509)
+	at real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection.getCurrentStep(SumoTraasConnection.java:105)
+	at real_time_traffic_simulation_with_java.cores.SimulationEngine.getCurrentTimeStep(SimulationEngine.java:329)
+	at real_time_traffic_simulation_with_java.gui.dashboardSection.TextSection.lambda$new$0(TextSection.java:50)
+	at com.sun.scenario.animation.shared.TimelineClipCore.visitKeyFrame(TimelineClipCore.java:239)
+	at com.sun.scenario.animation.shared.TimelineClipCore.playTo(TimelineClipCore.java:180)
+	at javafx.animation.Timeline.doPlayTo(Timeline.java:172)
+	at javafx.animation.AnimationAccessorImpl.playTo(AnimationAccessorImpl.java:39)
+	at com.sun.scenario.animation.shared.InfiniteClipEnvelope.timePulse(InfiniteClipEnvelope.java:104)
+	at javafx.animation.Animation.doTimePulse(Animation.java:1234)
+	at javafx.animation.Animation$1.timePulse(Animation.java:190)
+	at com.sun.scenario.animation.AbstractPrimaryTimer.timePulseImpl(AbstractPrimaryTimer.java:326)
+	at com.sun.scenario.animation.AbstractPrimaryTimer$MainLoop.run(AbstractPrimaryTimer.java:247)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:588)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:572)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:565)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$0(QuantumToolkit.java:346)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+

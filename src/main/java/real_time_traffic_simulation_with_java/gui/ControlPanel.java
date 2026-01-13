@@ -12,6 +12,7 @@ import javafx.util.Duration;
 import real_time_traffic_simulation_with_java.alias.Color;
 import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
+import real_time_traffic_simulation_with_java.tools.ExportingFiles;
 
 
 /**
@@ -26,6 +27,7 @@ public class ControlPanel extends Pane {
      * Create instance of SimulationEngine
     */
     private SimulationEngine simulationEngine;
+    private ExportingFiles exportingFiles;
 
     /**
      * Control panel pane including vehicle injection tool, stress test tool, toggle all traffic light tool. <br>
@@ -34,12 +36,13 @@ public class ControlPanel extends Pane {
      * (Happy Christmas!) ᓚ₍⑅^- .-^₎ -ᶻ 𝗓 𐰁
      * @param simulationEngine
     */
-    public ControlPanel(SimulationEngine simulationEngine){
+    public ControlPanel(SimulationEngine simulationEngine, ExportingFiles exportingFiles){
 
         /**
          * Initialize simulationEngine
         */
         this.simulationEngine = simulationEngine;
+        this.exportingFiles = exportingFiles;
 
         /**
          * Create vehicle text field, set perfered width and max width, add tooltip
@@ -265,11 +268,27 @@ public class ControlPanel extends Pane {
         };
         resetFilterButton.setOnAction(resetFilterEvent);
 
+        Button exportCSVButton = new Button("Export CSV");
+        Tooltip exportCSVTooltip = new Tooltip("Press to export current CSV log file.");
+        exportCSVTooltip.setShowDelay(Duration.ZERO);
+        Tooltip.install(exportCSVButton, exportCSVTooltip);
+
+        EventHandler<ActionEvent> exportCSVEvent = new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent e){
+                try {
+                    exportingFiles.queueCSV(simulationEngine.dataForCSV());
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        };
+        exportCSVButton.setOnAction(exportCSVEvent);
+
         /**
          * Group all tools in a VBox and add the VBox to control panel pane
         */
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(inputSpeedColor, startAndEnd, vehicleInjection, VandStart, StressTest, toggleAllTl, filtered, filteredButton, resetFilterButton);
+        vbox.getChildren().addAll(inputSpeedColor, startAndEnd, vehicleInjection, VandStart, StressTest, toggleAllTl, filtered, filteredButton, resetFilterButton, exportCSVButton);
         vbox.setSpacing(20);
         this.getChildren().add(vbox);
 
