@@ -27,7 +27,6 @@ public class ControlPanel extends Pane {
      * Create instance of SimulationEngine
     */
     private SimulationEngine simulationEngine;
-    private ExportingFiles exportingFiles;
 
     /**
      * Control panel pane including vehicle injection tool, stress test tool, toggle all traffic light tool. <br>
@@ -42,7 +41,6 @@ public class ControlPanel extends Pane {
          * Initialize simulationEngine
         */
         this.simulationEngine = simulationEngine;
-        this.exportingFiles = exportingFiles;
 
         /**
          * Create vehicle text field, set perfered width and max width, add tooltip

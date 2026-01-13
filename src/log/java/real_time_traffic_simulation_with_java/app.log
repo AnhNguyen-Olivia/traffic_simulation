@@ -2715,3 +2715,2066 @@ java.lang.IllegalStateException: connection is closed
 	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
 	at java.base/java.lang.Thread.run(Thread.java:1474)
 
+Jan 13, 2026 2:09:04 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 13, 2026 2:09:06 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 13, 2026 2:09:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles service started. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 14_09_06.csv
+Jan 13, 2026 2:09:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread started.
+Jan 13, 2026 2:09:07 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 13, 2026 2:09:07 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 13, 2026 2:09:07 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 13, 2026 2:09:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:13 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:14 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:15 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E13.
+Jan 13, 2026 2:09:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:16 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:16 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:16 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:17 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E19.
+Jan 13, 2026 2:09:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:17 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:17 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:17 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:18 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:18 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:18 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:19 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E21.
+Jan 13, 2026 2:09:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:19 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:19 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:19 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:20 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:21 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E16.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:22 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J18_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J18_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J11_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J18_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J18_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_7 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_7 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:24 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E17.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J11_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:25 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J11_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_9 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_6 not found in EdgeDataList.
+Jan 13, 2026 2:09:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J11_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_9 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_11 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_9 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_11 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_9 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_11 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_11 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_11 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_6 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_11 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_11 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J17_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J11_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_11 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:28 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J11_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:29 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_9 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J18_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_9 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J18_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J11_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_7 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_9 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:32 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_9 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J13_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_9 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_7 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:33 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J11_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J11_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_4 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J12_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_8 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:35 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_7 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:36 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J27_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:37 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J9_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_6 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J21_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_6 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_6 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J26_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_6 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_6 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_2 not found in EdgeDataList.
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:39 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J10_0 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_6 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J22_6 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J13_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J23_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J20_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J13_3 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J19_1 not found in EdgeDataList.
+Jan 13, 2026 2:09:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: [WRITE] Thread: pool-2-thread-1
+Jan 13, 2026 2:11:25 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @e2d56bf'
+Jan 13, 2026 2:11:27 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 13, 2026 2:11:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles service started. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 14_11_27.csv
+Jan 13, 2026 2:11:27 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread started.
+Jan 13, 2026 2:11:27 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 13, 2026 2:11:27 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 13, 2026 2:11:28 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 13, 2026 2:11:31 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 13, 2026 2:11:31 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 13, 2026 2:11:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles service...
+Jan 13, 2026 2:11:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread stopped.
+Jan 13, 2026 2:11:31 PM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 13, 2026 2:11:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles service shut down successfully. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 14_11_27.csv
+Jan 13, 2026 2:11:31 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 13, 2026 2:11:31 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection getCurrentStep
+SEVERE: Error getting current simulation time: 
+java.lang.IllegalStateException: connection is closed
+	at it.polito.appeal.traci.SumoTraciConnection.do_job_get(SumoTraciConnection.java:509)
+	at real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection.getCurrentStep(SumoTraasConnection.java:105)
+	at real_time_traffic_simulation_with_java.cores.SimulationEngine.getCurrentTimeStep(SimulationEngine.java:340)
+	at real_time_traffic_simulation_with_java.gui.dashboardSection.TextSection.lambda$new$0(TextSection.java:50)
+	at com.sun.scenario.animation.shared.TimelineClipCore.visitKeyFrame(TimelineClipCore.java:239)
+	at com.sun.scenario.animation.shared.TimelineClipCore.playTo(TimelineClipCore.java:180)
+	at javafx.animation.Timeline.doPlayTo(Timeline.java:172)
+	at javafx.animation.AnimationAccessorImpl.playTo(AnimationAccessorImpl.java:39)
+	at com.sun.scenario.animation.shared.InfiniteClipEnvelope.timePulse(InfiniteClipEnvelope.java:120)
+	at javafx.animation.Animation.doTimePulse(Animation.java:1234)
+	at javafx.animation.Animation$1.timePulse(Animation.java:190)
+	at com.sun.scenario.animation.AbstractPrimaryTimer.timePulseImpl(AbstractPrimaryTimer.java:326)
+	at com.sun.scenario.animation.AbstractPrimaryTimer$MainLoop.run(AbstractPrimaryTimer.java:247)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:588)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:572)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:565)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$0(QuantumToolkit.java:346)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+
+Jan 13, 2026 2:12:30 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 13, 2026 2:12:31 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 13, 2026 2:12:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles service started. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 14_12_31.csv
+Jan 13, 2026 2:12:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread started.
+Jan 13, 2026 2:12:32 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 13, 2026 2:12:32 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 13, 2026 2:12:33 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 13, 2026 2:12:38 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 13, 2026 2:12:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:40 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:41 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:41 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:41 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:41 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:42 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:42 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:42 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:42 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:42 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:42 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:42 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:42 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:42 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J13_2 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J13_2 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:43 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J13_2 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J13_2 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J15_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_0 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J13_3 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J13_2 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.EdgeManager getCongestedStatus
+WARNING: Edge ID: :J16_1 not found in EdgeDataList.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 13, 2026 2:12:44 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles service...
+Jan 13, 2026 2:12:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread stopped.
+Jan 13, 2026 2:12:45 PM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 13, 2026 2:12:45 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles service shut down successfully. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 14_12_31.csv
+Jan 13, 2026 2:12:45 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 13, 2026 2:12:45 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection getCurrentStep
+SEVERE: Error getting current simulation time: 
+java.lang.IllegalStateException: connection is closed
+	at it.polito.appeal.traci.SumoTraciConnection.do_job_get(SumoTraciConnection.java:509)
+	at real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection.getCurrentStep(SumoTraasConnection.java:105)
+	at real_time_traffic_simulation_with_java.cores.SimulationEngine.getCurrentTimeStep(SimulationEngine.java:340)
+	at real_time_traffic_simulation_with_java.gui.dashboardSection.TextSection.lambda$new$0(TextSection.java:50)
+	at com.sun.scenario.animation.shared.TimelineClipCore.visitKeyFrame(TimelineClipCore.java:239)
+	at com.sun.scenario.animation.shared.TimelineClipCore.playTo(TimelineClipCore.java:180)
+	at javafx.animation.Timeline.doPlayTo(Timeline.java:172)
+	at javafx.animation.AnimationAccessorImpl.playTo(AnimationAccessorImpl.java:39)
+	at com.sun.scenario.animation.shared.InfiniteClipEnvelope.timePulse(InfiniteClipEnvelope.java:104)
+	at javafx.animation.Animation.doTimePulse(Animation.java:1234)
+	at javafx.animation.Animation$1.timePulse(Animation.java:190)
+	at com.sun.scenario.animation.AbstractPrimaryTimer.timePulseImpl(AbstractPrimaryTimer.java:326)
+	at com.sun.scenario.animation.AbstractPrimaryTimer$MainLoop.run(AbstractPrimaryTimer.java:247)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:588)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:572)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:565)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$0(QuantumToolkit.java:346)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+
+Jan 13, 2026 2:13:38 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 13, 2026 2:13:40 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 13, 2026 2:13:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles service started. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 14_13_40.csv
+Jan 13, 2026 2:13:40 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread started.
+Jan 13, 2026 2:13:40 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 13, 2026 2:13:40 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 13, 2026 2:13:41 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 13, 2026 2:13:51 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 13, 2026 2:14:03 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 13, 2026 2:14:03 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 13, 2026 2:14:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles service...
+Jan 13, 2026 2:14:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: ExportingFiles worker thread stopped.
+Jan 13, 2026 2:14:04 PM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 13, 2026 2:14:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles service shut down successfully. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 14_13_40.csv
+Jan 13, 2026 2:14:04 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 13, 2026 2:14:04 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection getCurrentStep
+SEVERE: Error getting current simulation time: 
+java.lang.IllegalStateException: connection is closed
+	at it.polito.appeal.traci.SumoTraciConnection.do_job_get(SumoTraciConnection.java:509)
+	at real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection.getCurrentStep(SumoTraasConnection.java:105)
+	at real_time_traffic_simulation_with_java.cores.SimulationEngine.getCurrentTimeStep(SimulationEngine.java:340)
+	at real_time_traffic_simulation_with_java.gui.dashboardSection.TextSection.lambda$new$0(TextSection.java:50)
+	at com.sun.scenario.animation.shared.TimelineClipCore.visitKeyFrame(TimelineClipCore.java:239)
+	at com.sun.scenario.animation.shared.TimelineClipCore.playTo(TimelineClipCore.java:180)
+	at javafx.animation.Timeline.doPlayTo(Timeline.java:172)
+	at javafx.animation.AnimationAccessorImpl.playTo(AnimationAccessorImpl.java:39)
+	at com.sun.scenario.animation.shared.InfiniteClipEnvelope.timePulse(InfiniteClipEnvelope.java:120)
+	at javafx.animation.Animation.doTimePulse(Animation.java:1234)
+	at javafx.animation.Animation$1.timePulse(Animation.java:190)
+	at com.sun.scenario.animation.AbstractPrimaryTimer.timePulseImpl(AbstractPrimaryTimer.java:326)
+	at com.sun.scenario.animation.AbstractPrimaryTimer$MainLoop.run(AbstractPrimaryTimer.java:247)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:588)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulse(QuantumToolkit.java:572)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.pulseFromQueue(QuantumToolkit.java:565)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.lambda$runToolkit$0(QuantumToolkit.java:346)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+
+Jan 13, 2026 10:59:45 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 13, 2026 10:59:47 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 13, 2026 10:59:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-13 22_59_47.csv
+Jan 13, 2026 10:59:47 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 13, 2026 10:59:48 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 13, 2026 10:59:48 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 13, 2026 10:59:48 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:49 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:50 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:50 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:51 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:53 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:54 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 0 rows.
+Jan 13, 2026 10:59:55 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 13, 2026 10:59:55 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:55 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 3 rows.
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 6 rows.
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 9 rows.
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 12 rows.
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 15 rows.
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:56 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 18 rows.
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 21 rows.
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 22 rows.
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 25 rows.
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 25 rows.
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:57 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 28 rows.
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 28 rows.
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 30 rows.
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 30 rows.
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 31 rows.
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:58 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 32 rows.
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 33 rows.
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 35 rows.
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 35 rows.
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 37 rows.
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 10:59:59 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 37 rows.
+Jan 13, 2026 11:00:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 37 rows.
+Jan 13, 2026 11:00:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 39 rows.
+Jan 13, 2026 11:00:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 39 rows.
+Jan 13, 2026 11:00:00 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:00 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 40 rows.
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 41 rows.
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 42 rows.
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 43 rows.
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 44 rows.
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:01 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 45 rows.
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 46 rows.
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 46 rows.
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 48 rows.
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 49 rows.
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:02 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 49 rows.
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 51 rows.
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 51 rows.
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 53 rows.
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 53 rows.
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:03 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 54 rows.
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 55 rows.
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 56 rows.
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 56 rows.
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 56 rows.
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:04 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 57 rows.
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 57 rows.
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 58 rows.
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 59 rows.
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 60 rows.
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 62 rows.
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 62 rows.
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 64 rows.
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 64 rows.
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 64 rows.
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:06 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 64 rows.
+Jan 13, 2026 11:00:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 66 rows.
+Jan 13, 2026 11:00:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 66 rows.
+Jan 13, 2026 11:00:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 66 rows.
+Jan 13, 2026 11:00:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:07 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 66 rows.
+Jan 13, 2026 11:00:07 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 66 rows.
+Jan 13, 2026 11:00:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 67 rows.
+Jan 13, 2026 11:00:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 67 rows.
+Jan 13, 2026 11:00:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:08 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:08 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 67 rows.
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 67 rows.
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:09 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 69 rows.
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 69 rows.
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:10 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 69 rows.
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 69 rows.
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 67 rows.
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 67 rows.
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 68 rows.
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 67 rows.
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 67 rows.
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 69 rows.
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.gui.MainWindow$1 handle
+INFO: [QUEUE] Thread: JavaFX Application Thread
+Jan 13, 2026 11:00:12 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: [EXPORT] Thread: pool-2-thread-1 exported 69 rows.

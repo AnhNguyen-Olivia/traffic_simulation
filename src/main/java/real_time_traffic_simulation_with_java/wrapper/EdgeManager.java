@@ -76,7 +76,7 @@ public class EdgeManager {
                 return edge.isCongested();
             }
         }
-        LOGGER.log(Level.WARNING, "Edge ID: " + edgeID + " not found in EdgeDataList.");
+        // LOGGER.log(Level.WARNING, "Edge ID: " + edgeID + " not found in EdgeDataList.");
         return false;
     }
 
