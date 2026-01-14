@@ -1,11 +1,14 @@
 package real_time_traffic_simulation_with_java.wrapper;
-import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import de.tudresden.sumo.cmd.Simulation;
 import it.polito.appeal.traci.SumoTraciConnection;
 import real_time_traffic_simulation_with_java.alias.Path;
 
 public class SumoTraasConnection {
+    
+    private static final Logger LOGGER = Logger.getLogger( SumoTraasConnection.class.getName() );
     
     /** 
      * Private Sumo port 
@@ -19,11 +22,19 @@ public class SumoTraasConnection {
     private SumoTraciConnection connection;
 
     /** 
-     * Sumo binary, netfile and route file path. 
+     * Sumo binary file path. <br>
      * To change the path go to alias folder and change the path.java file
     */
     private String SumoBinary = Path.SumoPath;
+    /** 
+     * Sumo net file path. <br>
+     * To change the path go to alias folder and change the path.java file
+    */
     private String netFile = Path.NetFilePath;
+    /** 
+     * Sumo route file path. <br>
+     * To change the path go to alias folder and change the path.java file
+    */
     private String rouFile = Path.RouFilePath;
     
     /** 
@@ -36,7 +47,7 @@ public class SumoTraasConnection {
             connection = new SumoTraciConnection(SumoBinary, netFile, rouFile);
             /** Throws (output) the errors */
         } catch(Exception e){
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error initializing SumoTraciConnection: ", e);
             throw e;
         }
     }
@@ -70,13 +81,18 @@ public class SumoTraasConnection {
             Thread.sleep(wait);
  
             System.out.println("Sumo start successfully! Thank you for waiting.");
+            LOGGER.log(Level.INFO, "Sumo started successfully on port " + port);
     }
 
     /** 
      * Make a Sumo-move-to-the-next-step method 
     */
-    public void nextStep() throws Exception{
-        connection.do_timestep();
+    public void nextStep() throws Exception {
+        try{
+            connection.do_timestep();
+        } catch(Exception e){
+            throw e;
+        }
     }
 
     /** 
@@ -84,8 +100,12 @@ public class SumoTraasConnection {
      * @return double time in seconds
     */
     public double getCurrentStep() throws Exception{
-        double timeSeconds = (double)connection.do_job_get(Simulation.getTime());
-        return timeSeconds; 
+        try{
+            double timeSeconds = (double)connection.do_job_get(Simulation.getTime());
+            return timeSeconds; 
+        } catch(Exception e){
+            throw e;
+        }
     }
 
     /** 
@@ -94,9 +114,13 @@ public class SumoTraasConnection {
      * @throws Exception
     */
     public void closeConnection() throws Exception{
-        Objects.requireNonNull(connection, "Connection isn't initialize");
+        if (connection == null){
+            LOGGER.log(Level.SEVERE, "Connection is null, cannot close connection.");
+            throw new Exception("Connection is null, cannot close connection.");
+        }
         connection.close();
         System.out.println("Sumo close successfully, thank you for using!");
+        LOGGER.log(Level.INFO, "Sumo connection closed successfully.");
     }
 }
 

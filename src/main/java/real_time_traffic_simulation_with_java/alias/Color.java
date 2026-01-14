@@ -7,11 +7,20 @@ import java.util.ArrayList;
 
 /**
  * Utility classs: Stores all the sumo color code definitions to prevent user from generting so many color types, 
- * thus make the code easier to look and fix.
+ *      thus make the code easier to look and fix.
 */
 public final class Color {
     private Color(){
     }
+
+    /** Color to draw road */
+    public static final javafx.scene.paint.Color ROAD = javafx.scene.paint.Color.DIMGRAY;
+    /** Color to draw road border */
+    public static final javafx.scene.paint.Color ROAD_BORDER = javafx.scene.paint.Color.WHITE;
+    /** Color to draw lane divider */
+    public static final javafx.scene.paint.Color LANE_DIVIDER = javafx.scene.paint.Color.WHITE;
+    /** Color to draw congested road */
+    public static final javafx.scene.paint.Color CONGESTED_ROAD = javafx.scene.paint.Color.CHOCOLATE;
 
     /** Sumo Color(255,0,0,0) */
     public static final SumoColor RED = new SumoColor(255,0,0,0);
@@ -55,6 +64,15 @@ public final class Color {
                 return BLACK;
             default:
                 return WHITE;
+        }
+    }
+
+    /** Check if a given color name is valid and return color name (return WHITE if invalid) */
+    public static String checkAvailableColor(String colorName) {
+        if (ListofAllColor.contains(colorName.toUpperCase())) {
+            return colorName.toUpperCase();
+        } else {
+            return "WHITE";
         }
     }
 }

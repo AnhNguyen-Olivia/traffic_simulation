@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.application.Platform;
 
 
 public class MainWindow extends Stage {
@@ -15,30 +16,32 @@ public class MainWindow extends Stage {
      * Calling simulation engine, map panel, control panel and dashboard panel (currently only display an image)
     */
     private SimulationEngine simulationEngine;
-    private MapPanel placeHolderMap;
+    private MapPanel mapPanel;
     private AnimationTimer animationTimer;
+    private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(MainWindow.class.getName());
     
     /**
      * MainWindow contructor. Its have simulation engine as parameter to pass to other comfponents 
      * @param engine
-     * @throws Exception
     */
-    public MainWindow(SimulationEngine engine) throws Exception {
+    public MainWindow(SimulationEngine engine) {
         this.simulationEngine = engine;
-        initializeGui();
+        try {initializeGui();} catch(Exception e){
+            LOGGER.severe("Initialize GUI incompleted.");
+        }
+        LOGGER.info("Main window initialized.");
     }
 
     /**
      * initializeGui method to setup the main window gui
-     * @throws Exception
     */
-    private void initializeGui() throws Exception {
+    private void initializeGui() {
         /**
          * Create map panel, control panel and statistic panel
          * Pass simulation engine to map panel and control panel
          * Set preferred width, max width for control panel and statistic panel because we want to fix their width.
         */
-        placeHolderMap = new MapPanel(this.simulationEngine);
+        mapPanel = new MapPanel(this.simulationEngine);
         ControlPanel controlPanel = new ControlPanel(this.simulationEngine); 
         controlPanel.setPrefWidth(Metrics.CONTROL_PANEL_WIDTH);
         controlPanel.setMaxWidth(Metrics.WINDOW_HEIGHT);
@@ -46,7 +49,7 @@ public class MainWindow extends Stage {
         /**
          * Statistic panel still a placeholder image for now
         */
-        Dashboard dashboard = new Dashboard();
+        Dashboard dashboard = new Dashboard(this.simulationEngine);
         dashboard.setPrefWidth(Metrics.DASHBOARD_WIDTH);
         dashboard.setMaxWidth(Metrics.WINDOW_HEIGHT);
         
@@ -55,7 +58,7 @@ public class MainWindow extends Stage {
          * center for map panel, left for control panel, right for statistic panel.
         */ 
         BorderPane root = new BorderPane();
-        root.setCenter(placeHolderMap);
+        root.setCenter(mapPanel);
         root.setLeft(controlPanel);
         root.setRight(dashboard);
         Scene scene = new Scene(root,Metrics.WINDOW_WIDTH, Metrics.WINDOW_HEIGHT);
@@ -63,7 +66,7 @@ public class MainWindow extends Stage {
         /**
          * set alignment for each part in BorderPane 
         */
-        BorderPane.setAlignment(placeHolderMap,Pos.CENTER);
+        BorderPane.setAlignment(mapPanel,Pos.CENTER);
         BorderPane.setAlignment(controlPanel,Pos.CENTER);
         BorderPane.setAlignment(dashboard,Pos.CENTER);
 
@@ -109,10 +112,11 @@ public class MainWindow extends Stage {
                 if (now - lastStepTime < stepIntervalNanos)return;
                 try{
                     simulationEngine.stepSimulation();
-                    placeHolderMap.refresh();
+                    mapPanel.refresh();
                     lastStepTime = now;
                 }catch(IllegalStateException closed){   
                     this.stop();
+                    Platform.runLater(() -> MainWindow.this.close());
                 }catch(Exception e){
                     e.printStackTrace();
                 }
