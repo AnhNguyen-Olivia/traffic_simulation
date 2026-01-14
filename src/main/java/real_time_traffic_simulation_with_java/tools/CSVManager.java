@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 /**
  * Manages CSV log files for the traffic simulation.
- * It creates a new CSV file with a timestamped name upon instantiation
+ * It creates a new CSV file with a timestamped name upon instantiation (format: YYYY-MM-DD HH_MM_SS).
  */
 public class CSVManager {
     private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(CSVManager.class.getName());
@@ -25,7 +25,7 @@ public class CSVManager {
 
     /**
      * Manages CSV log files for the traffic simulation.
-     * It creates a new CSV file with a timestamped name upon instantiation
+     * It creates a new CSV file with a timestamped name upon instantiation (format: YYYY-MM-DD HH_MM_SS).
      */
     public CSVManager() {
         this.timeStamp = LocalDateTime.now().toString().substring(0, 19).replace("T", " ");
@@ -53,9 +53,9 @@ public class CSVManager {
     }
 
     /** 
-     * Appends a new row of data to the CSV file.
-     * @param data An array of strings representing the data row to be added.
-     * @exception IllegalArgumentException if the length of data does not match the number of headers.
+     * Appends new rows of data to the CSV file.
+     * @param data A list of string arrays representing the data rows to be added.
+     * @exception IllegalArgumentException if the length of any data row does not match the number of headers.
      */
     public void updateCSV(List<String[]> data) {
         for (String[] row : data) {

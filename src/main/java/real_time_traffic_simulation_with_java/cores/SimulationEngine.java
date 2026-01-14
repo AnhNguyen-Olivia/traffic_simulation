@@ -350,7 +350,7 @@ public class SimulationEngine {
      * @return Formatted statistic string for Dashboard
      */
     public String getBasicInfo() {
-        return String.format("    Total vehicles: %d\n    Total edges: %d\n    Total traffic lights: %d",   
+        return String.format("    Current number of vehicles in simulation: %d\n    Total edges: %d\n    Total traffic lights: %d",   
                     vehicleManager.getCount(),
                     edgeManager.getCount(),
                     trafficLightManager.getCount()
@@ -394,7 +394,7 @@ public class SimulationEngine {
 
 
     // ---------------------------------------------------------------------------
-    // CSV Data Preparation Methods
+    // CSV & PDF Data Preparation Methods
     // ---------------------------------------------------------------------------
     /**
      * Prepare data for CSV logging: "Simulation step", "vehicle id","vehicle color", "vehicle speed",
@@ -423,6 +423,44 @@ public class SimulationEngine {
         return data;
     }
 
+
+    /**
+     * Prepare data for PDF summary: 
+     *      1st element is {edgeCount, tlsCount}, 
+     *      following elements are {edgeID, laneCount, length}
+     * @return
+     * @throws IllegalStateException
+     */
+    public List<String[]> dataForPDF() throws IllegalStateException {
+        List<String[]> data = new ArrayList<>();
+        // 1st element: {edgeCount, tlsCount}
+        String edgeCount = this.edgeManager.getCount() == -1 ? 
+                "N/A" : String.valueOf(this.edgeManager.getCount());
+        String tlsCount = this.trafficLightManager.getCount() == -1 ? 
+                "N/A" : String.valueOf(this.trafficLightManager.getCount());
+        data.add(new String[]{edgeCount, tlsCount});
+        // Next elements: {edgeID, laneCount, length}
+        List<String> edgeIDs = this.getAllEdgeIDs();
+        for (String edgeID : edgeIDs) {
+            String laneCount;
+            try{
+                laneCount = String.valueOf(this.edgeManager.getLaneCount(edgeID));
+            } catch (IllegalStateException e){
+                throw e;
+            } catch (Exception e) {
+                laneCount = "N/A";
+            }
+            String length = this.edgeManager.getLength(edgeID) == -1 ? 
+                "N/A" : String.format("%.2f", this.edgeManager.getLength(edgeID));
+            data.add(new String[]{edgeID, laneCount, length});
+        }
+        return data;
+    }
+
+
+    // ---------------------------------------------------------------------------
+    // Private helper functions for CSV data preparation
+    // ---------------------------------------------------------------------------
     /** Private helper function for CSV: Simulation step */
     private String getTimeStepForCSV() throws IllegalStateException {
         try {
