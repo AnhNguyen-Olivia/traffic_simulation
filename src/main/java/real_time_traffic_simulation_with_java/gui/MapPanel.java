@@ -1,5 +1,7 @@
 package real_time_traffic_simulation_with_java.gui;
 
+import java.util.logging.Logger;
+
 import javafx.scene.layout.StackPane;
 import javafx.scene.Group;
 import javafx.scene.shape.Rectangle;
@@ -11,45 +13,62 @@ import real_time_traffic_simulation_with_java.gui.mapLayer.*;
 
 
 /**
- * MapPanel class: create map panel including 3 layers: road layer, vehicle layer, traffic light layer (top-most)
- * MapPanel supports zooming, panning, rotating functionalities
- * @extends StackPane
- * @Finished
- * @Test Completed
- * @Javadoc Completed
+ * Create map panel including 3 layers: road layer (bottom-most), vehicle layer, traffic light layer (top-most). <br>
+ * MapPanel supports zooming, panning, rotating functionalities. 
+ *      Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse. <br>
+ * <i><b>Note:</b> Drag to quadrant IV of Cartesian plane to rotate clockwise, 
+ *      drag to quadrant II of Cartesian plane to rotate counter-clockwise. 
+ *      Rotation might be unpredictable when dragging to other quadrants of Cartesian plane</i> <br>
+ * MapPanel is clipped to prevent overflow drawing. 
+ *      Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
  */
 public class MapPanel extends StackPane {
     private SimulationEngine simulationEngine;
+    private static final Logger LOGGER = Logger.getLogger(MapPanel.class.getName());
+    /** Current zoom level of the map panel */
+    private double currentZoomLevel = 1.0;
 
     /**
-     * Constructor for MapPanel, MapPanel size: 900x830
-     * MapPanel is clipped to prevent overflow drawing
-     * Shouldn't apply transformation to the clip, or the clip will be distorted, only apply transformation to the children nodes
-     * Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse
-     * @throws Exception
+     * Create map panel including 3 layers: road layer (bottom-most), vehicle layer, traffic light layer (top-most). <br>
+     *      MapPanel supports zooming, panning, rotating functionalities. 
+     *      Zoom by scrolling mouse wheel, pan by hold and dragging mouse, rotate by right-dragging mouse <br>
+     * MapPanel is clipped to prevent overflow drawing. 
+     *      Transformation shouldn't be applied to the clip, or the clip will be distorted, only apply transformation to the children nodes.
+     * @param engine SimulationEngine instance
      */
-    public MapPanel(SimulationEngine engine) throws Exception {
-        this.simulationEngine = engine;
-        createMapPanel(engine);
-        setupZooming();
-        setupPanning();
-        setupRotating();
-        // Set clip to prevent overflow drawing
-        Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.DASHBOARD_WIDTH - Metrics.STATISTIC_WIDTH, Metrics.WINDOW_HEIGHT);
-        this.setClip(clip);
+    public MapPanel(SimulationEngine engine) {
+        try{
+            this.simulationEngine = engine;
+            createMapPanel(engine);
+            setupZooming();
+            setupPanning();
+            setupRotating();
+            // Set clip to prevent overflow drawing
+            Rectangle clip = new Rectangle(Metrics.WINDOW_WIDTH - Metrics.CONTROL_PANEL_WIDTH - Metrics.DASHBOARD_WIDTH, Metrics.WINDOW_HEIGHT);
+            this.setStyle("-fx-background-color: rgba(248, 217, 185, 0.9);");
+            this.setClip(clip);
+        } catch (Exception e) {
+            LOGGER.severe("Failed to initialize MapPanel.");
+        }
+        
+        LOGGER.info("MapPanel initialized.");
     }
 
 
     /**
      * Public method: Refresh map panel by redraw vehicle layer and set color of traffic light layer
-     * @throws Exception
      */
-    public void refresh() throws Exception {
-        // Refresh vehicle layer
-        Group temp = (Group) this.getChildren().get(0);
-        temp.getChildren().set(1, new vehicleLayer(this.simulationEngine));
-        // Refresh traffic light layer
-        ((trafficlightLayer)temp.getChildren().get(2)).refreshTrafficLightLayer();
+    public void refresh() throws IllegalStateException{
+        try{
+            // Redraw vehicle layer
+            Group temp = (Group) this.getChildren().get(0);
+            temp.getChildren().set(1, new vehicleLayer(this.simulationEngine));
+        } catch (IllegalStateException e) {
+            LOGGER.severe("Simulation has ended or connection lost while refreshing MapPanel.");
+            throw e;
+        } catch (Exception e) {
+            LOGGER.warning("Failed to refresh vehicle layer in MapPanel.");
+        }
     }
 
 
@@ -57,9 +76,8 @@ public class MapPanel extends StackPane {
 
     /**
      * Private helper method: Create map panel by grouping 3 layers: road layer, vehicle layer, traffic light layer than add the Group to MapPanel StackPane
-     * @throws Exception
      */
-    private void createMapPanel(SimulationEngine engine) throws Exception {
+    private void createMapPanel(SimulationEngine engine) {
         // Generate road layer for map panel
         roadLayer RoadLayer = new roadLayer(engine);
         vehicleLayer VehicleLayer = new vehicleLayer(engine);
@@ -87,6 +105,10 @@ public class MapPanel extends StackPane {
         Group mapGroup = (Group) this.getChildren().get(0);
         mapGroup.setOnScroll(event -> {
             double zoomFactor = event.getDeltaY() > 0 ? Metrics.ENLARGE_FACTOR : Metrics.SHRINK_FACTOR;
+            // Limit the zoom level within the range [MIN_ZOOM_LEVEL, MAX_ZOOM_LEVEL]
+            zoomFactor = Math.max(Math.min(zoomFactor, Metrics.MAX_ZOOM_LEVEL/currentZoomLevel), Metrics.MIN_ZOOM_LEVEL/currentZoomLevel);
+            currentZoomLevel *= zoomFactor;
+            // Apply zooming at mouse cursor position
             Scale scale = new Scale(zoomFactor, zoomFactor, event.getX(), event.getY());
             mapGroup.getTransforms().add(scale);
             event.consume();
@@ -121,8 +143,8 @@ public class MapPanel extends StackPane {
 
     /**
      * Private helper method: Rotating functionality for MapPanel by dragging right mouse button
-     * Drag to bottom-right to rotate clockwise, drag to top-left to rotate counter-clockwise
-     * Rotation might be unpredictable when dragging to other directions
+     * Drag to quadrant IV of Cartesian plane to rotate clockwise, drag to quadrant II of Cartesian plane to rotate counter-clockwise
+     * Rotation might be unpredictable when dragging to other quadrants of Cartesian plane
      */
     private void setupRotating() {
         double[] delta = new double[3];

@@ -14,12 +14,13 @@ It simulates:
 - Traffic lights switching between red/yellow/green states
 - Roads and map layout
 - A GUI built using JavaFx (similar to SUMO-GUI)  
-- Real-time behavior controlled by a Swing `Timer`
+- Real-time behavior controlled by a JavaFx `Timer`
 
 ## Project Structure
 
 ```bash
 traffic_simulation
+├───.vscode
 ├───lib
 ├───src
 │   ├───main
@@ -28,6 +29,8 @@ traffic_simulation
 │   │           ├───alias
 │   │           ├───cores
 │   │           ├───gui
+│   │           │   ├───mapLayer
+│   │           │   └───resources
 │   │           ├───lib
 │   │           ├───SumoConfig
 │   │           └───wrapper
@@ -40,38 +43,32 @@ traffic_simulation
     │       ├───alias
     │       ├───cores
     │       ├───gui
-    │       ├───lib
-    │       ├───SumoConfig
+    │       │   ├───mapLayer
+    │       │   └───resources
     │       └───wrapper
     ├───generated-sources
     │   └───annotations
-    ├───generated-test-sources
-    │   └───test-annotations
-    ├───maven-archiver
     ├───maven-status
     │   └───maven-compiler-plugin
-    │       ├───compile
-    │       │   └───default-compile
-    │       └───testCompile
-    │           └───default-testCompile
-    ├───surefire-reports
+    │       └───compile
+    │           └───default-compile
     └───test-classes
-        └───real_time_traffic_simulation_with_java
 ```
 
 ## Installation
 
-- JavaSE-21 or higher
+- JavaSE-17 or higher (recommended Java 25)
 - SUMO 1.25.0
 - TraaS library
 - Eclipse IDE
+- JavaFX
 
 ---
 
 ## Features
 
 - Object-oriented design with multiple classes  
-- Traffic lights change using timers
+- Traffic lights changes
 - Road network rendering (horizontal + vertical)  
 - Smooth animations  
 - Modular structure split across multiple classes  
@@ -87,11 +84,11 @@ traffic_simulation
 
 |Name                              | Role                 | Description |
 |----------------------------------|----------------------|-------------|
-|Pham Tran Minh Anh                | Developer, GUI Designer            | Writes Java source code, including SUMO connection, GUI and logic. Design the layout, appearance, and user controls. |
-|Nguyen Thuy Anh                   | Developer                          | Writes Java source code, including SUMO connection, GUI and step simulation, design wrappers. |
-|Dieu Ngoc Thien An                | Document Writer                    | Creates diagram. |
-|Huynh Bao Tran                    | Document Writer                    | Writes documentation. |
-|Nguyen Ho Tuyet Phuong            | Developer                          | Creates logic for vehicles, traffic lights, and simulation rules. |
+|Pham Tran Minh Anh                | GUI Designer            | Writes Java source code, including GUI, map visualization and render vehicles.|
+|Nguyen Thuy Anh                   | Developer                          | Writes Java source code, including SUMO connection, step simulation, GUI draws main window and dashboard. |
+|Dieu Ngoc Thien An                | GUI designer                    | Writes Java source code, including design, layout, appearance. |
+|Huynh Bao Tran                    | Developer                    | Writes Java source code, including design wrappers, GUI draw maps, and user controls.|
+|Nguyen Ho Tuyet Phuong            | Developer, Document Writer                          | Write Java source code including traffic light, create diagrams, Javadoc and write report. |
 
 ---
 
@@ -123,16 +120,18 @@ traffic_simulation
 |Dec 15 – Jan 18 | Milestone 3: Finalize & Submission | Full GUI, export features, documentation     |
 
 ### **Timeline & Team roles Milestone 2
+
 |Dates            |Tasks                        |Member                |
 |----------------|------------------------------------|----------------------------------------------|
 |03/12/2025 - 07/12/2025 | Working Application: Live SUMO connection     | Nguyen Thuy Anh        |
-|03/12/2025 - 07/12/2025 | Working Application: Vehicle injection        | Nguyen Ho Tuyet Phuong    |
-|03/12/2025 - 07/12/2025 | Working Application: Traffic light control    | Pham Tran Minh Anh         |
-|03/12/2025 - 07/12/2025 | Working Application: Map visualization        | Dieu Ngoc Thien An        |
-|03/12/2025 - 07/12/2025 | Code Documentation & Fix project report       | Huynh Bao Tran                |
-|07/12/2025 - 10/12/2025 | User Guide Draft & Test core features         | Pham Tran Minh Anh, Nguyen Thuy Anh |
-|07/12/2025 - 11/12/2025 | Test Scenario                                 | Huynh Bao Tran, Nguyen Ho Tuyet Phuong |
-|08/12/2025 - 12/12/2025 | Progress Summary                              | Dieu Ngoc Thien An        |
+|03/12/2025 - 07/12/2025 | Working Application: Vehicle injection        | Huynh Bao Tran    |
+|03/12/2025 - 07/12/2025 | Working Application: Traffic light control    | Huynh Bao Tran, Nguyen Ho Tuyet Phuong         |
+|03/12/2025 - 07/12/2025 | Working Application: Map visualization        | Pham Tran Minh Anh, Huynh Bao Tran        |
+|03/12/2025 - 07/12/2025 | Code Documentation & Fix project report       | Nguyen Ho Tuyet Phuong, Pham Tran Minh Anh                |
+|03/12/2025 - 07/12/2025|Design: Design the layout, appearance, and user controls.|Dieu Ngoc Thien An, Nguyen Thuy Anh|
+|07/12/2025 - 10/12/2025 | User Guide Draft & Test core features         | Nguyen Ho Tuyet Phuong, Huynh Bao Tran  |
+|07/12/2025 - 11/12/2025 | Test Scenario                                 | Huynh Bao Tran, Nguyen Thuy Anh |
+|08/12/2025 - 12/12/2025 | Progress Summary                              | Nguyen Ho Tuyet Phuong        |
 
 ### **Detailed Checklists**
 
@@ -149,12 +148,12 @@ traffic_simulation
 
 #### Milestone 2 — Functional Prototype
 
-- [ ] Running app with live SUMO ↔ Java communication
-- [ ] Vehicle injection + traffic light control
-- [ ] Map rendering inside GUI
-- [ ] Draft Javadoc & user guide
-- [ ] Test scenario (vehicles, signals, route)
-- [ ] Mid-project progress summary
+- [x] Running app with live SUMO ↔ Java communication
+- [x] Vehicle injection + traffic light control
+- [x] Map rendering inside GUI
+- [x] Draft Javadoc & user guide
+- [x] Test scenario (vehicles, signals, route)
+- [x] Mid-project progress summary
 
 #### Milestone 3 — Finalization & Submission
 
@@ -166,6 +165,16 @@ traffic_simulation
 - [ ] Final user guide + installation section
 - [ ] Presentation preparation
 - [ ] Team reflection & clean repository
+
+## Achitechture Diagram and Class Design
+
+![Architecture Diagram](src/main/java/real_time_traffic_simulation_with_java/gui/resources/AchitechDia.jpg)
+
+![Class Design Diagram](src/main/java/real_time_traffic_simulation_with_java/gui/resources/ClassDia.jpg)
+
+## Demo UI
+
+![Demo UI](src/main/java/real_time_traffic_simulation_with_java/gui/resources/DemoUI.jpg)
 
 ## License
 

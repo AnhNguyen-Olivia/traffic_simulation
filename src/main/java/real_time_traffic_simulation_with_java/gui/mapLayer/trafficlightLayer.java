@@ -5,49 +5,43 @@ import real_time_traffic_simulation_with_java.cores.TrafficLightData;
 import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import java.util.List;
+import java.util.Optional;
 
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.animation.Timeline;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.scene.Group;
 import javafx.util.Duration;
 
+
 /**
- * trafficlightLayer class: create traffic light layer including traffic lights
- * Add tooltip for better interactivity
- * No mouse events needed
- * @extends Group
- * @Finished
- * @Test Completed
- * @Javadoc Completed
+ * Create traffic lights layer including traffic lights, 
+ *      with tooltip for better interactivity. <br>
+ * Double-clicked left mouse events is set to toggle traffic light state. <br>
+ * Double-clicked right mouse events is set to adjust traffic light phase durations.
  */
 public class trafficlightLayer extends Group {
     private SimulationEngine simulationEngine;
 
-
     /**
-     * Constructor for trafficlightLayer
-     * @throws Exception
+     * Create traffic lights layer including traffic lights, 
+     *      with tooltip for better interactivity. <br>
+     * Double-clicked left mouse events is set to toggle traffic light state. <br>
+     * Double-clicked right mouse events is set to adjust traffic light phase durations.
+     * @param engine SimulationEngine instance
      */
-    public trafficlightLayer(SimulationEngine engine) throws Exception {
+    public trafficlightLayer(SimulationEngine engine) {
         this.simulationEngine = engine;
-        createTrafficLightLayer();
-    }
-
-
-    /**
-     * Private helper method: Grouping traffic lights into 1 group for traffic light layer
-     * @throws Exception
-     */
-    private void createTrafficLightLayer() throws Exception {
         List<TrafficLightData> Tls = this.simulationEngine.getMapTls();
 
         // Add tooltip and mouse events
         addToolTip(Tls);
         setToggleEvent(Tls);
+        setAdjustPhaseEvent(Tls);
 
         // Add traffic light groups to the traffic light layer
         this.getChildren().addAll(Tls);
@@ -55,27 +49,26 @@ public class trafficlightLayer extends Group {
 
 
     /**
-     * Private helper method: Add tooltip and mouse events to traffic lights
-     * @throws Exception
+     * Private helper method: Add tooltip to traffic lights
      */
-    private void addToolTip(List<TrafficLightData> Tls) throws Exception {
+    private void addToolTip(List<TrafficLightData> Tls) {
         for (TrafficLightData Tl : Tls){
             Label tooltipLabel = new Label();
-            // Install tooltip
             Tooltip tooltip = new Tooltip();
+            // Tooltip does not repaint when visible if setText, Label is a live node that can be updated dynamically
+            // Tooltip text is treated as static String, tooltip graphic is treated as Node that can be updated dynamically
             tooltip.setGraphic(tooltipLabel);
-            tooltip.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            // Add Timeline to update tooltip content with simulation speed
             Timeline updateTooltip = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-                try{
-                    tooltipLabel.setText(simulationEngine.getTlTooltip(Tl.getId()));
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS)));
+                tooltipLabel.setText(simulationEngine.getTlTooltip(Tl.getId()));
+            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS))); // Time line stop after this duration (or loop if setCycleCount)
+            // Ensure the timeline runs indefinitely
             updateTooltip.setCycleCount(Animation.INDEFINITE);
+            // To prevent tooltip delay and automatical hide
             tooltip.setShowDelay(Duration.ZERO);
             tooltip.setShowDuration(Duration.INDEFINITE);
             tooltip.setHideDelay(Duration.millis(Metrics.HIDE_DELAY));
+            // Update tooltip content when shown
             tooltip.setOnShown(e->updateTooltip.play());
             tooltip.setOnHidden(e->updateTooltip.stop());
             Tooltip.install(Tl, tooltip);
@@ -84,17 +77,15 @@ public class trafficlightLayer extends Group {
 
     
     /**
-     * Private helper method: Set double-click event to toggle traffic lights to change state
+     * Private helper method: Set double-click left mouse event to toggle traffic lights to change state
      */
     private void setToggleEvent(List<TrafficLightData> Tls) {
         for (TrafficLightData Tl : Tls){
-            Tl.setOnMouseClicked(event -> {
-                try {
-                    if (event.getClickCount() == 2) {
-                        simulationEngine.toggleSingleTl(Tl.getId());
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
+            // MOUSE_CLICKED fired when mouse button is released
+            Tl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                // event.isPrimaryButtonDown() not working because mouse button has been released at this time
+                if (event.getClickCount() == 2 && event.getButton() == MouseButton.PRIMARY) {
+                    simulationEngine.toggleSingleTl(Tl.getId());
                 }
             });
         }
@@ -102,12 +93,28 @@ public class trafficlightLayer extends Group {
 
 
     /**
-     * Public method: Refresh traffic light layer to update traffic light states
-     * @throws Exception
+     * Private helper method: Set double-click right mouse event to adjust traffic lights phase durations
      */
-    public void refreshTrafficLightLayer() throws Exception {
-        this.simulationEngine.updateMapTls();
+    private void setAdjustPhaseEvent(List<TrafficLightData> Tls) {
+        for (TrafficLightData Tl : Tls){
+            // MOUSE_CLICKED fired when mouse button is released
+            Tl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                // event.isSecondaryButtonDown() not working because mouse button has been released at this time
+                if (event.getClickCount() == 2 && event.getButton() == MouseButton.SECONDARY) {
+                    // Open popup window to adjust phase durations and get the result
+                    trafficlightPopupWindow popup = new trafficlightPopupWindow(Tl.getId(), Tl.getPhasesDuration());
+                    Optional<List<Integer>> result = popup.showAndWait();
+                    // If result is not null, set new phase durations to the simulation engine
+                    result.ifPresent(phaseDurations -> {
+                        try {
+                            simulationEngine.setTlPhaseDurations(Tl.getId(), phaseDurations);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
+                }
+            });
+        }
     }
-
 
 }

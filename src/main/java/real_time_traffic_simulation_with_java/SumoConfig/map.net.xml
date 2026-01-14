@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-12-11T06:32:47.975101+07:00 by Eclipse SUMO netedit 1.25.0
+<!-- generated on 2025-12-15T22:56:14.435936+07:00 by Eclipse SUMO netedit 1.25.0
 <neteditConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
 
     <input>
@@ -456,10 +456,10 @@
         <phase duration="3"  state="yyyrrrrrrrr"/>
     </tlLogic>
     <tlLogic id="J20" type="static" programID="0" offset="0">
-        <phase duration="42" state="ggggrrr"/>
-        <phase duration="3"  state="yyyyrrr"/>
-        <phase duration="42" state="rrrrggg"/>
-        <phase duration="3"  state="rrrryyy"/>
+        <phase duration="42" state="ggrr"/>
+        <phase duration="3"  state="yyrr"/>
+        <phase duration="42" state="rrgg"/>
+        <phase duration="3"  state="rryy"/>
     </tlLogic>
     <tlLogic id="J21" type="static" programID="0" offset="0">
         <phase duration="42" state="ggggrrrgrr"/>
@@ -653,8 +653,8 @@
     <connection from="E16" to="-E23" fromLane="0" toLane="0" via=":J19_0_0" tl="J19" linkIndex="0" dir="r" state="o"/>
     <connection from="E16" to="E17" fromLane="0" toLane="0" via=":J19_1_0" tl="J19" linkIndex="1" dir="s" state="o"/>
     <connection from="E16" to="E24" fromLane="0" toLane="2" via=":J19_2_0" tl="J19" linkIndex="2" dir="l" state="o"/>
-    <connection from="E17" to="-E26" fromLane="0" toLane="0" via=":J20_0_0" tl="J20" linkIndex="4" dir="r" state="o"/>
-    <connection from="E17" to="E27" fromLane="0" toLane="0" via=":J20_1_0" tl="J20" linkIndex="6" dir="l" state="o"/>
+    <connection from="E17" to="-E26" fromLane="0" toLane="0" via=":J20_0_0" tl="J20" linkIndex="2" dir="r" state="o"/>
+    <connection from="E17" to="E27" fromLane="0" toLane="0" via=":J20_1_0" tl="J20" linkIndex="3" dir="l" state="o"/>
     <connection from="E19" to="E35" fromLane="0" toLane="0" via=":J21_0_0" tl="J21" linkIndex="0" dir="r" state="O"/>
     <connection from="E19" to="E20" fromLane="0" toLane="0" via=":J21_1_0" tl="J21" linkIndex="1" dir="s" state="O"/>
     <connection from="E19" to="E20" fromLane="0" toLane="1" via=":J21_1_1" tl="J21" linkIndex="2" dir="s" state="O"/>
@@ -671,7 +671,7 @@
     <connection from="E24" to="-E20" fromLane="2" toLane="1" via=":J22_4_1" tl="J22" linkIndex="7" dir="l" state="o"/>
     <connection from="E25" to="E26" fromLane="0" toLane="0" via=":J17_2_0" tl="J17" linkIndex="2" dir="s" state="O"/>
     <connection from="E25" to="-E14" fromLane="0" toLane="0" via=":J17_3_0" tl="J17" linkIndex="3" dir="l" state="o"/>
-    <connection from="E26" to="E27" fromLane="0" toLane="0" via=":J20_3_0" tl="J20" linkIndex="3" dir="s" state="O"/>
+    <connection from="E26" to="E27" fromLane="0" toLane="0" via=":J20_3_0" tl="J20" linkIndex="1" dir="s" state="O"/>
     <connection from="E27" to="-E21" fromLane="0" toLane="0" via=":J23_1_0" dir="l" state="M"/>
     <connection from="E27" to="-E21" fromLane="0" toLane="1" via=":J23_1_1" dir="l" state="M"/>
     <connection from="E28" to="E23" fromLane="0" toLane="0" via=":J16_6_0" tl="J16" linkIndex="6" dir="s" state="O"/>

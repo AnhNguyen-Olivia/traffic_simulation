@@ -7,7 +7,6 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 
 import java.util.List;
 
-import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.animation.Animation;
@@ -19,32 +18,21 @@ import javafx.util.Duration;
 
 
 /**
- * roadLayer class: create road layer including junctions and edges
- * Add tooltip and mouse events for better interactivity
- * Junction have no tooltips or mouse events, since they are just for visual purpose
- * @extends Group
- * @Finished
- * @Test Completed
- * @Javadoc Completed
+ * Create road layer including junctions and edges, 
+ *      with tooltips and mouse events on edges. <br>
+ * Junction have no tooltips or mouse events, since they are just for visual purpose.
  */
 public class roadLayer extends Group {
     private SimulationEngine simulationEngine;
 
     /**
-     * Constructor for roadLayer
-     * @throws Exception
+     * Create road layer including junctions and edges, 
+     *          with tooltips and mouse events on edges. <br>
+     * Junction have no tooltips or mouse events, since they are just for visual purpose.
+     * @param engine SimulationEngine instance
      */
-    public roadLayer(SimulationEngine engine) throws Exception {
+    public roadLayer(SimulationEngine engine) {
         this.simulationEngine = engine;
-        createRoadLayer();
-    }
-
-
-    /**
-     * Private helper method: Grouping junctions and edges into 1 group for road layer
-     * @throws Exception
-     */
-    private void createRoadLayer() throws Exception {
         List<JunctionData> junctions = this.simulationEngine.getMapJunctions();
         List<EdgeData> edges = this.simulationEngine.getMapEdges();
 
@@ -60,30 +48,29 @@ public class roadLayer extends Group {
 
     /**
      * Private helper method: Add tooltip and mouse events to edges
-     * @throws Exception
      */
-    private void addToolTip(List<EdgeData> edges) throws Exception {
+    private void addToolTip(List<EdgeData> edges) {
         for (EdgeData edge : edges){
-            // Install tooltip
             Label tooltipLabel = new Label();
-            // Install tooltip
             Tooltip tooltip = new Tooltip();
+            // Tooltip does not repaint when visible if setText, Label is a live node that can be updated dynamically
+            // Tooltip text is treated as static String, tooltip graphic is treated as Node that can be updated dynamically
             tooltip.setGraphic(tooltipLabel);
-            tooltip.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            // Add Timeline to update tooltip content with simulation speed
             Timeline updateTooltip = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-                try{
-                    tooltipLabel.setText(simulationEngine.getEdgeTooltip(edge.getId()));
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS)));
+                tooltipLabel.setText(simulationEngine.getEdgeTooltip(edge.getId()));
+            }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS))); // Time line stop after this duration (or loop if setCycleCount)
+            // Ensure the timeline runs indefinitely
             updateTooltip.setCycleCount(Animation.INDEFINITE);
+            // To prevent tooltip delay and automatical hide
             tooltip.setShowDelay(Duration.ZERO);
             tooltip.setShowDuration(Duration.INDEFINITE);
             tooltip.setHideDelay(Duration.millis(Metrics.HIDE_DELAY));
+            // Update tooltip content when shown
             tooltip.setOnShown(e->updateTooltip.play());
             tooltip.setOnHidden(e->updateTooltip.stop());
             Tooltip.install(edge, tooltip);
+            
             // Add mouse entered/exited to know hovering state
             // Since edge is a Group, we need to get the Rectangle inside it (1st child, see in cores/EdgeData.java)
             edge.setOnMouseEntered(e -> {
@@ -99,6 +86,4 @@ public class roadLayer extends Group {
             });
         }
     }
-
-
 }
