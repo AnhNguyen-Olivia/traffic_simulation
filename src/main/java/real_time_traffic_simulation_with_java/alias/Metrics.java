@@ -57,4 +57,19 @@ public final class Metrics {
 
     /** Dashboard panel width (in pixels) */
     public static final double DASHBOARD_WIDTH = 300;
+
+    /** Header for CSV file to write */
+    public static final String[] HEADERS = {"Simulation step", "vehicle id","vehicle color", "vehicle speed",
+                                                "vehicle is on edge", "edge congestion status", 
+                                                "edge average speed", "edge density" };
+
+    /** PDF text font */
+    public static final int PDF_FONT = com.lowagie.text.Font.TIMES_ROMAN;
+    /** PDF title font size */
+    public static final int PDF_TITLE_FONT_SIZE = 18;
+    /** PDF heading font size */
+    public static final int PDF_HEADING_FONT_SIZE = 10;
+    /** PDF normal text font size */
+    public static final int PDF_NORMAL_FONT_SIZE = 12;
+
 }

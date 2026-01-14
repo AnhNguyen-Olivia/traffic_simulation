@@ -119,7 +119,6 @@ public class SumoTraasConnection {
             throw new Exception("Connection is null, cannot close connection.");
         }
         connection.close();
-        System.out.println("Sumo close successfully, thank you for using!");
         LOGGER.log(Level.INFO, "Sumo connection closed successfully.");
     }
 }

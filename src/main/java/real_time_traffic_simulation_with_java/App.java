@@ -3,7 +3,6 @@ package real_time_traffic_simulation_with_java;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import java.io.IOException;
-import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
 

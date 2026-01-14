@@ -66,6 +66,22 @@ public class EdgeManager {
 
 
     /**
+     * Get congested status of the edge
+     * @param edgeID the ID of the edge
+     * @return boolean congested status of the edge
+     */
+    public boolean getCongestedStatus(String edgeID) {
+        for (EdgeData edge : this.edgeDataList) {
+            if (edge.getId().equals(edgeID)) {
+                return edge.isCongested();
+            }
+        }
+        // LOGGER.log(Level.WARNING, "Edge ID: " + edgeID + " not found in EdgeDataList.");
+        return false;
+    }
+
+
+    /**
      * Get number of edges, excluding junction edges
      * @return an int number of edges, excluding junction edges
     */
