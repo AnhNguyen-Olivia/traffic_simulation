@@ -5390,3 +5390,241 @@ Jan 14, 2026 12:52:33 AM real_time_traffic_simulation_with_java.tools.ExportingF
 INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 00_51_57.csv
 Jan 14, 2026 12:52:33 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
 INFO: ExportingFiles service shut down initiated.
+Jan 14, 2026 1:15:29 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 14, 2026 1:15:31 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 14, 2026 1:15:31 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_15_31.csv
+Jan 14, 2026 1:15:31 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 14, 2026 1:15:31 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 14, 2026 1:15:32 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 14, 2026 1:15:32 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 14, 2026 1:16:15 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 14, 2026 1:16:15 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 14, 2026 1:16:15 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 14, 2026 1:16:16 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 14, 2026 1:16:16 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 14, 2026 1:16:16 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_15_31.csv
+Jan 14, 2026 1:16:16 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 14, 2026 1:20:20 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 14, 2026 1:20:22 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 14, 2026 1:20:22 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_20_22.csv
+Jan 14, 2026 1:20:22 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 14, 2026 1:20:22 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 14, 2026 1:20:23 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 14, 2026 1:20:23 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 14, 2026 1:20:34 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 14, 2026 1:20:34 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 14, 2026 1:20:34 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 14, 2026 1:20:34 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 14, 2026 1:20:34 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 14, 2026 1:20:34 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_20_22.csv
+Jan 14, 2026 1:20:34 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 14, 2026 1:21:03 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 14, 2026 1:21:04 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 14, 2026 1:21:04 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_21_04.csv
+Jan 14, 2026 1:21:04 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 14, 2026 1:21:05 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 14, 2026 1:21:05 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 14, 2026 1:21:05 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 14, 2026 1:21:11 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 14, 2026 1:21:11 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 14, 2026 1:21:11 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 14, 2026 1:21:11 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 14, 2026 1:21:11 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 14, 2026 1:21:11 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_21_04.csv
+Jan 14, 2026 1:21:11 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 14, 2026 1:22:31 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 14, 2026 1:22:33 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 14, 2026 1:22:33 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_22_33.csv
+Jan 14, 2026 1:22:33 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 14, 2026 1:22:33 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 14, 2026 1:22:34 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 14, 2026 1:22:34 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 14, 2026 1:28:03 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @e2d56bf'
+Jan 14, 2026 1:28:04 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 14, 2026 1:28:04 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_28_04.csv
+Jan 14, 2026 1:28:04 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 14, 2026 1:28:05 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 14, 2026 1:28:05 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 14, 2026 1:28:06 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 14, 2026 1:28:37 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 14, 2026 1:28:37 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 14, 2026 1:28:37 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 14, 2026 1:28:38 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 14, 2026 1:28:38 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 14, 2026 1:28:38 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_28_04.csv
+Jan 14, 2026 1:28:38 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 14, 2026 1:29:53 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 14, 2026 1:29:54 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 14, 2026 1:29:54 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_29_54.csv
+Jan 14, 2026 1:29:54 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 14, 2026 1:29:55 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 14, 2026 1:29:55 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 14, 2026 1:29:55 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 14, 2026 1:30:06 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 14, 2026 1:30:06 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 14, 2026 1:30:06 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 14, 2026 1:30:06 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 14, 2026 1:30:06 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 14, 2026 1:30:06 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_29_54.csv
+Jan 14, 2026 1:30:06 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 14, 2026 1:30:56 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 14, 2026 1:30:57 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 14, 2026 1:30:57 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 14, 2026 1:30:57 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_30_57.csv
+Jan 14, 2026 1:30:58 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 14, 2026 1:30:58 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 14, 2026 1:30:58 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 14, 2026 1:31:11 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 14, 2026 1:31:11 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 14, 2026 1:31:11 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 14, 2026 1:31:11 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 14, 2026 1:31:11 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 14, 2026 1:31:11 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_30_57.csv
+Jan 14, 2026 1:31:11 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 14, 2026 1:31:34 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 14, 2026 1:31:35 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 14, 2026 1:31:35 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_31_35.csv
+Jan 14, 2026 1:31:35 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 14, 2026 1:31:36 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 14, 2026 1:31:36 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 14, 2026 1:31:37 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 14, 2026 1:33:21 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 14, 2026 1:33:21 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 14, 2026 1:33:21 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 14, 2026 1:33:22 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 14, 2026 1:33:22 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 14, 2026 1:33:22 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_31_35.csv
+Jan 14, 2026 1:33:22 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 14, 2026 1:33:40 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5aaa6d82'
+Jan 14, 2026 1:33:42 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 14, 2026 1:33:42 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_33_42.csv
+Jan 14, 2026 1:33:42 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 14, 2026 1:33:42 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 14, 2026 1:33:42 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 14, 2026 1:33:43 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 14, 2026 1:35:21 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 14, 2026 1:35:21 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 14, 2026 1:35:21 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 14, 2026 1:35:21 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 14, 2026 1:35:21 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 14, 2026 1:35:21 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-14 01_33_42.csv
+Jan 14, 2026 1:35:21 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.

@@ -3,7 +3,6 @@ package real_time_traffic_simulation_with_java.gui.controlPanelElement;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.util.Duration;
 import real_time_traffic_simulation_with_java.alias.Color;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
@@ -25,8 +24,8 @@ public class VehicleInjectionPane extends VBox {
         this.setSpacing(10);
         
         // Number and speed inputs
-        inputVnumber = createTextField("1", 105, "Enter the number of vehicle you want to inject");
-        inputSpeed = createTextField("max", 105, "Enter the speed of vehicle you want to inject (in km/h)");
+        inputVnumber = ButtonAndTooltip.createTextField("1", 105, "Enter the number of vehicle you want to inject");
+        inputSpeed = ButtonAndTooltip.createTextField("max", 105, "Enter the speed of vehicle you want to inject (in km/h)");
         
         // Color selection
         vehicleColor = new ComboBox<>();
@@ -34,7 +33,7 @@ public class VehicleInjectionPane extends VBox {
         vehicleColor.setPromptText("Color");
         vehicleColor.setPrefWidth(105);
         vehicleColor.setMaxWidth(105);
-        addTooltip(vehicleColor, "Select color for your vehicle(s)");
+        ButtonAndTooltip.addTooltip(vehicleColor, "Select color for your vehicle(s)");
         
         HBox inputRow = new HBox(10, inputVnumber, inputSpeed);
         
@@ -50,17 +49,13 @@ public class VehicleInjectionPane extends VBox {
         endEdge.setMaxWidth(105);
         
         populateEdges();
-        addTooltip(startEdge, "Select your start edge");
-        addTooltip(endEdge, "Select your end edge");
+        ButtonAndTooltip.addTooltip(startEdge, "Select your start edge");
+        ButtonAndTooltip.addTooltip(endEdge, "Select your end edge");
         
         HBox edgeRow = new HBox(10, startEdge, endEdge);
         
         // Inject button
-        injectButton = new Button("Inject vehicle");
-        injectButton.setPrefWidth(105);
-        injectButton.setMaxWidth(105);
-        injectButton.setStyle("-fx-background-color: #6A6733; -fx-text-fill: white;");
-        addTooltip(injectButton, "Press to inject vehicle");
+        injectButton = ButtonAndTooltip.createButton("Inject vehicle", 105, "Press to inject vehicle", "#6A6733");
         injectButton.setOnAction(e -> handleInject());
         
         HBox colorButtonRow = new HBox(10, vehicleColor, injectButton);
@@ -68,36 +63,6 @@ public class VehicleInjectionPane extends VBox {
         this.getChildren().addAll(inputRow, edgeRow, colorButtonRow);
     }
 
-    /**
-     * Create a text field with specified properties. So instead of repeating code, we can just call this method.
-     * @param prompt
-     * @param width
-     * @param tooltipText
-     * @return
-    */
-    private TextField createTextField(String prompt, int width, String tooltipText) {
-        TextField textField = new TextField();
-        textField.setPromptText(prompt);
-        textField.setPrefWidth(width);
-        textField.setMaxWidth(width);
-        addTooltip(textField, tooltipText);
-        return textField;
-    }
-    
-    /**
-     * Add tooltip to a control, because we use it multiple times
-     * @param control
-     * @param text
-    */
-    private void addTooltip(Control control, String text) {
-        Tooltip tooltip = new Tooltip(text);
-        tooltip.setShowDelay(Duration.ZERO);
-        Tooltip.install(control, tooltip);
-    }
-    
-    /**
-     * Populate start and end edge combo boxes
-    */
     private void populateEdges() {
         try {
             startEdge.getItems().addAll(simulationEngine.getAllEdgeIDs());
