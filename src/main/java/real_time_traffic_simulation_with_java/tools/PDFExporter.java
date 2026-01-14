@@ -4,13 +4,20 @@ import com.lowagie.text.*;
 import com.lowagie.text.pdf.*;
 
 import tech.tablesaw.api.Table;
-import tech.tablesaw.aggregate.AggregateFunctions;
 
 import java.io.FileOutputStream;
+import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.util.logging.Logger;
 import java.util.List;
 import java.util.Arrays;
+import java.awt.image.BufferedImage;
+import java.nio.file.Paths;
+
+import org.knowm.xchart.BitmapEncoder;
+import org.knowm.xchart.XYChart;
+import org.knowm.xchart.XYChartBuilder;
+import org.knowm.xchart.style.markers.SeriesMarkers;
 
 import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.alias.Metrics;
@@ -41,7 +48,8 @@ public final class PDFExporter {
                                     List<String[]> data_from_simulation_engine) {
         try{
             Document document = new Document(PageSize.A4);
-            PdfWriter.getInstance(document, new FileOutputStream(generatePath(csv_timestamp)));
+            Files.createDirectories(Paths.get(Path.PdfLogFolder));
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(generatePath(csv_timestamp)));
             document.open();
             // Preparing data from simulation engine
             String[] edge_tls_count = data_from_simulation_engine.get(0);
@@ -55,6 +63,10 @@ public final class PDFExporter {
             addHeading(document, filter_veh_color, filter_congested_edges, csv_timestamp, csv_overall_data.get(0)[0]);
             addObjectCount(document, filter_veh_color, filter_congested_edges, edge_tls_count[0], edge_tls_count[1], csv_overall_data);
             addEdgeTable(document, edge_table_data, filter_congested_edges, csv_overall_data.get(4));
+
+            // Add chart image
+            addVehicleCountChartFromCSV(csv_table, document, writer, filter_veh_color);
+            addCongestedEdgeCountChartFromCSV(csv_table, document, writer);
             
             document.close();
             LOGGER.info(String.format("PDF summary {%d} created successfully.", index));
@@ -207,6 +219,62 @@ public final class PDFExporter {
     }
 
 
+    // ----------------------------------------------------
+    // ADD CHARTS TO PDF
+    // ----------------------------------------------------
+    private static void addVehicleCountChartFromCSV(Table csv_table, Document document, PdfWriter writer, String filter_veh_color) {
+        List<String> series_names = new java.util.ArrayList<>();
+        List<List<Integer>> series = new java.util.ArrayList<>();
+        List<List<Integer>> simulationStep = new java.util.ArrayList<>();
+        boolean show_series_names = true;
+        // Series names
+        if(filter_veh_color.equals("")) { // Without filtering (all colors + total number) [color1, color2, ..., total]
+            series_names = csv_table.stringColumn("vehicle color").unique().asList();
+        } else {
+            series_names.add(filter_veh_color);
+            show_series_names = false;
+        }
+        // Data for colors
+        for (String color : series_names) {
+            Table vehicle_by_color_by_time = csv_table.where(csv_table.stringColumn("vehicle color").isEqualTo(color))
+                                                        .countBy("simulation step");
+            simulationStep.add(vehicle_by_color_by_time.intColumn("simulation step").asList());
+            series.add(vehicle_by_color_by_time.intColumn("Count").asList());
+        }
+        // Data for total (only when no filter applied)
+        if(filter_veh_color.equals("")) {
+            series_names.add("All");
+            Table vehicle_per_step = csv_table.countBy("simulation step");
+            simulationStep.add(vehicle_per_step.intColumn("simulation step").asList());
+            series.add(vehicle_per_step.intColumn("Count").asList());
+        }
+        // Add chart to PDF
+        addChart(document, writer,
+                    "Number of Vehicles Over Time", 
+                    "Number of Vehicles", 
+                    series_names, 
+                    simulationStep, 
+                    series,
+                    show_series_names);
+    }
+
+    private static void addCongestedEdgeCountChartFromCSV(Table csv_table, Document document, PdfWriter writer) {
+        // Prepare data
+        Table edge_congested = csv_table.where(csv_table.booleanColumn("edge congestion status").isTrue());
+        edge_congested = edge_congested.selectColumns("simulation step", "vehicle is on edge")
+                                                .dropDuplicateRows().countBy("simulation step");
+        List<Integer> simulationStep = edge_congested.intColumn("simulation step").asList();
+        List<Integer> congestedEdgeCount = edge_congested.intColumn("Count").asList();
+        // Add chart to PDF
+        addChart(document, writer,
+                    "Number of Congested Edges Over Time", 
+                    "Number of Congested Edges", 
+                    Arrays.asList("Congested Edges"), 
+                    Arrays.asList(simulationStep),
+                    Arrays.asList(congestedEdgeCount),
+                    false);
+    }
+
 
     // ----------------------------------------------------
     // RETRIEVE PDF CONTENT FROM CSV
@@ -219,19 +287,18 @@ public final class PDFExporter {
     private static final List<String[]> retrieveOverallDataFromCSV(Table csv_table) {
         List<String[]> data = new java.util.ArrayList<>();
         // Last simulation step
-        int exportSimulationStep = csv_table.row(csv_table.rowCount() - 1).getInt("Simulation step");
+        int exportSimulationStep = csv_table.row(csv_table.rowCount() - 1).getInt("simulation step");
         data.add(new String[]{String.valueOf(exportSimulationStep)});
         // Total vehicle injected
         Table uniqueVehicles = csv_table.selectColumns("vehicle id", "vehicle color").dropDuplicateRows();  // keep one row per vehicle
         int uniqueVehicleCount = uniqueVehicles.rowCount();
         data.add(new String[]{String.valueOf(uniqueVehicleCount)});
         // Total vehicle injected by color
-        Table countByColor = uniqueVehicles.summarize("vehicle id", AggregateFunctions.count)
-                                .by("vehicle color");
+        Table countByColor = uniqueVehicles.countBy("vehicle color");
         String[] colors = countByColor.stringColumn("vehicle color").asObjectArray();
-        Double[] counts_double = countByColor.doubleColumn("Count [vehicle id]").asObjectArray();
+        Integer[] counts_double = countByColor.intColumn("Count").asObjectArray();
         String[] counts = Arrays.stream(counts_double)
-                         .map(d -> String.format("%.0f", d))
+                         .map(d -> String.format("%d", d))
                          .toArray(String[]::new);
         data.add(colors);
         data.add(counts);
@@ -243,11 +310,49 @@ public final class PDFExporter {
         return data;
     }
 
-    // private static void retrieveColorVehicleCountChartDataFromCSV(String csv_path) {
 
-    // }
-
-    // private static void retrieveCongestedEdgeCountChartDataFromCSV(String csv_path) {
-
-    // }
+    // ----------------------------------------------------
+    // ADD CHARTS TO PDF
+    // ----------------------------------------------------
+    private static final void addChart(Document document, PdfWriter writer,
+                                        String chart_title, String x_title, List<String> series_names,
+                                        List<List<Integer>> simulationStep, List<List<Integer>> series,
+                                        boolean show_series_names) {
+        if(simulationStep.size() == 0 || series_names.size() == 0 || series.size() == 0) {
+            LOGGER.warning("No data available for chart: " + chart_title);
+            return;
+        }
+        if(series_names.size() != series.size()) {
+            LOGGER.warning("Series names and data size mismatch for chart: " + chart_title);
+            return;
+        }
+        // Create chart, Height of image that is not chart is estimated to be 88.75 when scaled to this width
+        float usable_width = PageSize.A4.getWidth() - document.leftMargin() - document.rightMargin();
+        float usable_height = (PageSize.A4.getHeight() - document.topMargin() - document.bottomMargin())/2 - 30; // half page minus 30 for spacing
+        float preferred_chart_height = Metrics.SIZE_PER_Y_UNIT * java.util.Collections.max(series.get(0)) + 88.75 > usable_height ? 
+                    (int)(usable_height) : (int)(Metrics.SIZE_PER_Y_UNIT * java.util.Collections.max(series.get(0)) + 88.75);
+        XYChart chart = new XYChartBuilder().width((int)usable_width).height((int)preferred_chart_height)
+                                .title(chart_title)
+                                .xAxisTitle(x_title)
+                                .yAxisTitle("Simulation Step")
+                                .build();
+        for (int i = 0; i < series_names.size(); i++) {
+            chart.addSeries(series_names.get(i), simulationStep.get(i), series.get(i)).setMarker(SeriesMarkers.NONE);
+        }
+        chart.getStyler().setLegendVisible(show_series_names);
+        // Convert to BufferedImage (not saved to file)
+        BufferedImage chartBuffer = BitmapEncoder.getBufferedImage(chart);
+        Image chartImage;
+        try{
+            // Need PDF Writer so that don't have to save image to file
+            // 1.0f, no compress, max quality
+            chartImage = Image.getInstance(writer, chartBuffer, 1.0f);
+        } catch (Exception e) {
+            LOGGER.severe("Failed to create chart image for PDF: " + e.getMessage());
+            return;
+        }
+        // Scale and add to PDF in case height exceeds usable area
+        // chartImage.scaleToFit(usable_width, usable_height);
+        document.add(chartImage);
+    }
 }

@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
 /**
@@ -32,6 +34,8 @@ public class CSVManager {
         this.timeStamp = this.timeStamp.replaceAll(":", "_");
         this.filePath = Path.CsvLogFolder + this.timeStamp + ".csv";
         try {
+            // Make sure the directory exists
+            Files.createDirectories(Paths.get(Path.CsvLogFolder));
             this.writer = new CSVWriter(new FileWriter(this.filePath, true), CSVWriter.DEFAULT_SEPARATOR,
                                         CSVWriter.NO_QUOTE_CHARACTER,
                                         CSVWriter.DEFAULT_ESCAPE_CHARACTER,
