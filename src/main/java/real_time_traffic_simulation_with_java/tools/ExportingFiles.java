@@ -9,83 +9,94 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Handles CSV export on a background thread.
+ * Main thread queues data, worker thread writes to file.
+ */
 public class ExportingFiles {
     private static final Logger LOGGER = Logger.getLogger(ExportingFiles.class.getName());
     
-    private final ExecutorService exportingFiles;
+    /**
+     * Thread components for exporting CSV data in the background
+    */
+    private final ExecutorService executor;
     private final BlockingQueue<ReportData> queue;
     private volatile boolean running;
 
-    private final CSVManager csvManager;
+    // The CSV manager to handle CSV file operations
+    private final CSVManager csvManager; 
 
-
-    public ExportingFiles(){
-        
+    /**
+     * Create ExportingFiles with background worker thread.
+    */
+    public ExportingFiles() {
+        // Initialize CSV manager and thread components
         this.csvManager = new CSVManager();
-
         this.queue = new LinkedBlockingQueue<>(1000);
-        this.exportingFiles = Executors.newSingleThreadExecutor();
+        this.executor = Executors.newSingleThreadExecutor();
         this.running = true;
 
+        // Start background worker thread
         startWorker();
-        LOGGER.log(Level.INFO, "ExportingFiles service started. File: " + csvManager.getFilePath());
+        LOGGER.log(Level.INFO, "ExportingFiles started. CSV: " + csvManager.getFilePath());
     }
 
-    private void startWorker(){
-        exportingFiles.submit(() ->{
-            LOGGER.log(Level.INFO, "ExportingFiles worker thread started.");
+    /**
+     * Background worker thread to process queued CSV data.
+     * This will run on a seperate thread.
+     * Polls the queue for data and writes to CSV.
+    */
+    private void startWorker() {
+        executor.submit(() -> {
+            LOGGER.log(Level.INFO, "Export worker thread started.");
 
-            while(running || !queue.isEmpty()) {
+            while (running || !queue.isEmpty()) {
                 try {
-
                     ReportData data = queue.poll(500, TimeUnit.MILLISECONDS);
 
-                    if (data!= null && data.getVehicleData() != null){
-                        LOGGER.log(Level.FINE, "[WRITE] Thread: " + Thread.currentThread().getName());
-                        if(data.shouldExportCSV()){
-                            csvManager.updateCSV(data.getVehicleData());
-                        }
-                        // Will add pdf export here =))))))))
+                    if (data != null && data.getVehicleData() != null) {
+                        csvManager.updateCSV(data.getVehicleData());
+                        LOGGER.log(Level.FINE, "Thread: " + Thread.currentThread().getName() + " exported " + data.getVehicleData().size() + " rows.");
                     }
-                    
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
-                    LOGGER.log(Level.WARNING, "ExportingFiles worker thread interrupted.");
+                    LOGGER.log(Level.WARNING, "Export worker interrupted.");
                     break;
                 } catch (Exception e) {
-                    LOGGER.log(Level.SEVERE, "Error in ExportingFiles worker thread: " + e.getMessage(), e);
+                    LOGGER.log(Level.SEVERE, "Export error: " + e.getMessage(), e);
                 }
             }
-            LOGGER.log(Level.INFO, "ExportingFiles worker thread stopped.");
+            LOGGER.log(Level.INFO, "Export worker thread stopped.");
         });
     }
 
-    public void queueExport(ReportData data){
-        if (!queue.offer(data)){
-            LOGGER.log(Level.WARNING, "ExportingFiles queue is full. Dropping export data.");
+    /**
+     * Queue vehicle data for CSV export (non-blocking).
+     * @param vehicleData Data to write to CSV
+     */
+    public void queueCSV(List<String[]> vehicleData) {
+        if (!queue.offer(new ReportData(vehicleData))) {
+            LOGGER.log(Level.WARNING, "Export queue full. Data dropped.");
         }
     }
 
-    public void queueCSV(List<String[]> vehicleData){
-        queueExport(new ReportData(null, vehicleData, null, true, false));
-    }
-
-    public void shutdown(){
-        LOGGER.log(Level.INFO, "Shutting down ExportingFiles service...");
+    /**
+     * Shutdown the export service. Waits for queued data to be written.
+     */
+    public void shutdown() {
+        LOGGER.log(Level.INFO, "Shutting down ExportingFiles...");
         running = false;
-        exportingFiles.shutdown();
-        try{
-            if (!exportingFiles.awaitTermination(60, TimeUnit.SECONDS)) {
-                exportingFiles.shutdownNow();
-                LOGGER.log(Level.WARNING, "ExportingFiles service did not terminate in the allotted time. Forced shutdown initiated.");
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+                LOGGER.log(Level.WARNING, "Forced shutdown.");
             }
             csvManager.closeCSV();
-            LOGGER.log(Level.INFO, "ExportingFiles service shut down successfully. File: " + csvManager.getFilePath());
-
+            LOGGER.log(Level.INFO, "ExportingFiles shut down. File: " + csvManager.getFilePath());
         } catch (InterruptedException e) {
-            exportingFiles.shutdownNow();
+            executor.shutdownNow();
             Thread.currentThread().interrupt();
-            LOGGER.log(Level.WARNING, "ExportingFiles service shutdown interrupted.");
         }
     }
 }

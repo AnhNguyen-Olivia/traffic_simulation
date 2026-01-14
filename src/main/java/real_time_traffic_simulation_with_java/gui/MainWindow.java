@@ -17,7 +17,7 @@ import javafx.application.Platform;
 
 public class MainWindow extends Stage {
     /**
-     * Calling simulation engine, map panel, control panel and dashboard panel (currently only display an image)
+     * Calling simulation engine, map panel, animation timer, logger and exporting files
     */
     private SimulationEngine simulationEngine;
     private MapPanel mapPanel;
@@ -119,7 +119,7 @@ public class MainWindow extends Stage {
                 try{
                     simulationEngine.stepSimulation();
                     mapPanel.refresh();
-                    LOGGER.log(Level.FINE, "[QUEUE] Thread: " + Thread.currentThread().getName());
+                    LOGGER.log(Level.FINE, "Thread: " + Thread.currentThread().getName());
                     exportingFiles.queueCSV(simulationEngine.dataForCSV());
                     lastStepTime = now;
                     LOGGER.log(Level.FINE, "MainWindow AnimationTimer step executed at: " + now);
@@ -137,7 +137,7 @@ public class MainWindow extends Stage {
     }                  
 
     /**
-     * Stop animation timer method to stop the animation timer when main window is closed
+     * Stop animation timer method to stop the animation timer and exporting files service when main window is closed
     */
     public void stopAnimationTimer(){
         if(animationTimer != null){ //This means the animation timer is running, stop it
