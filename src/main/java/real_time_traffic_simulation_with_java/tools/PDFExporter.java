@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 import java.time.LocalDateTime;
 import java.util.logging.Logger;
 import java.util.List;
-import java.util.Collections;
+import java.util.Arrays;
 
 import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.alias.Metrics;
@@ -48,14 +48,13 @@ public final class PDFExporter {
             List<String[]> edge_table_data = data_from_simulation_engine.subList(1, data_from_simulation_engine.size());
             // Preparing data from CSV file
             Table csv_table = Table.read().csv(csv_path);
+            List<String[]> csv_overall_data = retrieveOverallDataFromCSV(csv_table);
 
             // Write PDF content
             addTitle(document);
-            // TODO: retrieve simulation step from CSV file and fix parameter list
-            addHeading(document, csv_timestamp, csv_timestamp, filter_veh_color, filter_congested_edges);
-            // TODO: retrieve vehicle count and pass to parameter list
-            addObjectCount(document, edge_tls_count[0], edge_tls_count[1]);
-            addEdgeTable(document, edge_table_data);
+            addHeading(document, filter_veh_color, filter_congested_edges, csv_timestamp, csv_overall_data.get(0)[0]);
+            addObjectCount(document, filter_veh_color, filter_congested_edges, edge_tls_count[0], edge_tls_count[1], csv_overall_data);
+            addEdgeTable(document, edge_table_data, filter_congested_edges, csv_overall_data.get(4));
             
             document.close();
             LOGGER.info(String.format("PDF summary {%d} created successfully.", index));
@@ -87,9 +86,8 @@ public final class PDFExporter {
         }
     }
 
-    private static void addHeading(Document document, String csv_timestamp, String simulation_step, 
-                                    String filter_veh_color,
-                                    boolean filter_congested_edges) {
+    private static void addHeading(Document document, String filter_veh_color, boolean filter_congested_edges, 
+                            String csv_timestamp, String simulation_step) {
         try {
             Font headingFont = new Font(Metrics.PDF_FONT, Metrics.PDF_HEADING_FONT_SIZE, Font.ITALIC);
             // Heading 1: Timestamp simulation started
@@ -108,16 +106,16 @@ public final class PDFExporter {
             Heading3.setAlignment(Element.ALIGN_RIGHT);
             document.add(Heading3);
             // Heading 4 (optional): Filter applied
-            if(filter_veh_color.equals("") || !filter_congested_edges) {return;} // skip if no filter applied
-            String heading4_text = "Filter applied: ";
+            if(filter_veh_color.equals("") && !filter_congested_edges) {return;} // skip if no filter applied
+            StringBuilder heading4_text = new StringBuilder("Filter applied: ");
             if(!filter_veh_color.equals("") && filter_congested_edges) {
-                heading4_text += "Vehicle color = " + filter_veh_color + ", Only congested edges";
+                heading4_text.append("Vehicle color = " + filter_veh_color + ", Only congested edges");
             } else if (!filter_veh_color.equals("")) {
-                heading4_text += "Vehicle color = " + filter_veh_color;
+                heading4_text.append("Vehicle color = " + filter_veh_color);
             } else {
-                heading4_text += "Only congested edges";
+                heading4_text.append("Only congested edges");
             } 
-            Paragraph Heading4 = new Paragraph(heading4_text, headingFont);
+            Paragraph Heading4 = new Paragraph(heading4_text.toString(), headingFont);
             Heading4.setAlignment(Element.ALIGN_RIGHT);
             document.add(Heading4);
         } catch (DocumentException e) {
@@ -125,11 +123,39 @@ public final class PDFExporter {
         }
     }
 
-    private static void addObjectCount(Document document, String edgeCount, String tlsCount) {
+    private static void addObjectCount(Document document, String filter_veh_color, boolean filter_congested_edges, 
+                                            String edgeCount, String tlsCount, List<String[]> csv_overall_data) {
         try {
+            // Prepare edge data
+            StringBuilder edgeData = new StringBuilder();
+            int congestedEdgeCount = csv_overall_data.get(4).length; 
+            if(!filter_congested_edges) {
+                edgeData.append("Total number of edges: " + edgeCount + "\n");
+            }
+            edgeData.append("Total number of congested edges: " + congestedEdgeCount + "\n");
+            if(congestedEdgeCount > 0) {
+                edgeData.append("        Congested edge ID: " + Arrays.toString(csv_overall_data.get(4)));
+            }
+            // Prepare vehicle data
+            String vehicleData;
+            String[] colors = csv_overall_data.get(2);
+            String[] counts = csv_overall_data.get(3);
+            if(filter_veh_color.equals("")) {
+                String totalVehicleCount = csv_overall_data.get(1)[0];
+                StringBuilder vehicleCountText = new StringBuilder("Total number of vehicles injected: " + totalVehicleCount + "\nVehicle count by color:\n");
+                for (int i = 0; i < colors.length; i++) {
+                    vehicleCountText.append("        - ").append(colors[i]).append(" vehicles: ").append(counts[i]).append("\n");
+                }
+                vehicleData = vehicleCountText.toString();
+            } else {
+                int index = Arrays.asList(colors).indexOf(filter_veh_color);
+                vehicleData = "Total number of vehicles injected with color " + filter_veh_color + ": " + counts[index];
+            }
+            // Create paragraph
             Font normalFont = new Font(Metrics.PDF_FONT, Metrics.PDF_NORMAL_FONT_SIZE, Font.NORMAL);
-            Paragraph objectCount = new Paragraph("\nTotal number of edges: " + edgeCount + 
-                                                    "\nTotal number of traffic lights: " + tlsCount,
+            Paragraph objectCount = new Paragraph("\n" + edgeData +
+                                                    "\nTotal number of traffic lights: " + tlsCount
+                                                    + "\n" + vehicleData,
                                                     normalFont);
             objectCount.setAlignment(Element.ALIGN_LEFT);
             document.add(objectCount);
@@ -138,7 +164,8 @@ public final class PDFExporter {
         }
     }
 
-    private static void addEdgeTable(Document document, List<String[]> edge_table_data) {
+    private static void addEdgeTable(Document document, List<String[]> edge_table_data,
+                                         boolean filter_congested_edges, String[] congested_edges) {
         try {
             // Create table with 3 columns: Edge ID, Lane Count, Length
             PdfPTable table = new PdfPTable(3);
@@ -154,6 +181,9 @@ public final class PDFExporter {
             addHeaderCell(table, "Length (m)", headerFont);
             // Table data
             for (String[] edgeData : edge_table_data) {
+                if(filter_congested_edges && !Arrays.asList(congested_edges).contains(edgeData[0])) {
+                    continue;
+                }
                 table.addCell(edgeData[0]);
                 // Right align numeric cells
                 PdfPCell laneCountCell = new PdfPCell(new Phrase(edgeData[1]));
@@ -181,48 +211,43 @@ public final class PDFExporter {
     // ----------------------------------------------------
     // RETRIEVE PDF CONTENT FROM CSV
     // ----------------------------------------------------
-    private static void readCSV(String csv_path) {
-
-    }
-
     /**
      * Retrieve overall data from CSV file for summary
      * @param csv_table
-     * @return List<String[]> 1st element is {lastSimulationStep, totalVehicleCount},
+     * @return List<String[]> {exportSimulationStep, totalVehicleCount, [color], [count by color], [congested edges]}
      */
     private static final List<String[]> retrieveOverallDataFromCSV(Table csv_table) {
+        List<String[]> data = new java.util.ArrayList<>();
         // Last simulation step
-        int lastSimulationStep = csv_table.row(csv_table.rowCount() - 1).getInt("Simulation step");
-
-
+        int exportSimulationStep = csv_table.row(csv_table.rowCount() - 1).getInt("Simulation step");
+        data.add(new String[]{String.valueOf(exportSimulationStep)});
         // Total vehicle injected
         Table uniqueVehicles = csv_table.selectColumns("vehicle id", "vehicle color").dropDuplicateRows();  // keep one row per vehicle
         int uniqueVehicleCount = uniqueVehicles.rowCount();
+        data.add(new String[]{String.valueOf(uniqueVehicleCount)});
         // Total vehicle injected by color
         Table countByColor = uniqueVehicles.summarize("vehicle id", AggregateFunctions.count)
                                 .by("vehicle color");
-        List<String> colors = countByColor.stringColumn("vehicle color").asList();
-        List<Double> counts = countByColor.doubleColumn("Count [vehicle id]").asList();
-
-
+        String[] colors = countByColor.stringColumn("vehicle color").asObjectArray();
+        Double[] counts_double = countByColor.doubleColumn("Count [vehicle id]").asObjectArray();
+        String[] counts = Arrays.stream(counts_double)
+                         .map(d -> String.format("%.0f", d))
+                         .toArray(String[]::new);
+        data.add(colors);
+        data.add(counts);
         // Edge congested at least once
         Table congestedEdgesTable = csv_table.where(csv_table.booleanColumn("edge congestion status").isTrue());
-        List<String> congestedEdges = congestedEdgesTable.stringColumn("vehicle is on edge").unique().asList();
-        Collections.sort(congestedEdges);
-        return new java.util.ArrayList<>();
+        String[] congestedEdges = congestedEdgesTable.stringColumn("vehicle is on edge").unique().asObjectArray();
+        Arrays.sort(congestedEdges);
+        data.add(congestedEdges);
+        return data;
     }
 
-    private static void retrieveColorVehicleCountChartDataFromCSV(String csv_path) {
+    // private static void retrieveColorVehicleCountChartDataFromCSV(String csv_path) {
 
-    }
+    // }
 
-    private static void retrieveCongestedEdgeCountChartDataFromCSV(String csv_path) {
+    // private static void retrieveCongestedEdgeCountChartDataFromCSV(String csv_path) {
 
-    }
-
-    private static void closeCSV() {
-
-    }
-
-    
+    // }
 }
