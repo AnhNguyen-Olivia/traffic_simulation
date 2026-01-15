@@ -427,6 +427,7 @@ public class SimulationEngine {
     /**
      * Prepare data for PDF summary: 
      *      1st element is {edgeCount, tlsCount}, 
+     *      2nd element is {exportedSimulationStep},
      *      following elements are {edgeID, laneCount, length}
      * @return
      * @throws IllegalStateException
@@ -439,6 +440,9 @@ public class SimulationEngine {
         String tlsCount = this.trafficLightManager.getCount() == -1 ? 
                 "N/A" : String.valueOf(this.trafficLightManager.getCount());
         data.add(new String[]{edgeCount, tlsCount});
+        // 2nd element: {exportedSimulationStep}
+        String exportedSimulationStep = this.getTimeStepForCSV();
+        data.add(new String[]{exportedSimulationStep});
         // Next elements: {edgeID, laneCount, length}
         List<String> edgeIDs = this.getAllEdgeIDs();
         for (String edgeID : edgeIDs) {

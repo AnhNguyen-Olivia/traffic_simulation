@@ -6,13 +6,11 @@ import com.lowagie.text.pdf.*;
 import tech.tablesaw.api.Table;
 
 import java.io.FileOutputStream;
-import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.util.logging.Logger;
 import java.util.List;
 import java.util.Arrays;
 import java.awt.image.BufferedImage;
-import java.nio.file.Paths;
 
 import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.XYChart;
@@ -48,7 +46,6 @@ public final class PDFExporter {
                                     List<String[]> data_from_simulation_engine) {
         try{
             Document document = new Document(PageSize.A4);
-            Files.createDirectories(Paths.get(Path.PdfLogFolder));
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(generatePath(csv_timestamp)));
             document.open();
             // Preparing data from simulation engine
