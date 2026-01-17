@@ -106,6 +106,11 @@ public class ExportPane extends VBox {
         final String finalSelectedColor = selectedColor;
         final boolean finalCongestedOnly = congestedOnly;
 
+
+        /**
+         * Start a new background thread to perform the PDF export
+         * This prevents blocking the JavaFX Application Thread, keeping the UI responsive
+        */
         new Thread(() -> {
            try{
             PDFExporter.exportSummary(csvPath, csvTimeStamp, finalSelectedColor, finalCongestedOnly, simulationData);
