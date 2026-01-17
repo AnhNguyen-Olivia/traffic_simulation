@@ -81,6 +81,22 @@ public class ExportingFiles {
     }
 
     /**
+     * Get the file path of the current CSV file.
+     * @return CSV file path
+     */
+    public String getCSVFilePath() {
+        return csvManager.getFilePath();
+    }
+
+    /**
+     * Get the timestamp of the current CSV file for PDF export.
+     * @return CSV timestamp
+     */
+    public String getCSVTimerstamp() {
+        return csvManager.getTimeStamp();
+    }
+
+    /**
      * Shutdown the export service. Waits for queued data to be written.
      */
     public void shutdown() {

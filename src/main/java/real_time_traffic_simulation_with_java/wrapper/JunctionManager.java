@@ -4,7 +4,6 @@ import it.polito.appeal.traci.SumoTraciConnection;
 import de.tudresden.sumo.cmd.Junction;
 import de.tudresden.sumo.objects.SumoGeometry;
 
-import java.util.ArrayList;
 import java.util.List;
 import real_time_traffic_simulation_with_java.cores.JunctionData;
 
@@ -32,16 +31,9 @@ public class JunctionManager {
      * Get list of junctions IDs
      * @return a List type String of junction IDs
     */ 
+    @SuppressWarnings("unchecked")
     public List<String> getIDList() throws Exception {
-        List<String> IDs = new ArrayList<>();
-        @SuppressWarnings("unchecked")
-        List<String> junctionIDList = (List<String>) conn.do_job_get(Junction.getIDList());
-        for (String ID : junctionIDList) {
-            if (ID.startsWith("J")) {
-                IDs.add(ID);
-            }
-        }
-        return IDs;
+        return (List<String>) conn.do_job_get(Junction.getIDList());
     }
 
     
