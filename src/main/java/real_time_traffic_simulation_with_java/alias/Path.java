@@ -12,7 +12,7 @@ public final class Path {
     /** Relative path to TraaS library */
     public static final String TraasPath = "src/main/java/real_time_traffic_simulation_with_java/lib/TraaS.jar";
     /** Relative path to SUMO executable file */
-    public static final String SumoPath = "D:\\Bai hoc\\Winter Semester 3rd\\Java\\store\\sumo-win64-1.25.0\\sumo-1.25.0\\bin\\sumo.exe";
+    public static final String SumoPath = "src/main/java/real_time_traffic_simulation_with_java/lib/sumo.exe";
     /** Relative path to SUMO configuration file net */
     public static final String NetFilePath = "src/main/java/real_time_traffic_simulation_with_java/SumoConfig/map.net.xml";
     /** Relative path to SUMO configuration file rou */
