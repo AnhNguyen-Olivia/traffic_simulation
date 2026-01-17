@@ -30,7 +30,7 @@ public class VehicleFilterPane extends VBox {
         colorFilter.setPromptText("Color");
         colorFilter.setPrefWidth(105);
         colorFilter.setMaxWidth(105);
-        ButtonAndTooltip.addTooltip(colorFilter, "Select color to filter vehicles");
+        CustomElement.addTooltip(colorFilter, "Select color to filter vehicles");
         
         // Edge filter
         edgeFilter = new ComboBox<>();
@@ -44,16 +44,16 @@ public class VehicleFilterPane extends VBox {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ButtonAndTooltip.addTooltip(edgeFilter, "Select your filtered edge");
+        CustomElement.addTooltip(edgeFilter, "Select your filtered edge");
         
         HBox filterRow = new HBox(10, colorFilter, edgeFilter);
         
         // Filter button
-        filterButton = ButtonAndTooltip.createButton("Filter", 105, "Press to filter vehicles by color and edge.", "#6A6733");
+        filterButton = CustomElement.createButton("Filter", 105, "Press to filter vehicles by color and edge.", "#6A6733");
         filterButton.setOnAction(e -> handleFilter());
         
         // Reset button
-        resetButton = ButtonAndTooltip.createButton("Reset Filter", 105, "Press to reset vehicle filter.", "#6A6733");
+        resetButton = CustomElement.createButton("Reset Filter", 105, "Press to reset vehicle filter.", "#6A6733");
         resetButton.setOnAction(e -> handleReset());
         
         HBox buttonRow = new HBox(10, filterButton, resetButton);

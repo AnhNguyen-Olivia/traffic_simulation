@@ -34,14 +34,14 @@ public class ExportPane extends VBox {
         colorFilter.setPromptText("Color");
         colorFilter.setPrefWidth(105);
         colorFilter.setMaxWidth(105);
-        ButtonAndTooltip.addTooltip(colorFilter, "Select color to filter vehicles");
+        CustomElement.addTooltip(colorFilter, "Select color to filter vehicles");
         
         // Congested edge checkbox
         congestedOnlyCheckBox = new CheckBox("Only include congested edge");
         congestedOnlyCheckBox.setStyle("-fx-text-fill: white;");
-        ButtonAndTooltip.addTooltip(congestedOnlyCheckBox, "Check to export only congested edges");
+        CustomElement.addTooltip(congestedOnlyCheckBox, "Check to export only congested edges");
 
-        exportButton = ButtonAndTooltip.createButton("Export PDF", 220, 
+        exportButton = CustomElement.createButton("Export PDF", 220, 
             "Press to export current PDF log file.", "#6A6733");
         exportButton.setOnAction(e -> handleExport());
         
