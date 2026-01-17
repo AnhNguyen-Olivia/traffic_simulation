@@ -3,6 +3,7 @@ package real_time_traffic_simulation_with_java.gui.controlPanelElement;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
 /**
@@ -20,7 +21,7 @@ public class StressTestPane extends VBox {
         this.setSpacing(10);
         
         // Vehicle number input
-        inputVnumber = ButtonAndTooltip.createTextField("100", 105, "Enter the number of vehicle you want to inject. Default is 100");
+        inputVnumber = CustomElement.createTextField("100", 105, "Enter the number of vehicle you want to inject. Default is 100");
         
         // Start edge selection
         startEdge = new ComboBox<>();
@@ -32,12 +33,12 @@ public class StressTestPane extends VBox {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ButtonAndTooltip.addTooltip(startEdge, "Select your start edge");
+        CustomElement.addTooltip(startEdge, "Select your start edge");
         
         HBox inputRow = new HBox(10, inputVnumber, startEdge);
         
         // Stress test button
-        stressButton = ButtonAndTooltip.createButton("Stress test tool", 220, 
+        stressButton = CustomElement.createButton("Stress test tool", 220, 
             "Stress test tool that allow user to enter stress test mode. Default number is 100, but you can change to any number you want.", "#6A6733");
         stressButton.setOnAction(e -> handleStressTest());
         

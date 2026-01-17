@@ -9,11 +9,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
 /**
  * Manages CSV log files for the traffic simulation.
- * It creates a new CSV file with a timestamped name upon instantiation
+ * It creates a new CSV file with a timestamped name upon instantiation (format: YYYY-MM-DD HH_MM_SS).
  */
 public class CSVManager {
     private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(CSVManager.class.getName());
@@ -25,14 +27,19 @@ public class CSVManager {
 
     /**
      * Manages CSV log files for the traffic simulation.
-     * It creates a new CSV file with a timestamped name upon instantiation
+     * It creates a new CSV file with a timestamped name upon instantiation (format: YYYY-MM-DD HH_MM_SS).
      */
     public CSVManager() {
         this.timeStamp = LocalDateTime.now().toString().substring(0, 19).replace("T", " ");
         this.timeStamp = this.timeStamp.replaceAll(":", "_");
         this.filePath = Path.CsvLogFolder + this.timeStamp + ".csv";
         try {
-            this.writer = new CSVWriter(new FileWriter(this.filePath, true));
+            // Make sure the directory exists
+            Files.createDirectories(Paths.get(Path.CsvLogFolder));
+            this.writer = new CSVWriter(new FileWriter(this.filePath, true), CSVWriter.DEFAULT_SEPARATOR,
+                                        CSVWriter.NO_QUOTE_CHARACTER,
+                                        CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                                        CSVWriter.DEFAULT_LINE_END);
             this.writer.writeNext(headers);
             this.writer.flush();
         } catch (IOException e) {
@@ -50,9 +57,9 @@ public class CSVManager {
     }
 
     /** 
-     * Appends a new row of data to the CSV file.
-     * @param data An array of strings representing the data row to be added.
-     * @exception IllegalArgumentException if the length of data does not match the number of headers.
+     * Appends new rows of data to the CSV file.
+     * @param data A list of string arrays representing the data rows to be added.
+     * @exception IllegalArgumentException if the length of any data row does not match the number of headers.
      */
     public void updateCSV(List<String[]> data) {
         for (String[] row : data) {

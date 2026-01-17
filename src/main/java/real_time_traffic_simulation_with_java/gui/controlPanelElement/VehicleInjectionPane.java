@@ -11,6 +11,9 @@ import real_time_traffic_simulation_with_java.cores.SimulationEngine;
  */
 public class VehicleInjectionPane extends VBox {
     
+    /**
+     * Create Component, make it private final because it will not change after created
+    */
     private final TextField inputVnumber;
     private final TextField inputSpeed;
     private final ComboBox<String> vehicleColor;
@@ -24,8 +27,8 @@ public class VehicleInjectionPane extends VBox {
         this.setSpacing(10);
         
         // Number and speed inputs
-        inputVnumber = ButtonAndTooltip.createTextField("1", 105, "Enter the number of vehicle you want to inject");
-        inputSpeed = ButtonAndTooltip.createTextField("max", 105, "Enter the speed of vehicle you want to inject (in km/h)");
+        inputVnumber = CustomElement.createTextField("1", 105, "Enter the number of vehicle you want to inject");
+        inputSpeed = CustomElement.createTextField("max", 105, "Enter the speed of vehicle you want to inject (in km/h)");
         
         // Color selection
         vehicleColor = new ComboBox<>();
@@ -33,7 +36,7 @@ public class VehicleInjectionPane extends VBox {
         vehicleColor.setPromptText("Color");
         vehicleColor.setPrefWidth(105);
         vehicleColor.setMaxWidth(105);
-        ButtonAndTooltip.addTooltip(vehicleColor, "Select color for your vehicle(s)");
+        CustomElement.addTooltip(vehicleColor, "Select color for your vehicle(s)");
         
         HBox inputRow = new HBox(10, inputVnumber, inputSpeed);
         
@@ -49,13 +52,13 @@ public class VehicleInjectionPane extends VBox {
         endEdge.setMaxWidth(105);
         
         populateEdges();
-        ButtonAndTooltip.addTooltip(startEdge, "Select your start edge");
-        ButtonAndTooltip.addTooltip(endEdge, "Select your end edge");
+        CustomElement.addTooltip(startEdge, "Select your start edge");
+        CustomElement.addTooltip(endEdge, "Select your end edge");
         
         HBox edgeRow = new HBox(10, startEdge, endEdge);
         
         // Inject button
-        injectButton = ButtonAndTooltip.createButton("Inject vehicle", 105, "Press to inject vehicle", "#6A6733");
+        injectButton = CustomElement.createButton("Inject vehicle", 105, "Press to inject vehicle", "#6A6733");
         injectButton.setOnAction(e -> handleInject());
         
         HBox colorButtonRow = new HBox(10, vehicleColor, injectButton);

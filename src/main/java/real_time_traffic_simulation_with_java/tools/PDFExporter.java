@@ -49,7 +49,6 @@ public final class PDFExporter {
         // Preparing data from CSV file
         // Overall data: {totalVehicleCount, [color], [count by color], [congested edges]}
         Table csv_table = Table.read().csv(csv_path);
-        System.out.println(csv_table);
         List<String[]> csv_overall_data = retrieveOverallDataFromCSV(csv_table);
         // Preparing data from simulation engine
         // 1st element: {edgeCount, tlsCount}, 2nd element: {exportedSimulationStep}, next elements: {edgeID, laneCount, length}
@@ -70,13 +69,14 @@ public final class PDFExporter {
             // Add chart image
             if(csv_table.rowCount() > 0) {
                 addVehicleCountChartFromCSV(csv_table, document, writer, filter_veh_color);
-                addCongestedEdgeCountChartFromCSV(csv_table, document, writer);
+                addCongestedEdgeCountChartFromCSV(csv_table, document, writer, data_from_simulation_engine.get(1)[0]);
             }
             
             document.close();
             LOGGER.info(String.format("PDF summary {%s [%d]} created successfully.", csv_timestamp, index));
         } catch (Exception e) {
             LOGGER.severe("Failed to create PDF summary: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -267,13 +267,21 @@ public final class PDFExporter {
                     show_series_names);
     }
 
-    private static void addCongestedEdgeCountChartFromCSV(Table csv_table, Document document, PdfWriter writer) {
+    private static void addCongestedEdgeCountChartFromCSV(Table csv_table, Document document, PdfWriter writer, String exported_simulation_step) {
         // Prepare data
         Table edge_congested = csv_table.where(csv_table.booleanColumn("edge congestion status").isTrue());
         edge_congested = edge_congested.selectColumns("simulation step", "vehicle is on edge")
                                                 .dropDuplicateRows().countBy("simulation step");
         List<Integer> simulationStep = edge_congested.intColumn("simulation step").asList();
         List<Integer> congestedEdgeCount = edge_congested.intColumn("Count").asList();
+        if(simulationStep.size() == 0) {
+            int exported_step = (int) Double.parseDouble(exported_simulation_step);
+            for (int step = 0; step <= exported_step; step++) {
+                simulationStep.add(step);
+                congestedEdgeCount.add(0);
+            }
+        }
+        
         // Add chart to PDF
         addChart(document, writer,
                     "Number of Congested Edges Over Time", 
@@ -343,8 +351,14 @@ public final class PDFExporter {
         // Create chart, Height of image that is not chart is estimated to be 88.75 when scaled to this width
         float usable_width = PageSize.A4.getWidth() - document.leftMargin() - document.rightMargin();
         float usable_height = (PageSize.A4.getHeight() - document.topMargin() - document.bottomMargin())/2 - 30; // half page minus 30 for spacing
-        float preferred_chart_height = Metrics.SIZE_PER_Y_UNIT * java.util.Collections.max(series.get(0)) + 88.75 > usable_height ? 
-                    (int)(usable_height) : (int)(Metrics.SIZE_PER_Y_UNIT * java.util.Collections.max(series.get(0)) + 88.75);
+        int max_y_unit;
+        try{
+            max_y_unit = java.util.Collections.max(series.get(series.size() - 1));
+        } catch (Exception e) {
+            max_y_unit = 0; // if no data present for y axis
+        }
+        float preferred_chart_height = Metrics.SIZE_PER_Y_UNIT * max_y_unit + 88.75 > usable_height ? 
+                    (int)(usable_height) : (int)(Metrics.SIZE_PER_Y_UNIT * max_y_unit + 88.75);
         XYChart chart = new XYChartBuilder().width((int)usable_width).height((int)preferred_chart_height)
                                 .title(chart_title)
                                 .xAxisTitle(x_title)

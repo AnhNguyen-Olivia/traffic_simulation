@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
  
         
         {
@@ -18,7 +19,7 @@
             "request": "launch",
             "mainClass": "real_time_traffic_simulation_with_java.App",
             "projectName": "traffic_simulation",
-            "vmArgs": "--module-path E:/javafx-sdk-25.0.1/lib --add-modules javafx.controls"
+            "vmArgs": "--module-path \"C:\\Users\\Tuyet Phuong\\Downloads\\sqldeveloper\\modules\\javafx\\windows-x64\\lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
