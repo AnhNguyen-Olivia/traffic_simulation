@@ -9,7 +9,7 @@ import javafx.util.Duration;
 /**
  * Utility class for creating commonly used UI controls with tooltips
  */
-public class ButtonAndTooltip {
+public class CustomElement {
     
     /**
      * Create a text field with specified properties. So instead of repeating code, we can just call this method.
