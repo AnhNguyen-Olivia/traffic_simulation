@@ -110,7 +110,16 @@ public class ExportPane extends VBox {
            try{
             PDFExporter.exportSummary(csvPath, csvTimeStamp, finalSelectedColor, finalCongestedOnly, simulationData);
             
-            // Update button state back on the JavaFX Application Thread
+            /**
+             * Update button state back on the JavaFX Application Thread after export completion
+             * javafx.application.Platform.runLater runs the specified Runnable on the JavaFX Application Thread at some unspecified time in the future. 
+             * This method, which may be called from any thread, will post the Runnable to an event queue and then return immediately to the caller. 
+             * The Runnables are executed in the order they are posted. 
+             * A runnable passed into the runLater method will be executed before any Runnable passed into a subsequent call to runLater. 
+             * If this method is called after the JavaFX runtime has been shutdown, the call will be ignored: the Runnable will not be executed and no exception will be thrown.
+             * -Official JavaFX Documentation-
+            */
+            
             javafx.application.Platform.runLater(() -> {
                 exportButton.setDisable(false);
                 exportButton.setText("Export PDF");
