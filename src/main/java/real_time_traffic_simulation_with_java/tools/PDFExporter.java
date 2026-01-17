@@ -40,38 +40,43 @@ public final class PDFExporter {
      * @param csv_timestamp Timestamp when the simulation started (used in CSV file name)
      * @param filter_veh_color Color of vehicle to filter, empty string for no filter
      * @param filter_congested_edges Whether to filter only congested edges
-     * @param data_from_simulation_engine List<String[]>, 1st element is {edgeCount, tlsCount}, each next are {edgeID, laneCount, length}
+     * @param data_from_simulation_engine List<String[]>, 1st element is {edgeCount, tlsCount}, 2nd element is {exportedSimulationStep}, each next are {edgeID, laneCount, length}
      */
     public static void exportSummary(String csv_path, String csv_timestamp, 
                                     String filter_veh_color, 
                                     boolean filter_congested_edges,
                                     List<String[]> data_from_simulation_engine) {
+        // Preparing data from CSV file
+        // Overall data: {totalVehicleCount, [color], [count by color], [congested edges]}
+        Table csv_table = Table.read().csv(csv_path);
+        List<String[]> csv_overall_data = retrieveOverallDataFromCSV(csv_table);
+        // Preparing data from simulation engine
+        // 1st element: {edgeCount, tlsCount}, 2nd element: {exportedSimulationStep}, next elements: {edgeID, laneCount, length}
+        String[] edge_tls_count = data_from_simulation_engine.get(0);
+        List<String[]> edge_table_data = data_from_simulation_engine.subList(2, data_from_simulation_engine.size());
         try{
             Document document = new Document(PageSize.A4);
             Files.createDirectories(Paths.get(Path.PdfLogFolder));
             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(generatePath(csv_timestamp)));
             document.open();
-            // Preparing data from simulation engine
-            String[] edge_tls_count = data_from_simulation_engine.get(0);
-            List<String[]> edge_table_data = data_from_simulation_engine.subList(1, data_from_simulation_engine.size());
-            // Preparing data from CSV file
-            Table csv_table = Table.read().csv(csv_path);
-            List<String[]> csv_overall_data = retrieveOverallDataFromCSV(csv_table);
 
             // Write PDF content
             addTitle(document);
-            addHeading(document, filter_veh_color, filter_congested_edges, csv_timestamp, csv_overall_data.get(0)[0]);
+            addHeading(document, filter_veh_color, filter_congested_edges, csv_timestamp, data_from_simulation_engine.get(1)[0]);
             addObjectCount(document, filter_veh_color, filter_congested_edges, edge_tls_count[0], edge_tls_count[1], csv_overall_data);
-            addEdgeTable(document, edge_table_data, filter_congested_edges, csv_overall_data.get(4));
+            addEdgeTable(document, edge_table_data, filter_congested_edges, csv_overall_data.get(3));
 
             // Add chart image
-            addVehicleCountChartFromCSV(csv_table, document, writer, filter_veh_color);
-            addCongestedEdgeCountChartFromCSV(csv_table, document, writer);
+            if(csv_table.rowCount() > 0) {
+                addVehicleCountChartFromCSV(csv_table, document, writer, filter_veh_color);
+                addCongestedEdgeCountChartFromCSV(csv_table, document, writer, data_from_simulation_engine.get(1)[0]);
+            }
             
             document.close();
-            LOGGER.info(String.format("PDF summary {%d} created successfully.", index));
+            LOGGER.info(String.format("PDF summary {%s [%d]} created successfully.", csv_timestamp, index));
         } catch (Exception e) {
             LOGGER.severe("Failed to create PDF summary: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -140,28 +145,32 @@ public final class PDFExporter {
         try {
             // Prepare edge data
             StringBuilder edgeData = new StringBuilder();
-            int congestedEdgeCount = csv_overall_data.get(4).length; 
+            int congestedEdgeCount = csv_overall_data.get(3).length; 
             if(!filter_congested_edges) {
                 edgeData.append("Total number of edges: " + edgeCount + "\n");
             }
             edgeData.append("Total number of congested edges: " + congestedEdgeCount + "\n");
             if(congestedEdgeCount > 0) {
-                edgeData.append("        Congested edge ID: " + Arrays.toString(csv_overall_data.get(4)));
+                edgeData.append("        Congested edge ID: " + Arrays.toString(csv_overall_data.get(3)));
             }
             // Prepare vehicle data
             String vehicleData;
-            String[] colors = csv_overall_data.get(2);
-            String[] counts = csv_overall_data.get(3);
-            if(filter_veh_color.equals("")) {
-                String totalVehicleCount = csv_overall_data.get(1)[0];
-                StringBuilder vehicleCountText = new StringBuilder("Total number of vehicles injected: " + totalVehicleCount + "\nVehicle count by color:\n");
-                for (int i = 0; i < colors.length; i++) {
-                    vehicleCountText.append("        - ").append(colors[i]).append(" vehicles: ").append(counts[i]).append("\n");
-                }
-                vehicleData = vehicleCountText.toString();
+            if(csv_overall_data.get(0)[0].equals("0")) {  
+                vehicleData = "No vehicle has been injected.";
             } else {
-                int index = Arrays.asList(colors).indexOf(filter_veh_color);
-                vehicleData = "Total number of vehicles injected with color " + filter_veh_color + ": " + counts[index];
+                String[] colors = csv_overall_data.get(1);
+                String[] counts = csv_overall_data.get(2);
+                if(filter_veh_color.equals("")) {
+                    String totalVehicleCount = csv_overall_data.get(0)[0];
+                    StringBuilder vehicleCountText = new StringBuilder("Total number of vehicles injected: " + totalVehicleCount + "\nVehicle count by color:\n");
+                    for (int i = 0; i < colors.length; i++) {
+                        vehicleCountText.append("        - ").append(colors[i]).append(" vehicles: ").append(counts[i]).append("\n");
+                    }
+                    vehicleData = vehicleCountText.toString();
+                } else {
+                    int index = Arrays.asList(colors).indexOf(filter_veh_color);
+                    vehicleData = "Total number of vehicles injected with color " + filter_veh_color + ": " + counts[index];
+                }
             }
             // Create paragraph
             Font normalFont = new Font(Metrics.PDF_FONT, Metrics.PDF_NORMAL_FONT_SIZE, Font.NORMAL);
@@ -258,13 +267,21 @@ public final class PDFExporter {
                     show_series_names);
     }
 
-    private static void addCongestedEdgeCountChartFromCSV(Table csv_table, Document document, PdfWriter writer) {
+    private static void addCongestedEdgeCountChartFromCSV(Table csv_table, Document document, PdfWriter writer, String exported_simulation_step) {
         // Prepare data
         Table edge_congested = csv_table.where(csv_table.booleanColumn("edge congestion status").isTrue());
         edge_congested = edge_congested.selectColumns("simulation step", "vehicle is on edge")
                                                 .dropDuplicateRows().countBy("simulation step");
         List<Integer> simulationStep = edge_congested.intColumn("simulation step").asList();
         List<Integer> congestedEdgeCount = edge_congested.intColumn("Count").asList();
+        if(simulationStep.size() == 0) {
+            int exported_step = (int) Double.parseDouble(exported_simulation_step);
+            for (int step = 0; step <= exported_step; step++) {
+                simulationStep.add(step);
+                congestedEdgeCount.add(0);
+            }
+        }
+        
         // Add chart to PDF
         addChart(document, writer,
                     "Number of Congested Edges Over Time", 
@@ -282,13 +299,18 @@ public final class PDFExporter {
     /**
      * Retrieve overall data from CSV file for summary
      * @param csv_table
-     * @return List<String[]> {exportSimulationStep, totalVehicleCount, [color], [count by color], [congested edges]}
+     * @return List<String[]> {totalVehicleCount, [color], [count by color], [congested edges]}
      */
     private static final List<String[]> retrieveOverallDataFromCSV(Table csv_table) {
+        if(csv_table.rowCount() == 0) {
+            return List.of(
+                new String[]{"0"}, // totalVehicleCount
+                new String[]{},    // [color]
+                new String[]{},    // [count by color]
+                new String[]{}     // [congested edges]
+            );
+        }
         List<String[]> data = new java.util.ArrayList<>();
-        // Last simulation step
-        int exportSimulationStep = csv_table.row(csv_table.rowCount() - 1).getInt("simulation step");
-        data.add(new String[]{String.valueOf(exportSimulationStep)});
         // Total vehicle injected
         Table uniqueVehicles = csv_table.selectColumns("vehicle id", "vehicle color").dropDuplicateRows();  // keep one row per vehicle
         int uniqueVehicleCount = uniqueVehicles.rowCount();
@@ -329,8 +351,14 @@ public final class PDFExporter {
         // Create chart, Height of image that is not chart is estimated to be 88.75 when scaled to this width
         float usable_width = PageSize.A4.getWidth() - document.leftMargin() - document.rightMargin();
         float usable_height = (PageSize.A4.getHeight() - document.topMargin() - document.bottomMargin())/2 - 30; // half page minus 30 for spacing
-        float preferred_chart_height = Metrics.SIZE_PER_Y_UNIT * java.util.Collections.max(series.get(0)) + 88.75 > usable_height ? 
-                    (int)(usable_height) : (int)(Metrics.SIZE_PER_Y_UNIT * java.util.Collections.max(series.get(0)) + 88.75);
+        int max_y_unit;
+        try{
+            max_y_unit = java.util.Collections.max(series.get(series.size() - 1));
+        } catch (Exception e) {
+            max_y_unit = 0; // if no data present for y axis
+        }
+        float preferred_chart_height = Metrics.SIZE_PER_Y_UNIT * max_y_unit + 88.75 > usable_height ? 
+                    (int)(usable_height) : (int)(Metrics.SIZE_PER_Y_UNIT * max_y_unit + 88.75);
         XYChart chart = new XYChartBuilder().width((int)usable_width).height((int)preferred_chart_height)
                                 .title(chart_title)
                                 .xAxisTitle(x_title)

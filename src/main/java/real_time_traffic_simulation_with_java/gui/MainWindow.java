@@ -32,6 +32,7 @@ public class MainWindow extends Stage {
     public MainWindow(SimulationEngine engine) {
         this.simulationEngine = engine;
         this.exportingFiles = new ExportingFiles();
+        
         try {initializeGui();} catch(Exception e){
             LOGGER.log(Level.SEVERE, "Failed to initialize MainWindow GUI: " + e.getMessage(), e);
         }

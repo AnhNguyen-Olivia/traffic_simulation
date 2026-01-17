@@ -21,27 +21,23 @@ import real_time_traffic_simulation_with_java.tools.ExportingFiles;
  * Simple and modular design with separated concerns.
  * (Happy Christmas!) ᓚ₍⑅^- .-^₎ -ᶻ 𝗓 𐰁
  */
-public class ControlPanel extends Pane {
+public class ControlPanel extends VBox {
 
     public ControlPanel(SimulationEngine simulationEngine, ExportingFiles exportingFiles) {
         
-        VBox mainLayout = new VBox();
-        mainLayout.setSpacing(15);
-        mainLayout.setPadding(new Insets(0));
+        // Main layout container with no spacing between header and content
+        VBox mainLayout = new VBox(0);
+        mainLayout.prefWidthProperty().bind(this.widthProperty());
+        mainLayout.maxWidthProperty().bind(this.widthProperty());
         
-        // Main title
+        // Header with title
         Label title = new Label("Control Panel");
         title.setFont(Font.font("System", FontWeight.BOLD, 18));
         title.setStyle("-fx-text-fill: white;");
 
-        // Header pane with background and centered text
         VBox headerPane = new VBox(title);
         headerPane.setAlignment(Pos.CENTER);
         headerPane.setPadding(new Insets(10));
-
-        mainLayout.setSpacing(0); // No spacing between header and content
-        mainLayout.prefWidthProperty().bind(this.widthProperty());
-        mainLayout.maxWidthProperty().bind(this.widthProperty());
         headerPane.setStyle("-fx-background-color: #6A6733;");
 
         // Content area with spacing
@@ -71,9 +67,9 @@ public class ControlPanel extends Pane {
             new ExportPane(simulationEngine, exportingFiles)
         );
         
-        // Assemble main layout - header FIRST, then content
-        this.getChildren().add(mainLayout);
+        // Assemble layout
         mainLayout.getChildren().addAll(headerPane, contentArea);
+        this.getChildren().add(mainLayout);
         
         // Set background color /ᐠ - ˕ -マ ᶻ 𝗓 𐰁
         this.setStyle("-fx-background-color: #6D4514;");

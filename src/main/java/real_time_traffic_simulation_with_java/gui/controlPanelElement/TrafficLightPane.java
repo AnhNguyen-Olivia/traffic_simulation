@@ -15,7 +15,7 @@ public class TrafficLightPane extends VBox {
     public TrafficLightPane(SimulationEngine simulationEngine) {
         this.simulationEngine = simulationEngine;
         
-        toggleButton = ButtonAndTooltip.createButton("Toggle all traffic light", 220, 
+        toggleButton = CustomElement.createButton("Toggle all traffic light", 220, 
             "Press to toggle all traffic light.", "#6A6733");
         toggleButton.setOnAction(e -> handleToggle());
         
