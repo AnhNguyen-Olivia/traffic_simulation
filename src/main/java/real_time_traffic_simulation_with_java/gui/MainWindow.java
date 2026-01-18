@@ -3,7 +3,6 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.tools.ExportingFiles;
-import real_time_traffic_simulation_with_java.tools.ReportData;
 
 import java.util.logging.Level;
 
