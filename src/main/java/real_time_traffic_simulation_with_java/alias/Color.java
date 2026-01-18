@@ -36,7 +36,9 @@ public final class Color {
     /** List of all color names that user can choose for the vehicle */
     public static final List<String> ListofAllColor = new ArrayList<>(List.of("RED", "GREEN", "BLUE", "BLACK", "WHITE"));
     
-    /** Convert SumoColor to its String representation, WHITE is default for unknown colors */
+    /** Convert SumoColor to its String representation, WHITE is default for unknown colors 
+     * @param color SumoColor instance
+    */
     public static String colorToString(SumoColor color) {
         if(color.r == RED.r && color.g == RED.g && color.b == RED.b){
             return "RED";
@@ -51,7 +53,9 @@ public final class Color {
         }
     }
 
-    /** Convert String representation of color to SumoColor, WHITE is default for invalid input or unknown colors */
+    /** Convert String representation of color to SumoColor, WHITE is default for invalid input or unknown colors 
+     * @param colorName Name of the color
+    */
     public static SumoColor stringToColor(String colorName) {
         switch(colorName.toUpperCase()) {
             case "RED":
@@ -67,7 +71,9 @@ public final class Color {
         }
     }
 
-    /** Check if a given color name is valid and return color name (return WHITE if invalid) */
+    /** Check if a given color name is valid and return color name (return WHITE if invalid) 
+     * @param colorName Name of the color
+    */
     public static String checkAvailableColor(String colorName) {
         if (ListofAllColor.contains(colorName.toUpperCase())) {
             return colorName.toUpperCase();

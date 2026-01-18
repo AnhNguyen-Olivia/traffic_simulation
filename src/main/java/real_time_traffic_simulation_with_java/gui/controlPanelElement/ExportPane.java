@@ -60,6 +60,23 @@ public class ExportPane extends VBox {
         return congestedOnlyCheckBox.isSelected();
     }
 
+
+    /**
+     * <p>
+     * The handleExport method handles the export button click event.
+     * When the button is pressed, this method retrieves the selected filter options,
+     * disables the button, and starts a background thread to perform the PDF export.
+     * The background thread ensures that the JavaFX Application Thread is not blocked,
+     * keeping the UI responsive during the export process.
+     * </p>
+     *
+     * <p>
+     * Once the export is complete—or if an error occurs—the button state is updated
+     * back on the JavaFX Application Thread using Platform.runLater.
+     * This re-enables the button, resets its text to "Export PDF", and allows the
+     * background thread to finish cleanly.
+     * </p>
+     */
     private void handleExport() {
 
         /**

@@ -19,15 +19,15 @@ public final class EdgeTable {
     private static final Logger LOGGER = Logger.getLogger(EdgeTable.class.getName());
     private static final Font headerFont = new Font(Metrics.PDF_FONT, Metrics.PDF_NORMAL_FONT_SIZE, Font.BOLD);
 
+    private EdgeTable() {
+        // Private constructor to prevent instantiation
+    }
+
     /**
      * Add an edge table to a PDF document <br>
      * 3 columns: Edge ID, No. of Lanes, Length (m)
      *      with option to filter only congested edges
      */
-    private EdgeTable() {
-        // Private constructor to prevent instantiation
-    }
-
     public static void addEdgeTable(Document document, List<String[]> edge_table_data,
                                          boolean filter_congested_edges, String[] congested_edges) {
         try {

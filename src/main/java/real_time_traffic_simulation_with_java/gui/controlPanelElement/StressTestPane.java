@@ -16,6 +16,10 @@ public class StressTestPane extends VBox {
     private final Button stressButton;
     private final SimulationEngine simulationEngine;
     
+    /**
+     * StressTestPane constructor
+     * @param simulationEngine
+    */
     public StressTestPane(SimulationEngine simulationEngine) {
         this.simulationEngine = simulationEngine;
         this.setSpacing(10);
@@ -45,6 +49,7 @@ public class StressTestPane extends VBox {
         this.getChildren().addAll(inputRow, stressButton);
     }
     
+    /** Handle stress test action */
     private void handleStressTest() {
         try {
             String vehicleNumber = inputVnumber.getText().trim();

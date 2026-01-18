@@ -3,6 +3,7 @@ import real_time_traffic_simulation_with_java.alias.Metrics;
 import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.tools.ExportingFiles;
+import real_time_traffic_simulation_with_java.tools.ReportData;
 
 import java.util.logging.Level;
 
@@ -14,11 +15,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.application.Platform;
 
-
+/** Main window class that sets up the primary GUI components and manages the animation timer */
 public class MainWindow extends Stage {
-    /**
-     * Calling simulation engine, map panel, animation timer, logger and exporting files
-    */
+    /** Calling simulation engine, map panel, animation timer, logger and exporting files */
     private SimulationEngine simulationEngine;
     private MapPanel mapPanel;
     private AnimationTimer animationTimer;
@@ -27,11 +26,11 @@ public class MainWindow extends Stage {
 
     /**
      * MainWindow contructor. Its have simulation engine as parameter to pass to other comfponents 
-     * @param engine
+     * @param engine The simulation engine instance
     */
     public MainWindow(SimulationEngine engine) {
         this.simulationEngine = engine;
-        this.exportingFiles = new ExportingFiles();
+        this.exportingFiles = new ExportingFiles(); 
         
         try {initializeGui();} catch(Exception e){
             LOGGER.log(Level.SEVERE, "Failed to initialize MainWindow GUI: " + e.getMessage(), e);
@@ -121,9 +120,14 @@ public class MainWindow extends Stage {
                     simulationEngine.stepSimulation();
                     mapPanel.refresh();
                     LOGGER.log(Level.FINE, "Thread: " + Thread.currentThread().getName());
+
+                    // The simulation engine produces the vehicle data, which is then passed to ExportingFiles.
+                    // ExportingFiles wraps this data in a ReportData object and places it into a BlockingQueue,
+                    // allowing a background worker thread to process and export the data asynchronously.
                     exportingFiles.queueCSV(simulationEngine.dataForCSV());
                     lastStepTime = now;
                     LOGGER.log(Level.FINE, "MainWindow AnimationTimer step executed at: " + now);
+
                 }catch(IllegalStateException closed){   
                     this.stop();
                     Platform.runLater(() -> MainWindow.this.close());

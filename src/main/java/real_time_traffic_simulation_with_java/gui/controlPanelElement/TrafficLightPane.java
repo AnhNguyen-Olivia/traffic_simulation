@@ -4,14 +4,13 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
-/**
- * Traffic light toggle component with a single button
- */
+/** Traffic light toggle component with a single button */
 public class TrafficLightPane extends VBox {
     
     private final Button toggleButton;
     private final SimulationEngine simulationEngine;
     
+    /** TrafficLightPane constructor */
     public TrafficLightPane(SimulationEngine simulationEngine) {
         this.simulationEngine = simulationEngine;
         
@@ -22,6 +21,7 @@ public class TrafficLightPane extends VBox {
         this.getChildren().add(toggleButton);
     }
     
+    /** Handle toggle action */
     private void handleToggle() {
         try {
             simulationEngine.toggleAllTls();
