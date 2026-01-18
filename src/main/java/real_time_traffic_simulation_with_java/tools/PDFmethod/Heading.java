@@ -48,7 +48,7 @@ public final class Heading {
             addHeadingAlignedRight(document, "at simulation step: " + simulation_step);
 
             // Heading 4 (optional): Filter applied
-            if(!filter_veh_color.equals("") && filter_congested_edges) {
+            if(!filter_veh_color.equals("") || filter_congested_edges) {
                 addHeadingAlignedRight(document, getFilterAppliedString(filter_veh_color, filter_congested_edges));
             } 
 

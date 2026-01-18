@@ -28,9 +28,9 @@ public final class ObjectCount {
         try {
             Font normalFont = new Font(Metrics.PDF_FONT, Metrics.PDF_NORMAL_FONT_SIZE, Font.NORMAL);
             Paragraph objectCount = new Paragraph(
-                        "\n" + getEdgeString(edgeCount, filter_congested_edges, csv_overall_data.get(3)) +
                         "\nTotal number of traffic lights: " + tlsCount +
-                        "\n" + getVehicleString(filter_veh_color, csv_overall_data),
+                        "\n" + getVehicleString(filter_veh_color, csv_overall_data) +
+                        "\n" + getEdgeString(edgeCount, filter_congested_edges, csv_overall_data.get(3)),
                         normalFont);
             objectCount.setAlignment(Element.ALIGN_LEFT);
             document.add(objectCount);
