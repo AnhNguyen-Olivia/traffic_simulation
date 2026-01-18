@@ -43,7 +43,7 @@ public class CSVManager {
             this.writer.writeNext(headers);
             this.writer.flush();
         } catch (IOException e) {
-            LOGGER.log(Level.WARNING, "Failed to write headers to CSV file: " + e.getMessage(), e);
+            LOGGER.log(Level.WARNING, "Failed to write headers to CSV file: " + e.getMessage());
         }
     }
 

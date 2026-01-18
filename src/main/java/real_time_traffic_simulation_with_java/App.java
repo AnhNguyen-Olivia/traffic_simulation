@@ -94,7 +94,6 @@ public class App {
             fileHandler.setLevel(Level.INFO);
             fileHandler.setFormatter(new SimpleFormatter());
             ROOT_LOGGER.addHandler(fileHandler);
-
         } catch (IOException e) {
             ROOT_LOGGER.log(Level.SEVERE, "Failed to initialize logger", e);
         }

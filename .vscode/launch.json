@@ -18,8 +18,12 @@
             "name": "App",
             "request": "launch",
             "mainClass": "real_time_traffic_simulation_with_java.App",
+<<<<<<< HEAD
             "projectName": "traffic_simulation",
             "vmArgs":  "E:/javafx-sdk-25.0.1/lib --add-modules javafx.controls"
+=======
+            "projectName": "traffic_simulation"
+>>>>>>> 26384472c8c2e8124f35f6bc851018241480d63d
         }
     ]
 }

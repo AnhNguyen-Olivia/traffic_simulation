@@ -83,7 +83,7 @@ public class trafficlightPopupWindow extends Dialog<List<Integer>> {
                 List<Integer> newDurations = new java.util.ArrayList<>();
                 for(int i = 0; i < textFields.size(); i++) {
                     try {
-                        String input = textFields.get(i).getText();
+                        String input = textFields.get(i).getText().trim();
                         // If input is empty, keep original duration
                         if(input == null || input.isEmpty()) {
                             newDurations.add(originalPhaseDurations.get(i));
