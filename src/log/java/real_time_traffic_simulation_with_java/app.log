@@ -1,0 +1,28 @@
+Jan 18, 2026 2:05:43 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @e6ea0c6'
+Jan 18, 2026 2:05:46 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 18, 2026 2:05:46 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 02_05_46.csv
+Jan 18, 2026 2:05:46 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread started.
+Jan 18, 2026 2:05:47 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 18, 2026 2:05:47 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 18, 2026 2:05:48 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 18, 2026 2:08:56 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 18, 2026 2:08:56 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 18, 2026 2:08:56 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 18, 2026 2:08:57 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread stopped.
+Jan 18, 2026 2:08:57 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 18, 2026 2:08:57 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 02_05_46.csv
+Jan 18, 2026 2:08:57 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.

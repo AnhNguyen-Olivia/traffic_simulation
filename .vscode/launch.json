@@ -19,7 +19,7 @@
             "request": "launch",
             "mainClass": "real_time_traffic_simulation_with_java.App",
             "projectName": "traffic_simulation",
-            "vmArgs": "--module-path \"C:\\Users\\Tuyet Phuong\\Downloads\\sqldeveloper\\modules\\javafx\\windows-x64\\lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs":  "E:/javafx-sdk-25.0.1/lib --add-modules javafx.controls"
         }
     ]
 }
