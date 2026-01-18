@@ -156,3 +156,197 @@ INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_
 Jan 18, 2026 9:09:24 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
 >>>>>>> 26384472c8c2e8124f35f6bc851018241480d63d
 INFO: ExportingFiles service shut down initiated.
+Jan 18, 2026 9:03:07 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @e6ea0c6'
+Jan 18, 2026 9:03:11 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 18, 2026 9:03:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 21_03_11.csv
+Jan 18, 2026 9:03:11 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 18, 2026 9:03:12 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 18, 2026 9:03:12 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 18, 2026 9:03:13 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 18, 2026 9:03:28 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 18, 2026 9:03:28 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 18, 2026 9:03:28 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 18, 2026 9:03:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 18, 2026 9:03:29 PM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 18, 2026 9:03:29 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 21_03_11.csv
+Jan 18, 2026 9:03:29 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 18, 2026 9:24:05 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5a01ccaa'
+Jan 18, 2026 9:24:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 21_24_05.csv
+Jan 18, 2026 9:24:05 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 18, 2026 9:24:06 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 18, 2026 9:24:06 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 18, 2026 9:24:06 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 18, 2026 9:24:24 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:26 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:26 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:26 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:26 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:26 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:26 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:27 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:27 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:27 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:27 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:27 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:27 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:28 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:28 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:28 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:28 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:28 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:29 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:29 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:29 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:29 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:29 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:30 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:30 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:30 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:30 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:30 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:30 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:24:34 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 18, 2026 9:24:34 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 18, 2026 9:24:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 18, 2026 9:24:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 18, 2026 9:24:34 PM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 18, 2026 9:24:34 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 21_24_05.csv
+Jan 18, 2026 9:24:34 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 18, 2026 9:26:25 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5a01ccaa'
+Jan 18, 2026 9:26:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 21_26_26.csv
+Jan 18, 2026 9:26:26 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread started.
+Jan 18, 2026 9:26:26 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 18, 2026 9:26:26 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 18, 2026 9:26:27 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 18, 2026 9:26:33 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:26:35 PM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E24.
+Jan 18, 2026 9:26:38 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 18, 2026 9:26:38 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 18, 2026 9:26:38 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 18, 2026 9:26:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$0
+INFO: Export worker thread stopped.
+Jan 18, 2026 9:26:39 PM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 18, 2026 9:26:39 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 21_26_26.csv
+Jan 18, 2026 9:26:39 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 18, 2026 9:58:51 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @47f37ef1'
+Jan 18, 2026 9:58:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 21_58_52.csv
+Jan 18, 2026 9:58:52 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread started.
+Jan 18, 2026 9:58:53 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 18, 2026 9:58:53 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 18, 2026 9:58:53 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 18, 2026 9:59:15 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 18, 2026 9:59:15 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 18, 2026 9:59:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 18, 2026 9:59:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread stopped.
+Jan 18, 2026 9:59:15 PM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 18, 2026 9:59:15 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 21_58_52.csv
+Jan 18, 2026 9:59:15 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.
+Jan 18, 2026 10:07:23 PM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @47f37ef1'
+Jan 18, 2026 10:07:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 22_07_23.csv
+Jan 18, 2026 10:07:23 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread started.
+Jan 18, 2026 10:07:24 PM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 18, 2026 10:07:24 PM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 18, 2026 10:07:25 PM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 18, 2026 10:07:30 PM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 18, 2026 10:07:30 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 18, 2026 10:07:30 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 18, 2026 10:07:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread stopped.
+Jan 18, 2026 10:07:31 PM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 18, 2026 10:07:31 PM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 22_07_23.csv
+Jan 18, 2026 10:07:31 PM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: ExportingFiles service shut down initiated.

@@ -24,10 +24,7 @@ public final class Path {
     public static final String PdfLogFolder = "src/log/java/real_time_traffic_simulation_with_java/pdf/";
     /** Relative path to log file */
     public static final String LogFile = "src/log/java/real_time_traffic_simulation_with_java/app.log";
-
     
+    /** Relative path to icon image */
     public static final String IconImage = "/real_time_traffic_simulation_with_java/gui/resources/cat.png";
-    public static final String ConTrolPanelImage = "/real_time_traffic_simulation_with_java/gui/resources/ChristmasCat.jpg";
-    public static final String StatisticImage = "/real_time_traffic_simulation_with_java/gui/resources/CatBanner.jpg";
-    public static final String mapBackgroundImage = "/real_time_traffic_simulation_with_java/gui/resources/CatChristmas.jpg";
 }

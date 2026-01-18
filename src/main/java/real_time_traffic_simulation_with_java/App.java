@@ -11,13 +11,27 @@ import real_time_traffic_simulation_with_java.alias.Path;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 import real_time_traffic_simulation_with_java.gui.MainWindow;
 
+/**
+ * The main application class for the Real-Time Traffic Simulation with Java.
+ * It initializes and launches the GUI, sets up logging, and manages the simulation engine.
+ * 
+*/
 public class App {
     private SimulationEngine simulationEngine;
     private static final Logger ROOT_LOGGER = Logger.getLogger("");
 
+    /** App constructor */
+    public App() {
+        try {
+            this.simulationEngine = new SimulationEngine();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * The main application entry point to launch and run the traffic simulation GUI
-     * @param args
+     * @param args the command line arguments
     */
     public static void main(String[] args) {
         App app = new App();
@@ -25,9 +39,7 @@ public class App {
         app.run();
     }
 
-    /**
-     * private method to run, calling launchGui(), surround by try-catch block to handle exceptions
-    */
+    /** private method to run, calling launchGui(), surround by try-catch block to handle exceptions */
     private void run(){
         try{
             launchGui();
@@ -37,32 +49,39 @@ public class App {
     }
 
     /**
+     * <p>
      * private method to actually launch the Gui, becasue we are using javafx, we need to use Platform.startup()
      * to initialize the javafx toolkit and launch the main window.
      * Platform.startup​(Runnable runnable) is a static method meaning
      * it belongs to the class Platform itself rather than to any specific instance of the class.
      * It is used to start the JavaFx runtime, the specified runable will be called on the Javafx application thread.
+     * </p>
      * 
+     * <p>
      * In the code Platform.startup(() -> {......}); 
      * the () -> {......} syntax is a lambda expression
      * It is a short block of code that takes in parameters () and reuturns a value, they look like methods but do not need a name
      * and can be implemented right in the body of a method.
+     * </p>
      * 
+     * <p>
      * Then inside the lambda expression, we create a new SimulationEngine object and a new MainWindow object
      * passing the simulationEngine as parameter to the MainWindow constructor. 
      * We then call show() method so the main window is displayed and use startAnimationTimer() method to start the animation timer. 
      * (The method is definded in MainWindow class, we will talk more about in the MainWinddow file)
+     * </p>
      * 
+     * <p>
      * We add a setOnCloseRequest event handler to the main window to ensure that when the window is closed 
      * (stopAnimationTimer method is called so the animation timer is stopped, more about this in MainWindow.java),
      * the simulation engine is properly stopped and the JavaFx platform exits cleanly. 
      * And Platform.ext() is a static method that initiates the termination of the JavaFx runtime.
+     * </p>
     */
 
     private void launchGui(){
         Platform.startup(() -> {
             try {
-                simulationEngine = new SimulationEngine();
                 MainWindow mainWindow = new MainWindow(simulationEngine);
 
                 mainWindow.setOnCloseRequest(e -> {

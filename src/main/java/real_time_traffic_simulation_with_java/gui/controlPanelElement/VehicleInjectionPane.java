@@ -6,14 +6,10 @@ import javafx.scene.layout.VBox;
 import real_time_traffic_simulation_with_java.alias.Color;
 import real_time_traffic_simulation_with_java.cores.SimulationEngine;
 
-/**
- * Vehicle injection component with input fields and controls
- */
+/** Vehicle injection component with input fields and controls */
 public class VehicleInjectionPane extends VBox {
     
-    /**
-     * Create Component, make it private final because it will not change after created
-    */
+    /** Create Component, make it private final because it will not change after created */
     private final TextField inputVnumber;
     private final TextField inputSpeed;
     private final ComboBox<String> vehicleColor;
@@ -22,6 +18,10 @@ public class VehicleInjectionPane extends VBox {
     private final Button injectButton;
     private final SimulationEngine simulationEngine;
     
+    /**
+     * VehicleInjectionPane constructor
+     * @param simulationEngine
+    */
     public VehicleInjectionPane(SimulationEngine simulationEngine) {
         this.simulationEngine = simulationEngine;
         this.setSpacing(10);
@@ -66,6 +66,7 @@ public class VehicleInjectionPane extends VBox {
         this.getChildren().addAll(inputRow, edgeRow, colorButtonRow);
     }
 
+    /** Populate edges in startEdge and endEdge ComboBoxes (aka put the data into the ComboBoxes) */
     private void populateEdges() {
         try {
             startEdge.getItems().addAll(simulationEngine.getAllEdgeIDs());
@@ -75,9 +76,7 @@ public class VehicleInjectionPane extends VBox {
         }
     }
     
-    /**
-     * Handle inject action
-    */
+    /** Handle inject action */
     private void handleInject() {
         try {
             String vehicleNumber = inputVnumber.getText().trim();

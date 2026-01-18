@@ -6,13 +6,12 @@ import de.tudresden.sumo.cmd.Simulation;
 import it.polito.appeal.traci.SumoTraciConnection;
 import real_time_traffic_simulation_with_java.alias.Path;
 
+/** Wrapper class for SumoTraciConnection to manage connection with SUMO simulator using TraaS library */
 public class SumoTraasConnection {
     
     private static final Logger LOGGER = Logger.getLogger( SumoTraasConnection.class.getName() );
     
-    /** 
-     * Private Sumo port 
-    */
+    /** Private Sumo port */
     private int port = 8813;
 
     /** added waiting time for Sumo in ms */
@@ -52,40 +51,32 @@ public class SumoTraasConnection {
         }
     }
 
-    /** 
-     * Getter for connection 
+    /** Getter for connection 
+     * @return SumoTraciConnection connection object
     */
     public SumoTraciConnection getConnection() {
         return this.connection;
     }
 
-    /** 
-     * Method to start the connection 
-    */
+    /** Method to start the connection */
     public void startConnection() throws Exception{
             System.out.println("Starting Sumo, please wait....");
 
-            /** 
-             * Start Sumo automatically 
-            */
+            /** Start Sumo automatically */
             connection.addOption("start", "true");
             
-            /** 
-             * Sumo remote port 
-            */
+            /** Sumo remote port*/
             connection.runServer(port);
             
-            /** 
-             * Wait for Sumo 
-            */
+            /** Wait for Sumo */
             Thread.sleep(wait);
  
             System.out.println("Sumo start successfully! Thank you for waiting.");
             LOGGER.log(Level.INFO, "Sumo started successfully on port " + port);
     }
 
-    /** 
-     * Make a Sumo-move-to-the-next-step method 
+    /** Make a Sumo-move-to-the-next-step method 
+     * @throws Exception 
     */
     public void nextStep() throws Exception {
         try{
@@ -123,6 +114,4 @@ public class SumoTraasConnection {
     }
 }
 
-/** 
- * Learn more about SumoTraciConnection on https://sumo.dlr.de/javadoc/traas/it/polito/appeal/traci/SumoTraciConnection.html 
-*/
+/** Learn more about SumoTraciConnection on https://sumo.dlr.de/javadoc/traas/it/polito/appeal/traci/SumoTraciConnection.html */

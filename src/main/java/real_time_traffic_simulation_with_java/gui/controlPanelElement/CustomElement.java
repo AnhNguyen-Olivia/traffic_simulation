@@ -13,7 +13,7 @@ public class CustomElement {
     
     /**
      * Create a text field with specified properties. So instead of repeating code, we can just call this method.
-     * @param prompCan yt The prompt text to display
+     * @param prompt The prompt text to display
      * @param width The width of the text field
      * @param tooltipText The tooltip text
      * @return Configured TextField

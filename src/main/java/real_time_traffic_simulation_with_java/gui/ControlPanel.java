@@ -21,7 +21,11 @@ import real_time_traffic_simulation_with_java.tools.ExportingFiles;
  * (Happy Christmas!) ᓚ₍⑅^- .-^₎ -ᶻ 𝗓 𐰁
  */
 public class ControlPanel extends VBox {
-
+    /**
+     * ControlPanel constructor
+     * @param simulationEngine The simulation engine instance
+     * @param exportingFiles The exporting files utility
+    */
     public ControlPanel(SimulationEngine simulationEngine, ExportingFiles exportingFiles) {
         
         // Main layout container with no spacing between header and content

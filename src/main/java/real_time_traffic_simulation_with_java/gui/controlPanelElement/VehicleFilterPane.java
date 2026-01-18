@@ -18,6 +18,10 @@ public class VehicleFilterPane extends VBox {
     private final Button resetButton;
     private final SimulationEngine simulationEngine;
     
+    /***
+     * VehicleFilterPane constructor
+     * @param simulationEngine
+    */
     public VehicleFilterPane(SimulationEngine simulationEngine) {
         this.simulationEngine = simulationEngine;
         this.setSpacing(10);

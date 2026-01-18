@@ -98,12 +98,11 @@ traffic_simulation
 
 |Name                              | Role                 | Description |
 |----------------------------------|----------------------|-------------|
-|Pham Tran Minh Anh                | Tester     | Test the program|
-|Nguyen Thuy Anh                   | Developer                          | Writes Java source code, cover front end, thread, and mannage Sumo Connection |
-|Dieu Ngoc Thien An                | Tester              |Test the program |
 |Huynh Bao Tran                    | Developer                    | Writes Java source code, cover back-end including design wrappers, GUI render maps, and user controls.|
+|Nguyen Thuy Anh                   | Developer                          | Writes Java source code, cover front end, thread, and mannage Sumo Connection |
 |Nguyen Ho Tuyet Phuong            | Developer, Document Writer                          | Write Java source code related to traffic light, create diagrams, Javadoc and write report. |
-
+|Dieu Ngoc Thien An                | Tester              |Test the program |
+|Pham Tran Minh Anh                | Tester     | Test the program|
 ---
 
 ## Technology Stack Summary
@@ -133,19 +132,34 @@ traffic_simulation
 |Nov 28 – Dec 14 | Milestone 2: Functional Prototype | Live demo, core features                     |
 |Dec 15 – Jan 18 | Milestone 3: Finalize & Submission | Full GUI, export features, documentation     |
 
-### **Timeline & Team roles Milestone 2
+### **Timeline & Team roles Milestone 2**
 
 |Dates            |Tasks                        |Member                |
 |----------------|------------------------------------|----------------------------------------------|
 |03/12/2025 - 07/12/2025 | Working Application: Live SUMO connection     | Nguyen Thuy Anh        |
 |03/12/2025 - 07/12/2025 | Working Application: Vehicle injection        | Huynh Bao Tran    |
-|03/12/2025 - 07/12/2025 | Working Application: Traffic light control    | Huynh Bao Tran, Nguyen Ho Tuyet Phuong         |
-|03/12/2025 - 07/12/2025 | Working Application: Map visualization        | Pham Tran Minh Anh, Huynh Bao Tran        |
-|03/12/2025 - 07/12/2025 | Code Documentation & Fix project report       | Nguyen Ho Tuyet Phuong, Pham Tran Minh Anh                |
-|03/12/2025 - 07/12/2025|Design: Design the layout, appearance, and user controls.|Dieu Ngoc Thien An, Nguyen Thuy Anh|
+|03/12/2025 - 07/12/2025 | Working Application: Traffic light control    | Nguyen Ho Tuyet Phuong         |
+|03/12/2025 - 07/12/2025 | Working Application: Map visualization        | Huynh Bao Tran        |
+|03/12/2025 - 07/12/2025 | Design: Design the layout, appearance, and user controls.       | Nguyen Thuy Anh                |
+|03/12/2025 - 07/12/2025 | Code Documentation & Fix project report|Nguyen Ho Tuyet Phuong, Nguyen Thuy Anh|
 |07/12/2025 - 10/12/2025 | User Guide Draft & Test core features         | Nguyen Ho Tuyet Phuong, Huynh Bao Tran  |
-|07/12/2025 - 11/12/2025 | Test Scenario                                 | Huynh Bao Tran, Nguyen Thuy Anh |
+|07/12/2025 - 11/12/2025 | Test Scenario                                 | Pham Tran Minh Anh, Dieu Ngoc Thien An |
 |08/12/2025 - 12/12/2025 | Progress Summary                              | Nguyen Ho Tuyet Phuong        |
+
+### **Timeline & Team roles Milestone 3**
+
+|Dates            |Tasks                        |Member                |
+|----------------|------------------------------------|----------------------------------------------|
+|20/12-8/1 | GUI: Full dashboard with statistics     | Huynh Bao Tran, Pham Tran Minh Anh       |
+|20/12-8/1 | Working Application:Vehicle filtering        | Huynh Bao Tran    |
+|20/12-15/1 | Working Application: Traffic light duration adjustment.    | Nguyen Ho Tuyet Phuong         |
+|8/1-15/1 | Working Application: Record CSV       | Huynh Bao Tran, Dieu Ngoc Thien An        |
+|8/1-15/1 | Working Application: Exportable PDF      | Huynh Bao Tran                |
+|16/1-17/1|Working Application: Multi-threading.|Nguyen Thuy Anh|
+|10/1- 15/1 | Design: Design the layout, appearance, and user controls.         | Nguyen Thuy Anh  |
+|16/1-18/1 |Code Documentation & Fix project report                                 | Nguyen Ho Tuyet Phuong |
+|16/1-18/1 | User Guide Draft & Test core features                              | Nguyen Ho Tuyet Phuong        |
+|8/1-20/1|Clean Git Repository|Huynh Bao Tran, Nguyen Thuy Anh|
 
 ### **Detailed Checklists**
 
@@ -186,9 +200,9 @@ traffic_simulation
 
 ![Class Design Diagram](src/main/java/real_time_traffic_simulation_with_java/gui/resources/ClassDia.jpg)
 
-## Demo UI
+## UI
 
-![Demo UI](src/main/java/real_time_traffic_simulation_with_java/gui/resources/DemoUI.jpg)
+![UI](src/main/java/real_time_traffic_simulation_with_java/gui/resources/UI.png)
 
 ## License
 
