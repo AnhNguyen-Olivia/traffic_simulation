@@ -106,11 +106,7 @@ public class trafficlightLayer extends Group {
                     Optional<List<Integer>> result = popup.showAndWait();
                     // If result is not null, set new phase durations to the simulation engine
                     result.ifPresent(phaseDurations -> {
-                        try {
                             simulationEngine.setTlPhaseDurations(Tl.getId(), phaseDurations);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
                     });
                 }
             });
