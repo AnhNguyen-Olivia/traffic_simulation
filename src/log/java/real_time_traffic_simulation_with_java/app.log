@@ -1,0 +1,158 @@
+<<<<<<< HEAD
+Jan 18, 2026 2:05:43 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @e6ea0c6'
+Jan 18, 2026 2:05:46 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 18, 2026 2:05:46 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 02_05_46.csv
+Jan 18, 2026 2:05:46 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread started.
+Jan 18, 2026 2:05:47 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 18, 2026 2:05:47 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 18, 2026 2:05:48 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 18, 2026 2:08:56 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 18, 2026 2:08:56 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 18, 2026 2:08:56 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 18, 2026 2:08:57 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread stopped.
+Jan 18, 2026 2:08:57 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 18, 2026 2:08:57 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 02_05_46.csv
+Jan 18, 2026 2:08:57 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+=======
+Jan 18, 2026 9:01:34 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @5e265ba4'
+Jan 18, 2026 9:01:36 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 18, 2026 9:01:36 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 09_01_36.csv
+Jan 18, 2026 9:01:36 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread started.
+Jan 18, 2026 9:01:36 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 18, 2026 9:01:36 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 18, 2026 9:01:37 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 18, 2026 9:02:04 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_01_36 [1]} created successfully.
+Jan 18, 2026 9:02:04 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:02:17 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_01_36 [2]} created successfully.
+Jan 18, 2026 9:02:17 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:02:23 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_01_36 [3]} created successfully.
+Jan 18, 2026 9:02:23 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:02:33 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_01_36 [4]} created successfully.
+Jan 18, 2026 9:02:33 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:02:43 AM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:02:46 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_01_36 [5]} created successfully.
+Jan 18, 2026 9:02:46 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:03:00 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_01_36 [6]} created successfully.
+Jan 18, 2026 9:03:00 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:07:40 AM com.sun.javafx.application.PlatformImpl startup
+WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @7a46a697'
+Jan 18, 2026 9:07:42 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection startConnection
+INFO: Sumo started successfully on port 8813
+Jan 18, 2026 9:07:42 AM real_time_traffic_simulation_with_java.tools.ExportingFiles <init>
+INFO: ExportingFiles started. CSV: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 09_07_42.csv
+Jan 18, 2026 9:07:42 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread started.
+Jan 18, 2026 9:07:42 AM real_time_traffic_simulation_with_java.gui.MapPanel <init>
+INFO: MapPanel initialized.
+Jan 18, 2026 9:07:42 AM real_time_traffic_simulation_with_java.gui.Dashboard <init>
+INFO: Dashboard initialized.
+Jan 18, 2026 9:07:43 AM real_time_traffic_simulation_with_java.gui.MainWindow <init>
+INFO: MainWindow initialized successfully.
+Jan 18, 2026 9:08:01 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [1]} created successfully.
+Jan 18, 2026 9:08:01 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:08:03 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [2]} created successfully.
+Jan 18, 2026 9:08:03 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:08:07 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [3]} created successfully.
+Jan 18, 2026 9:08:07 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:08:11 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [4]} created successfully.
+Jan 18, 2026 9:08:11 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:08:15 AM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:08:18 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [5]} created successfully.
+Jan 18, 2026 9:08:18 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:08:20 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [6]} created successfully.
+Jan 18, 2026 9:08:20 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:08:22 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [7]} created successfully.
+Jan 18, 2026 9:08:22 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:08:25 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [8]} created successfully.
+Jan 18, 2026 9:08:25 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:08:32 AM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E23.
+Jan 18, 2026 9:08:35 AM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: -E24.
+Jan 18, 2026 9:08:42 AM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E23.
+Jan 18, 2026 9:08:44 AM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E24.
+Jan 18, 2026 9:08:44 AM real_time_traffic_simulation_with_java.cores.SimulationEngine stressTest
+INFO: Stress test: Injected 100 vehicles to edge: E24.
+Jan 18, 2026 9:09:05 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [9]} created successfully.
+Jan 18, 2026 9:09:05 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:09:07 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [10]} created successfully.
+Jan 18, 2026 9:09:07 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:09:09 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [11]} created successfully.
+Jan 18, 2026 9:09:09 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:09:13 AM real_time_traffic_simulation_with_java.tools.PDFExporter exportSummary
+INFO: PDF summary {2026-01-18 09_07_42 [12]} created successfully.
+Jan 18, 2026 9:09:13 AM real_time_traffic_simulation_with_java.gui.controlPanelElement.ExportPane lambda$handleExport$1
+INFO: PDF export completed successfully.
+Jan 18, 2026 9:09:24 AM real_time_traffic_simulation_with_java.wrapper.SumoTraasConnection closeConnection
+INFO: Sumo connection closed successfully.
+Jan 18, 2026 9:09:24 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+INFO: MainWindow AnimationTimer stopped.
+Jan 18, 2026 9:09:24 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: Shutting down ExportingFiles...
+Jan 18, 2026 9:09:24 AM real_time_traffic_simulation_with_java.tools.ExportingFiles lambda$startWorker$0
+INFO: Export worker thread stopped.
+Jan 18, 2026 9:09:24 AM real_time_traffic_simulation_with_java.tools.CSVManager closeCSV
+INFO: CSV file closed successfully.
+Jan 18, 2026 9:09:24 AM real_time_traffic_simulation_with_java.tools.ExportingFiles shutdown
+INFO: ExportingFiles shut down. File: src/log/java/real_time_traffic_simulation_with_java/csv/2026-01-18 09_07_42.csv
+Jan 18, 2026 9:09:24 AM real_time_traffic_simulation_with_java.gui.MainWindow stopAnimationTimer
+>>>>>>> 26384472c8c2e8124f35f6bc851018241480d63d
+INFO: ExportingFiles service shut down initiated.

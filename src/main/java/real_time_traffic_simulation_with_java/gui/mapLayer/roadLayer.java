@@ -19,7 +19,7 @@ import javafx.util.Duration;
 
 /**
  * Create road layer including junctions and edges, 
- * with tooltips and mouse events on edges. <br>
+ *      with tooltips and mouse events on edges. <br>
  * Junction have no tooltips or mouse events, since they are just for visual purpose.
  */
 public class roadLayer extends Group {
@@ -27,12 +27,11 @@ public class roadLayer extends Group {
 
     /**
      * Create road layer including junctions and edges, 
-     * with tooltips and mouse events on edges. <br>
+     *          with tooltips and mouse events on edges. <br>
      * Junction have no tooltips or mouse events, since they are just for visual purpose.
      * @param engine SimulationEngine instance
-     * @throws Exception
      */
-    public roadLayer(SimulationEngine engine) throws Exception {
+    public roadLayer(SimulationEngine engine) {
         this.simulationEngine = engine;
         List<JunctionData> junctions = this.simulationEngine.getMapJunctions();
         List<EdgeData> edges = this.simulationEngine.getMapEdges();
@@ -49,9 +48,8 @@ public class roadLayer extends Group {
 
     /**
      * Private helper method: Add tooltip and mouse events to edges
-     * @throws Exception
      */
-    private void addToolTip(List<EdgeData> edges) throws Exception {
+    private void addToolTip(List<EdgeData> edges) {
         for (EdgeData edge : edges){
             Label tooltipLabel = new Label();
             Tooltip tooltip = new Tooltip();
@@ -60,11 +58,7 @@ public class roadLayer extends Group {
             tooltip.setGraphic(tooltipLabel);
             // Add Timeline to update tooltip content with simulation speed
             Timeline updateTooltip = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-                try{
-                    tooltipLabel.setText(simulationEngine.getEdgeTooltip(edge.getId()));
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
+                tooltipLabel.setText(simulationEngine.getEdgeTooltip(edge.getId()));
             }), new KeyFrame(Duration.millis(Metrics.CONNECT_SPEED_MS))); // Time line stop after this duration (or loop if setCycleCount)
             // Ensure the timeline runs indefinitely
             updateTooltip.setCycleCount(Animation.INDEFINITE);

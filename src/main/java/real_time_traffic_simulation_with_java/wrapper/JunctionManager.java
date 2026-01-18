@@ -4,7 +4,6 @@ import it.polito.appeal.traci.SumoTraciConnection;
 import de.tudresden.sumo.cmd.Junction;
 import de.tudresden.sumo.objects.SumoGeometry;
 
-import java.util.ArrayList;
 import java.util.List;
 import real_time_traffic_simulation_with_java.cores.JunctionData;
 
@@ -22,9 +21,8 @@ public class JunctionManager {
     /**
      * Wrapper class for TraaS to manage junctions in the simulation
      * @param connection connection to Sumo
-     * @throws Exception
     */
-    public JunctionManager(SumoTraciConnection connection) throws Exception {
+    public JunctionManager(SumoTraciConnection connection) {
         this.conn = connection;
     }
 
@@ -32,25 +30,16 @@ public class JunctionManager {
     /**
      * Get list of junctions IDs
      * @return a List type String of junction IDs
-     * @throws Exception
     */ 
+    @SuppressWarnings("unchecked")
     public List<String> getIDList() throws Exception {
-        List<String> IDs = new ArrayList<>();
-        @SuppressWarnings("unchecked")
-        List<String> junctionIDList = (List<String>) conn.do_job_get(Junction.getIDList());
-        for (String ID : junctionIDList) {
-            if (ID.startsWith("J")) {
-                IDs.add(ID);
-            }
-        }
-        return IDs;
+        return (List<String>) conn.do_job_get(Junction.getIDList());
     }
 
     
     /**
      * Get number of junctions
      * @return an int number of junctions
-     * @throws Exception
     */
     public int getCount() throws Exception {
         return this.getIDList().size();
@@ -61,7 +50,6 @@ public class JunctionManager {
      * Get shape of the junction
      * @param junctionID the ID of the junction
      * @return SumoGeometry shape of the junction
-     * @throws Exception
     */
     public SumoGeometry getShape(String junctionID) throws Exception {
         return (SumoGeometry) conn.do_job_get(Junction.getShape(junctionID));
@@ -71,7 +59,6 @@ public class JunctionManager {
     /**
      * Create and get a List of JunctionData for all junctions
      * @return a List of JunctionData for all junctions
-     * @throws Exception
     */
     public List<JunctionData> getJunctionDataList() throws Exception {
         if(junctionDataList.isEmpty()){

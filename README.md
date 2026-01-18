@@ -84,11 +84,11 @@ traffic_simulation
 
 |Name                              | Role                 | Description |
 |----------------------------------|----------------------|-------------|
-|Pham Tran Minh Anh                | GUI Designer            | Writes Java source code, including GUI, map visualization and render vehicles.|
-|Nguyen Thuy Anh                   | Developer                          | Writes Java source code, including SUMO connection, step simulation, GUI draws main window and dashboard. |
-|Dieu Ngoc Thien An                | GUI designer                    | Writes Java source code, including design, layout, appearance. |
-|Huynh Bao Tran                    | Developer                    | Writes Java source code, including design wrappers, GUI draw maps, and user controls.|
-|Nguyen Ho Tuyet Phuong            | Developer, Document Writer                          | Write Java source code including traffic light, create diagrams, Javadoc and write report. |
+|Pham Tran Minh Anh                | Tester     | Test the program|
+|Nguyen Thuy Anh                   | Developer                          | Writes Java source code, cover front end, thread, and mannage Sumo Connection |
+|Dieu Ngoc Thien An                | Tester              |Test the program |
+|Huynh Bao Tran                    | Developer                    | Writes Java source code, cover back-end including design wrappers, GUI render maps, and user controls.|
+|Nguyen Ho Tuyet Phuong            | Developer, Document Writer                          | Write Java source code related to traffic light, create diagrams, Javadoc and write report. |
 
 ---
 
@@ -157,14 +157,14 @@ traffic_simulation
 
 #### Milestone 3 — Finalization & Submission
 
-- [ ] Final polished GUI with full interactions
-- [ ] Grouping/filtering logic for vehicles
+- [x] Final polished GUI with full interactions
+- [x] Grouping/filtering logic for vehicles
 - [ ] Traffic rule logic + timing optimization
-- [ ] Export features (CSV & PDF)
-- [ ] All documentation completed
-- [ ] Final user guide + installation section
-- [ ] Presentation preparation
-- [ ] Team reflection & clean repository
+- [x] Traffic duration adjustment feature
+- [x] Export features (CSV & PDF)
+- [x] All documentation completed
+- [x] Final user guide + installation section
+- [x] Clean repository
 
 ## Achitechture Diagram and Class Design
 

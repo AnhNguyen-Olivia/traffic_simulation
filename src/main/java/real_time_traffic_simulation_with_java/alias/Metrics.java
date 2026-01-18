@@ -2,7 +2,7 @@ package real_time_traffic_simulation_with_java.alias;
 
 /**
  * Utility class: Stores all the metrics used in the simulation, 
- * thus make the code easier to look and fix.
+ *      thus make the code easier to look and fix.
 */
 
 public final class Metrics {
@@ -28,6 +28,11 @@ public final class Metrics {
     /** Gap between dashes in lane divider */
     public static final double LANE_DASHED_GAP = 4.0;
 
+    /** Threshold for high halting duration (in simulation seconds) to determine congestion */
+    public static final int HIGH_HALTING_DURATION_THRESHOLD = 60;
+    /** Threshold for high halting rate (average halting vehicles/lane) */
+    public static final double HIGH_HALTING_RATE_THRESHOLD = 5.0;
+
     /** Hide delay for tooltips (in milliseconds) */
     public static final double HIDE_DELAY = 100;
 
@@ -35,6 +40,10 @@ public final class Metrics {
     public static final double ENLARGE_FACTOR = 1.05;
     /** Factor to zoom in the map */
     public static final double SHRINK_FACTOR = 0.95;
+    /** Maximum zoom level */
+    public static final double MAX_ZOOM_LEVEL = 15.0;
+    /** Minimum zoom level */
+    public static final double MIN_ZOOM_LEVEL = 0.5;
 
     /** Connection speed (in milliseconds): How often does the simulation update */
     public static final int CONNECT_SPEED_MS = 200;
@@ -47,5 +56,22 @@ public final class Metrics {
     public static final double  CONTROL_PANEL_WIDTH = 250;
 
     /** Dashboard panel width (in pixels) */
-    public static final double DASHBOARD_WIDTH = 250;
+    public static final double DASHBOARD_WIDTH = 300;
+
+    /** Header for CSV file to write */
+    public static final String[] HEADERS = {"simulation step", "vehicle id","vehicle color", "vehicle speed",
+                                                "vehicle is on edge", "edge congestion status", 
+                                                "edge average speed", "edge density" };
+
+    /** PDF text font */
+    public static final int PDF_FONT = com.lowagie.text.Font.TIMES_ROMAN;
+    /** PDF title font size */
+    public static final int PDF_TITLE_FONT_SIZE = 18;
+    /** PDF heading font size */
+    public static final int PDF_HEADING_FONT_SIZE = 10;
+    /** PDF normal text font size */
+    public static final int PDF_NORMAL_FONT_SIZE = 12;
+    /** PDF chart image height: preffered height per unit on Y-axis */
+    public static final int SIZE_PER_Y_UNIT = 17;
+
 }

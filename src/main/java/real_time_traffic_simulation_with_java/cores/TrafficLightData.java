@@ -13,23 +13,47 @@ import javafx.scene.Group;
 
 /**
  * Represents the visual data of a traffic light in the simulation, 
- * grouping multiple Polygons representing the sub-lights of the traffic light. <br>
+ *      grouping multiple Polygons representing the sub-lights of the traffic light. <br>
  * Each sub-light's shape is derived from the coordinates of the incoming lanes, and its color is determined by the traffic light's current state.
  */
 public class TrafficLightData extends Group {
+    /** 
+     * List of durations for each phase of the traffic light <br>
+     * Should keep track by ourselves, since SUMO always return the initial durations set in the net file
+     */
+    private List<Integer> phasesDuration = new ArrayList<>();
+
     /**
-     * Represents the visual data of a traffic light in the simulation, 
-     * grouping multiple Polygons representing the sub-lights of the traffic light. <br>
+     * Represents the visual data and keep track of phases durations of a traffic light in the simulation, 
+     *      grouping multiple Polygons representing the sub-lights of the traffic light. <br>
      * Each sub-light's shape is derived from the coordinates of the incoming lanes, and its color is determined by the traffic light's current state.
      * @param tlID the unique identifier of the traffic light
      * @param coordinates a list of SumoGeometry objects representing the shapes of incoming lanes controlled by the traffic light
      * @param colorString a string representing the color states of the traffic light
+     * @param phasesDuration a list of durations for each phase of the traffic light
      */
-    public TrafficLightData(String tlID, List<SumoGeometry> coordinates, String colorString) {
+    public TrafficLightData(String tlID, List<SumoGeometry> coordinates, String colorString, List<Integer> phasesDuration) {
         List<Polygon> light_shapes = convertSumoGeometryToShapeList(coordinates, colorString);
+        this.phasesDuration = phasesDuration;
         this.getChildren().addAll(light_shapes);
         this.setId(tlID);
         this.setPickOnBounds(true); // Allow mouse event on transparent area
+    }
+
+    /** Getter for the list of durations for each phase of the traffic light */
+    public List<Integer> getPhasesDuration() {
+        return this.phasesDuration;
+    }
+
+    /**
+     * Setter for the list of durations for each phase of the traffic light <br>
+     * Only updates if the new list has the same size as the existing one
+     * @param phasesDuration a list of durations for each phase of the traffic light
+     */
+    public void setPhasesDuration(List<Integer> phasesDuration) {
+        if(phasesDuration.size() == this.phasesDuration.size()) {
+            this.phasesDuration = phasesDuration;
+        }
     }
 
     /**
@@ -44,6 +68,10 @@ public class TrafficLightData extends Group {
         }
     }
 
+
+    // ---------------------------------------------------------
+    // Private helper methods for drawing edge shape and lane dividers
+    // ---------------------------------------------------------
     /**
      * Private helper method: convert list of lanes' coordinations to list of Polygon
      */
