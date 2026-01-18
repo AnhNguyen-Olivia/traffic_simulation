@@ -11,7 +11,7 @@ import real_time_traffic_simulation_with_java.alias.Color;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
-import javafx.scene.Group;
+import javafx.scene.Group; 
 
 
 /**

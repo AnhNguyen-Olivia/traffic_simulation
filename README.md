@@ -23,16 +23,25 @@ traffic_simulation
 ├───.vscode
 ├───lib
 ├───src
+│   ├───log
+│   │   └───java
+│   │       └───real_time_traffic_simulation_with_java
+│   │           ├───csv
+│   │           └───pdf
 │   ├───main
 │   │   └───java
 │   │       └───real_time_traffic_simulation_with_java
 │   │           ├───alias
 │   │           ├───cores
 │   │           ├───gui
+│   │           │   ├───controlPanelElement
+│   │           │   ├───dashboardSection
 │   │           │   ├───mapLayer
 │   │           │   └───resources
 │   │           ├───lib
 │   │           ├───SumoConfig
+│   │           ├───tools
+│   │           │   └───PDFmethod
 │   │           └───wrapper
 │   └───test
 │       └───java
@@ -43,8 +52,12 @@ traffic_simulation
     │       ├───alias
     │       ├───cores
     │       ├───gui
+    │       │   ├───controlPanelElement
+    │       │   ├───dashboardSection
     │       │   ├───mapLayer
     │       │   └───resources
+    │       ├───tools
+    │       │   └───PDFmethod
     │       └───wrapper
     ├───generated-sources
     │   └───annotations
@@ -53,6 +66,7 @@ traffic_simulation
     │       └───compile
     │           └───default-compile
     └───test-classes
+        └───real_time_traffic_simulation_with_java
 ```
 
 ## Installation
