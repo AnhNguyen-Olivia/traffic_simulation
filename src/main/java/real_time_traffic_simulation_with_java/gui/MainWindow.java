@@ -111,10 +111,6 @@ public class MainWindow extends Application {
         
         
         // ========== STEP 7: HANDLE WINDOW CLOSE EVENT ==========
-        // When user clicks X button or closes window, we need to:
-        // 1. Stop SUMO simulation properly
-        // 2. Close connections
-        // 3. Exit program
         
         stage.setOnCloseRequest(event -> {  // Lambda function (runs when window closes)
             try {

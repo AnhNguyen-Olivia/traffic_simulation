@@ -269,13 +269,6 @@ public class ControlPanel extends VBox {
         title.setMaxWidth(Double.MAX_VALUE);  // Responsive title
         section.getChildren().add(title);
         
-        // ComboBox to select traffic light
-        trafficLightComboBox = new ComboBox<>();
-        trafficLightComboBox.setPromptText("Select Traffic Light");
-        trafficLightComboBox.setMaxWidth(Double.MAX_VALUE);
-        trafficLightComboBox.setStyle("-fx-font-size: 12px;");
-        section.getChildren().add(trafficLightComboBox);
-        
         // Toggle Single Button
         Button toggleSingleButton = new Button("Toggle Selected");
         toggleSingleButton.setMaxWidth(Double.MAX_VALUE);
